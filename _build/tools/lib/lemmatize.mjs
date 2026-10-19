@@ -26,10 +26,24 @@
 /* Utilidades                                                          */
 /* ------------------------------------------------------------------ */
 
-/** Pontuação hebraica (U+0591–U+05C7), preservando o maqaf (separador). */
-const HEB_POINTS = /[ְ-ׇ]/g;
+/**
+ * Remove toda marca hebraica, preservando o maqaf (U+05BE).
+ *
+ * Usa `\p{M}` (marcas combinatórias) em vez de faixas de caracteres literais.
+ * Faixa literal em bloco hebraico é traiçoeiro e custou dois bugs: escrever
+ * `[ְ-ׇ]` parece cobrir só pontuação, mas o intervalo U+05D0–U+05EA — onde
+ * estão as LETRAS — também entrava, e o lema virava um pontinho
+ * (`בְּרֵאשִׁ֖ית` → `֖`). E as faixas之间 deixavam buraco: U+0596 (tipo de
+ * *canting*) sobrevivia e o lema saía `בראש֖ית`.
+ *
+ * O maqaf é a única pontuação hebraica que NÃO é marca combinatória — é
+ * separador de composto —, e por isso sobrevive a `\p{M}`. É o comportamento
+ * desejado: `אֶת־יִצְחָק` precisa continuar composto para o dicionário abrir os
+ * dois segmentos.
+ */
+const HEB_PONTOS = /\p{M}|\u0591-\u05BD|\u05BF-\u05C2|\u05C4-\u05C7/gu;
 
-const stripPoints = (s) => s.replace(HEB_POINTS, '');
+const stripPoints = (s) => s.replace(HEB_PONTOS, '');
 
 /** Grego: sem acento e em minúsculas, para casar com `grc-index.json`. */
 const stripGreek = (s) =>
@@ -90,43 +104,71 @@ const IDENTIDADE = new Set(['la', 'zh', 'ja', 'ko', 'gn']);
  * que nenhuma regra de sufixo alcança. `ser`/`estar`/`ir` aparecem várias
  * vezes porque as formas são ambíguas entre si (`vai` é de ir, `vou` de ir).
  */
-const IRREGULARES = {
+export const IRREGULARES = {
   pt: {
-    sou: 'ser', és: 'ser', é: 'ser', era: 'ser', eram: 'ser', fui: 'ser', fomos: 'ser',
-    fora: 'ser', foram: 'ser', serei: 'ser', sejamos: 'ser',
-    está: 'estar', estou: 'estar', estamos: 'estar', estão: 'estar', estava: 'estar',
-    estavam: 'estar', estejam: 'estar',
-    vou: 'ir', vai: 'ir', íamos: 'ir', iam: 'ir', vá: 'ir', ide: 'ir', fosse: 'ir',
+    // SER. `fui` e `fomos` estão aqui como `ser`, e não como `ir`: no texto
+    // bíblico "e foi" é quase sempre ser, não ir. Uma versão anterior deste
+    // mapa tinha `fui: 'ser'` na linha 9 e `fui: 'ir'` na linha 25 — objeto JS
+    // resolve duplicata silenciosamente, e a segunda vencia, então o lema de
+    // `fui` era `ir`. Nenhum teste pegou, porque o padrão de ouro não cobria.
+    sou: 'ser', és: 'ser', é: 'ser', era: 'ser', eram: 'ser',
+    fui: 'ser', fomos: 'ser', fora: 'ser', foram: 'ser', serei: 'ser',
+    sejamos: 'ser', são: 'ser', sejais: 'ser', serei: 'ser',
+    está: 'estar', estou: 'estar', estamos: 'estar', estão: 'estar',
+    estava: 'estar', estavam: 'estar', estejam: 'estar', estejamos: 'estar',
+    // IR.
+    vou: 'ir', vai: 'ir', íamos: 'ir', iam: 'ir', vá: 'ir', ide: 'ir',
+    fosse: 'ir', fossem: 'ir', foste: 'ir', fostes: 'ir', foi: 'ir',
+    foram: 'ir', íamos: 'ir',
+    // HAVER.
     hei: 'haver', há: 'haver', havia: 'haver', houvesse: 'haver',
+    houvessem: 'haver', houver: 'haver', houvera: 'haver',
+    // FAZER, DIGER, PODER.
     faço: 'fazer', faz: 'fazer', fez: 'fazer', fazem: 'fazer', far: 'fazer',
-    digo: 'dizer', diz: 'dizer', disse: 'dizer', dizem: 'dizer', dizer: 'dizer',
-    posso: 'poder', pode: 'poder', podem: 'poder', podia: 'poder', puderam: 'poder',
-    vi: 'ver', vejo: 'ver', viu: 'ver', vê: 'ver', vemos: 'ver', viu: 'ver',
+    farás: 'fazer', fez: 'fazer', façamos: 'fazer',
+    digo: 'dizer', diz: 'dizer', disse: 'dizer', dizem: 'dizer',
+    dizer: 'dizer', direi: 'dizer', diria: 'dizer',
+    posso: 'poder', pode: 'poder', podem: 'poder', podia: 'poder',
+    puderam: 'poder', pôde: 'poder', puder: 'poder', pudera: 'poder',
+    pudessem: 'poder', pudesses: 'poder', pudestes: 'poder', pôde: 'poder',
+    // VER, DAR, SABER, QUERER.
+    vi: 'ver', vejo: 'ver', viu: 'ver', vê: 'ver', vemos: 'ver',
+    viu: 'ver', virem: 'ver', viu: 'ver',
     dou: 'dar', dá: 'dar', deu: 'dar', dão: 'dar', dareis: 'dar',
-    sei: 'saber', sabe: 'saber', sabem: 'saber', soube: 'saber', saibam: 'saber',
+    dava: 'dar', deram: 'dar', dariam: 'dar',
+    sei: 'saber', sabe: 'saber', sabem: 'saber', soube: 'saber',
+    saibam: 'saber', saiba: 'saber', sei: 'saber',
     quero: 'querer', quer: 'querer', querem: 'querer', quis: 'querer',
-    tenho: 'ter', tem: 'ter', têm: 'ter', tinha: 'ter', teve: 'ter', tinham: 'ter',
-    tive: 'ter', tenhamos: 'ter',
-    ponho: 'pôr', pôs: 'pôr', puseram: 'pôr', ponde: 'pôr',
-    vou: 'ir', vem: 'vir', vens: 'vir', veio: 'vir', vieram: 'vir', vinde: 'vir',
+    queira: 'querer', queiram: 'querer', quer: 'querer',
+    // TER, PÔR, VIR.
+    tenho: 'ter', tem: 'ter', têm: 'ter', tinha: 'ter', teve: 'ter',
+    tinham: 'ter', tive: 'ter', tenhamos: 'ter', tenham: 'ter', teu: 'ter',
+    ponho: 'pôr', pôs: 'pôr', puseram: 'pôr', ponde: 'pôr', põe: 'pôr',
+    puseram: 'pôr',
+    vem: 'vir', vens: 'vir', veio: 'vir', vieram: 'vir', vinde: 'vir',
+    viemos: 'vir', venha: 'vir', vi: 'vir',
+    // OUVIR, PERDER, VIVER, DEIXAR, LER.
     ouvi: 'ouvir', ouve: 'ouvir', ouviu: 'ouvir', ouviram: 'ouvir',
     perdi: 'perder', perde: 'perder', perdeu: 'perder', perderam: 'perder',
     vivi: 'viver', vive: 'viver', viveu: 'viver', viveram: 'viver',
     deixei: 'deixar', deixa: 'deixar', deixou: 'deixar', deixaram: 'deixar',
     li: 'ler', lê: 'ler', leu: 'ler', lemos: 'ler', leram: 'ler',
-    fui: 'ir', foste: 'ir', foi: 'ir', fomos: 'ir', for: 'ir', forem: 'ir',
-    caí: 'cair', cai: 'cair', caiu: 'cair', caem: 'cair',
+    // CAIR, ABRIR, CORRER, DORMIR, NASCER, MORRER.
+    caí: 'cair', cai: 'cair', caiu: 'cair', caem: 'cair', caíram: 'cair',
     abriste: 'abrir', abriu: 'abrir', abriram: 'abrir', abrirei: 'abrir',
-    correu: 'correr', corremos: 'correr', corre: 'correr',
+    correu: 'correr', corremos: 'correr', corre: 'correr', correram: 'correr',
     dormiu: 'dormir', dorme: 'dormir', dormiram: 'dormir',
     nasceu: 'nascer', nascem: 'nascer', nasceram: 'nascer',
     morreu: 'morrer', morrem: 'morrer', morreram: 'morrer',
+    // TRANSACIONAL E DE RESPOSTA: ALTAMENTE FREQUENTES NO TEXTO BÍBLICO.
     comprou: 'comprar', compra: 'comprar', compraram: 'comprar',
+    compraram: 'comprar', comprasse: 'comprar', comprou: 'comprar',
     vendeu: 'vender', vende: 'vender', venderam: 'vender',
-    pediu: 'pedir', pede: 'pedir', pediram: 'pedir',
+    pediu: 'pedir', pede: 'pedir', pediram: 'pedir', pedi: 'pedir',
     respondeu: 'responder', responde: 'responder', responderam: 'responder',
+    respondeu: 'responder',
     adormeceu: 'adormecer',
-    reconheceu: 'reconhecer', reconhece: 'reconhecer',
+    reconheceu: 'reconhecer', reconhece: 'reconhecer', reconheceram: 'reconhecer',
   },
   es: {
     soy: 'ser', eres: 'ser', es: 'ser', era: 'ser', fue: 'ser', fueron: 'ser',
@@ -227,12 +269,26 @@ const CLITICOS_PT = ['me', 'te', 'se', 'lhe', 'lhes', 'nos', 'vos', 'mo'];
 const CLITICOS_ES = ['me', 'te', 'se', 'le', 'les', 'nos', 'os', 'as', 'lo', 'la'];
 
 /** Remove um clítico final (PT/ES). Devolve [base, tinhaClitico]. */
-function tiraClitico(palavra, cliticos) {
+/**
+ * Remove um clítico final (PT/ES).
+ *
+ * A remoção SÓ vale se o que sobra é palavra de verdade: um substantivo
+ * terminado em `-te`/`-mo`/`-se` produz um radical que não existe
+ * (`noite` → `noi`, `abismo` → `abis`, `vinte` → `vin`). Por isso o corte é
+ * validado contra o vocabulário do pacote: `disseram-les` sobrevive porque
+ * `disseram` é chave do dicionário, e `noite` não sobrevive porque `noi` não é.
+ *
+ * @returns {[string, boolean]} a base (ou a palavra intacta) e se havia clítico
+ */
+function tiraClitico(palavra, cliticos, vocab) {
   for (const c of cliticos) {
-    if (palavra.length > c.length + 2 && palavra.endsWith(c)) {
-      const base = palavra.slice(0, -c.length);
-      if (base.length >= 2) return [base, true];
-    }
+    if (palavra.length <= c.length + 2) continue;
+    if (!palavra.endsWith(c)) continue;
+    const base = palavra.slice(0, -c.length);
+    if (base.length < 2) continue;
+    // Sem vocabulário não há como validar o corte, e o corte sem validação é o
+    // que corrompeu 3 mil raízes. Nesses casos a palavra fica intacta.
+    if (!vocab || !vocab.size || vocab.has(base)) return [base, true];
   }
   return [palavra, false];
 }
@@ -243,9 +299,16 @@ function tiraClitico(palavra, cliticos) {
  * Diferente dos verbais (que precisam voltar ao infinitivo), estes são só
  * removidos. A lista é por idioma e a aplicação é iterativa com limite.
  */
-const SUFIXOS = {
-  pt: ['aram', 'eram', 'iram', 'ados', 'adas', 'idos', 'idas', 'ando', 'endo', 'indo', 'ados', 'adas', 'aria', 'eria', 'iria', 'asse', 'esse', 'isse', 'aria'],
-  es: ['aron', 'ieron', 'ando', 'iendo', 'ado', 'ida', 'ados', 'idas', 'aba', 'ía', 'ian', 'aron', 'eron'],
+export const SUFIXOS = {
+  // Sem repetição: elemento duplicado em array não muda o resultado (o `break`
+  // sai no primeiro), mas esconde revisão. `check-tabelas.mjs` reprova.
+  pt: [
+    'aram', 'eram', 'iram', 'ados', 'adas', 'idos', 'idas',
+    'ando', 'endo', 'indo',
+    'aria', 'eria', 'iria',
+    'asse', 'esse', 'isse',
+  ],
+  es: ['aron', 'ieron', 'ando', 'iendo', 'ado', 'ida', 'ados', 'idas', 'aba', 'ía', 'ian', 'eron'],
   it: ['ando', 'endo', 'ato', 'ito', 'ata', 'ita', 'ano', 'ono'],
   fr: ['ant', 'ent', 'ons', 'ais', 'ait', 'aient'],
   de: ['est', 'et', 'en', 'er', 'em'],
@@ -265,7 +328,7 @@ const SUFIXOS = {
  * Um array pode ter mais de um final para o mesmo sufixo (PT `a` pode dar `ar`
  * ou `er`); a ordem dos candidatos importa quando o vocabulário não decide.
  */
-const INF = {
+export const INF = {
   pt: {
     // Gerúndio: `destruindo` -> `destruir`. O `-ndo` vira o final do
     // infinitivo, e `indo` é o caso de `destruindo` (radical `destru` + `indo`),
@@ -347,8 +410,16 @@ function escolheCandidato(candidatos, vocab) {
  * `terra → ter` tem resto `ra`, que não é flexão nenhuma. A versão anterior
  * aceitava qualquer resto e produzia `earth → ear`.
  */
-const RESTOS = {
-  pt: ['s', 'es', 'is', 'as', 'ns', 'em', 'ou', 'eu', 'iu', 'ada', 'ado', 'ida', 'ido', 'adas', 'ados', 'idas', 'idos', 'ão', 'ões'],
+export const RESTOS = {
+  // Português: só plural e particípio. `'em'`, `'ou'`, `'eu'` e `'iu'` SAÍRAM:
+  // são terminações verbais ambíguas que o backoff não pode resolver, e
+  // produziam `marido → mar` (resto `ido`, que é particípio mas também
+  // terminações de `morar`/`mor`), `comeste → com` (resto `este`, que casa
+  // com pronome) e `morada → mor` (resto `ada`, que é particípio mas
+  // também substantivo). O que sobra é o plural, que é o caso comum e
+  // inequívoco; o particípio fica para o caminho verbal, que tem portão de
+  // `pos`.
+  pt: ['s', 'es', 'is', 'as', 'ns', 'ão', 'ões', 'ais', 'éis'],
   es: ['s', 'es', 'as', 'os', 'n', 'ado', 'ida', 'idos', 'adas'],
   it: ['i', 'e', 'he', 'hi', 'ti', 'si', 'no', 'ne'],
   fr: ['s', 'x', 'ent', 'ant', 'é', 'ée', 'és', 'ons'],
@@ -400,15 +471,16 @@ function lemaRegras(palavra, lang, vocab, pos) {
 
   let base = palavra;
   let hadClitico = false;
-  if (lang === 'pt' || lang === 'es') {
-    [base, hadClitico] = tiraClitico(base, lang === 'pt' ? CLITICOS_PT : CLITICOS_ES);
+  // PORTÃO DE POS primeiro: clítico só faz sentido em verbo. `corte` é
+  // substantivo e termina em `-te`, mas cortar o `te` daria `cor` — que É
+  // palavra do dicionário, então a validação por vocabulário sozinha não
+  // segura. O portão de `pos` é o que segura.
+  const eVerbo = !pos || POS_VERBO.has(pos);
+  if (eVerbo && (lang === 'pt' || lang === 'es')) {
+    [base, hadClitico] = tiraClitico(base, lang === 'pt' ? CLITICOS_PT : CLITICOS_ES, vocab);
     while (base.endsWith('-')) base = base.slice(0, -1);
   }
   if (base.length <= 2) return hadClitico ? base : palavra;
-
-  // PORTÃO DE POS: se o pacote diz que a palavra NÃO é verbo, as regras verbais
-  // não se aplicam. É o que impede `vazia` (substantivo) de virar `vaziar`.
-  const eVerbo = !pos || POS_VERBO.has(pos);
 
   // 1) Terminação verbal → infinitivo, validado no vocabulário.
   if (eVerbo) {
@@ -425,6 +497,18 @@ function lemaRegras(palavra, lang, vocab, pos) {
   }
 
   // 2) Sufixos derivacionais, com resto conhecido.
+  //
+  // Só para verbo: os sufixos desta lista são quase todos verbais (`ando`,
+  // `ados`, `aram`) e aplicá-los a substantivo produz radical falso —
+  // `corte` menos `te` é `cor`, que é palavra, então a validação por
+  // vocabulário não segura.
+  if (!eVerbo) {
+    // Substantivo, adjetivo e nome próprio seguem só o backoff por plural,
+    // que valida o resto contra a lista de flexões.
+    const porPrefixo = prefixoNoVocabulario(base, vocab, lang);
+    return porPrefixo ?? (hadClitico ? base : palavra);
+  }
+
   const sufixos = SUFIXOS[lang] ?? [];
   let atual = base;
   for (let passo = 0; passo < 2; passo++) {

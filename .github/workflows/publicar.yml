@@ -27,19 +27,18 @@ jobs:
 
       # O build é Node puro de propósito: sem `npm install`, o CI roda em
       # segundos e não pode falhar por dependência que ninguém pediu.
-      - name: Verificar integridade
-        run: node _build/tools/verificar.mjs
-
-      - name: Gerar índices
-        run: |
-          node _build/tools/gen-master.mjs
-          node _build/tools/gen-pt-glossary.mjs
-
-      - name: Verificar de novo (os índices são derivados do que foi conferido)
-        run: node _build/tools/verificar.mjs
-
-      - name: Empacotar
-        run: node _build/tools/empacotar.mjs
+      #
+      # `npm run build` roda os gates ANTES de empacotar, e cada um sai com
+      # código 1 quando reprova:
+      #   tabelas  — chave duplicada nas tabelas do lemmatizer (o defeito que
+      #              produziu lema errado sem erro de sintaxe)
+      #   lemma    — o padrão de ouro, com substantivos como bloco de bloqueio
+      #   check    — integridade dos pacotes, incluindo radical falso em escala
+      #
+      # Sem os três, o CI publicava pacote com radical corrompido: foi assim
+      # que `noite → noi` e `abismo → abis` chegaram aos dois apps.
+      - name: Gates, índices e empacotamento
+        run: npm run build
 
       - name: Publicar
         env:

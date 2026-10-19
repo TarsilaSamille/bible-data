@@ -5,11 +5,14 @@
   "type": "module",
   "description": "Dicionário bíblico multilingue — fonte única para o Scriptorium web e Android",
   "scripts": {
+    "tabelas": "node _build/tools/check-tabelas.mjs",
+    "lemma": "node _build/tools/report-lemma.mjs",
     "master": "node _build/tools/gen-master.mjs",
     "glossary": "node _build/tools/gen-pt-glossary.mjs",
     "pack": "node _build/tools/empacotar.mjs",
-    "build": "npm run master && npm run glossary && npm run pack",
     "check": "node _build/tools/verificar.mjs",
+    "apply:lemma": "node _build/tools/apply-lemma.mjs --pack",
+    "build": "npm run tabelas && npm run lemma && npm run master && npm run glossary && npm run check && npm run pack",
     "release": "npm run build && bash _build/tools/publicar-release.sh"
   },
   "engines": {

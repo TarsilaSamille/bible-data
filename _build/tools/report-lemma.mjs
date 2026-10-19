@@ -133,7 +133,8 @@ function imprimir(r) {
   console.log('Padrão de ouro');
   for (const m of r.medicoes) {
     const pct = ((m.acertos / m.total) * 100).toFixed(1);
-    console.log(`  ${m.lang} ${m.bloco.padEnd(18)} ${m.acertos}/${m.total}  ${pct}%`);
+    const selo = m.critico ? ' [bloqueio]' : '';
+    console.log(`  ${m.lang} ${m.bloco.padEnd(18)} ${m.acertos}/${m.total}  ${pct}%${selo}`);
     for (const e of m.erros.slice(0, 12)) {
       console.log(`      ${e.forma.padEnd(14)} esperado ${String(e.esperado).padEnd(16)} obtido ${e.obtido}`);
     }
@@ -155,6 +156,37 @@ function imprimir(r) {
       `  ${c.lang.padEnd(4)} ${c.pct.toFixed(1).padStart(5)}% das ${c.chaves} chaves mudariam  (${c.estrategia})`,
     );
   }
+}
+
+/**
+ * Há algo que impede aplicar o lema aos dados?
+ *
+ * Sem isto o relatório era só impressão: imprimia "21/23" nas armadilhas e
+ * saía com código 0, e `npm run build` publicava o pacote assim mesmo. Um
+ * número que não bloqueia nada não é um portão.
+ *
+ * @returns {string[]} as razões do bloqueio
+ */
+export function bloqueios(r) {
+  const motivos = [];
+  for (const m of r.medicoes) {
+    if (!m.critico) continue;
+    if (m.erros.length) {
+      motivos.push(
+        `${m.lang}/${m.bloco}: ${m.erros.length} erro(s) em substantivo — ` +
+          'substantivo com radical falso corrompe o dicionário inteiro',
+      );
+    }
+  }
+  for (const a of r.armadilhas) {
+    if (a.erros.length) {
+      motivos.push(
+        `${a.lang}: ${a.erros.length} armadilha(s) quebrada(s): ` +
+          a.erros.map((e) => e.forma).join(', '),
+      );
+    }
+  }
+  return motivos;
 }
 
 /** Sorteia verbos de um idioma para anotação manual. */
@@ -188,6 +220,15 @@ if (process.argv[1] && process.argv[1].endsWith('report-lemma.mjs')) {
   if (process.argv.includes('--amostra')) {
     amostrar(process.argv[2] ?? 'pt', Number(process.argv[3]) || 60, Number(process.argv[4]) || 7);
   } else {
-    imprimir(medir());
+    const resultado = medir();
+    imprimir(resultado);
+    const motivos = bloqueios(resultado);
+    if (motivos.length) {
+      console.log('\nBLOQUEADO:');
+      for (const m of motivos) console.log(`  - ${m}`);
+      console.log('\nNão aplique lema aos dados com `apply-lemma.mjs --pack`.');
+      process.exit(1);
+    }
+    console.log('\nsem bloqueios — `apply-lemma.mjs --pack` pode rodar');
   }
 }
