@@ -39,14 +39,22 @@ const SEM_GATE_RADICAL = new Set([
 ]);
 
 /**
- * Idiomas cujo radical ainda é o do web (forma de superfície), com defeito de
- * origem a corrigir no dicionário.
+ * Idiomas cujo radical encurta por flexão legítima, e não por defeito.
  *
- * Em `id`, 11,8% dos radicais de um livro perderam afixos: `kesukaannya` →
- * `suka`, `menghasilkan` → `hasil`. Veio no commit inicial, quando o root era
- * a chave. O gate reporta como aviso e não como erro porque o conserto é
- * manual (precisa do dicionário de flexão indonésio), e erro travaria o build
- * sem dar caminho. Quando `id` entrar no escopo do lema, sai daqui.
+ * Em indonésio, `kesukaannya` tem raiz `suka` — o Wiktionary declara
+ * `{{imbuhan ke-an|suka|nya}}` —, `menghasilkan` tem `hasil`,
+ * `penghakiman` tem `hakim`. A raiz MORFOLOGICA de uma palavra indonésia é o
+ * radical sem os afixos, e é isso que o campo `root` guarda. O gate de
+ * comprimento via `kesukaannya → suka` como corrupção, e 11,8% de um livro
+ * é praticamente todo o pacote.
+ *
+ * Confirmado contra o dado: em `id`, 32.858 entradas seguem o padrão
+ * `<forma> (<radical>): glosa` e NENHUMA diverge entre o radical declarado e o
+ * campo `root`. O radical está certo; o gate é que estava errado.
+ *
+ * O mesmo vale para `id` estar fora do escopo do lema (`apply-lemma.mjs`), que
+ * é a decisão correta: sem um morphological analyzer indonésio, mexer no radical
+ * seria pior do que não mexer.
  */
 const RADICAL_DE_MIGRACAO = new Set(['id']);
 
@@ -160,22 +168,20 @@ export function verificar(raiz = RAIZ) {
           if (pctLivro > piores.pct) piores = { pct: pctLivro, livro, exLocal };
         }
       }
-      if (piores.pct > TOLERANCIA_PCT) {
-        // Radicale durante a migração vinda do web — em que o root era a própria
-        // forma — é AVISO, não erro: o problema é do dado de origem e o
-        // conserto é manual, no dicionário. Erro aqui trava o build sem que
-        // ninguém consiga resolver, porque o defeito não está no código.
-        const mensagem =
+      if (piores.pct > TOLERANCIA_PCT && !RADICAL_DE_MIGRACAO.has(lang)) {
+        erros.push(
           `${lang}/${piores.livro}: ${piores.pct.toFixed(1)}% dos radicais curtos demais ` +
-          `(> ${TOLERANCIA_PCT}%); exemplos: ${piores.exLocal.join(', ')}`;
-        if (RADICAL_DE_MIGRACAO.has(lang)) avisos.push(`${mensagem} [migração do web]`);
-        else erros.push(mensagem);
+            `(> ${TOLERANCIA_PCT}%); exemplos: ${piores.exLocal.join(', ')}`,
+        );
       } else {
         const pct = (radicalCurto / chaves) * 100;
         if (radicalCurto > 0) {
+          const nota = RADICAL_DE_MIGRACAO.has(lang)
+            ? ' (radical morfológico: afixos fora, correto)'
+            : '';
           avisos.push(
             `${lang}: ${radicalCurto} radical(is) curto (${pct.toFixed(1)}% do pacote, ` +
-              `pior livro ${piores.pct.toFixed(1)}%, tolerância ${TOLERANCIA_PCT}%)`,
+              `pior livro ${piores.pct.toFixed(1)}%, tolerância ${TOLERANCIA_PCT}%)${nota}`,
           );
         }
       }
