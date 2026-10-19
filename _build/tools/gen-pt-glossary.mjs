@@ -16,6 +16,7 @@
  */
 
 import { join } from 'node:path';
+import { existsSync } from 'node:fs';
 import { RAIZ, pacotes, livrosDo, lerJson, escreverJson } from './lib/io.mjs';
 import { glosaUtil } from './lib/schema.mjs';
 
@@ -23,6 +24,33 @@ const SAIDA = join(RAIZ, 'pt_master_glossary.json');
 
 /** Chaves de metadado que o leitor Android ignora ao carregar o glossário. */
 const RESERVADAS = ['generated_at', 'model', 'total_translated'];
+
+/**
+ * Definições em português extraídas de fonte externa, por forma.
+ *
+ * O arquivo é opcional: sem ele, o glossário sai só com o campo `pt` dos
+ * pacotes, que é o que existia antes. A ausência é um aviso, não um erro —
+ * quem não tem o arquivo ainda tem um glossário, só que menor.
+ *
+ * @param {string} raiz
+ * @returns {Map<string,string>}
+ */
+function carregarGlossasExternas(raiz) {
+  const caminho = join(raiz, 'gloss-pt.json');
+  if (!existsSync(caminho)) {
+    console.warn(
+      `gloss-pt.json ausente — o glossário sai só com o campo 'pt' dos pacotes.\n` +
+        '  Gere com: python3 _build/tools/extrair-glossas.py',
+    );
+    return new Map();
+  }
+  const bruto = lerJson(caminho);
+  const saida = new Map();
+  for (const [forma, glosa] of Object.entries(bruto)) {
+    if (typeof glosa === 'string' && glosa.trim()) saida.set(forma, glosa.trim());
+  }
+  return saida;
+}
 
 /**
  * @param {string} [raiz]
@@ -35,21 +63,40 @@ export function gerarGlossarioPt(raiz = RAIZ) {
   const porForma = new Map();
   const dePacotes = {};
 
+  // Definições externas em português, por FORMA (`gloss-pt.json`).
+  //
+  // Sem elas o glossário sai quase vazio para o português: 89% das entradas do
+  // pacote `pt` não tem campo `pt`, porque o texto bíblico em português já é a
+  // palavra — o que falta é o SENTIDO, e ele não estava em lugar nenhum do
+  // projeto. O arquivo é produzido por extração do Wiktionary
+  // (`_build/tools/extrair-glossas.py`) e entra aqui indexado por radical, que
+  // é como o `OfflineDictManager` consulta (`lookupPtGlossary(root)`).
+  const externas = carregarGlossasExternas(raiz);
+
   for (const lang of pacotes(raiz)) {
     const dir = join(raiz, lang);
     let glosas = 0;
     for (const livro of livrosDo(dir)) {
       for (const [surface, bruta] of Object.entries(lerJson(join(dir, livro)))) {
         if (typeof bruta !== 'object' || bruta === null) continue;
-        const pt = bruta.pt;
-        if (!glosaUtil(pt)) continue;
-        glosas++;
         const root = typeof bruta.root === 'string' && bruta.root ? bruta.root : surface;
-        // `def` do mobile também conta: alguns pacotes têm a glosa em PT ali.
-        const def = typeof bruta.def === 'string' ? bruta.def : null;
-        for (const chave of new Set([root, surface])) {
-          if (!porRadical.has(chave)) porRadical.set(chave, pt);
-          if (!porForma.has(chave)) porForma.set(chave, def && glosaUtil(def) ? def : pt);
+
+        // 1) Campo `pt` do próprio pacote: é a fonte mais confiável, existe
+        //    onde a tradução foi feita, e a primeira que vale.
+        const pt = bruta.pt;
+        if (glosaUtil(pt)) {
+          glosas++;
+          if (!porRadical.has(root)) porRadical.set(root, pt);
+          if (!porForma.has(surface)) porForma.set(surface, pt);
+          continue;
+        }
+
+        // 2) Definição externa por forma.
+        const externa = externas.get(surface) ?? externas.get(root);
+        if (glosaUtil(externa)) {
+          glosas++;
+          if (!porRadical.has(root)) porRadical.set(root, externa);
+          if (!porForma.has(surface)) porForma.set(surface, externa);
         }
       }
     }
