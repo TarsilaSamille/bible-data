@@ -1,0 +1,64 @@
+name: publicar pacotes
+
+# O dicionário é a fonte de verdade dos dois apps, então mudar dado aqui tem que
+# chegar aos dois. A publicação é por tag, não por push em main: `latest/download`
+# (que é o que o Android segue) só se move quando há release, e um push em main
+# mudaria os dados sem o app perceber.
+on:
+  push:
+    tags: ['v*']
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Tag da release (ex: v2026.01.18)'
+        required: true
+
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      # O build é Node puro de propósito: sem `npm install`, o CI roda em
+      # segundos e não pode falhar por dependência que ninguém pediu.
+      - name: Verificar integridade
+        run: node tools/verificar.mjs
+
+      - name: Gerar índices
+        run: |
+          node tools/gen-master.mjs
+          node tools/gen-pt-glossary.mjs
+
+      - name: Verificar de novo (os índices são derivados do que foi conferido)
+        run: node tools/verificar.mjs
+
+      - name: Empacotar
+        run: node tools/empacotar.mjs
+
+      - name: Publicar
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ github.event.inputs.tag || github.ref_name }}
+        run: |
+          gh release create "$TAG" dist/*.zip \
+            --title "Dict packs $TAG" \
+            --notes "Pacotes de dicionário. Consumido pelo Scriptorium Android em runtime e pelo web via submódulo." \
+            --clobber
+
+      - name: Resumo
+        run: |
+          {
+            echo "## Pacotes — ${{ github.event.inputs.tag || github.ref_name }}"
+            echo
+            echo "| asset | tamanho |"
+            echo "|---|---|"
+            for f in dist/*.zip; do
+              printf '| `%s` | %s |\n' "$(basename "$f")" "$(du -h "$f" | cut -f1)"
+            done
+          } >> "$GITHUB_STEP_SUMMARY"

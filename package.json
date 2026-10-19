@@ -1,0 +1,18 @@
+{
+  "name": "bible-dict-data",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Dicionário bíblico multilingue — fonte única para o Scriptorium web e Android",
+  "scripts": {
+    "master": "node tools/gen-master.mjs",
+    "glossary": "node tools/gen-pt-glossary.mjs",
+    "pack": "node tools/empacotar.mjs",
+    "build": "npm run master && npm run glossary && npm run pack",
+    "check": "node tools/verificar.mjs",
+    "release": "npm run build && bash tools/publicar-release.sh"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

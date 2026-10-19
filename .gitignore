@@ -1,0 +1,15 @@
+# Artefatos de build: são derivados de `<lang>/*.json` e se recriam com
+# `npm run build`. Versioná-los só faria o git carregar 290 MB de zips.
+dist/
+
+# O glossário PT é derivado do campo `pt` dos pacotes.
+pt_master_glossary.json
+
+# Editores e SO
+.DS_Store
+*.swp
+.idea/
+.vscode/
+
+# Scratch
+*.tmp
