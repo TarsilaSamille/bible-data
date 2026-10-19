@@ -244,32 +244,29 @@ export const ARMADILHAS_EN = {
 };
 
 /**
- * Plurais irregulares que a regra `-s` não pega, e o que foi feito sobre eles.
+ * Plurais irregulares: o caso em que cortar `-s` devolve o radical errado.
  *
- * `bens` → `bem`, `visões` → `visão`, `homens` → `homem`, `animais` →
- * `animal`: em português o plural muda a vogal (`-ão` → `-ões`, `-em` → `-ens`,
- * `-il` → `-is`) e a regra de cortar `-s` devolve a forma errada.
+ * `animais` cortado em `s` sobra `anim`, que EXISTE como chave do dicionário e
+ * por isso passava na validação por vocabulário — o defeito era invisível para
+ * o gate. A tabela `PLURAIS_IRREGULARES` em `lemmatize.mjs` declara a
+ * substituição (`animals` → `animal`).
  *
- * A anotação aqui é `null` (não destruir) e NÃO o plural correto, porque a
- * expectativa `bens` → `bem` reprovaria a medição num caso em que a resposta
- * certa depende de um dicionário de flexão, não de regra de sufixo. O mapa do
- * Wiktionary (`lemma-map-pt.json`) é o que entrega `bens` → `bem`.
- *
- * A primeira versão anotou `null` para TUDO no bloco de substantivos, e isso
- * reprovava `mulheres` → `mulher`, que é o comportamento desejado. Nem
- * `null` para tudo nem a expectativa correta para tudo: o plural comum é o
- * alvo da regra, e o irregular é o limite conhecido.
+ * A expectativa aqui é o SINGULAR. A primeira versão deste bloco usava `null`
+ * com o argumento de que "o lema não existe no corpus" — e o argumento está
+ * errado: `animal`, `bem`, `visão` e `homem` SÃO chaves do pacote, e é por
+ * isso que a substituição porelas foi validada. Anotar a expectativa errada faz
+ * o relatório reprovar o comportamento certo.
  */
 export const PLURAIS_IRREGULARES_PT = {
-  // Regular em -s: a regra pega.
+  // Regular em -s: pega pelo backoff genérico.
   mãos: 'mão',
   olhos: 'olho',
   aves: 'ave',
-  // Irregulares: limite conhecido da regra de sufixo.
-  bens: null,
-  visões: null,
-  homens: null,
-  animais: null,
+  // Irregulares: pegam pela tabela de plural.
+  bens: 'bem',
+  visões: 'visão',
+  homens: 'homem',
+  animais: 'animal',
 };
 
 /** Blocos por idioma, para a medição. */
