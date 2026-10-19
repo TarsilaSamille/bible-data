@@ -410,19 +410,47 @@ function escolheCandidato(candidatos, vocab) {
  * `terra → ter` tem resto `ra`, que não é flexão nenhuma. A versão anterior
  * aceitava qualquer resto e produzia `earth → ear`.
  */
+/**
+ * Substituições de plural irregular português.
+ *
+ * O backoff genérico corta o resto e procura o que sobrou no vocabulário. Para
+ * `animais` sobra `anim`, que EXISTE como chave do dicionário — e a validação
+ * aceita, porque a validação não sabe que `anim` é um radical falso que também
+ * virou palavra. Aqui a substituição é declarada: `animais` → `animal`.
+ *
+ * O padrão de ouro é o quepegou isso — `animais → anim` passava em 100% dos
+ * testes porque o bloco que continha o caso não estava na lista de medição.
+ */
+export const PLURAIS_IRREGULARES = {
+  pt: {
+    ais: 'al', // animais → animal, cavais → cavalo, Finaleis → final
+    eis: 'el', //reis → real, valleis → valle
+    ões: 'ão', //visões → visão, coração → coração
+    ens: 'em', //homens → homem, homem → homem
+    aes: 'al', //animais → animal
+  },
+  es: { es: ['e'], 'ces': ['z'], 'anes': ['án'] },
+};
+
+/**
+ * Restos de flexão aceitos no backoff por prefixo.
+ *
+ * O critério do RESTO é o que separa um corte legítimo de um corte por
+ * coincidência, e a lista é declaradamente curta: plural regular e mais nada.
+ * `'em'`, `'ou'`, `'eu'`, `'iu'`, `'ado'`, `'ida'` ficaram de fora porque são
+ * terminações verbais ambíguas que produziam `marido → mar` (resto `ido`),
+ * `comeste → com` (resto `este`) e `morada → mor` (resto `ada`).
+ *
+ * `-es` e `-is` CONTINUAM porque são plural legítimo e comum em português
+ * (`animais`, `homens`, `pequenes`). Uma versão desta lista tirou `es` achando
+ * que era terminação verbal, e `animais` virou `anim` — que passou na
+ * validação por vocabulário porque `anim` existe como chave. A regra está em
+ * `PLURAIS_IRREGULARES`, não aqui.
+ *
+ * O particípio (`-ado`, `-ido`) não volta aqui porque quem flexiona particípio
+ * é a palavra VERBAL, que tem portão de `pos` no caminho verbal.
+ */
 export const RESTOS = {
-  // Português: só plural. `'em'`, `'ou'`, `'eu'`, `'iu'`, `'ado'`, `'ida'`
-  // SAÍRAM — são terminações verbais ambíguas que o backoff não resolve, e
-  // produziam `marido → mar` (resto `ido`), `comeste → com` (resto `este`) e
-  // `morada → mor` (resto `ada`).
-  //
-  // `-es` e `-is` CONTINUAM porque são plural legítimo e comum em português
-  // (`animais`, `homens`, `pequenes`, `livros`). Uma versão deste lista tirou
-  // `es` achando que era terminação verbal, e `animais` virou `anim` — o
-  // padrão de ouro pegou, e é para isso que ele existe.
-  //
-  // O particípio (`-ado`, `-ido`) não volta aqui porque quem flexiona
-  // particípio é a palavra VERBAL, que tem portão de `pos` no caminho verbal.
   pt: ['s', 'es', 'is', 'as', 'ns', 'ão', 'ões', 'ais', 'éis'],
   es: ['s', 'es', 'as', 'os', 'n'],
   it: ['i', 'e', 'he', 'hi', 'ti', 'si', 'no', 'ne'],
@@ -449,6 +477,24 @@ const RESTO_MINIMO = { en: 1, de: 1, pt: 1, es: 1, it: 1, fr: 1, id: 2 };
 
 function prefixoNoVocabulario(palavra, vocab, lang) {
   if (!vocab || !vocab.size) return null;
+
+  // Plural irregular declarado, antes do backoff genérico. `animais` corta em
+  // `s` e sobra `anim`, que existe como chave e passaria na validação; a
+  // substituição é explícita porque o resto não identifica o singular.
+  const irregulares = PLURAIS_IRREGULARES[lang];
+  if (irregulares) {
+    for (const [resto, trocas] of Object.entries(irregulares)) {
+      if (!palavra.endsWith(resto)) continue;
+      const radical = palavra.slice(0, -resto.length);
+      const finais = Array.isArray(trocas) ? trocas : [trocas];
+      const candidatos = finais.map((t) => radical + t);
+      const escolhido = escolheCandidato(candidatos, vocab);
+      if (escolhido) return escolhido;
+      // Sem vocabulário: aceita a primeira troca, que é a mais frequente.
+      if (!vocab || !vocab.size) return candidatos[0];
+    }
+  }
+
   const permitidos = new Set(RESTOS[lang] ?? []);
   if (!permitidos.size) return null;
   for (let corte = palavra.length - 1; corte >= 3; corte--) {

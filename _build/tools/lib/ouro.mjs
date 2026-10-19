@@ -284,6 +284,16 @@ export const MEDICOES = [
     // substantivo, que é o defeito que corrompeu 3 mil raízes.
     critico: true,
   },
+  {
+    lang: 'pt',
+    bloco: 'plurais_irregulares',
+    dados: PLURAIS_IRREGULARES_PT,
+    armadilhas: ARMADILHAS_PT,
+    // Crítico porque `animais` → `anim` é radical falso que PASSA na
+    // validação por vocabulário (`anim` existe como chave). Sem este bloco, a
+    // medição dizia 100% sobre um dado corrompido.
+    critico: true,
+  },
   { lang: 'en', bloco: 'substantivos_seed11', dados: OURO_EN.substantivos_seed11, armadilhas: ARMADILHAS_EN },
   {
     lang: 'en',
