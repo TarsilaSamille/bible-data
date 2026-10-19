@@ -1,6 +1,6 @@
 # Artefatos de build: são derivados de `<lang>/*.json` e se recriam com
 # `npm run build`. Versioná-los só faria o git carregar 290 MB de zips.
-dist/
+_build/dist/
 
 # O glossário PT é derivado do campo `pt` dos pacotes.
 pt_master_glossary.json
@@ -13,3 +13,8 @@ pt_master_glossary.json
 
 # Scratch
 *.tmp
+
+# Este repo entra como submódulo em `public/data/dict/` do web, então o que está
+# na raiz é servido publicamente. `_build/` concentra o build (scripts) para que
+# a raiz do repositório contenha só dicionário.
+_build/node_modules/

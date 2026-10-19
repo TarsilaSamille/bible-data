@@ -11,7 +11,18 @@ import { readdirSync, readFileSync, writeFileSync, existsSync, statSync } from '
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-export const RAIZ = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
+/**
+ * Raiz do repositório de dados.
+ *
+ * `tools/` fica dentro de `_build/`, que é a única pasta do repo que NÃO é
+ * dicionário. O motivo é o consumidor web: este repositório entra lá como
+ * submódulo em `public/data/dict/`, e qualquer arquivo na raiz acaba sendo
+ * SERVIDO junto com os dados — inclusive `package.json` e os scripts, que viram
+ * URLs públicas e fazem o web contar diretórios que não são idiomas (o teste
+ * de "quantos idiomas têm dicionário" passou a ver 17 em vez de 15 por causa
+ * de `tools/` e `.github/`).
+ */
+export const RAIZ = join(dirname(fileURLToPath(import.meta.url)), '..', '..', '..');
 
 /** Nomes de livro bíblico: 1 a 66, em qualquer ordem. */
 export const LIVROS = (() => {

@@ -29,7 +29,14 @@ import { entradaMobile, glosaUtil } from './lib/schema.mjs';
 /** Cópia binária de um JSON: preserva byte a byte, sem passar por parse. */
 const copiarJson = (de, para) => copyFileSync(de, para);
 
-const DIST = join(RAIZ, 'dist');
+/**
+ * Saída do empacotamento.
+ *
+ * Fica dentro de `_build/` e não na raiz porque a raiz deste repositório é
+ * servida publicamente (o web entra com ele como submódulo em
+ * `public/data/dict/`): um `dist/` na raiz viraria `/data/dict/dist/`.
+ */
+const DIST = join(RAIZ, '_build', 'dist');
 
 /** Ordem canônica dos pacotes que o mobile consome. */
 export const PACOTES_MOBILE = ['ar', 'de', 'en', 'es', 'fr', 'id', 'it', 'ja', 'ko', 'la', 'pt', 'ru', 'zh'];

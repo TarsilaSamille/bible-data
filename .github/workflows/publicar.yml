@@ -28,25 +28,25 @@ jobs:
       # O build é Node puro de propósito: sem `npm install`, o CI roda em
       # segundos e não pode falhar por dependência que ninguém pediu.
       - name: Verificar integridade
-        run: node tools/verificar.mjs
+        run: node _build/tools/verificar.mjs
 
       - name: Gerar índices
         run: |
-          node tools/gen-master.mjs
-          node tools/gen-pt-glossary.mjs
+          node _build/tools/gen-master.mjs
+          node _build/tools/gen-pt-glossary.mjs
 
       - name: Verificar de novo (os índices são derivados do que foi conferido)
-        run: node tools/verificar.mjs
+        run: node _build/tools/verificar.mjs
 
       - name: Empacotar
-        run: node tools/empacotar.mjs
+        run: node _build/tools/empacotar.mjs
 
       - name: Publicar
         env:
           GH_TOKEN: ${{ github.token }}
           TAG: ${{ github.event.inputs.tag || github.ref_name }}
         run: |
-          gh release create "$TAG" dist/*.zip \
+          gh release create "$TAG" _build/dist/*.zip \
             --title "Dict packs $TAG" \
             --notes "Pacotes de dicionário. Consumido pelo Scriptorium Android em runtime e pelo web via submódulo." \
             --clobber
@@ -58,7 +58,7 @@ jobs:
             echo
             echo "| asset | tamanho |"
             echo "|---|---|"
-            for f in dist/*.zip; do
+            for f in _build/dist/*.zip; do
               printf '| `%s` | %s |\n' "$(basename "$f")" "$(du -h "$f" | cut -f1)"
             done
           } >> "$GITHUB_STEP_SUMMARY"
