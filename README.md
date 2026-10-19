@@ -42,8 +42,35 @@ A chave é sempre a **forma de superfície**, exatamente como aparece no texto:
 }
 ```
 
-`root` é o lema, e amarra a família — é o que permite tocar numa forma
+`root` é o **lema**, e amarra a família — é o que permite tocar numa forma
 conjugada e ver as demais.
+
+## O lema por idioma
+
+Nem todo idioma tem lema exato, e fingir que tem é pior do que não ter:
+
+| Idioma | Estratégia | Precisão | O que é |
+|---|---|---|---|
+| `grc` | índice de radiais | exata | dado (`grc-index.json`), agrupa acentuada/sem-acento |
+| `heb` | forma sem pontos | exata | dado, por convenção da gramática |
+| `la` | identidade | — | a citação já é o lema (`dixit`, `terra`) |
+| `zh` `ja` `ko` `gn` | identidade | — | o idioma não flexiona a chave |
+| `pt` | regras + portão de `pos` | ~70% | heurística, medida |
+| `en` | regras + portão de `pos` | ~90% | heurística, medida |
+| `es` `id` `de` `fr` `it` `ar` `ru` | **não tocado** | — | falta padrão de ouro |
+
+"Não tocado" é decisão, não omissão: a heurística foi escrita e medida para pt/en,
+e aplicá-la onde não há medição seria publicar palpite como dado.
+
+```bash
+node _build/tools/report-lemma.mjs           # mede contra o padrão de ouro
+node _build/tools/report-lemma.mjs --amostra  # sorteia casos p/ anotar
+node _build/tools/apply-lemma.mjs            # simulação
+node _build/tools/apply-lemma.mjs --pack     # grava
+```
+
+O padrão de ouro (`_build/tools/lib/ouro.mjs`) é anotado à mão. Sem ele,
+"melhorou" não é uma afirmação verificável.
 
 ## Como os dois apps consomem
 
@@ -59,15 +86,32 @@ preenchido com a glosa do idioma.
 ## Build
 
 ```bash
-node tools/gen-master.mjs         # master.json por idioma (união dos 66 livros)
-node tools/gen-pt-glossary.mjs    # radical → glosa PT
-node tools/empacotar.mjs          # dist/*.zip  (ou `empacotar.mjs pt en` só alguns)
+node _build/tools/gen-master.mjs         # master.json por idioma (união dos 66 livros)
+node _build/tools/gen-pt-glossary.mjs    # radical → glosa PT
+node _build/tools/verificar.mjs          # falha o build se um pacote tem entrada sem glosa
+node _build/tools/empacotar.mjs          # _build/dist/*.zip
 ```
 
-`npm run build` faz os três em sequência.
+`npm run build` faz os quatro em sequência.
 
-Publicar: `PUBLISH_TAG=v2026.01.18 npm run release` empacota e cria a release no
+Publicar: `PUBLISH_TAG=vAAAAMMDD npm run release` empacota e cria a release no
 GitHub, de onde o app baixa.
+
+## O que ainda falta
+
+Medido, não adivinhado:
+
+- **Lema em 7 idiomas** (`es`, `id`, `de`, `fr`, `it`, `ar`, `ru`). Cada um
+  precisa de padrão de ouro anotado e iteração até passar.
+- **~30% de erro em português.** O que falta é irregular e clítico
+  (`escreveu` → `escrever`, `sejam` → `ser`), que regra de sufixo não alcança.
+  A saída é um dicionário de lemas, não mais uma tabela.
+- **Flexão grega além de acento.** O índice agrupa `γῆ`/`γη`, mas `λόγος`/
+  `λόγου`/`λόγῳ` ainda não — precisa de um morphological analyzer grego.
+- **20 chaves de sigla de capítulo** no pacote `en` (`i.`, `1.ch.11.11`):
+  problema de tokenização na origem, relatado pelo verificador, não corrigido.
+- **Glosa PT ausente** onde o glossário antigo só tinha `en` (o `criou` do
+  pacote `pt` mostra a definição em inglês).
 
 ## Idioma que é pacote de definição vs. de tradução
 
