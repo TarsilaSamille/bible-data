@@ -114,7 +114,15 @@ export function aplicarLemas(opcoes = {}) {
             ? { grcIndex: indice, vocab }
             : { vocab, pos: poses?.get(surface) ?? null };
         const novo = lema(surface, lang, ctx);
-        if (novo && novo !== surface && novo !== bruta.root) {
+        // Escreve quando o lema DIFERENTE do que está gravado, inclusive quando
+        // o novo lema é a própria forma.
+        //
+        // A guarda anterior exigia `novo !== surface`, e isso impedia a correção:
+        // uma entrada com root corrompido (`δαν` gravado como `δα`) não era
+        // reescrita porque o lema correto É a superfície. O resultado era que
+        // rodar de novo não limpava nada — a ferramenta só ia em frente, nunca
+        // voltava. É o defeito que fez a corrupção parecer irrecuperável.
+        if (novo && novo !== bruta.root) {
           bruta.root = novo;
           mudouLivro = true;
           mudadas++;

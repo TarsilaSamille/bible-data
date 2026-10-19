@@ -60,10 +60,22 @@ const stripGreek = (s) =>
  * Lema grego via índice de radiais.
  *
  * O índice é chaveado pela forma NORMALIZADA (sem acento, minúscula), que é o
- * que `stripGreek` produz — mas o VALOR também pode vir normalizado, e usá-lo
- * como lema cortava a sílaba final: `αὐξάνω` virava `αὐξάν`. A verificação é
- * o que separa os dois casos: um lema real é mais longo ou igual à forma
- * normalizada, nunca mais curto por perda de letra.
+ * que `stripGreek` produz. O VALOR traz a grafia acentuada quando existe — e
+ * existe em 28% dos casos; nos outros, o valor é a própria forma sem acento.
+ *
+ * Usar o valor cru produzia duas inconsistências:
+ *
+ *   1. `αἷμα` (forma acentuada) e `αιμα` (forma sem acento) caíam em lemas
+ *      diferentes — `αἱμα` e `αἷμα` — e o mesmo lema ficava com duas grafias
+ *      conforme a forma tocada. São 2.886 radicais assim, e o agrupamento se
+ *      fragmenta: tocar em `αιμα` e em `αἷμα` não reúne a família.
+ *   2. Um valor normalizado usado como lema cortava a sílaba final:
+ *      `αὐξάνω` virava `αὐξάν`.
+ *
+ * A normalização do valor resolve os dois: o lema é a forma CANÔNICA — a
+ * acentuada quando o índice a oferece, a sem acento caso contrário —, e a
+ * comparação é feita sobre a forma normalizada, então corte de sílaba é
+ * rejeitado.
  *
  * @param {string} surface
  * @param {Map<string,string>} indice  forma sem acento → lema
@@ -71,12 +83,12 @@ const stripGreek = (s) =>
  */
 export function lemaGrego(surface, indice) {
   if (!indice) return surface;
-  const bruto = indice.get(stripGreek(surface));
+  const normalizada = stripGreek(surface);
+  const bruto = indice.get(normalizada);
   if (typeof bruto !== 'string' || !bruto) return surface;
-  // O valor normalizado (perdemos o acento) ainda é melhor que a forma de
-  // superfície, desde que não seja um prefixo — corte de sílaba é pior que
-  // não agrupar.
-  if (bruto.length < stripGreek(surface).length) return surface;
+  // O valor normalizado é o lema quando o índice não tem a forma acentuada;
+  // nesse caso, cortar sílaba é o modo de falhar — `αὐξάνω` → `αὐξάν`.
+  if (stripGreek(bruto).length < normalizada.length) return surface;
   return bruto;
 }
 
