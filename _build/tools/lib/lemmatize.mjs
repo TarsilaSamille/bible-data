@@ -1,52 +1,41 @@
 /**
  * Derivação de lema por idioma.
  *
- * O `root` das entradas é a CHAVE de superfície (`criou`, `disse`, `and`).
+ * O `root` de uma entrada é a CHAVE de superfície (`criou`, `disse`, `and`).
  * O que o app mostra e agrupa é o LEMA (`criar`, `dizer`, `be`): é o que
  * permite tocar numa forma conjugada e ver a família inteira.
  *
- * Três classes de idioma, porque a linguística não é uniforme:
+ * TRÊS CLASSES DE IDIOMA, porque a linguística não é uniforme:
  *
- *   1. EXATO — o lema está nos dados (`grc`: índice de radiais; `heb`: a forma
- *      sem pontos É o lema, por convenção). Nada a adivinhar.
- *   2. IDENTIDADE — o idioma não flexiona o que está na chave (`zh`, `ja`, `ko`)
- *      ou a citação já é o lema (`la`: `dixit`, `terra`, `autem`).
- *   3. REGRAS — línguas modernas com sufixos (`en`, `pt`, `es`, `id`, `it`,
- *      `fr`, `de`). Aqui há heurística involved, e a heurística erra; por isso
- *      `report-lemma.mjs` mede e publica a cobertura, em vez de esconder o
- *      palpite dentro do dado.
+ *   1. EXATO — o lema está nos dados. Grego: o índice de radiais
+ *      (`grc-index.json`) mapeia forma → lema, e é dado, não palpite.
+ *      Hebraico: a forma sem pontos É o lema, por convenção.
+ *   2. IDENTIDADE — o idioma não flexiona o que está na chave (`zh`, `ja`,
+ *      `ko`) ou a citação já é o lema (`la`: `dixit`, `terra`, `autem`).
+ *   3. REGRAS + DADO — línguas modernas com sufixos (`en`, `pt`, `es`, `id`,
+ *      `it`, `fr`, `de`). Aqui há heurística e ela erra; por isso `pos` (quando
+ *      existe) e o vocabulário do pacote são usados como PORTÕES, e
+ *      `report-lemma.mjs` mede tudo contra o padrão de ouro.
  *
- * REGRA DE OURO: quando a derivação não tem confiança, devolve a própria chave.
- * Um lema errado agrupa palavras que não são da mesma família, o que é pior do
- * que não agrupar.
+ * REGRA DE OURO: quando a derivação não tem dado nem regra que sustente, devolve
+ * a própria chave. Um lema errado agrupa palavras de famílias diferentes — pior
+ * do que não agrupar — e aparece na palavra mais comum da Bíblia.
  */
 
 /* ------------------------------------------------------------------ */
 /* Utilidades                                                          */
 /* ------------------------------------------------------------------ */
 
-/**
- * Pontuação hebraica: cantillation (0591–05AF), sinais de vogal e metafonia
- * (05B0–05C7). O maqaf (05BE) fica de fora de propósito: é separador de
- * composto, não pontuação, e o lema precisa preservá-lo.
- */
+/** Pontuação hebraica (U+0591–U+05C7), preservando o maqaf (separador). */
 const HEB_POINTS = /[ְ-ׇ]/g;
 
 const stripPoints = (s) => s.replace(HEB_POINTS, '');
 
-/**
- * Grego: acentos e diacríticos fora, para casar com as chaves do
- * `grc-index.json` (que são justamente sem acento).
- */
+/** Grego: sem acento e em minúsculas, para casar com `grc-index.json`. */
 const stripGreek = (s) =>
   s
     .normalize('NFD')
     .replace(/[̀-ͯ]/g, '')
-    .replace(/[᾽-῿]/g, (c) => {
-      // As maiúsculas acentuadas do grego polytônico (᾿ etc.) decompõem mal em
-      // NFD; o fallback é o próprio caractere, que o índice também guarda.
-      return c.normalize('NFD').replace(/[̀-ͯ]/g, '');
-    })
     .toLowerCase();
 
 /* ------------------------------------------------------------------ */
@@ -54,12 +43,27 @@ const stripGreek = (s) =>
 /* ------------------------------------------------------------------ */
 
 /**
+ * Lema grego via índice de radiais.
+ *
+ * O índice é chaveado pela forma NORMALIZADA (sem acento, minúscula), que é o
+ * que `stripGreek` produz — mas o VALOR também pode vir normalizado, e usá-lo
+ * como lema cortava a sílaba final: `αὐξάνω` virava `αὐξάν`. A verificação é
+ * o que separa os dois casos: um lema real é mais longo ou igual à forma
+ * normalizada, nunca mais curto por perda de letra.
+ *
  * @param {string} surface
- * @param {Map<string,string>} indice  `grc-index.json`: forma sem acento → lema
+ * @param {Map<string,string>} indice  forma sem acento → lema
+ * @returns {string}
  */
 export function lemaGrego(surface, indice) {
   if (!indice) return surface;
-  return indice.get(stripGreek(surface)) ?? surface;
+  const bruto = indice.get(stripGreek(surface));
+  if (typeof bruto !== 'string' || !bruto) return surface;
+  // O valor normalizado (perdemos o acento) ainda é melhor que a forma de
+  // superfície, desde que não seja um prefixo — corte de sílaba é pior que
+  // não agrupar.
+  if (bruto.length < stripGreek(surface).length) return surface;
+  return bruto;
 }
 
 /* ------------------------------------------------------------------ */
@@ -78,82 +82,111 @@ export function lemaHebraico(surface) {
 const IDENTIDADE = new Set(['la', 'zh', 'ja', 'ko', 'gn']);
 
 /* ------------------------------------------------------------------ */
-/* 4. Línguas modernas — regras de sufixo                               */
+/* 4. Línguas modernas                                                  */
 /* ------------------------------------------------------------------ */
 
 /**
- * Verbos irregulares que nenhum padrão de sufixo alcança. A forma citada é a
- * 1ª pessoa do presente (`sou`, `vou`) ou a forma mais comum no texto; o lema é
- * o infinitivo. Só entra aqui o que a regra não pega.
+ * Verbos irregulares: a forma mais comum no texto → o infinitivo. Só entra o
+ * que nenhuma regra de sufixo alcança. `ser`/`estar`/`ir` aparecem várias
+ * vezes porque as formas são ambíguas entre si (`vai` é de ir, `vou` de ir).
  */
 const IRREGULARES = {
   pt: {
     sou: 'ser', és: 'ser', é: 'ser', era: 'ser', eram: 'ser', fui: 'ser', fomos: 'ser',
-    fora: 'ser', foram: 'ser', serei: 'ser', está: 'estar', estou: 'estar', estamos: 'estar',
-    estão: 'estar', estava: 'estar', foram: 'ser', vou: 'ir', vai: 'ir', went: 'ir',
-    vamos: 'ir', vão: 'ir', ia: 'ir', íamos: 'ir', vou: 'ir', hei: 'haver', há: 'haver',
-    havia: 'haver', fazem: 'fazer', fez: 'fazer', faço: 'fazer', far: 'fazer',
+    fora: 'ser', foram: 'ser', serei: 'ser', sejamos: 'ser',
+    está: 'estar', estou: 'estar', estamos: 'estar', estão: 'estar', estava: 'estar',
+    estavam: 'estar', estejam: 'estar',
+    vou: 'ir', vai: 'ir', íamos: 'ir', iam: 'ir', vá: 'ir', ide: 'ir', fosse: 'ir',
+    hei: 'haver', há: 'haver', havia: 'haver', houvesse: 'haver',
+    faço: 'fazer', faz: 'fazer', fez: 'fazer', fazem: 'fazer', far: 'fazer',
     digo: 'dizer', diz: 'dizer', disse: 'dizer', dizem: 'dizer', dizer: 'dizer',
-    posso: 'poder', pode: 'poder', podem: 'poder', podia: 'poder',
-    vi: 'ver', vejo: 'ver', viu: 'ver', vê: 'ver', vemos: 'ver',
-    dou: 'dar', dá: 'dar', deu: 'dar', dão: 'dar',
-    sei: 'saber', sabe: 'saber', sabem: 'saber', soube: 'saber',
+    posso: 'poder', pode: 'poder', podem: 'poder', podia: 'poder', puderam: 'poder',
+    vi: 'ver', vejo: 'ver', viu: 'ver', vê: 'ver', vemos: 'ver', viu: 'ver',
+    dou: 'dar', dá: 'dar', deu: 'dar', dão: 'dar', dareis: 'dar',
+    sei: 'saber', sabe: 'saber', sabem: 'saber', soube: 'saber', saibam: 'saber',
     quero: 'querer', quer: 'querer', querem: 'querer', quis: 'querer',
     tenho: 'ter', tem: 'ter', têm: 'ter', tinha: 'ter', teve: 'ter', tinham: 'ter',
-    tenho: 'ter', pôde: 'poder', pôr: 'pôr', ponho: 'pôr', pôs: 'pôr',
-    vou: 'ir', vem: 'viver', vem: 'vir', viu: 'vir', vindo: 'vir',
-    vou: 'ir', vai: 'ir', vens: 'vir', tenho: 'ter', tem: 'ter',
-    ouvi: 'ouvir', ouve: 'ouvir', ouviu: 'ouvir',
-    perdi: 'perder', perde: 'perder', perdeu: 'perder',
-    vivi: 'viver', vive: 'viver', viveu: 'viver',
-    deixei: 'deixar', deixa: 'deixar', deixou: 'deixar',
-    li: 'ler', lê: 'ler', leu: 'ler', lemos: 'ler',
-    cai: 'cair', caiu: 'cair', caem: 'cair',
+    tive: 'ter', tenhamos: 'ter',
+    ponho: 'pôr', pôs: 'pôr', puseram: 'pôr', ponde: 'pôr',
+    vou: 'ir', vem: 'vir', vens: 'vir', veio: 'vir', vieram: 'vir', vinde: 'vir',
+    ouvi: 'ouvir', ouve: 'ouvir', ouviu: 'ouvir', ouviram: 'ouvir',
+    perdi: 'perder', perde: 'perder', perdeu: 'perder', perderam: 'perder',
+    vivi: 'viver', vive: 'viver', viveu: 'viver', viveram: 'viver',
+    deixei: 'deixar', deixa: 'deixar', deixou: 'deixar', deixaram: 'deixar',
+    li: 'ler', lê: 'ler', leu: 'ler', lemos: 'ler', leram: 'ler',
     fui: 'ir', foste: 'ir', foi: 'ir', fomos: 'ir', for: 'ir', forem: 'ir',
+    caí: 'cair', cai: 'cair', caiu: 'cair', caem: 'cair',
+    abriste: 'abrir', abriu: 'abrir', abriram: 'abrir', abrirei: 'abrir',
+    correu: 'correr', corremos: 'correr', corre: 'correr',
+    dormiu: 'dormir', dorme: 'dormir', dormiram: 'dormir',
+    nasceu: 'nascer', nascem: 'nascer', nasceram: 'nascer',
+    morreu: 'morrer', morrem: 'morrer', morreram: 'morrer',
+    comprou: 'comprar', compra: 'comprar', compraram: 'comprar',
+    vendeu: 'vender', vende: 'vender', venderam: 'vender',
+    pediu: 'pedir', pede: 'pedir', pediram: 'pedir',
+    respondeu: 'responder', responde: 'responder', responderam: 'responder',
+    adormeceu: 'adormecer',
+    reconheceu: 'reconhecer', reconhece: 'reconhecer',
   },
   es: {
     soy: 'ser', eres: 'ser', es: 'ser', era: 'ser', fue: 'ser', fueron: 'ser',
-    estoy: 'estar', está: 'estar', están: 'estar', estaba: 'estar',
-    voy: 'ir', va: 'ir', vas: 'ir', va: 'ir', íbamos: 'ir',
-    he: 'haber', hay: 'haber', ha: 'haber', han: 'haber', había: 'haber',
-    hago: 'hacer', hace: 'hacer', hizo: 'hacer', hacen: 'hacer',
-    digo: 'decir', dice: 'decir', dijo: 'decir', dicen: 'decir',
-    puedo: 'poder', puede: 'poder', pueden: 'poder', podía: 'poder',
-    veo: 'ver', ve: 'ver', vio: 'ver', ven: 'ver',
-    doy: 'dar', da: 'dar', dio: 'dar', dan: 'dar',
-    sé: 'saber', sabe: 'saber', saben: 'saber',
-    quiero: 'querer', quiere: 'querer', quieren: 'querer', quiso: 'querer',
+    estoy: 'estar', está: 'estar', están: 'estar', estaba: 'estar', estaban: 'estar',
+    voy: 'ir', va: 'ir', vas: 'ir', íbamos: 'ir', iban: 'ir', vaya: 'ir',
+    he: 'haber', hay: 'haber', ha: 'haber', han: 'haber', había: 'haber', habían: 'haber',
+    hago: 'hacer', hace: 'hacer', hizo: 'hacer', hacen: 'hacer', hacía: 'hacer',
+    digo: 'decir', dice: 'decir', dijo: 'decir', dicen: 'decir', decía: 'decir',
+    puedo: 'poder', puede: 'poder', pueden: 'poder', podía: 'poder', podían: 'poder',
+    veo: 'ver', ve: 'ver', vio: 'ver', ven: 'ver', veía: 'ver',
+    doy: 'dar', da: 'dar', dio: 'dar', dan: 'dar', daba: 'dar',
+    sé: 'saber', sabe: 'saber', saben: 'saber', sabía: 'saber',
+    quiero: 'querer', quiere: 'querer', quieren: 'querer', quiso: 'querer', quería: 'querer',
     tengo: 'tener', tiene: 'tener', tienen: 'tener', tenía: 'tener', tuvo: 'tener',
-    tengo: 'tener', voy: 'ir', puse: 'poner', pone: 'poner', puso: 'poner',
-    oí: 'oír', oye: 'oír', oyó: 'oír',
-    perdí: 'perder', pierde: 'perder', perdió: 'perder',
-    viví: 'vivir', vive: 'vivir', vivió: 'vivir',
-    leí: 'leer', lee: 'leer', leyó: 'leer',
-    vine: 'venir', viene: 'venir', vino: 'venir',
-    cuido: 'cuidar', cuida: 'cuidar', cuidar: 'cuidar',
+    puse: 'poner', pone: 'poner', puso: 'poner', ponen: 'poner',
+    oí: 'oír', oye: 'oír', oyó: 'oír', oyen: 'oír',
+    perdí: 'perder', pierde: 'perder', perdió: 'perder', pierden: 'perder',
+    viví: 'vivir', vive: 'vivir', vivió: 'vivir', viven: 'vivir',
+    leí: 'leer', lee: 'leer', leyó: 'leer', leen: 'leer',
+    vine: 'venir', viene: 'venir', vino: 'venir', vienen: 'venir',
+  },
+  en: {
+    am: 'be', is: 'be', are: 'be', was: 'be', were: 'be', been: 'be', being: 'be',
+    have: 'have', has: 'have', had: 'have', having: 'have',
+    do: 'do', does: 'do', did: 'do', done: 'do', doing: 'do',
+    went: 'go', gone: 'go', going: 'go',
+    said: 'say', saying: 'say',
+    made: 'make', making: 'make',
+    gave: 'give', given: 'give', giving: 'give',
+    took: 'take', taken: 'take', taking: 'take',
+    came: 'come', coming: 'come',
+    saw: 'see', seen: 'see', seeing: 'see',
+    knew: 'know', known: 'know', knowing: 'know',
+    got: 'get', gotten: 'get', getting: 'get',
+    told: 'tell', thought: 'think', brought: 'bring', found: 'find',
+    stood: 'stand', heard: 'hear', let: 'let', meant: 'mean',
+    felt: 'feel', kept: 'keep', began: 'begin', seemed: 'seem',
+    left: 'leave', called: 'call', asked: 'ask', turned: 'turn',
+    became: 'become', wanted: 'want', showed: 'show',
+    ran: 'run', looked: 'look', used: 'use', wanted: 'want',
   },
   id: {
-    // `ada` cobre quase tudo o que é verbo estático em indonésio; o resto são
-    // as formas que nenhum sufixo alcança.
-    aku: 'ada', adalah: 'ada', adanya: 'ada', adapun: 'ada',
+    aku: 'ada', adalah: 'ada', adanya: 'ada',
     menjadi: 'jadi', jadilah: 'jadi', jadikan: 'jadi',
-    possui: 'punya', punya: 'punya', memiliki: 'punya',
+    memiliki: 'punya', punya: 'punya',
     mendapat: 'dapat', dapat: 'dapat', diperoleh: 'dapat',
     memberikan: 'beri', memberi: 'beri', diberikan: 'beri',
     mengambil: 'ambil', ambil: 'ambil', diambil: 'ambil',
-    kepada: 'kepada', kepadanya: 'kepada', kepadamu: 'kepada',
-    terhadap: 'terhadap', therein: 'di', therein2: 'di',  },
+  },
   it: {
-    sono: 'essere', sei: 'essere', è: 'essere', era: 'essere', stati: 'essere',
-    vado: 'andare', vai: 'andare', va: 'andare', andiamo: 'andare',
+    sono: 'essere', sei: 'essere', era: 'essere', stati: 'essere',
+    vado: 'andare', va: 'andare', andiamo: 'andare',
     ho: 'avere', ha: 'avere', hai: 'avere', hanno: 'avere', aveva: 'avere',
     faccio: 'fare', fa: 'fare', fai: 'fare', fanno: 'fare',
     dico: 'dire', dice: 'dire', disse: 'dire', dicono: 'dire',
     posso: 'potere', può: 'potere', possono: 'potere',
     vedo: 'vedere', vede: 'vedere', vide: 'vedere', vedono: 'vedere',
-    do: 'dare', dà: 'dare', diede: 'dare', danno: 'dare',
+    do: 'dare', diede: 'dare', danno: 'dare',
     so: 'sapere', sa: 'sapere', sanno: 'sapere',
-    voglio: 'volere', vuole: 'volere', vollero: 'volere',
+    voglio: 'volere', vuole: 'volere',
     tengo: 'tenere', tiene: 'tenere', tennero: 'tenere',
   },
   fr: {
@@ -167,7 +200,6 @@ const IRREGULARES = {
     donne: 'donner', donné: 'donner', donnent: 'donner',
     sais: 'savoir', sait: 'savoir', savent: 'savoir',
     veux: 'vouloir', veut: 'vouloir', veulent: 'vouloir',
-    ai: 'avoir', avez: 'avoir', avons: 'avoir', aient: 'avoir',
   },
   de: {
     bin: 'sein', bist: 'sein', ist: 'sein', sind: 'sein', war: 'sein',
@@ -176,46 +208,29 @@ const IRREGULARES = {
     mache: 'machen', macht: 'machen', machen: 'machen',
     sage: 'sagen', sagt: 'sagen', sagen: 'sagen',
   },
-  en: {
-    am: 'be', is: 'be', are: 'be', was: 'be', were: 'be', been: 'be', being: 'be',
-    have: 'have', has: 'have', had: 'have', having: 'have',
-    do: 'do', does: 'do', did: 'do', done: 'do', doing: 'do',
-    go: 'go', goes: 'go', went: 'go', gone: 'go', going: 'go',
-    say: 'say', says: 'say', said: 'say', saying: 'say',
-    make: 'make', makes: 'make', made: 'make', making: 'make',
-    give: 'give', gives: 'give', gave: 'give', given: 'give', giving: 'give',
-    take: 'take', takes: 'take', took: 'take', taken: 'take', taking: 'take',
-    come: 'come', comes: 'come', came: 'come', coming: 'come',
-    see: 'see', sees: 'see', saw: 'see', seen: 'see', seeing: 'see',
-    know: 'know', knows: 'know', knew: 'know', known: 'know', knowing: 'know',
-    get: 'get', gets: 'get', got: 'get', gotten: 'get', getting: 'get',
-    give: 'give', tell: 'tell', told: 'tell', think: 'think', thought: 'think',
-    bring: 'bring', brought: 'bring', find: 'find', found: 'find',
-    gave: 'give', stood: 'stand', heard: 'hear', let: 'let', mean: 'mean',
-    felt: 'feel', put: 'put', kept: 'keep', began: 'begin', seemed: 'seem',
-    left: 'leave', called: 'call', asked: 'ask', turned: 'turn',
-    became: 'become', wanted: 'want', showed: 'show', heard: 'hear',
-    ran: 'run', came: 'come', looked: 'look', used: 'use',
-  },
 };
 
 /**
- * Pronomes enclíticos do português e do espanhol. O texto bíblico translators
- * usa muito (`diz-me`, `disse-lhes`, `dávam-lhe`): sem tirar o clítico antes das
- * regras de sufixo, a forma sai errada quase sempre.
+ * Pronomes enclíticos do português e do espanhol.
+ *
+ * O texto bíblico translators usa muito (`diz-me`, `disse-lhes`, `dávam-lhe`).
+ * Sem tirar o clítico antes das regras de sufixo, a forma sai errada quase
+ * sempre — `disse-lhes` viraria `disse-l`.
  */
-const CLITICOS_PT = [
-  'lhelo', 'lhes', 'lhe', 'nos', 'vos',
-  'me', 'te', 'se', 'mo', 'to',
-];
-const CLITICOS_ES = ['selo', 'sela', 'les', 'me', 'te', 'se', 'nos', 'os', 'as', 'lo', 'la'];
+/**
+ * `to` e `o` NÃO são clíticos: aparecem como terminação verbal (`falo`,
+ * `manifesto`) e tratá-los como pronome cortava `manifesto` em `manifes`,
+ * que não é palavra nenhuma em português. `mo`/`to` pronominais exigem
+ * `dar-te`/`vô-lo`, com hífen, e o hífen é tratado à parte.
+ */
+const CLITICOS_PT = ['me', 'te', 'se', 'lhe', 'lhes', 'nos', 'vos', 'mo'];
+const CLITICOS_ES = ['me', 'te', 'se', 'le', 'les', 'nos', 'os', 'as', 'lo', 'la'];
 
 /** Remove um clítico final (PT/ES). Devolve [base, tinhaClitico]. */
 function tiraClitico(palavra, cliticos) {
   for (const c of cliticos) {
     if (palavra.length > c.length + 2 && palavra.endsWith(c)) {
       const base = palavra.slice(0, -c.length);
-      // Só é clítico se o que sobra ainda parece palavra (não só uma vogal).
       if (base.length >= 2) return [base, true];
     }
   }
@@ -223,89 +238,231 @@ function tiraClitico(palavra, cliticos) {
 }
 
 /**
- * Sufixos de verbo por idioma, do mais longo para o mais curto. A aplicação é
- * iterativa com limite: `cantávamos` → `cantar`, mas `cantar` não pode virar
- * `cant` só porque `ar` também está na lista.
+ * Sufixos derivacionais: plural, gerúndio, particípio, etc.
+ *
+ * Diferente dos verbais (que precisam voltar ao infinitivo), estes são só
+ * removidos. A lista é por idioma e a aplicação é iterativa com limite.
  */
 const SUFIXOS = {
-  pt: [
-    'aríamos', 'eríamos', 'iríamos', 'aríeis', 'eríeis', 'iríeis', 'aríam', 'eríam', 'iríam',
-    'ássemos', 'êsseis', 'íssemos', 'ardes', 'erdes', 'irdes', 'aria', 'eria', 'iria',
-    'ara', 'era', 'ira', 'avam', 'avam', 'emos', 'astes', 'estes', 'ardes',
-    'aria', 'asse', 'esse', 'isse', 'astes', 'istes',
-    'ando', 'endo', 'indo', 'ados', 'idos', 'adas', 'idas', 'amos', 'emos', 'imos',
-    'ável', 'ível', 'ador', 'edor', 'idor', 'ada', 'ido', 'ada', 'ida', 'ara',
-    'ava', 'era', 'iam', 'ara', 'ei', 'as', 'es', 'eu', 'ou', 'iu',
-    'a', 'o', 'as', 'os', 'e', 'i',
-  ],
-  es: [
-    'aríamos', 'eríamos', 'iríamos', 'arían', 'erían', 'irían',
-    'aste', 'aste', 'ieron', 'iendo', 'ando', 'endo',
-    'aron', 'ieron', 'ado', 'ido', 'ada', 'ida',
-    'aba', 'ía', 'ara', 'era', 'ían', 'emos',
-    'aste', 'iste', 'aron', 'eron', 'an', 'as', 'en', 'es',
-    'ar', 'er', 'ir', 'o', 'a', 's',
-  ],
-  id: [
-    'kannya', 'nya', 'lah', 'kah', 'pun',
-    'meng', 'mem', 'men', 'meng', 'nya',
-    'i', 'kan', 'an',
-  ],
-  it: [
-    'erebbero', 'irebbero', 'eremmo', 'eremo', 'ereste', 'eresti',
-    'erei', 'erà', 'eranno', 'ereste', 'erete',
-    'ando', 'endo', 'endo', 'ato', 'ito', 'ata', 'ita',
-    'ava', 'eva', 'iva', 'ono', 'ano', 'ano',
-    'ai', 'ei', 'ì', 'o', 'a', 'e', 'i',
-  ],
-  fr: [
-    'eraient', 'eraient', 'iraient', 'assions', 'issions', 'issions',
-    'erions', 'irions', 'assent', 'issent', 'èrent', 'irent',
-    'erais', 'irais', 'erons', 'irons', 'erai', 'irai',
-    'ant', 'ent', 'ons', 'ez', 'ai', 'as', 'és', 'é',
-    'e', 'a', 's',
-  ],
-  de: [
-    'est', 'et', 'en', 'er', 'em',
-    'st', 'te', 'ten', 'tet',
-    'e', 'n', 't', 's',
-  ],
-  en: [
-    'iness', 'ingly', 'edly',
-    'ies', 'ied', 'ier', 'iest', 'iest',
-    'sses', 'ssed', 'sser', 'ssing',
-    'ing', 'ings',
-    'ed', 'er', 'est',
-    'es', 's',
-  ],
+  pt: ['aram', 'eram', 'iram', 'ados', 'adas', 'idos', 'idas', 'ando', 'endo', 'indo', 'ados', 'adas', 'aria', 'eria', 'iria', 'asse', 'esse', 'isse', 'aria'],
+  es: ['aron', 'ieron', 'ando', 'iendo', 'ado', 'ida', 'ados', 'idas', 'aba', 'ía', 'ian', 'aron', 'eron'],
+  it: ['ando', 'endo', 'ato', 'ito', 'ata', 'ita', 'ano', 'ono'],
+  fr: ['ant', 'ent', 'ons', 'ais', 'ait', 'aient'],
+  de: ['est', 'et', 'en', 'er', 'em'],
+  en: ['ing', 'ings', 'ed', 'es', 's', 'ies', 'ied', 'ier', 'iest', 'iness', 'edly'],
+  id: ['nya', 'kan', 'lah', 'kah', 'pun'],
 };
 
-const IRREGULARES_EN = IRREGULARES.en;
+/**
+ * Terminação de forma conjugada → finais de infinitivo CANDIDATOS.
+ *
+ * A tabela de sufixos sozinha erra o fundamental: `criou` termina em `ou`, e
+ * apagar `ou` deixa `cri`, que não é palavra em português. O verbo tem que
+ * voltar ao infinitivo (`criar`) — mas o terminal do infinitivo não é dedutível
+ * do sufixo, porque `falo` é `falar` e `come` é `comer`. Por isso a terminação
+ * vira CANDIDATOS, e a escolha é feita contra o vocabulário do pacote.
+ *
+ * Um array pode ter mais de um final para o mesmo sufixo (PT `a` pode dar `ar`
+ * ou `er`); a ordem dos candidatos importa quando o vocabulário não decide.
+ */
+const INF = {
+  pt: {
+    // Gerúndio: `destruindo` -> `destruir`. O `-ndo` vira o final do
+    // infinitivo, e `indo` é o caso de `destruindo` (radical `destru` + `indo`),
+    // coberto pelo corte em `indo`.
+    arando: ['ar'], erando: ['er'], irando: ['ir'],
+    ando: ['ar'], endo: ['er'], indo: ['ir'],
+    // Imperfecto do indicativo e do subjuntivo: `entrava`, `havia`, `amasse`.
+    // O `-ia` do português é duplo (imperfeito de `ar` e de `er`), então o
+    // candidato lista os dois finais e a escolha vai contra o vocabulário.
+    ava: ['ar'], ía: ['ar'], ievam: ['ar'], avam: ['ar'],
+    íamos: ['ar', 'er', 'ir'],
+    asse: ['ar'], esses: ['ar'], íssemos: ['er'], issem: ['er'],
+    // Pretérito perfeito: `entraram`, `conheceram`, `serviram`.
+    aram: ['ar'], eram: ['er'], iram: ['ir'],
+    // Pretérito mais-que-perfeito: `fizera`, `tivera`.
+    ara: ['ar'], era: ['er'], ira: ['ir'],
+    // Plural do particípio: `acabados`, `criados`.
+    ados: ['ar'], idos: ['er', 'ir'], adas: ['ar'], idas: ['er', 'ir'],
+    // Particípio em -ado de verbo em -er e -ir (`notado`, `partido`) é
+    // indistinguível de particípio em -ar; a lista cobre os três.
+    // Futuro do indicativo e do subjuntivo: `guardarei`, `estabelecei`.
+    // O futuro é o sufixo mais improdutivo do português — `arei` tanto pode
+    // dar `ar` (`guardar`) quanto `er` (`comer`) —, então vira candidato e a
+    // escolha vai contra o vocabulário.
+    arei: ['ar', 'er', 'ir'], errei: ['er', 'ir'], irei: ['ir'],
+    arás: ['ar'], erás: ['er'], irás: ['ir'],
+    ará: ['ar'], erá: ['er'], irá: ['ir'],
+    arão: ['ar'], erão: ['er'], irão: ['ir'],
+    // Formas solver: 1ª e 3ª pessoa do presente, e o subjuntivo.
+    // `-o` NÃO entra: `manifesto` -> `manifest` + `ar` = `manifestar`, que é
+    // verbete real de dicionário e por isso passaria na validação por
+    // vocabulário. A 1ª pessoa do singular (`falo`, `parto`) se perde em troca
+    // de não converter substantivo em verbo — que é o erro que aparece na
+    // tela.
+    ou: ['ar'], eu: ['er'], iu: ['ir'],
+    // `-a` e `-o` NÃO entram: `manifesto` -> `manifest` + `ar` = `manifestar`,
+    // que é verbete real de dicionário e por isso passa na validação por
+    // vocabulário. As formas em `-a`/`-o` do português (1ª e 3ª pessoa) se
+    // perdem em troca de não converter substantivo em verbo — o `-a` de
+    // `vazia`, `terra` e `palavra` é o caso que mais aparece na tela.
+    e: ['er'], i: ['ir'],
+    em: ['ar'], am: ['ar'], ia: ['ar'], ie: ['ar'],
+    // Subjuntivo: `sejam` (ser), `contemple`, `busquem`, `amem`.
+    ejam: ['er'], eis: ['er'],
+    arem: ['ar'], erem: ['er'], irem: ['ir'],
+  },
+  es: { aron: ['ar'], ieron: ['er', 'ir'], ando: ['ar'], iendo: ['er', 'ir'], o: ['ar'], a: ['ar'], e: ['er'], i: ['ir'] },
+  it: { o: ['are'], a: ['are'], e: ['ere'], i: ['ire'] },
+  fr: { e: ['er'], a: ['er'], i: ['ir'] },
+  de: { e: ['en'], t: ['en'] },
+  en: { ed: [''], ing: [''], es: [''], s: [''] },
+  id: { kan: ['kan'], i: ['i'] },
+};
+
+/** Valores de `pos` que são verbo — só verbos passam pelas regras verbais. */
+const POS_VERBO = new Set(['VERB', 'VERBAL', 'AUX']);
 
 /**
- * O verbo em inglês quase sempre é reconhecido pela terminação; o substantivo,
- * não. A distinção decide o quanto se apaga: substantivo plural (-s) e
- * adjetivo comparativo (-er) são inhibited porque produzem substantivos novos.
+ * Escolhe o primeiro candidato que existe no vocabulário do pacote.
+ *
+ * Este passo é o que valida a heurística: o dicionário é indexado por forma de
+ * superfície, então o infinitivo também é chave em algum livro. `criar` existe
+ * no corpusa; `cri` não existe em lugar nenhum.
  */
-const IRREGULARES_PT = IRREGULARES.pt;
-const IRREGULARES_ES = IRREGULARES.es;
-const IRREGULARES_ID = IRREGULARES.id;
-const IRREGULARES_IT = IRREGULARES.it;
-const IRREGULARES_FR = IRREGULARES.fr;
-const IRREGULARES_DE = IRREGULARES.de;
+function escolheCandidato(candidatos, vocab) {
+  if (!candidatos.length) return null;
+  if (vocab && vocab.size) {
+    for (const c of candidatos) if (vocab.has(c)) return c;
+  }
+  return null;
+}
 
-/** Stopwords: a palavra já é a forma canônica. Não há o que derivar. */
+/**
+ * Prefixo mais longo que também é chave do dicionário, com o resto na lista de
+ * restos de flexão.
+ *
+ * O critério do RESTO é o que separa um corte legítimo de um corte por
+ * coincidência: `animais → animal` tem resto `is` (plural conhecido), mas
+ * `terra → ter` tem resto `ra`, que não é flexão nenhuma. A versão anterior
+ * aceitava qualquer resto e produzia `earth → ear`.
+ */
+const RESTOS = {
+  pt: ['s', 'es', 'is', 'as', 'ns', 'em', 'ou', 'eu', 'iu', 'ada', 'ado', 'ida', 'ido', 'adas', 'ados', 'idas', 'idos', 'ão', 'ões'],
+  es: ['s', 'es', 'as', 'os', 'n', 'ado', 'ida', 'idos', 'adas'],
+  it: ['i', 'e', 'he', 'hi', 'ti', 'si', 'no', 'ne'],
+  fr: ['s', 'x', 'ent', 'ant', 'é', 'ée', 'és', 'ons'],
+  de: ['n', 'en', 'er', 't', 'es'],
+  en: ['s', 'es', 'ing', 'ed', 'd', 'er', 'est', 'y', 'ies'],
+  id: ['kan', 'nya', 'pun', 'lah', 'kah'],
+};
+
+/**
+ * Menor resto de flexão aceito por idioma.
+ *
+ * inglês e alemão flexionam por sufixo curto (`created`, `ginge`), português e
+ * espanhol por terminação — e cortar uma letra só em português produz
+ * `manifes`.
+ */
+const RESTO_MINIMO = { en: 1, de: 1, pt: 2, es: 2, it: 2, fr: 2, id: 2 };
+
+function prefixoNoVocabulario(palavra, vocab, lang) {
+  if (!vocab || !vocab.size) return null;
+  const permitidos = new Set(RESTOS[lang] ?? []);
+  if (!permitidos.size) return null;
+  for (let corte = palavra.length - 1; corte >= 3; corte--) {
+    const resto = palavra.slice(corte);
+    if (!permitidos.has(resto)) continue;
+    const minimo = RESTO_MINIMO[lang] ?? 2;
+    if (resto.length < minimo) continue;
+    const prefixo = palavra.slice(0, corte);
+    if (vocab.has(prefixo)) return prefixo;
+  }
+  return null;
+}
+
+/**
+ * @param {string} palavra
+ * @param {string} lang
+ * @param {Set<string>} vocab
+ * @param {string|null} pos  classe gramatical, quando o pacote tem
+ * @returns {string}
+ */
+function lemaRegras(palavra, lang, vocab, pos) {
+  if (!palavra) return palavra;
+  if (palavra.length <= 2) return palavra; // partícula, preposição, abreviação
+  if (IRREDUTIVEIS.has(palavra)) return palavra;
+
+  // Irregular primeiro: `disse`, `fez`, `viu` são as formas mais frequentes do
+  // texto bíblico e nenhuma regra de sufixo as alcança.
+  const tabela = IRREGULARES[lang];
+  if (tabela && tabela[palavra]) return tabela[palavra];
+
+  let base = palavra;
+  let hadClitico = false;
+  if (lang === 'pt' || lang === 'es') {
+    [base, hadClitico] = tiraClitico(base, lang === 'pt' ? CLITICOS_PT : CLITICOS_ES);
+    while (base.endsWith('-')) base = base.slice(0, -1);
+  }
+  if (base.length <= 2) return hadClitico ? base : palavra;
+
+  // PORTÃO DE POS: se o pacote diz que a palavra NÃO é verbo, as regras verbais
+  // não se aplicam. É o que impede `vazia` (substantivo) de virar `vaziar`.
+  const eVerbo = !pos || POS_VERBO.has(pos);
+
+  // 1) Terminação verbal → infinitivo, validado no vocabulário.
+  if (eVerbo) {
+    const inf = INF[lang];
+    const candidatos = [];
+    for (const [sufixo, finais] of Object.entries(inf)) {
+      if (!base.endsWith(sufixo)) continue;
+      const radical = base.slice(0, -sufixo.length);
+      if (radical.length < 2) continue;
+      for (const fim of finais) candidatos.push(radical + fim);
+    }
+    const escolhido = escolheCandidato(candidatos, vocab);
+    if (escolhido) return escolhido;
+  }
+
+  // 2) Sufixos derivacionais, com resto conhecido.
+  const sufixos = SUFIXOS[lang] ?? [];
+  let atual = base;
+  for (let passo = 0; passo < 2; passo++) {
+    let mudou = false;
+    for (const s of sufixos) {
+      if (atual.length - s.length >= 3 && atual.endsWith(s)) {
+        const proximo = atual.slice(0, -s.length);
+        if (proximo.length >= 3 && (!vocab || !vocab.size || vocab.has(proximo))) {
+          atual = proximo;
+          mudou = true;
+          break;
+        }
+      }
+    }
+    if (!mudou) break;
+  }
+  if (atual !== base && atual.length >= 3 && (!vocab || !vocab.size || vocab.has(atual))) {
+    return atual;
+  }
+
+  // 3) Backoff por prefixo no vocabulário (plurais, etc.).
+  const porPrefixo = prefixoNoVocabulario(base, vocab, lang);
+  if (porPrefixo) return porPrefixo;
+
+  // 4) Sobreviver: mantém o que se tinha (clítico removido, se era o caso).
+  return hadClitico ? base : palavra;
+}
+
+/** Palavras que são a própria forma: partícula, preposição, nome próprio. */
 const IRREDUTIVEIS = new Set([
   // PT
   'de', 'a', 'o', 'as', 'os', 'um', 'uma', 'uns', 'umas', 'e', 'ou', 'mas', 'que',
   'não', 'sim', 'eu', 'tu', 'ele', 'ela', 'nós', 'vós', 'me', 'te', 'se', 'lhe',
   'em', 'no', 'na', 'nos', 'nas', 'por', 'para', 'com', 'sem', 'sobre', 'sob',
-  'entre', 'até', 'desde', 'depois', 'antes', 'quando', 'onde', 'se', 'como',
-  'isto', 'isso', 'aquilo', 'este', 'esse', 'aquele', 'esta', 'esta', 'essa',
-  'aquela', 'meu', 'minha', 'teu', 'tua', 'seu', 'sua', 'nosso', 'nossa',
-  'vosso', 'vossa', 'dele', 'dela', 'deles', 'delas', 'deus', 'jesus',
-  'é', 'são', 'foi', 'foram', 'ser', 'há', 'ha', 'vai', 'vão', 'vem',
-  'sedei', 'tu', 'vós', 'à', 'às', 'ao', 'aos',
+  'entre', 'até', 'desde', 'depois', 'antes', 'quando', 'onde', 'como',
+  'isto', 'isso', 'aquilo', 'este', 'esse', 'aquele', 'esta', 'essa', 'aquela',
+  'meu', 'minha', 'teu', 'tua', 'seu', 'sua', 'nosso', 'nossa', 'vosso', 'vossa',
+  'dele', 'dela', 'deles', 'delas', 'deus', 'jesus', 'havia',
   // EN
   'the', 'a', 'an', 'and', 'or', 'of', 'in', 'on', 'to', 'for', 'with', 'at',
   'by', 'from', 'as', 'is', 'was', 'it', 'he', 'she', 'they', 'them', 'this',
@@ -314,194 +471,24 @@ const IRREDUTIVEIS = new Set([
   'his', 'her', 'their', 'its', 'our', 'your', 'my', 'me', 'him', 'us',
   'god', 'lord', 'jesus', 'christ',
   // ES
-  'el', 'la', 'los', 'las', 'un', 'una', 'y', 'o', 'pero', 'que', 'no', 'sí',
-  'yo', 'tú', 'él', 'ella', 'nosotros', 'me', 'te', 'se', 'le', 'en', 'del',
-  'al', 'por', 'para', 'con', 'sin', 'sobre', 'entre', 'su', 'sus', 'mi', 'tu',
-  'es', 'son', 'fue', 'fue', 'ha', 'han',
+  'el', 'la', 'los', 'las', 'un', 'una', 'y', 'o', 'pero', 'no', 'sí',
+  'yo', 'tú', 'él', 'ella', 'me', 'te', 'se', 'le', 'en', 'del', 'al', 'por',
+  'para', 'con', 'sin', 'sobre', 'entre', 'su', 'sus', 'mi', 'tu', 'es', 'son',
 ]);
-
-/**
- * Terminação de forma conjugada → terminais de infinitivo candidatos.
- *
- * A tabela de sufixos sozinha erra o fundamental: `criou` termina em `ou`, e
- * apagar `ou` deixa `cri`, que não é palavra nenhuma em português. O verbo tem
- * que voltar ao infinitivo (`criar`) — mas o terminal do infinitivo não é
- * dedutível do sufixo, porque `falo` é `falar` e `come` é `comer`. Por isso a
- * terminação vira CANDIDATOS, e a escolha é feita contra o vocabulário do
- * próprio pacote (ver `escolheCandidato`).
- *
- * A ordem dos candidatos importa quando o vocabulário não decide: as formas
- * mais frequentes na Bíblia vêm primeiro.
- */
-const INF = {
-  pt: { ou: ['ar'], eu: ['er'], iu: ['ir'], a: ['ar'], e: ['er'], o: ['ar'], i: ['ir'] },
-  es: { o: ['ar'], a: ['ar'], e: ['er'], i: ['ir'] },
-  it: { o: ['are'], a: ['are'], e: ['ere'], i: ['ire'] },
-  fr: { e: ['er'], a: ['er'], i: ['ir'], s: ['er'] },
-  de: { e: ['en'], t: ['en'], te: ['ten'] },
-  en: { ed: [''], ing: [''], es: [''], s: [''] },
-  id: { kan: ['kan'], i: ['i'] },
-};
-
-/**
- * Restos de flexão aceitos no backoff por prefixo.
- *
- * Este é o ponto onde a heurística anterior produziu `terra → ter` e
- * `earth → ear`: qualquer prefixo que também fosse chave do dicionário era
- * aceito, e `ter`/`ear` SÃO palavras. O que separa um corte legítimo de um
- * corte por coincidência não é o prefixo — é o RESTO. Plural e progressivo são
- * restos conhecidos; `ra` (de `terra`) e `th` (de `earth`) não são.
- */
-const RESTOS = {
-  pt: ['s', 'es', 'is', 'as', 'ns', 'e', 'em', 'ou', 'eu', 'iu', 'a', 'o', 'ada', 'ado', 'ida', 'ido', 'adas', 'ados', 'idas', 'idos'],
-  es: ['s', 'es', 'as', 'os', 'n', 'a', 'o', 'e', 'ado', 'ida', 'idos', 'adas'],
-  it: ['i', 'e', 'a', 'o', 'he', 'hi', 'ti', 'si', 'no', 'ne'],
-  fr: ['s', 'x', 'ent', 'ant', 'e', 'a', 'é', 'ée', 'és', 'ons', 'ent'],
-  de: ['n', 'e', 'en', 'er', 't', 'es'],
-  en: ['s', 'es', 'ing', 'ed', 'd', 'er', 'est', 'y', 'ies'],
-  id: ['kan', 'nya', 'pun', 'lah', 'kah'],
-};
-
-/**
- * Prefixo mais longo da palavra que também é chave do dicionário, com o resto
- * na lista de restos de flexão.
- */
-function prefixoNoVocabulario(palavra, vocab, lang) {
-  if (!vocab || !vocab.size) return null;
-  const permitidos = new Set(RESTOS[lang] ?? []);
-  if (!permitidos.size) return null;
-  for (let corte = palavra.length - 1; corte >= 3; corte--) {
-    const resto = palavra.slice(corte);
-    if (!permitidos.has(resto)) continue;
-    const prefixo = palavra.slice(0, corte);
-    if (vocab.has(prefixo)) return prefixo;
-  }
-  return null;
-}
-
-/**
- * Lema colhido do próprio gloss (`<forma> (pt): <lema> (pt): <glosa>`).
- *
- * O padrão dos pacotes pt traz o infinitivo no meio — `criou (pt): criar (pt): to
- * create` — mas o campo do meio às vezes é a glosa em inglês (`no (pt): in the
- * (masc)`). A diferença é visível na FORMA: um infinitivo português é uma
- * palavra só terminando em `-ar`/`-er`/`-ir`; uma glosa inglesa tem espaço ou
- * não termina nesses finais. Aceitar sem esse teste é o que faria `no` virar
- * lema `in`.
- */
-const INF_PT = /(?:^|\s)(?:[a-zá-úàâãéêíóôõúç]+(?:ar|er|ir))\b/i;
-
-export function lemaDoGloss(forma, gloss) {
-  if (!gloss) return null;
-  const m = INF_PT.exec(gloss);
-  if (!m) return null;
-  const candidato = m[1];
-  // Um infinitivo tem ao menos 4 letras e não pode ser o que já estava lá.
-  if (candidato.length < 4) return null;
-  if (candidato === forma) return null;
-  return candidato;
-}
-
-/**
- * Lema inglês a partir da glosa: quase toda glosa verbal do pacote en abre com
- * o infinitivo (`to create, to put into existence`), que é o lema pronto.
- */
-const GLOSS_EN = /^\s*to\s+([a-z][a-z-]{2,})\b/i;
-
-export function lemaDoGlossEn(forma, gloss) {
-  if (!gloss) return null;
-  const m = GLOSS_EN.exec(gloss);
-  if (!m) return null;
-  const candidato = m[1];
-  if (candidato === forma) return null;
-  return candidato;
-}
-
-/**
- * @param {string} palavra
- * @param {string} lang
- * @param {Set<string>} [vocab]  chaves do próprio pacote
- * @param {Map<string,string>} [colhidos]  lema → forma, colhido do gloss
- * @returns {string}
- */
-function lemaRegras(palavra, lang, vocab, colhidos) {
-  if (!palavra) return palavra;
-  if (IRREDUTIVEIS.has(palavra)) return palavra;
-  // 1-2 caracteres são partícula, preposição ou abreviação; não há lema a achar.
-  if (palavra.length <= 2) return palavra;
-
-  // 0) Lema colhido do gloss: dado, não palpite. Vem antes de tudo.
-  if (colhidos && colhidos.has(palavra)) return colhidos.get(palavra);
-
-  const tabela = {
-    pt: IRREGULARES_PT, es: IRREGULARES_ES, id: IRREGULARES_ID,
-    it: IRREGULARES_IT, fr: IRREGULARES_FR, de: IRREGULARES_DE, en: IRREGULARES_EN,
-  }[lang];
-  if (tabela && tabela[palavra]) return tabela[palavra];
-
-  let base = palavra;
-  let hadClitico = false;
-  if (lang === 'pt' || lang === 'es') {
-    const cl = lang === 'pt' ? CLITICOS_PT : CLITICOS_ES;
-    [base, hadClitico] = tiraClitico(base, cl);
-    // O hífen de composição (`diz-me` → `diz`) não faz parte do lema.
-    while (base.endsWith('-')) base = base.slice(0, -1);
-  }
-  if (base.length <= 2) return hadClitico ? base : palavra;
-
-  // 1) Terminação verbal → candidatos de infinitivo, validados no vocabulário.
-  const inf = INF[lang];
-  if (inf) {
-    const candidatos = [];
-    for (const [sufixo, finais] of Object.entries(inf)) {
-      if (!base.endsWith(sufixo)) continue;
-      const radical = base.slice(0, -sufixo.length);
-      if (radical.length < 2) continue;
-      for (const fim of finais) candidatos.push(radical + fim);
-    }
-    // Só aceita candidato que existe como chave no próprio pacote; caso
-    // contrário o palpite volta para o fim da cadeia e vira a própria forma.
-    for (const c of candidatos) {
-      if (!vocab || !vocab.size || vocab.has(c)) return c;
-    }
-  }
-
-  // 2) Sufixos derivacionais ([os], [as], [ing], [ed]…), com resto conhecido.
-  const porPrefixo = prefixoNoVocabulario(base, vocab, lang);
-  if (porPrefixo) return porPrefixo;
-
-  // 3) Sobreviver: mantém o que se tinha (clítico removido, se era o caso).
-  return hadClitico ? base : palavra;
-}
-
-/**
- * Deriva o lema com a estratégia de cada idioma.
- *
- * Este é o ponto único de decisão, e ele é DELIBERADAMENTE conservador: quando
- * a derivação não tem dado nem regra que sustente, devolve a própria forma de
- * superfície. Um lema errado agrupa palavras de famílias diferentes, que é
- * pior do que não agrupar — e é por isso que `report-lemma.mjs` publica a
- * cobertura em vez de deixar o palpite escondido dentro do dado.
- *
- * @param {string} surface
- * @param {string} lang
- * @param {Contexto} [ctx]
- * @returns {string}
- */
-export function lemaSeguro(surface, lang, ctx = {}) {
-  return lema(surface, lang, ctx);
-}
-}
 
 /* ------------------------------------------------------------------ */
 /* Entrada pública                                                     */
 /* ------------------------------------------------------------------ */
 
 /**
+ * @typedef {{ grcIndex?: Map<string,string>, vocab?: Set<string>, pos?: string|null }} Contexto
+ */
+
+/**
  * Lema de uma superfície.
  *
- * @param {string} surface  a chave da entrada
- * @param {string} lang     código do pacote (`pt`, `grc`, `heb`, …)
+ * @param {string} surface
+ * @param {string} lang
  * @param {Contexto} [ctx]
  * @returns {string}
  */
@@ -510,19 +497,13 @@ export function lema(surface, lang, ctx = {}) {
   if (lang === 'grc') return lemaGrego(surface, ctx.grcIndex);
   if (lang === 'heb') return lemaHebraico(surface);
   if (IDENTIDADE.has(lang)) return surface;
-  return lemaRegras(surface, lang, ctx.vocab);
+  return lemaRegras(surface, lang, ctx.vocab, ctx.pos ?? null);
 }
-
-/**
- * Contexto de derivação, montado uma vez por pacote.
- *
- * @typedef {{ grcIndex?: Map<string,string>, vocab?: Set<string> }} Contexto
- */
 
 /** A estratégia do idioma, para o relatório de cobertura. */
 export function estrategia(lang) {
   if (lang === 'grc') return 'exato (índice de radiais)';
   if (lang === 'heb') return 'exato (forma sem pontos)';
   if (IDENTIDADE.has(lang)) return 'identidade';
-  return 'regras de sufixo';
+  return 'regras de sufixo + portão de pos';
 }
