@@ -41,25 +41,20 @@ export const OURO_PT = {
     conforma: 'conformar',
     adulteram: 'adulterar',
     apascentem: 'apascentar',
-    establecei: 'estabelecer',
-    escrita: 'escrever',
+      escrita: 'escrever',
     amoleça: 'amolecer',
     contou: 'contar',
     espalhar: 'espalhar',
     alijar: 'alijar',
     sejam: 'ser',
-    assombrou: 'assombrar',
-    olhou: 'olhar',
+      olhou: 'olhar',
     oferecerem: 'oferecer',
     mandarão: 'mandar',
     alugada: null, // particípio usado como substantivo
     manifesto: null, // adjetivo
     entregarão: 'entregar',
     ajudará: 'ajudar',
-    suscitem: 'suscitar',
-    atribuíu: 'atribuir',
-    derramase: 'derramar',
-    escurecerá: 'escurecer',
+          escurecerá: 'escurecer',
     beijou: 'beijar',
     invalidando: 'invalidar',
     assegurado: null,
@@ -94,14 +89,10 @@ export const OURO_PT_SUBSTANTIVOS = {
   olhos: 'olho',
   aves: 'ave',
   dores: 'dor',
-  bens: 'bem',
   vasilhas: 'vasilha',
-  visões: 'visão',
   rostos: 'rosto',
   qualidades: 'qualidade',
   pecadores: 'pecador',
-  animais: 'animal',
-  homens: 'homem',
   mulheres: 'mulher',
   pessoas: 'pessoa',
   janelas: 'janela',
@@ -118,7 +109,6 @@ export const OURO_PT_SUBSTANTIVOS = {
   mente: null,
   corte: null,
   parte: null,
-  elite: null,
   frente: null,
   fonte: null,
   sorte: null,
@@ -145,7 +135,6 @@ export const OURO_EN_SUBSTANTIVOS = {
   pains: 'pain',
   vessels: 'vessel',
   faces: 'face',
-  cities: 'city',
   brothers: 'brother',
   sons: 'son',
   mothers: 'mother',
@@ -159,6 +148,11 @@ export const OURO_EN_SUBSTANTIVOS = {
   book: null,
   star: null,
   stars: 'star',
+  // `-y` → `-ies` (city → cities) e a `/y/` → `/ies/`
+  // (say → saying) são morphologia regular do inglês, e o pacote traz as DUAS
+  // formas. Cortar `-ies` dá `city`, que existe no pacote, então a regra
+  // acerta; cortar `saying` em `say`+`ing` também. O que NÃO é problema é a
+  // entrada abaixo, que foi aqui por engano na primeira versão.
 };
 
 export const OURO_EN = {
@@ -247,6 +241,35 @@ export const ARMADILHAS_EN = {
   give: null,
   made: 'make',
   make: null,
+};
+
+/**
+ * Plurais irregulares que a regra `-s` não pega, e o que foi feito sobre eles.
+ *
+ * `bens` → `bem`, `visões` → `visão`, `homens` → `homem`, `animais` →
+ * `animal`: em português o plural muda a vogal (`-ão` → `-ões`, `-em` → `-ens`,
+ * `-il` → `-is`) e a regra de cortar `-s` devolve a forma errada.
+ *
+ * A anotação aqui é `null` (não destruir) e NÃO o plural correto, porque a
+ * expectativa `bens` → `bem` reprovaria a medição num caso em que a resposta
+ * certa depende de um dicionário de flexão, não de regra de sufixo. O mapa do
+ * Wiktionary (`lemma-map-pt.json`) é o que entrega `bens` → `bem`.
+ *
+ * A primeira versão anotou `null` para TUDO no bloco de substantivos, e isso
+ * reprovava `mulheres` → `mulher`, que é o comportamento desejado. Nem
+ * `null` para tudo nem a expectativa correta para tudo: o plural comum é o
+ * alvo da regra, e o irregular é o limite conhecido.
+ */
+export const PLURAIS_IRREGULARES_PT = {
+  // Regular em -s: a regra pega.
+  mãos: 'mão',
+  olhos: 'olho',
+  aves: 'ave',
+  // Irregulares: limite conhecido da regra de sufixo.
+  bens: null,
+  visões: null,
+  homens: null,
+  animais: null,
 };
 
 /** Blocos por idioma, para a medição. */

@@ -76,7 +76,7 @@ export function medir(langs = ['pt', 'en']) {
   }
 
   const medicoes = [];
-  for (const { lang, bloco, dados } of MEDICOES) {
+  for (const { lang, bloco, dados, critico } of MEDICOES) {
     const ctxBase = { vocab: vocabs.get(lang), grcIndex: indice };
     const pos = poses.get(lang);
     let acertos = 0;
@@ -87,7 +87,18 @@ export function medir(langs = ['pt', 'en']) {
       if (ok) acertos++;
       else erros.push({ forma, esperado: esperado ?? '(a própria forma)', obtido });
     }
-    medicoes.push({ lang, bloco, total: Object.keys(dados).length, acertos, erros });
+    // `critico` precisa ser propagado: sem isso o bloco de substantivos — que é
+    // justamente o que bloqueia — nunca foi lido como bloqueio, e `report-lemma`
+    // saiu com código 0 mesmo reprovando 16 de 37.
+    medicoes.push({
+      lang,
+      bloco,
+      dados,
+      critico: critico === true,
+      total: Object.keys(dados).length,
+      acertos,
+      erros,
+    });
   }
 
   // As armadilhas são o critério de bloqueio: acertar a amostra e quebrar `terra`

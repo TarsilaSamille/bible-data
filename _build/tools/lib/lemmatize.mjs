@@ -411,16 +411,20 @@ function escolheCandidato(candidatos, vocab) {
  * aceitava qualquer resto e produzia `earth → ear`.
  */
 export const RESTOS = {
-  // Português: só plural e particípio. `'em'`, `'ou'`, `'eu'` e `'iu'` SAÍRAM:
-  // são terminações verbais ambíguas que o backoff não pode resolver, e
-  // produziam `marido → mar` (resto `ido`, que é particípio mas também
-  // terminações de `morar`/`mor`), `comeste → com` (resto `este`, que casa
-  // com pronome) e `morada → mor` (resto `ada`, que é particípio mas
-  // também substantivo). O que sobra é o plural, que é o caso comum e
-  // inequívoco; o particípio fica para o caminho verbal, que tem portão de
-  // `pos`.
+  // Português: só plural. `'em'`, `'ou'`, `'eu'`, `'iu'`, `'ado'`, `'ida'`
+  // SAÍRAM — são terminações verbais ambíguas que o backoff não resolve, e
+  // produziam `marido → mar` (resto `ido`), `comeste → com` (resto `este`) e
+  // `morada → mor` (resto `ada`).
+  //
+  // `-es` e `-is` CONTINUAM porque são plural legítimo e comum em português
+  // (`animais`, `homens`, `pequenes`, `livros`). Uma versão deste lista tirou
+  // `es` achando que era terminação verbal, e `animais` virou `anim` — o
+  // padrão de ouro pegou, e é para isso que ele existe.
+  //
+  // O particípio (`-ado`, `-ido`) não volta aqui porque quem flexiona
+  // particípio é a palavra VERBAL, que tem portão de `pos` no caminho verbal.
   pt: ['s', 'es', 'is', 'as', 'ns', 'ão', 'ões', 'ais', 'éis'],
-  es: ['s', 'es', 'as', 'os', 'n', 'ado', 'ida', 'idos', 'adas'],
+  es: ['s', 'es', 'as', 'os', 'n'],
   it: ['i', 'e', 'he', 'hi', 'ti', 'si', 'no', 'ne'],
   fr: ['s', 'x', 'ent', 'ant', 'é', 'ée', 'és', 'ons'],
   de: ['n', 'en', 'er', 't', 'es'],
@@ -431,11 +435,17 @@ export const RESTOS = {
 /**
  * Menor resto de flexão aceito por idioma.
  *
- * inglês e alemão flexionam por sufixo curto (`created`, `ginge`), português e
- * espanhol por terminação — e cortar uma letra só em português produz
- * `manifes`.
+ * `-s` (plural) tem UMA letra em português, espanhol, francês, italiano e
+ * alemão — e é a flexão mais comum de todos esses idiomas. Bloqueá-la eliminava
+ * o plural inteiro: `mãos`, `olhos`, `animais`, `cidades` ficavam sem lema
+ * porque o corte termina em `s`.
+ *
+ * O que a versão anterior tentava evitar — cortar `manifesto` em `manifes` + `o`
+ * — é resolvido pelo PORTÃO DE POS e pela ausência de `o` em `RESTOS.pt`, não
+ * pelo tamanho do resto. Resto de uma letra é flexão legítima em todos esses
+ * idiomas.
  */
-const RESTO_MINIMO = { en: 1, de: 1, pt: 2, es: 2, it: 2, fr: 2, id: 2 };
+const RESTO_MINIMO = { en: 1, de: 1, pt: 1, es: 1, it: 1, fr: 1, id: 2 };
 
 function prefixoNoVocabulario(palavra, vocab, lang) {
   if (!vocab || !vocab.size) return null;
