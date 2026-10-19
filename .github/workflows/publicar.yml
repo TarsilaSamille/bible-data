@@ -46,10 +46,15 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           TAG: ${{ github.event.inputs.tag || github.ref_name }}
         run: |
-          gh release create "$TAG" _build/dist/*.zip \
+          # O CI dispara por push de tag, então a tag já existe e é este
+          # workflow que a materializa em release. `--clobber` foi removido do
+          # `gh release create` (2.96) e continua existindo no `upload`; sem
+          # ele, republicar a tag deixaria o asset velho no lugar e o
+          # `latest/download` do Android continuaria servindo o pacote antigo.
+          gh release create "$TAG" \
             --title "Dict packs $TAG" \
             --notes "Pacotes de dicionário. Consumido pelo Scriptorium Android em runtime e pelo web via submódulo." \
-            --clobber
+          || gh release upload "$TAG" _build/dist/*.zip --clobber
 
       - name: Resumo
         run: |
