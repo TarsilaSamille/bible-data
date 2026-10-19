@@ -146,6 +146,24 @@ export function glosaUtil(valor) {
 }
 
 /**
+ * A chave é uma ABREVIÇÃO de referência, não uma palavra.
+ *
+ * O pacote `en` tem 20 chaves assim (`i.`, `ii.`, `1.ch.11.11`), que são a
+ * sigla de um versículo de capítulo alongado — o KJV escreve "I. Cor. 11:11" e
+ * quem indexou leu `1.ch.11.11` como palavra. Entram no dicionário porque
+ * passaram no filtro de "não é pontuação", e de lá no `master.json` e no
+ * glossário PT, onde poluem o índice sem correspondente na Bíblia.
+ *
+ * Não é erro que faça o build falhar: são 20 entradas em 3 milhões, e a fonte é
+ * do web, que consome esses arquivos como estão. Mas é a assinatura de um
+ * problema de tokenização na origem, e o `verificar` reporta para que não passe
+ * despercebido.
+ */
+export function ehAbreviacao(chave) {
+  return /^\d+\.ch\.\d|^\d+\.\d+\.\d+$|^[ivxlc]+\.$/i.test(chave);
+}
+
+/**
  * Pacotes em que o campo de glosa NÃO é a tradução do termo, e sim a definição
  * dele (o infinitivo ou o sentido), em inglês.
  *

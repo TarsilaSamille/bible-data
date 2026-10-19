@@ -9,7 +9,7 @@
 
 import { join } from 'node:path';
 import { RAIZ, pacotes, livrosDo, lerJson } from './lib/io.mjs';
-import { entradaMobile, glosaUtil, IDIOMAS_DEFINICAO } from './lib/schema.mjs';
+import { entradaMobile, glosaUtil, ehAbreviacao, IDIOMAS_DEFINICAO } from './lib/schema.mjs';
 
 const MINIMO_LIBROS = 66;
 
@@ -33,6 +33,7 @@ export function verificar(raiz = RAIZ) {
     let chaves = 0;
     let semGlosa = 0;
     let semRoot = 0;
+    const abrev = new Set();
     const vistos = new Set();
 
     for (const livro of livros) {
@@ -44,15 +45,12 @@ export function verificar(raiz = RAIZ) {
       for (const [surface, bruta] of Object.entries(entradas)) {
         chaves++;
         if (surface === '') erros.push(`${lang}/${livro}: chave vazia`);
-        if (vistos.has(surface)) {
-          // Repetição dentro do MESMO pacote é permitida (a forma aparece em
-          // livros diferentes), então isto é informativo, não erro.
-        }
         vistos.add(surface);
         if (!bruta || typeof bruta !== 'object') {
           erros.push(`${lang}/${livro}/${surface}: valor não é objeto`);
           continue;
         }
+        if (ehAbreviacao(surface)) abrev.add(surface);
         if (!bruta.root) semRoot++;
         const e = entradaMobile(bruta, lang);
         if (!glosaUtil(e.def)) semGlosa++;
@@ -63,6 +61,12 @@ export function verificar(raiz = RAIZ) {
     const pctSemRoot = chaves ? (semRoot / chaves) * 100 : 0;
 
     if (semRoot > 0) avisos.push(`${lang}: ${semRoot} entradas sem root`);
+    if (abrev.size) {
+      avisos.push(
+        `${lang}: ${abrev.size} chaves que são sigla de referência, não palavra ` +
+          `(${[...abrev].slice(0, 3).join(', ')}${abrev.size > 3 ? ', …' : ''})`,
+      );
+    }
     if (pctSemGlosa > 5) {
       erros.push(`${lang}: ${pctSemGlosa.toFixed(1)}% das entradas sem glosa (${semGlosa}/${chaves})`);
     }

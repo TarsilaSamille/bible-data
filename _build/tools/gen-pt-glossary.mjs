@@ -21,6 +21,9 @@ import { glosaUtil } from './lib/schema.mjs';
 
 const SAIDA = join(RAIZ, 'pt_master_glossary.json');
 
+/** Chaves de metadado que o leitor Android ignora ao carregar o glossário. */
+const RESERVADAS = ['generated_at', 'model', 'total_translated'];
+
 /**
  * @param {string} [raiz]
  * @returns {{radicais: number, dePacotes: Record<string, number>}}
@@ -60,6 +63,21 @@ export function gerarGlossarioPt(raiz = RAIZ) {
 
   const saida = {};
   for (const chave of [...porRadical.keys()].sort()) saida[chave] = porRadical.get(chave);
+
+  // O `OfflineDictManager` (Android) pula estas três chaves ao carregar o
+  // glossário. Uma delas ser um radical real faria a glosa daquele radical sumir
+  // — em silêncio, porque a glosa do resto continuaria aparecendo. Hoje
+  // nenhuma colide (verificado), mas a checagem custa uma linha e a consequência
+  // de errar é uma tradução que não aparece para uma pessoa que a esperava.
+  for (const reservada of RESERVADAS) {
+    if (Object.hasOwn(saida, reservada)) {
+      throw new Error(
+        `pt_master_glossary.json: "${reservada}" é um radical e também uma chave ` +
+          'reservada pelo leitor do Android. Renomeie o radical na fonte.',
+      );
+    }
+  }
+
   escreverJson(SAIDA, saida);
   return { radicais: Object.keys(saida).length, dePacotes };
 }
