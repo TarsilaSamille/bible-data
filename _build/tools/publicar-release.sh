@@ -18,8 +18,7 @@ cd "$RAIZ"
 
 TAG="${PUBLISH_TAG:-}"
 if [ -z "$TAG" ]; then
-  echo "uso: PUBLISH_TAG=vYYYY.MM.DD npm run release" >&2
-  exit 2
+  TAG="v$(date +%Y.%m.%d.%H%M)"
 fi
 
 if ! command -v gh >/dev/null 2>&1; then
