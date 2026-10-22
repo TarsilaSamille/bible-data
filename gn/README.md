@@ -13,7 +13,7 @@ são reescritos na íntegra a cada build.
 
 O arquivo por livro (`1.json` … `66.json`) é o que o leitor carrega em
 `/data/dict/gn/<bookId>.json`, consumido por `loadNormDict` em
-`src/hooks/useDictionary.ts`. `_master_gn.json` é a soma de todos, para busca
+`src/hooks/dictionary/useDictionary.ts`. `_master_gn.json` é a soma de todos, para busca
 global e inspeção.
 
 ## O que cada verbete carrega
