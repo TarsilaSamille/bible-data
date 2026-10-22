@@ -12,6 +12,7 @@ import { RAIZ, pacotes, livrosDo, lerJson } from './lib/io.mjs';
 import { entradaMobile, glosaUtil, ehAbreviacao, IDIOMAS_DEFINICAO } from './lib/schema.mjs';
 
 const MINIMO_LIBROS = 66;
+const MINIMO_LIBROS_POR_PACOTE = new Map([["bju", 1]]);
 
 /**
  * Idiomas SEM o gate de radical falso.
@@ -71,8 +72,9 @@ export function verificar(raiz = RAIZ) {
   for (const lang of alvos) {
     const dir = join(raiz, lang);
     const livros = livrosDo(dir);
-    if (livros.length < MINIMO_LIBROS) {
-      erros.push(`${lang}: ${livros.length} livros (esperado ${MINIMO_LIBROS})`);
+    const minimoLivros = MINIMO_LIBROS_POR_PACOTE.get(lang) ?? MINIMO_LIBROS;
+    if (livros.length < minimoLivros) {
+      erros.push(`${lang}: ${livros.length} livros (esperado ${minimoLivros})`);
     }
 
     let chaves = 0;

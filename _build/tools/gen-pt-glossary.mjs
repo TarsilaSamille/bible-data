@@ -105,7 +105,7 @@ export function gerarGlossarioPt(raiz = RAIZ) {
 
   // Segundo passe: forma que tem glosa mas cujo radical não tem.
   for (const [forma, glosa] of porForma) {
-    if (!porRadical.has(forma)) porRadical.set(forma, glosa);
+    if (!porRadical.has(forma) && !RESERVADAS.includes(forma)) porRadical.set(forma, glosa);
   }
 
   const saida = {};
