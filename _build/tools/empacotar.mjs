@@ -126,21 +126,9 @@ export function empacotar(opcoes = {}) {
   mkdirSync(DIST, { recursive: true });
 
   const feitos = [];
-  if (mobile) {
-    // O glossário PT entra na raiz de cada pacote mobile.
-    const glossario = join(RAIZ, 'pt_master_glossary.json');
-    for (const lang of alvos) {
-      if (!PACOTES_MOBILE.includes(lang)) continue;
-      const dir = join(DIST, 'mobile', lang);
-      const info = pacoteMobile(lang, dir);
-      if (existsSync(glossario)) {
-        copiarJson(glossario, join(dir, 'pt_master_glossary.json'));
-      }
-      const zip = zipar(dir, join(DIST, `dict-mobile-${lang}.zip`));
-      feitos.push({ lang, tipo: 'mobile', ...info, zip });
-    }
-  }
-  if (source) {
+  // Fonte unica: existe um unico pacote por idioma (dict-source-*.zip).
+  // Derivacoes separadas (dict-mobile-*) deixam de ser publicadas.
+  if (source || mobile) {
     for (const lang of alvos) {
       const zip = zipar(join(RAIZ, lang), join(DIST, `dict-source-${lang}.zip`));
       feitos.push({ lang, tipo: 'source', zip });
