@@ -21,7 +21,7 @@
  */
 
 import { join } from 'node:path';
-import { RAIZ, livrosDo, lerJson, escreverJson } from './lib/io.mjs';
+import { RAIZ, DICT_DIR, livrosDo, lerJson, escreverJson } from './lib/io.mjs';
 
 /** Grego sem acento e em minúsculas — a forma da chave do índice. */
 const semAcento = (s) =>
@@ -34,7 +34,7 @@ const semAcento = (s) =>
  * @param {string} [raiz]
  * @returns {{chaves: number, porForma: Map<string, Map<string, number>>}}
  */
-export function construirIndice(raiz = RAIZ) {
+export function construirIndice(raiz = DICT_DIR) {
   /** forma normalizada → contagem por grafia real vista no pacote */
   const porForma = new Map();
   const dir = join(raiz, 'grc');

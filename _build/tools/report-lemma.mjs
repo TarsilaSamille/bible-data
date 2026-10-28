@@ -17,12 +17,12 @@
 
 import { join } from 'node:path';
 import { readFileSync } from 'node:fs';
-import { RAIZ, pacotes, livrosDo, lerJson } from './lib/io.mjs';
+import { RAIZ, DICT_DIR, pacotes, livrosDo, lerJson } from './lib/io.mjs';
 import { lema, estrategia } from './lib/lemmatize.mjs';
 import { MEDICOES } from './lib/ouro.mjs';
 
 /** Vocabulário completo de um idioma: todas as chaves dos 66 livros. */
-function vocabulario(lang, raiz = RAIZ) {
+function vocabulario(lang, raiz = DICT_DIR) {
   const set = new Set();
   for (const livro of livrosDo(join(raiz, lang))) {
     for (const k of Object.keys(lerJson(join(raiz, lang, livro)))) set.add(k);
@@ -48,7 +48,7 @@ function indiceGrc(raiz = RAIZ) {
  * onde o pacote traz o campo. Nos demais idiomas a heurística roda sem esse
  * portão, e a precisão medida aqui NÃO se aplica a eles.
  */
-function posPorForma(lang, raiz = RAIZ) {
+function posPorForma(lang, raiz = DICT_DIR) {
   const mapa = new Map();
   const dir = join(raiz, lang);
   let temPos = false;
@@ -203,7 +203,7 @@ export function bloqueios(r) {
 /** Sorteia verbos de um idioma para anotação manual. */
 function amostrar(lang = 'pt', n = 60, seed = 7) {
   const vocab = [...vocabulario(lang)];
-  const dir = join(RAIZ, lang);
+  const dir = join(DICT_DIR, lang);
   const verbos = new Set();
   for (const livro of livrosDo(dir)) {
     for (const [k, v] of Object.entries(lerJson(join(dir, livro)))) {

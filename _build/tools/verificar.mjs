@@ -8,7 +8,7 @@
  */
 
 import { join } from 'node:path';
-import { RAIZ, pacotes, livrosDo, lerJson } from './lib/io.mjs';
+import { RAIZ, DICT_DIR, pacotes, livrosDo, lerJson } from './lib/io.mjs';
 import { entradaMobile, glosaUtil, ehAbreviacao, IDIOMAS_DEFINICAO } from './lib/schema.mjs';
 
 const MINIMO_LIBROS = 66;
@@ -63,7 +63,7 @@ const RADICAL_DE_MIGRACAO = new Set(['id']);
  * @param {string} [raiz]
  * @returns {{erros: string[], avisos: string[], pacotes: number}}
  */
-export function verificar(raiz = RAIZ) {
+export function verificar(raiz = DICT_DIR) {
   const erros = [];
   const avisos = [];
   const alvos = pacotes(raiz);

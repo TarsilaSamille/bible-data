@@ -29,7 +29,7 @@
  */
 
 import { join } from 'node:path';
-import { RAIZ, pacotes, livrosDo, lerJson, escreverJson } from './lib/io.mjs';
+import { RAIZ, DICT_DIR, pacotes, livrosDo, lerJson, escreverJson } from './lib/io.mjs';
 import { lema, estrategia } from './lib/lemmatize.mjs';
 
 /** @type {Record<string, 'exato'|'identidade'|'regras'>} */
@@ -93,12 +93,12 @@ export function aplicarLemas(opcoes = {}) {
       resultados.push({ lang, modo: 'não tocado', motivo: NAO_FEITO[lang] ?? 'fora do escopo' });
       continue;
     }
-    const dir = join(RAIZ, lang);
+    const dir = join(DICT_DIR, lang);
     const vocab = new Set();
     for (const livro of livrosDo(dir)) {
       for (const k of Object.keys(lerJson(join(dir, livro)))) vocab.add(k);
     }
-    const poses = modo === 'regras' ? posPorForma(lang, RAIZ) : null;
+    const poses = modo === 'regras' ? posPorForma(lang, DICT_DIR) : null;
 
     let mudadas = 0;
     let total = 0;

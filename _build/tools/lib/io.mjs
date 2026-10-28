@@ -57,7 +57,7 @@ export function livrosDo(dir) {
  * dicionários, mas um nome novo não avisaria), e o custo do teste é um
  * `readdir` por diretório — uma vez por build.
  */
-export function pacotes(raiz = RAIZ) {
+export function pacotes(raiz = DICT_DIR) {
   return readdirSync(raiz)
     .filter((n) => {
       const p = join(raiz, n);
