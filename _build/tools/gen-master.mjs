@@ -15,7 +15,7 @@
  */
 
 import { join } from 'node:path';
-import { RAIZ, pacotes, livrosDo, lerJson, escreverJson } from './lib/io.mjs';
+import { RAIZ, DICT_DIR, pacotes, livrosDo, lerJson, escreverJson } from './lib/io.mjs';
 import { glosaDe, glosaUtil } from './lib/schema.mjs';
 
 /**
@@ -23,7 +23,7 @@ import { glosaDe, glosaUtil } from './lib/schema.mjs';
  * @param {string} [raiz]
  * @returns {{total: number, colisoes: number}}
  */
-export function gerarMaster(lang, raiz = RAIZ) {
+export function gerarMaster(lang, raiz = DICT_DIR) {
   const dir = join(raiz, lang);
   const master = {};
   let colisoes = 0;
@@ -45,7 +45,7 @@ export function gerarMaster(lang, raiz = RAIZ) {
 }
 
 const CLICADO = process.argv[2];
-const alvos = CLICADO ? [CLICADO] : pacotes();
+const alvos = CLICADO ? [CLICADO] : pacotes(DICT_DIR);
 console.log(`master.json — ${alvos.length} pacote(s)`);
 for (const lang of alvos) {
   const { total, colisoes } = gerarMaster(lang);

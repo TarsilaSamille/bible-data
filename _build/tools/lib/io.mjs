@@ -24,6 +24,9 @@ import { fileURLToPath } from 'node:url';
  */
 export const RAIZ = join(dirname(fileURLToPath(import.meta.url)), '..', '..', '..');
 
+/** Diretório onde os idiomas vivem após a reorg 'Move all data ... reorganize dict into dict/'. */
+export const DICT_DIR = join(RAIZ, 'dict');
+
 /** Nomes de livro bíblico: 1 a 66, em qualquer ordem. */
 export const LIVROS = (() => {
   const out = [];

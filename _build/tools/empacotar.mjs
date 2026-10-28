@@ -23,7 +23,7 @@ import { existsSync, mkdirSync, rmSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
 import { execFileSync } from 'node:child_process';
 import { copyFileSync } from 'node:fs';
-import { RAIZ, pacotes, livrosDo, lerJson, escreverJson } from './lib/io.mjs';
+import { RAIZ, DICT_DIR, pacotes, livrosDo, lerJson, escreverJson } from './lib/io.mjs';
 import { entradaMobile, glosaUtil } from './lib/schema.mjs';
 
 /** Cópia binária de um JSON: preserva byte a byte, sem passar por parse. */
@@ -56,7 +56,7 @@ export const PACOTES_MOBILE = ['ar', 'de', 'en', 'es', 'fr', 'gn', 'id', 'ja', '
  * @returns {{livros: number, entradas: number}}
  */
 export function pacoteMobile(lang, saidaDir = join(DIST, 'mobile', lang)) {
-  const origem = join(RAIZ, lang);
+  const origem = join(DICT_DIR, lang);
   rmSync(saidaDir, { recursive: true, force: true });
   mkdirSync(saidaDir, { recursive: true });
 
@@ -120,7 +120,7 @@ export function zipar(dir, destino) {
  */
 export function empacotar(opcoes = {}) {
   const { source = true, mobile = true, langs } = opcoes;
-  const todos = pacotes();
+  const todos = pacotes(DICT_DIR);
   const alvos = langs ?? todos;
   rmSync(DIST, { recursive: true, force: true });
   mkdirSync(DIST, { recursive: true });
@@ -130,7 +130,7 @@ export function empacotar(opcoes = {}) {
   // Derivacoes separadas (dict-mobile-*) deixam de ser publicadas.
   if (source || mobile) {
     for (const lang of alvos) {
-      const zip = zipar(join(RAIZ, lang), join(DIST, `dict-source-${lang}.zip`));
+      const zip = zipar(join(DICT_DIR, lang), join(DIST, `dict-source-${lang}.zip`));
       feitos.push({ lang, tipo: 'source', zip });
     }
   }

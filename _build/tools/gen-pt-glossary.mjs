@@ -17,7 +17,7 @@
 
 import { join } from 'node:path';
 import { existsSync } from 'node:fs';
-import { RAIZ, pacotes, livrosDo, lerJson, escreverJson } from './lib/io.mjs';
+import { RAIZ, DICT_DIR, pacotes, livrosDo, lerJson, escreverJson } from './lib/io.mjs';
 import { glosaUtil } from './lib/schema.mjs';
 
 const SAIDA = join(RAIZ, 'pt_master_glossary.json');
@@ -73,8 +73,8 @@ export function gerarGlossarioPt(raiz = RAIZ) {
   // é como o `OfflineDictManager` consulta (`lookupPtGlossary(root)`).
   const externas = carregarGlossasExternas(raiz);
 
-  for (const lang of pacotes(raiz)) {
-    const dir = join(raiz, lang);
+  for (const lang of pacotes(DICT_DIR)) {
+    const dir = join(DICT_DIR, lang);
     let glosas = 0;
     for (const livro of livrosDo(dir)) {
       for (const [surface, bruta] of Object.entries(lerJson(join(dir, livro)))) {
