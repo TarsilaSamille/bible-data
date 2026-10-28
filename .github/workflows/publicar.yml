@@ -50,7 +50,7 @@ jobs:
           # `gh release create` (2.96) e continua existindo no `upload`; sem
           # ele, republicar a tag deixaria o asset velho no lugar e o
           # `latest/download` do Android continuaria servindo o pacote antigo.
-          gh release create "$TAG" \
+          gh release create "$TAG" _build/dist/*.zip \
             --title "Dict packs $TAG" \
             --notes "Pacotes de dicionário. Consumido pelo Scriptorium Android em runtime e pelo web via submódulo." \
           || gh release upload "$TAG" _build/dist/*.zip --clobber
