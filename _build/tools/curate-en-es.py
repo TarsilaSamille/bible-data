@@ -129,6 +129,46 @@ def curate_spanish_dictionary():
             "pt": "sucesso / prosperidade",
             "en": "success / prosperity",
             "id": "keberhasilan"
+        },
+        "sale": {
+            "pt": "sai / brota / sai fora",
+            "en": "goes out / comes out",
+            "id": "keluar"
+        },
+        "salen": {
+            "pt": "saem / brotam",
+            "en": "go out / come out",
+            "id": "keluar"
+        },
+        "salía": {
+            "pt": "saía",
+            "en": "went out / was coming out",
+            "id": "sedang keluar"
+        },
+        "salían": {
+            "pt": "saíam",
+            "en": "went out / were coming out",
+            "id": "keluar"
+        },
+        "salga": {
+            "pt": "saia / venha para fora",
+            "en": "may go out / come forth",
+            "id": "keluar"
+        },
+        "salgan": {
+            "pt": "saiam / venham para fora",
+            "en": "may go out / come forth",
+            "id": "keluar"
+        },
+        "red": {
+            "pt": "rede",
+            "en": "net",
+            "id": "jaring"
+        },
+        "ten": {
+            "pt": "tem / tenha tu",
+            "en": "have! / hold!",
+            "id": "miliki"
         }
     }
 
