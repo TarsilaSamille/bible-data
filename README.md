@@ -50,3 +50,4 @@ Assim que a tag for enviada:
 * `bolls/`: Texto bíblico por tradução e capítulo.
 * `bolls-index.json`: Índice consolidado das traduções com contagem de versículos e tamanhos.
 * `_build/`: Scripts de validação (gates), geração de índices e ferramentas de empacotamento.
+
