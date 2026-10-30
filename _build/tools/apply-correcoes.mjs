@@ -17,6 +17,7 @@ import { execSync } from 'node:child_process';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const REPO_DATA_ROOT = join(__dirname, '..', '..');
+const BIBLE_READER_WEB_ROOT = join(REPO_DATA_ROOT, '..');
 const MESTRADO_ROOT = join(REPO_DATA_ROOT, '..', '..');
 
 // 1. Localizar arquivo de correções
@@ -177,7 +178,7 @@ try {
 }
 
 // 5. Invalidação de Cache no Web/PWA (Regra 3 do GEMINI.md)
-const usePrefPath = join(MESTRADO_ROOT, 'bible-reader-web', 'src', 'hooks', 'profile', 'usePreferences.ts');
+const usePrefPath = join(BIBLE_READER_WEB_ROOT, 'src', 'hooks', 'profile', 'usePreferences.ts');
 if (existsSync(usePrefPath)) {
   try {
     let prefContent = readFileSync(usePrefPath, 'utf8');
