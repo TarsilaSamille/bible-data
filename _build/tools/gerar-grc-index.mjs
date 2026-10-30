@@ -21,6 +21,7 @@
  */
 
 import { join } from 'node:path';
+import { existsSync } from 'node:fs';
 import { RAIZ, DICT_DIR, livrosDo, lerJson, escreverJson } from './lib/io.mjs';
 
 /** Grego sem acento e em minúsculas — a forma da chave do índice. */
@@ -73,7 +74,9 @@ if (process.argv[1] && process.argv[1].endsWith('gerar-grc-index.mjs')) {
 
   // Comparar com o índice atual é o que dá confiança no resultado: o número de
   // divergências é a medida do dano que se está corrigindo.
-  const anterior = lerJson(join(RAIZ, 'grc-index.json'));
+  const indexFile = [join(DICT_DIR, 'grc-index.json'), join(RAIZ, 'grc-index.json')].find(existsSync) || join(DICT_DIR, 'grc-index.json');
+  let anterior = {};
+  try { anterior = lerJson(indexFile); } catch {}
   let iguais = 0;
   let cortados = 0;
   for (const [norm, novo] of Object.entries(saida)) {
@@ -90,7 +93,10 @@ if (process.argv[1] && process.argv[1].endsWith('gerar-grc-index.mjs')) {
   if (dry) {
     console.log('\n(dry-run: nada escrito)');
   } else {
-    escreverJson(join(RAIZ, 'grc-index.json'), saida);
+    escreverJson(join(DICT_DIR, 'grc-index.json'), saida);
+    if (existsSync(join(RAIZ, 'grc-index.json'))) {
+      escreverJson(join(RAIZ, 'grc-index.json'), saida);
+    }
     console.log('\nescrito em grc-index.json');
     console.log('roda `npm run apply:lemma` para propagar aos pacotes');
   }

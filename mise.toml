@@ -1,0 +1,15 @@
+[tools]
+node = "26"
+
+[tasks."apply-correcoes"]
+description = "Aplica correções do grego de correcao-bible-data.json, regenera índices, publica release/tag e esvazia o JSON"
+run = "node _build/tools/apply-correcoes.mjs"
+
+[tasks."aply-correcoes"]
+alias = "apply-correcoes"
+run = "node _build/tools/apply-correcoes.mjs"
+
+[tasks."aply"]
+description = "Atalho para apply-correcoes quando invocado com 'mise run aply correcoes'"
+run = "node _build/tools/apply-correcoes.mjs"
+
