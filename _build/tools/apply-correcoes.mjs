@@ -27,8 +27,8 @@ import { execSync } from 'node:child_process';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const REPO_DATA_ROOT = join(__dirname, '..', '..');
-const BIBLE_READER_WEB_ROOT = join(REPO_DATA_ROOT, '..');
-const MESTRADO_ROOT = join(REPO_DATA_ROOT, '..', '..');
+const BIBLE_READER_WEB_ROOT = join(REPO_DATA_ROOT, '..', '..');
+const MESTRADO_ROOT = join(REPO_DATA_ROOT, '..', '..', '..');
 
 // Mapeamento de sufixos/nomes para código canônico de pasta em dict/
 const SUFFIX_TO_LANG = {
@@ -194,7 +194,14 @@ console.log(`\n=== APLICAR CORREÇÕES MULTILINGUES EM BIBLE-DATA ===`);
 const arg = process.argv[2];
 const filesToProcess = [];
 
-const searchDirs = [MESTRADO_ROOT, REPO_DATA_ROOT];
+const searchDirs = [
+  MESTRADO_ROOT,
+  BIBLE_READER_WEB_ROOT,
+  REPO_DATA_ROOT,
+  '/Users/macbook/GitHub/mestrado',
+  process.cwd(),
+  join(process.cwd(), '..')
+];
 const seenFiles = new Set();
 
 if (arg) {
