@@ -122,7 +122,9 @@ export function empacotar(opcoes = {}) {
   const { source = true, mobile = true, langs } = opcoes;
   const todos = pacotes(DICT_DIR);
   const alvos = langs ?? todos;
-  rmSync(DIST, { recursive: true, force: true });
+  if (!langs) {
+    rmSync(DIST, { recursive: true, force: true });
+  }
   mkdirSync(DIST, { recursive: true });
 
   const feitos = [];

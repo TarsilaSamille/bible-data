@@ -421,8 +421,9 @@ for (const lang of languagesModified) {
 console.log(`- Regenerando pt_master_glossary.json...`);
 execSync(`node _build/tools/gen-pt-glossary.mjs`, { cwd: REPO_DATA_ROOT, stdio: 'inherit' });
 
-console.log(`- Empacotando arquivos zip...`);
-execSync(`node _build/tools/empacotar.mjs`, { cwd: REPO_DATA_ROOT, stdio: 'inherit' });
+console.log(`- Empacotando arquivos zip para [${[...languagesModified].join(', ')}]...`);
+const langsArgs = [...languagesModified].join(' ');
+execSync(`node _build/tools/empacotar.mjs ${langsArgs}`, { cwd: REPO_DATA_ROOT, stdio: 'inherit' });
 
 // 3. Invalidação de Cache no Web/PWA
 const usePrefPath = join(BIBLE_READER_WEB_ROOT, 'src', 'hooks', 'profile', 'usePreferences.ts');
