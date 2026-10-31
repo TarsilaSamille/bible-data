@@ -375,6 +375,14 @@ for (const filePath of filesToProcess) {
       const keysToTouch = new Set([normKey]);
       if (palavra !== normKey) keysToTouch.add(palavra);
 
+      // Também inclui qualquer variante existente no livro que normalize para a mesma chave
+      // (ex.: no hebraico com cantilações: "לְדָוִ֑ד", "לְדָוִ֗ד", "לְדָוִֽד", etc.)
+      for (const existingKey of Object.keys(bookData)) {
+        if (normalizeWord(existingKey, lang) === normKey) {
+          keysToTouch.add(existingKey);
+        }
+      }
+
       for (const k of keysToTouch) {
         const prev = bookData[k] || {};
         bookData[k] = {
