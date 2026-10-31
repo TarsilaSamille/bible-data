@@ -489,12 +489,31 @@ try {
   }
 
   console.log(`\nTag ${newTag} publicada com sucesso!`);
+
+  // 5. Atualizar o submódulo e versão de cache no bible-reader-web (Web/PWA)
+  if (existsSync(join(BIBLE_READER_WEB_ROOT, '.git'))) {
+    console.log(`\n=== ATUALIZANDO REPOSITÓRIO WEB (bible-reader-web) ===`);
+    try {
+      execSync(`git add public/data src/hooks/profile/usePreferences.ts`, { cwd: BIBLE_READER_WEB_ROOT, stdio: 'inherit' });
+      const webStatus = execSync(`git status --porcelain public/data src/hooks/profile/usePreferences.ts`, { cwd: BIBLE_READER_WEB_ROOT, encoding: 'utf8' }).trim();
+      if (webStatus) {
+        console.log(`Comitando atualização do submódulo bible-data (${newTag}) e usePreferences.ts no Web...`);
+        execSync(`git commit -m "chore(dict): atualiza submódulo bible-data para ${newTag} e invalida cache"`, { cwd: BIBLE_READER_WEB_ROOT, stdio: 'inherit' });
+        execSync(`git push origin main`, { cwd: BIBLE_READER_WEB_ROOT, stdio: 'inherit' });
+        console.log(`✓ Repositório bible-reader-web atualizado com sucesso (Vercel iniciará o deploy)!`);
+      } else {
+        console.log(`Nenhuma alteração pendente no repositório bible-reader-web.`);
+      }
+    } catch (webErr) {
+      console.warn(`Aviso ao atualizar repositório bible-reader-web:`, webErr.message);
+    }
+  }
 } catch (gitErr) {
   console.error(`ERRO no git:`, gitErr.message);
   process.exit(1);
 }
 
-// 5. Esvaziar os arquivos de correções processados
+// 6. Esvaziar os arquivos de correções processados
 console.log(`\nEsvaziando arquivos de correções processados...`);
 for (const p of processedFiles) {
   writeFileSync(p, '{}\n', 'utf8');
