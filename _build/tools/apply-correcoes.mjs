@@ -508,12 +508,34 @@ try {
       console.warn(`Aviso ao atualizar repositório bible-reader-web:`, webErr.message);
     }
   }
+
+  // 6. Atualizar o submódulo no bible-app-mobile (dict-src)
+  const BIBLE_APP_MOBILE_ROOT = join(MESTRADO_ROOT, 'bible-app-mobile');
+  const mobileDictSrc = join(BIBLE_APP_MOBILE_ROOT, 'dict-src');
+  if (existsSync(join(mobileDictSrc, '.git'))) {
+    console.log(`\n=== ATUALIZANDO SUBMÓDULO DO MOBILE (bible-app-mobile/dict-src) ===`);
+    try {
+      execSync(`git fetch origin main && git checkout origin/main`, { cwd: mobileDictSrc, stdio: 'inherit' });
+      execSync(`git add dict-src`, { cwd: BIBLE_APP_MOBILE_ROOT, stdio: 'inherit' });
+      const mobileStatus = execSync(`git status --porcelain dict-src`, { cwd: BIBLE_APP_MOBILE_ROOT, encoding: 'utf8' }).trim();
+      if (mobileStatus) {
+        console.log(`Comitando atualização do submódulo dict-src (${newTag}) no mobile...`);
+        execSync(`git commit -m "chore(dict): atualiza submódulo dict-src para ${newTag}"`, { cwd: BIBLE_APP_MOBILE_ROOT, stdio: 'inherit' });
+        execSync(`git push origin main`, { cwd: BIBLE_APP_MOBILE_ROOT, stdio: 'inherit' });
+        console.log(`✓ Repositório bible-app-mobile atualizado com sucesso!`);
+      } else {
+        console.log(`Submódulo dict-src no mobile já está atualizado.`);
+      }
+    } catch (mobileErr) {
+      console.warn(`Aviso ao atualizar submódulo no mobile:`, mobileErr.message);
+    }
+  }
 } catch (gitErr) {
   console.error(`ERRO no git:`, gitErr.message);
   process.exit(1);
 }
 
-// 6. Esvaziar os arquivos de correções processados
+// 7. Esvaziar os arquivos de correções processados
 console.log(`\nEsvaziando arquivos de correções processados...`);
 for (const p of processedFiles) {
   writeFileSync(p, '{}\n', 'utf8');
