@@ -122,18 +122,23 @@ const CANONICAL_TEXTS = {
   ko: ['KRV']
 };
 
-// Normalização de chaves por língua
+// Normalização de chaves por língua com cache em memória
+const normCache = new Map();
 function normalizeWord(word, lang) {
   if (!word || typeof word !== 'string') return '';
+  const cacheKey = `${lang}:${word}`;
+  const cached = normCache.get(cacheKey);
+  if (cached !== undefined) return cached;
+
+  let res = '';
   if (lang === 'grc') {
-    return word
+    res = word
       .normalize('NFD')
       .replace(/[\u0300-\u036f]/g, '')
       .toLowerCase()
       .replace(/[\.,;:·!·\?\'"«»\(\)\[\]⸂⸃⸀⸁°¹²\s\u2019\u0027]/g, '');
-  }
-  if (lang === 'heb') {
-    return word
+  } else if (lang === 'heb') {
+    res = word
       .replace(/[\u0591-\u05C7\u200B-\u200D\uFEFF]/g, '')
       .normalize('NFD')
       .replace(/[שׂשׁ]/g, 'ש')
@@ -143,25 +148,27 @@ function normalizeWord(word, lang) {
       .replace(/ף/g, 'פ')
       .replace(/ץ/g, 'צ')
       .replace(/[\.,;:·!·\?\'"«»\(\)\[\]\s־\u05BE]/g, '');
-  }
-  if (lang === 'ar') {
-    return word
+  } else if (lang === 'ar') {
+    res = word
       .replace(/[\u064B-\u065F\u0670\u06DF-\u06ED\u0610-\u061A\u0640]/g, '')
       .replace(/[آأإٱ]/g, 'ا')
       .toLowerCase()
       .trim();
-  }
-  if (lang === 'gn') {
-    return word
+  } else if (lang === 'gn') {
+    res = word
       .normalize('NFD')
       .replace(/[\u0300-\u036f]/g, '')
       .toLowerCase()
       .trim();
+  } else {
+    res = word
+      .toLowerCase()
+      .replace(/[.,;:!?\(\)\[\]"'\u2019\s]/g, '')
+      .trim();
   }
-  return word
-    .toLowerCase()
-    .replace(/[.,;:!?\(\)\[\]"'\u2019\s]/g, '')
-    .trim();
+
+  normCache.set(cacheKey, res);
+  return res;
 }
 
 // Detecta língua pelo nome do arquivo ou conteúdo
@@ -351,6 +358,13 @@ for (const filePath of filesToProcess) {
     for (const b of set) targetBooks.add(b);
   }
 
+  // Pre-computar chaves normalizadas das correções
+  const entriesWithNorm = Object.entries(data).map(([palavra, dados]) => ({
+    palavra,
+    dados,
+    normKey: normalizeWord(palavra, lang)
+  }));
+
   console.log(`  Aplicando correções em ${targetBooks.size} livros do idioma [${lang}]...`);
   let fileModCount = 0;
 
@@ -365,10 +379,17 @@ for (const filePath of filesToProcess) {
       }
     }
 
+    // Indexar bookData UMA ÚNICA VEZ por livro: normKey -> chaves existentes (O(K) em vez de O(N*M*K))
+    const existingNormMap = new Map();
+    for (const existingKey of Object.keys(bookData)) {
+      const nk = normalizeWord(existingKey, lang);
+      if (!existingNormMap.has(nk)) existingNormMap.set(nk, []);
+      existingNormMap.get(nk).push(existingKey);
+    }
+
     let modified = false;
 
-    for (const [palavra, dados] of Object.entries(data)) {
-      const normKey = normalizeWord(palavra, lang);
+    for (const { palavra, dados, normKey } of entriesWithNorm) {
       const bSet = wordToBooks.get(normKey);
       if (!bSet || !bSet.has(b)) continue;
 
@@ -377,9 +398,10 @@ for (const filePath of filesToProcess) {
 
       // Também inclui qualquer variante existente no livro que normalize para a mesma chave
       // (ex.: no hebraico com cantilações: "לְדָוִ֑ד", "לְדָוִ֗ד", "לְדָוִֽד", etc.)
-      for (const existingKey of Object.keys(bookData)) {
-        if (normalizeWord(existingKey, lang) === normKey) {
-          keysToTouch.add(existingKey);
+      const variants = existingNormMap.get(normKey);
+      if (variants) {
+        for (const v of variants) {
+          keysToTouch.add(v);
         }
       }
 
