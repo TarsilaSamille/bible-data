@@ -27,8 +27,12 @@ import { execSync } from 'node:child_process';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const REPO_DATA_ROOT = join(__dirname, '..', '..');
-const BIBLE_READER_WEB_ROOT = join(REPO_DATA_ROOT, '..', '..');
-const MESTRADO_ROOT = join(REPO_DATA_ROOT, '..', '..', '..');
+const WEB_ROOT_FROM_SUBMODULE = join(REPO_DATA_ROOT, '..', '..');
+const BIBLE_READER_WEB_ROOT = existsSync(join(WEB_ROOT_FROM_SUBMODULE, '.git'))
+  ? WEB_ROOT_FROM_SUBMODULE
+  : join(REPO_DATA_ROOT, '..', 'bible-reader-web');
+const MESTRADO_ROOT = join(BIBLE_READER_WEB_ROOT, '..');
+const DICT_REVIEW_DIR = join(MESTRADO_ROOT, 'dict review');
 
 // Mapeamento de sufixos/nomes para código canônico de pasta em dict/
 const SUFFIX_TO_LANG = {
@@ -202,10 +206,10 @@ const arg = process.argv[2];
 const filesToProcess = [];
 
 const searchDirs = [
+  DICT_REVIEW_DIR,
   MESTRADO_ROOT,
   BIBLE_READER_WEB_ROOT,
   REPO_DATA_ROOT,
-  '/Users/macbook/GitHub/mestrado',
   process.cwd(),
   join(process.cwd(), '..')
 ];
