@@ -21,10 +21,14 @@
 
 import { existsSync, mkdirSync, rmSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
-import { execFileSync } from 'node:child_process';
+import { execFile } from 'node:child_process';
+import { promisify } from 'node:util';
+import { availableParallelism } from 'node:os';
 import { copyFileSync } from 'node:fs';
 import { RAIZ, DICT_DIR, pacotes, livrosDo, lerJson, escreverJson } from './lib/io.mjs';
 import { entradaMobile, glosaUtil } from './lib/schema.mjs';
+
+const execFileAsync = promisify(execFile);
 
 /** Cópia binária de um JSON: preserva byte a byte, sem passar por parse. */
 const copiarJson = (de, para) => copyFileSync(de, para);
@@ -106,19 +110,38 @@ function extrasDo(dir) {
 }
 
 /**
- * Zipa um diretório. A raiz do zip são os ARQUIVOS do pacote (sem a pasta do
+ * Zipa um diretório de forma assíncrona. A raiz do zip são os ARQUIVOS do pacote (sem a pasta do
  * idioma dentro): o `DictPackStore` descompacta direto em `filesDir/dict/<lang>/`.
  */
-export function zipar(dir, destino) {
+export async function zipar(dir, destino) {
   rmSync(destino, { force: true });
-  execFileSync('zip', ['-qr', destino, '.'], { cwd: dir, stdio: 'pipe' });
+  await execFileAsync('zip', ['-qr', destino, '.'], { cwd: dir, stdio: 'pipe' });
   return destino;
+}
+
+/**
+ * Utilitário para executar tarefas assíncronas com concorrência limitada.
+ */
+async function asyncPool(limit, items, iteratorFn) {
+  const ret = [];
+  const executing = new Set();
+  for (const item of items) {
+    const p = Promise.resolve().then(() => iteratorFn(item));
+    ret.push(p);
+    executing.add(p);
+    const clean = () => executing.delete(p);
+    p.then(clean, clean);
+    if (executing.size >= limit) {
+      await Promise.race(executing);
+    }
+  }
+  return Promise.all(ret);
 }
 
 /**
  * @param {{source?: boolean, mobile?: boolean, langs?: string[]}} [opcoes]
  */
-export function empacotar(opcoes = {}) {
+export async function empacotar(opcoes = {}) {
   const { source = true, mobile = true, langs } = opcoes;
   const todos = pacotes(DICT_DIR);
   const alvos = langs ?? todos;
@@ -127,24 +150,49 @@ export function empacotar(opcoes = {}) {
   }
   mkdirSync(DIST, { recursive: true });
 
-  const feitos = [];
-  // Fonte unica: existe um unico pacote por idioma (dict-source-*.zip).
-  // Derivacoes separadas (dict-mobile-*) deixam de ser publicadas.
-  if (source || mobile) {
+  const concurrency = Math.max(1, availableParallelism ? availableParallelism() : 4);
+  const tarefas = [];
+
+  // 1. Pacotes source (dict-source-<lang>.zip) - consumido por web e legado
+  if (source) {
     for (const lang of alvos) {
-      const zip = zipar(join(DICT_DIR, lang), join(DIST, `dict-source-${lang}.zip`));
-      feitos.push({ lang, tipo: 'source', zip });
+      tarefas.push(async () => {
+        const zip = await zipar(join(DICT_DIR, lang), join(DIST, `dict-source-${lang}.zip`));
+        return { lang, tipo: 'source', zip };
+      });
     }
   }
+
+  // 2. Pacotes mobile enxutos (dict-mobile-<lang>.zip) - adicional seguro
+  if (mobile) {
+    const alvosMobile = alvos.filter((l) => PACOTES_MOBILE.includes(l));
+    for (const lang of alvosMobile) {
+      tarefas.push(async () => {
+        const mobileDir = join(DIST, 'mobile', lang);
+        const res = pacoteMobile(lang, mobileDir);
+        const zip = await zipar(mobileDir, join(DIST, `dict-mobile-${lang}.zip`));
+        return { lang, tipo: 'mobile', zip, entradas: res?.entradas };
+      });
+    }
+  }
+
+  const feitos = await asyncPool(concurrency, tarefas, (task) => task());
   return feitos;
 }
 
 if (process.argv[1] && process.argv[1].endsWith('empacotar.mjs')) {
   const langs = process.argv.slice(2).filter((a) => !a.startsWith('-'));
-  const feitos = empacotar(langs.length ? { langs } : {});
-  console.log(`${feitos.length} pacote(s) em dist/`);
-  for (const f of feitos) {
-    const extra = f.entradas ? `${f.entradas} entradas` : '';
-    console.log(`  ${f.zip.split('/').pop().padEnd(26)} ${extra}`);
-  }
+  const t0 = Date.now();
+  empacotar(langs.length ? { langs } : {})
+    .then((feitos) => {
+      console.log(`${feitos.length} pacote(s) em dist/ em ${((Date.now() - t0) / 1000).toFixed(1)}s`);
+      for (const f of feitos) {
+        const extra = f.entradas ? `${f.entradas} entradas` : '';
+        console.log(`  ${f.zip.split('/').pop().padEnd(26)} ${extra}`);
+      }
+    })
+    .catch((err) => {
+      console.error('Erro ao empacotar:', err);
+      process.exit(1);
+    });
 }

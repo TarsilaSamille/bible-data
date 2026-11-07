@@ -1,0 +1,38 @@
+name: checar dados
+
+# Gates rápidos em todo push para main e em todo PR, SEM gerar release.
+# O `publicar.yml` só roda por tag; sem este workflow, um dado quebrado ficava
+# em main até alguém tentar publicar (e o web consome main via submódulo).
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: check-data-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      # Mesma major do `mise.toml` (node = "26").
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '26'
+
+      # Node puro, sem `npm install` (ver comentário em publicar.yml).
+      - name: Tabelas do lemmatizer (chaves duplicadas)
+        run: npm run tabelas
+
+      - name: Padrão-ouro de lematização
+        run: npm run lemma
+
+      - name: Índices e integridade (radicais truncados)
+        run: npm run master && npm run glossary && npm run check
