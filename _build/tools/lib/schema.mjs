@@ -106,6 +106,7 @@ export function entradaMobile(entrada, lang) {
   const saida = { root: entrada.root ?? '', def: glosa, translit: entrada.translit ?? '' };
   // `pinyin` só existe no chinês e tem prioridade sobre `translit` no mobile.
   if (entrada.pinyin) saida.pinyin = entrada.pinyin;
+  if (entrada.pos) saida.pos = entrada.pos;
   for (const campo of ['pt', 'es', 'id']) {
     if (entrada[campo]) saida[campo] = entrada[campo];
   }
