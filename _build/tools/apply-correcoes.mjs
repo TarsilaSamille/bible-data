@@ -334,6 +334,7 @@ for (const filePath of filesToProcess) {
       const bookDirs = readdirSync(tDir).filter(d => /^\d+$/.test(d));
       for (const bd of bookDirs) {
         const bNum = parseInt(bd, 10);
+        if (bNum < 1 || bNum > 66) continue;
         const bPath = join(tDir, bd);
         for (const vf of readdirSync(bPath)) {
           if (!vf.endsWith('.json')) continue;
