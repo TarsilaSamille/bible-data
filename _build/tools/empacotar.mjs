@@ -45,12 +45,11 @@ const DIST = join(RAIZ, '_build', 'dist');
 /**
  * Pacotes que o mobile consome em runtime.
  *
- * Derivado do que a fonte tem, e não da lista de idiomas do web: `it` é
- * listado como idioma do dicionário no web mas nunca teve pacote gerado, e
- * incluí-lo aqui só produz `ENOENT` no meio do build. `grc` e `heb` não entram
- * porque vão embutidos no APK (ver `BUNDLED_LANGS` do `DictPackStore`).
+ * Derivado do que a fonte tem, e não da lista de idiomas do web. `grc` e `heb`
+ * não entram porque vão embutidos no APK (ver `BUNDLED_LANGS` do
+ * `DictPackStore`).
  */
-export const PACOTES_MOBILE = ['ar', 'de', 'en', 'es', 'fr', 'gn', 'id', 'ja', 'ko', 'la', 'pt', 'ru', 'zh'];
+export const PACOTES_MOBILE = ['ar', 'de', 'en', 'es', 'fr', 'gn', 'id', 'it', 'ja', 'ko', 'la', 'pt', 'ru', 'zh'];
 
 /**
  * Pacote mobile de um idioma: os mesmos livros, com o formato enxuto.

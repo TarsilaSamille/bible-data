@@ -103,7 +103,12 @@ const SUFFIX_TO_LANG = {
 
   ko: 'ko',
   kor: 'ko',
-  coreano: 'ko'
+  coreano: 'ko',
+
+  it: 'it',
+  ita: 'it',
+  italian: 'it',
+  italiano: 'it'
 };
 
 // Textos canônicos de referência em bolls/ para cada língua
@@ -123,7 +128,8 @@ const CANONICAL_TEXTS = {
   ru: ['SYNOD'],
   zh: ['CUV'],
   ja: ['JPNICT'],
-  ko: ['KRV']
+  ko: ['KRV'],
+  it: ['NR06']
 };
 
 // Normalização de chaves por língua com cache em memória
