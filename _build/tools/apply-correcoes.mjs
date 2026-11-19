@@ -418,14 +418,19 @@ for (const filePath of filesToProcess) {
 
       for (const k of keysToTouch) {
         const prev = bookData[k] || {};
-        bookData[k] = {
-          root: dados.root || prev.root || normKey,
-          translit: dados.translit || prev.translit || '',
-          en: dados.en || prev.en || '',
-          pt: dados.pt || prev.pt || '',
-          es: dados.es || prev.es || '',
-          id: dados.id || prev.id || ''
-        };
+        const mesclado = { ...prev };
+        // Campos canônicos: a correção vence; se faltar, mantém o que já havia.
+        for (const campo of ['root', 'translit', 'en', 'pt', 'es', 'id']) {
+          const v = dados[campo] || prev[campo];
+          if (campo === 'root' && !v) { mesclado.root = normKey; continue; }
+          if (v !== undefined && v !== '') mesclado[campo] = v;
+        }
+        // Campos extras (pos, verses, proper, color, ...) não podem sumir.
+        for (const [campo, valor] of Object.entries(dados)) {
+          if (['root', 'translit', 'en', 'pt', 'es', 'id'].includes(campo)) continue;
+          if (valor !== undefined && valor !== '') mesclado[campo] = valor;
+        }
+        bookData[k] = mesclado;
         modified = true;
         totalEntriesApplied++;
       }
