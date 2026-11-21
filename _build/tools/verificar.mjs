@@ -56,8 +56,13 @@ const SEM_GATE_RADICAL = new Set([
  * O mesmo vale para `id` estar fora do escopo do lema (`apply-lemma.mjs`), que
  * é a decisão correta: sem um morphological analyzer indonésio, mexer no radical
  * seria pior do que não mexer.
+ *
+ * `bju` (Bidayuh) entra na mesma lista: a reduplicação é produtiva na língua e
+ * o radical morfológico é a forma NÃO reduplicada — `soyuak-soyuak → soyuak`,
+ * `lavung-lavung → lavung`. 20% das entradas seguem esse padrão, então o gate de
+ * comprimento em caracteres não diz nada aqui (o mesmo motivo de `id`).
  */
-const RADICAL_DE_MIGRACAO = new Set(['id']);
+const RADICAL_DE_MIGRACAO = new Set(['id', 'bju']);
 
 /**
  * @param {string} [raiz]
