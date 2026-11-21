@@ -116,10 +116,13 @@ function extrasDo(dir) {
 /**
  * Zipa um diretório de forma assíncrona. A raiz do zip são os ARQUIVOS do pacote (sem a pasta do
  * idioma dentro): o `DictPackStore` descompacta direto em `filesDir/dict/<lang>/`.
+ *
+ * `expanded_*.json` é excluído: é artefato derivado de centenas de MB (ver
+ * .gitignore) que nenhum consumidor lê — só inflaria o asset.
  */
 export async function zipar(dir, destino) {
   rmSync(destino, { force: true });
-  await execFileAsync('zip', ['-qr', destino, '.'], { cwd: dir, stdio: 'pipe' });
+  await execFileAsync('zip', ['-qr', destino, '.', '-x', 'expanded_*.json'], { cwd: dir, stdio: 'pipe' });
   return destino;
 }
 
