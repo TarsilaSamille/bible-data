@@ -493,6 +493,26 @@ if (existsSync(usePrefPath)) {
 console.log(`\n=== PUBLICANDO ALTERAÇÕES ===`);
 try {
   execSync(`git add .`, { cwd: REPO_DATA_ROOT, stdio: 'inherit' });
+  // GitHub recusa qualquer arquivo > 100 MB (GH001) e o pre-receive hook rejeita
+  // o push inteiro. Um artefato derivado (ex.: `dict/heb/expanded_heb.json`,
+  // 747 MB) entrava no `git add .` e travava a publicação. Fala antes do
+  // commit/push, quando ainda é só remover o caminho do .gitignore.
+  const LIMITE_MB = 100;
+  const staged = execSync(`git diff --cached --name-only -z`, { cwd: REPO_DATA_ROOT, encoding: 'buffer' })
+    .toString('utf8').split('\0').filter(Boolean);
+  const gigantes = [];
+  for (const f of staged) {
+    try {
+      const sz = statSync(join(REPO_DATA_ROOT, f)).size;
+      if (sz > LIMITE_MB * 1024 * 1024) gigantes.push(`${(sz / 1048576).toFixed(1)} MB  ${f}`);
+    } catch {}
+  }
+  if (gigantes.length) {
+    console.error(`\nERRO: arquivo(s) acima de ${LIMITE_MB} MB no commit (GitHub recusa > 100 MB):`);
+    for (const g of gigantes) console.error(`  - ${g}`);
+    console.error(`\nArtefato derivado: adicione o caminho em .gitignore. Nada foi commitado.`);
+    process.exit(1);
+  }
   const status = execSync(`git status --porcelain`, { cwd: REPO_DATA_ROOT, encoding: 'utf8' }).trim();
   const langListStr = [...languagesModified].join(', ');
   if (status) {

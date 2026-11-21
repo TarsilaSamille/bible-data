@@ -11,6 +11,11 @@ pt_master_glossary.json
 .idea/
 .vscode/
 
+# Artefatos derivados de dicionário. `dict/heb/expanded_heb.json` é gerado por
+# `dict review/scripts/expand_heb_forms.py` e já chegou a 747 MB: o GitHub recusa
+# qualquer arquivo > 100 MB (GH001) e o push do repositório inteiro travava.
+dict/*/expanded_*.json
+
 # Scratch
 *.tmp
 

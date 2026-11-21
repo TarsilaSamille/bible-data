@@ -103,9 +103,14 @@ export function pacoteMobile(lang, saidaDir = join(DIST, 'mobile', lang)) {
   return { livros: livros.length, entradas };
 }
 
-/** Arquivos que não são livro mas são lidos pelo dicionário. */
+/**
+ * Arquivos que não são livro mas são lidos pelo dicionário.
+ *
+ * `expanded_*.json` fica de fora: é artefato derivado (ver .gitignore), de
+ * centenas de MB, e nenhum consumidor o lê — ir no zip só inflaria o asset.
+ */
 function extrasDo(dir) {
-  return readdirSync(dir).filter((n) => !/^[0-9]{1,2}\.json$/.test(n) && n !== 'README.md');
+  return readdirSync(dir).filter((n) => !/^[0-9]{1,2}\.json$/.test(n) && n !== 'README.md' && !/^expanded_.*\.json$/.test(n));
 }
 
 /**
