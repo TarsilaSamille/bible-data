@@ -3,9 +3,9 @@
     "root": "après",
     "translit": "après",
     "en": "after",
-    "pt": "após; depois de",
-    "es": "después de",
-    "id": "sesudah; mengikuti",
+    "pt": "depois; após",
+    "es": "después",
+    "id": "sesudah; setelah",
     "pos": "ADP",
     "verses": [
       "1:1",
@@ -19,10 +19,10 @@
     "root": "avoir",
     "translit": "avoir",
     "en": "to have",
-    "pt": "ter; haver",
-    "es": "tener; haber",
-    "id": "memiliki; mempunyai",
-    "pos": "AUX",
+    "pt": "ter",
+    "es": "tener",
+    "id": "mempunyai",
+    "pos": "VERB",
     "pos_counts": {
       "AUX": 12,
       "VERB": 7
@@ -38,11 +38,11 @@
   "autrefois": {
     "root": "autrefois",
     "translit": "autrefois",
-    "en": "formerly; of old; in times past",
-    "pt": "outrora; antigamente; dantes",
-    "es": "antiguamente; antaño",
-    "id": "dahulu kala; pada zaman dahulu",
-    "pos": "NOUN",
+    "en": "of old; formerly",
+    "pt": "antigamente",
+    "es": "antiguamente",
+    "id": "dahulu kala",
+    "pos": "ADV",
     "verses": [
       "1:1"
     ]
@@ -182,12 +182,12 @@
     ]
   },
   "aux": {
-    "root": "à; les",
+    "root": "à",
     "translit": "aux",
-    "en": "to the; at the; in the",
-    "pt": "aos; às; nos; nas",
-    "es": "a los; a las; en los; en las",
-    "id": "kepada; di; pada",
+    "en": "to the; at the",
+    "pt": "aos; às",
+    "es": "a los; a las",
+    "id": "kepada; pada",
     "pos": "ADP",
     "pos_counts": {
       "ADP": 13,
@@ -304,13 +304,13 @@
     ]
   },
   "a": {
-    "root": "à; avoir",
-    "translit": "A",
-    "en": "to; at; in; for; has",
-    "pt": "a; em; para; por; tem; há",
-    "es": "a; en; para; por; tiene; hay",
-    "id": "ke; di; untuk; kepada; mempunyai; ada",
-    "pos": "AUX",
+    "root": "avoir",
+    "translit": "a.",
+    "en": "has",
+    "pt": "tem",
+    "es": "tiene",
+    "id": "memiliki; punya",
+    "pos": "VERB",
     "pos_counts": {
       "AUX": 76,
       "VERB": 14,
@@ -481,7 +481,7 @@
     "pt": "herdeiro",
     "es": "heredero",
     "id": "ahli waris",
-    "pos": "ADV",
+    "pos": "NOUN",
     "verses": [
       "1:2",
       "11:7"
@@ -668,11 +668,11 @@
   "même": {
     "root": "même",
     "translit": "même",
-    "en": "same; even",
-    "pt": "mesmo; até",
-    "es": "mismo; aun",
-    "id": "sama; bahkan",
-    "pos": "ADV",
+    "en": "same; even; self",
+    "pt": "mesmo",
+    "es": "mismo",
+    "id": "sama; sendiri; bahkan",
+    "pos": "ADJ",
     "pos_counts": {
       "ADV": 8,
       "ADJ": 5,
@@ -785,8 +785,8 @@
   "assis": {
     "root": "asseoir",
     "translit": "assis",
-    "en": "seated; sat down",
-    "pt": "sentado; assentado",
+    "en": "sat down",
+    "pt": "sentado",
     "es": "sentado",
     "id": "duduk",
     "pos": "VERB",
@@ -1085,10 +1085,10 @@
     "root": "être",
     "translit": "es",
     "en": "are",
-    "pt": "és; estás",
-    "es": "eres; estás",
+    "pt": "és",
+    "es": "eres",
     "id": "adalah",
-    "pos": "PRON",
+    "pos": "AUX",
     "pos_counts": {
       "PRON": 3,
       "AUX": 2
@@ -1303,7 +1303,7 @@
     "en": "when",
     "translit": "quand",
     "pt": "quando",
-    "id": "quando",
+    "id": "ketika; apabila",
     "es": "cuando",
     "pos": "SCONJ",
     "verses": [
@@ -1557,10 +1557,10 @@
   "établi": {
     "root": "établir",
     "translit": "établi",
-    "en": "appointed; established",
-    "pt": "posto; constituído; estabelecido",
-    "es": "puesto; constituido; establecido",
-    "id": "ditetapkan; diangkat",
+    "en": "established",
+    "pt": "estabelecido",
+    "es": "establecido",
+    "id": "ditetapkan",
     "pos": "VERB",
     "pos_counts": {
       "VERB": 4,
@@ -1644,10 +1644,10 @@
   "as": {
     "root": "avoir",
     "translit": "as",
-    "en": "have; hast",
-    "pt": "tens; hás",
-    "es": "tienes; has",
-    "id": "memiliki; telah",
+    "en": "have",
+    "pt": "tens",
+    "es": "has",
+    "id": "telah; punya",
     "pos": "AUX",
     "pos_counts": {
       "AUX": 5,
@@ -1775,11 +1775,12 @@
   },
   "onction": {
     "root": "onction",
-    "en": "noun)",
+    "en": "anointing",
     "translit": "onction",
     "pt": "unção",
     "id": "urapan",
-    "es": "unción"
+    "es": "unción",
+    "pos": "NOUN"
   },
   "d’huile": {
     "root": "dhuile",
@@ -1976,12 +1977,13 @@
     "id": "akan lenyap"
   },
   "demeures": {
-    "root": "demeurer; demeure",
+    "root": "demeurer",
     "translit": "demeures",
-    "en": "you remain; you dwell; dwellings; abodes",
-    "pt": "permaneces; habitas; moradas; habitações",
-    "es": "permaneces; habitas; moradas; habitaciones",
-    "id": "engkau tetap; engkau tinggal; tempat kediaman"
+    "en": "dwell; stay",
+    "pt": "habites; permaneças",
+    "es": "habites; permanezcas",
+    "id": "tinggallah",
+    "pos": "VERB"
   },
   "s’useront": {
     "root": "user",
@@ -2322,12 +2324,12 @@
     ]
   },
   "ceux": {
-    "root": "ceux",
-    "en": "those; the ones",
+    "root": "celui",
+    "en": "those",
     "translit": "ceux",
-    "pt": "aqueles",
-    "id": "itu",
-    "es": "aquellos",
+    "pt": "aqueles; os",
+    "id": "mereka",
+    "es": "aquellos; los",
     "pos": "PRON",
     "verses": [
       "1:14",
@@ -2343,7 +2345,8 @@
     "en": "go; are going",
     "pt": "vão",
     "es": "van",
-    "id": "pergi"
+    "id": "pergi; akan",
+    "pos": "VERB"
   },
   "hériter": {
     "root": "hériter",
@@ -2388,10 +2391,10 @@
   "devons": {
     "root": "devoir",
     "translit": "devons",
-    "en": "ought; must",
+    "en": "we must",
     "pt": "devemos",
     "es": "debemos",
-    "id": "harus kami",
+    "id": "kita harus",
     "pos": "VERB",
     "verses": [
       "2:1",
@@ -2413,7 +2416,7 @@
     "en": "a; an; one",
     "pt": "uma",
     "es": "una",
-    "id": "seorang; suatu; satu",
+    "id": "satu; suatu",
     "pos": "DET",
     "verses": [
       "1:7",
@@ -2425,11 +2428,12 @@
   },
   "attention": {
     "root": "attention",
-    "en": "acuity; advertence; advertency; attention",
+    "en": "attention",
     "translit": "attention",
     "pt": "atenção",
     "id": "perhatian",
-    "es": "escuchase"
+    "es": "atención",
+    "pos": "NOUN"
   },
   "vive": {
     "root": "vivre; vif",
@@ -2443,10 +2447,10 @@
     "root": "avoir",
     "translit": "avons",
     "en": "we have",
-    "pt": "temos; havemos",
-    "es": "hemos; tenemos",
-    "id": "kami telah; kami memiliki",
-    "pos": "VERB",
+    "pt": "temos",
+    "es": "tenemos",
+    "id": "kami memiliki",
+    "pos": "AUX",
     "pos_counts": {
       "VERB": 7,
       "AUX": 4
@@ -2585,9 +2589,9 @@
     "root": "avoir",
     "translit": "ont",
     "en": "have",
-    "pt": "têm; houveram",
-    "es": "tienen; han",
-    "id": "memiliki; ada",
+    "pt": "têm",
+    "es": "han; tienen",
+    "id": "telah; memiliki",
     "pos": "AUX",
     "pos_counts": {
       "AUX": 21,
@@ -2705,7 +2709,7 @@
     "en": "to be",
     "pt": "ser; estar",
     "es": "ser; estar",
-    "id": "menjadi; berada",
+    "id": "ada; menjadi",
     "pos": "AUX",
     "verses": [
       "2:17",
@@ -2796,10 +2800,10 @@
   "appuyant": {
     "root": "appuyer",
     "translit": "appuyant",
-    "en": "supporting; bearing witness with; leaning",
-    "pt": "apoiando; confirmando; testificando com",
-    "es": "apoyando; testificando juntamente",
-    "id": "meneguhkan; mendukung",
+    "en": "leaning; trusting",
+    "pt": "apoiando-se",
+    "es": "apoyándose",
+    "id": "menguatkan diri; bersandar",
     "pos": "VERB",
     "verses": [
       "2:4"
@@ -3282,10 +3286,10 @@
   },
   "rien": {
     "root": "rien",
-    "en": "nothing; not an ace",
+    "en": "nothing",
     "translit": "rien",
     "pt": "nada",
-    "id": "nada",
+    "id": "tidak ada apa-apa",
     "es": "nada",
     "pos": "PRON",
     "verses": [
@@ -3355,10 +3359,10 @@
   "voyons": {
     "root": "voir",
     "translit": "voyons",
-    "en": "we see",
-    "pt": "vemos",
-    "es": "vemos",
-    "id": "kami melihat",
+    "en": "let us see",
+    "pt": "vejamos",
+    "es": "veamos",
+    "id": "marilah kita lihat",
     "pos": "VERB",
     "pos_counts": {
       "VERB": 2,
@@ -3408,9 +3412,9 @@
   },
   "jésus": {
     "root": "Jésus",
-    "translit": "Jésus",
+    "translit": "jésus",
     "en": "Jesus",
-    "pt": "Jesus (Javé salva)",
+    "pt": "Jesus",
     "es": "Jesús",
     "id": "Yesus",
     "pos": "PROPN",
@@ -3543,7 +3547,7 @@
   "existe": {
     "root": "exister",
     "translit": "existe",
-    "en": "exists; has been",
+    "en": "exists",
     "pt": "existe",
     "es": "existe",
     "id": "ada",
@@ -3634,10 +3638,10 @@
   "accomplissement": {
     "root": "accomplissement",
     "translit": "accomplissement",
-    "en": "fulfillment; accomplishment; completion",
-    "pt": "cumprimento; realização",
-    "es": "cumplimiento; realización",
-    "id": "penggenapan; pelaksanaan",
+    "en": "fulfillment",
+    "pt": "cumprimento",
+    "es": "cumplimiento",
+    "id": "penggenapan",
     "pos": "NOUN",
     "verses": [
       "13:21"
@@ -3667,10 +3671,11 @@
   "consacre": {
     "root": "consacrer",
     "translit": "consacre",
-    "en": "consecrates; dedicate",
-    "pt": "consagro; consagra",
-    "es": "consagro; consagra",
-    "id": "mempersembahkan"
+    "en": "consecrate",
+    "pt": "consagra",
+    "es": "consagra",
+    "id": "kuduskanlah",
+    "pos": "VERB"
   },
   "consacrés": {
     "root": "consacrer",
@@ -3835,10 +3840,11 @@
   "louerai": {
     "root": "louer",
     "translit": "louerai",
-    "en": "I will praise",
+    "en": "shall I praise",
     "pt": "louvarei",
     "es": "alabaré",
-    "id": "aku akan memuji"
+    "id": "aku akan memuji",
+    "pos": "VERB"
   },
   "milieu": {
     "root": "milieu",
@@ -4205,12 +4211,12 @@
     ]
   },
   "aide": {
-    "root": "aide; aider",
+    "root": "aide",
     "translit": "aide",
-    "en": "help; aid",
-    "pt": "ajuda; auxílio",
-    "es": "ayuda; auxilio",
-    "id": "bantuan; pertolongan",
+    "en": "help",
+    "pt": "ajuda",
+    "es": "ayuda",
+    "id": "pertolongan",
     "pos": "NOUN",
     "verses": [
       "2:16",
@@ -4422,10 +4428,10 @@
   "peut": {
     "root": "pouvoir",
     "translit": "peut",
-    "en": "can; is able",
+    "en": "can; may",
     "pt": "pode",
     "es": "puede",
-    "id": "dapat; bisa; mampu",
+    "id": "dapat; mungkin",
     "pos": "VERB",
     "verses": [
       "2:18",
@@ -4469,10 +4475,10 @@
   "avez": {
     "root": "avoir",
     "translit": "avez",
-    "en": "you have",
-    "pt": "tendes; haveis; têm",
-    "es": "tenéis; habéis; tienen",
-    "id": "kamu memiliki; kamu telah",
+    "en": "have",
+    "pt": "tendes",
+    "es": "habéis",
+    "id": "kamu telah",
     "pos": "AUX",
     "pos_counts": {
       "AUX": 7,
@@ -4557,11 +4563,11 @@
   "apôtre": {
     "root": "apôtre",
     "translit": "apôtre",
-    "en": "apostle; messenger",
-    "pt": "apóstolo; enviado",
-    "es": "apóstol; enviado",
-    "id": "rasul; utusan",
-    "pos": "VERB",
+    "en": "apostle",
+    "pt": "apóstolo",
+    "es": "apóstol",
+    "id": "rasul",
+    "pos": "NOUN",
     "verses": [
       "3:1"
     ]
@@ -4643,11 +4649,11 @@
   },
   "grande": {
     "root": "grand",
-    "en": "big; great; large",
+    "en": "great; large",
     "translit": "grande",
     "pt": "grande",
     "id": "besar",
-    "es": "grandes",
+    "es": "grande",
     "pos": "ADJ",
     "verses": [
       "10:35",
@@ -4680,12 +4686,12 @@
   },
   "où": {
     "root": "où",
-    "en": "where; where ... to; whither",
+    "en": "where",
     "translit": "où",
     "pt": "onde",
-    "id": "onde",
-    "es": "dónde",
-    "pos": "PRON",
+    "id": "di mana",
+    "es": "donde",
+    "pos": "ADV",
     "pos_counts": {
       "PRON": 10,
       "ADV": 1
@@ -4707,12 +4713,12 @@
     "id": "membangun"
   },
   "elle-même": {
-    "en": "herself",
+    "en": "herself; itself",
     "root": "elle-même",
     "translit": "elle-même",
     "pt": "ela mesma",
-    "id": "hatinya",
-    "es": "se",
+    "id": "dirinya sendiri",
+    "es": "ella misma",
     "pos": "PRON",
     "verses": [
       "11:11"
@@ -4729,11 +4735,11 @@
   "or": {
     "root": "or",
     "translit": "or",
-    "en": "gold; now; however",
-    "pt": "ouro; ora; porém",
-    "es": "oro; ahora bien; mas",
-    "id": "emas; adapun; namun",
-    "pos": "CCONJ",
+    "en": "gold; now",
+    "pt": "ouro; ora",
+    "es": "oro; ahora",
+    "id": "emas",
+    "pos": "NOUN",
     "pos_counts": {
       "CCONJ": 11,
       "NOUN": 2
@@ -4808,9 +4814,9 @@
   },
   "christ": {
     "root": "Christ",
-    "translit": "Christ",
+    "translit": "christ",
     "en": "Christ",
-    "pt": "Cristo (o Ungido)",
+    "pt": "Cristo",
     "es": "Cristo",
     "id": "Kristus",
     "pos": "PROPN",
@@ -4929,10 +4935,10 @@
   "entendez": {
     "root": "entendre",
     "translit": "entendez",
-    "en": "you hear; hear",
-    "pt": "ouvis; entendeis; ouvi",
-    "es": "oís; entendéis; oíd",
-    "id": "kamu mendengar; dengarlah",
+    "en": "you hear; understand",
+    "pt": "ouvis; entendeis",
+    "es": "oís; entendéis",
+    "id": "kamu mendengar",
     "pos": "VERB",
     "verses": [
       "3:7",
@@ -5044,11 +5050,11 @@
   },
   "me": {
     "root": "me",
-    "en": "me; to me",
+    "en": "me",
     "translit": "me",
     "pt": "me",
-    "id": "me",
-    "es": "mí",
+    "id": "aku",
+    "es": "me",
     "pos": "PRON",
     "pos_counts": {
       "PRON": 8,
@@ -5293,9 +5299,9 @@
   "aucun": {
     "root": "aucun",
     "translit": "aucun",
-    "en": "no; any; none",
-    "pt": "nenhum; algum",
-    "es": "ningún; ninguno; alguno",
+    "en": "no; none; any",
+    "pt": "nenhum",
+    "es": "ninguno",
     "id": "tidak ada; satu pun",
     "pos": "DET",
     "pos_counts": {
@@ -5349,10 +5355,10 @@
   "prenez": {
     "root": "prendre",
     "translit": "prenez",
-    "en": "take; beware",
-    "pt": "tomai; pegai; tende",
-    "es": "tomad; tened",
-    "id": "ambillah; berhati-hatilah",
+    "en": "take; consider",
+    "pt": "tomai",
+    "es": "tomad",
+    "id": "perhatikanlah",
     "pos": "VERB",
     "proper": true,
     "verses": [
@@ -5542,7 +5548,7 @@
     "en": "to say",
     "pt": "dizer",
     "es": "decir",
-    "id": "berkata; mengatakan",
+    "id": "mengatakan",
     "pos": "VERB",
     "pos_counts": {
       "VERB": 8,
@@ -5883,9 +5889,9 @@
     "root": "avoir",
     "translit": "avaient",
     "en": "had",
-    "pt": "tinham; haviam",
-    "es": "tenían; habían",
-    "id": "mempunyai; telah",
+    "pt": "tinham",
+    "es": "tenían",
+    "id": "memiliki",
     "pos": "AUX",
     "verses": [
       "3:18",
@@ -5911,10 +5917,10 @@
   "purent": {
     "root": "pouvoir",
     "translit": "purent",
-    "en": "could; were able",
+    "en": "were able",
     "pt": "puderam",
     "es": "pudieron",
-    "id": "dapat; sanggup",
+    "id": "dapat",
     "pos": "VERB",
     "verses": [
       "3:19"
@@ -5923,7 +5929,7 @@
   "entrer": {
     "root": "entrer",
     "translit": "entrer",
-    "en": "to enter; to go in",
+    "en": "to enter",
     "pt": "entrar",
     "es": "entrar",
     "id": "masuk",
@@ -6105,11 +6111,11 @@
     ]
   },
   "servi": {
-    "root": "servi",
-    "en": "served; used (servi)",
+    "root": "servir",
+    "en": "served",
     "translit": "servi",
     "pt": "servido",
-    "id": "takluk",
+    "id": "melayani",
     "es": "servido",
     "pos": "VERB",
     "verses": [
@@ -6157,7 +6163,7 @@
     ]
   },
   "œuvres": {
-    "root": "œuvres",
+    "root": "œuvre",
     "en": "works; deeds",
     "translit": "œuvres",
     "pt": "obras",
@@ -6175,21 +6181,21 @@
   "faites": {
     "root": "faire",
     "translit": "faites",
-    "en": "do; make; made; done",
-    "pt": "fazei; fazeis; feitas",
-    "es": "haced; hacéis; hechas",
-    "id": "lakukanlah; dibuat",
-    "pos": "ADJ",
+    "en": "do; make",
+    "pt": "fazei",
+    "es": "haced",
+    "id": "lakukanlah; buatlah",
+    "pos": "VERB",
     "verses": [
       "12:27"
     ]
   },
   "depuis": {
     "root": "depuis",
-    "en": "from; since",
+    "en": "since; from",
     "translit": "depuis",
     "pt": "desde",
-    "id": "desde",
+    "id": "sejak",
     "es": "desde",
     "pos": "ADP",
     "verses": [
@@ -6296,10 +6302,10 @@
   "premiers": {
     "root": "premier",
     "translit": "premiers",
-    "en": "first (pl.)",
+    "en": "first",
     "pt": "primeiros",
     "es": "primeros",
-    "id": "pertama; terdahulu",
+    "id": "pertama",
     "pos": "ADJ",
     "verses": [
       "5:12",
@@ -6322,7 +6328,8 @@
     "en": "entered",
     "pt": "entraram",
     "es": "entraron",
-    "id": "masuklah"
+    "id": "masuk",
+    "pos": "VERB"
   },
   "refus": {
     "root": "refus",
@@ -6455,10 +6462,10 @@
   "autre": {
     "root": "autre",
     "translit": "autre",
-    "en": "other; another",
-    "pt": "outro; outra",
-    "es": "otro; otra",
-    "id": "lain; yang lain",
+    "en": "other",
+    "pt": "outro",
+    "es": "otro",
+    "id": "lain",
     "pos": "ADJ",
     "verses": [
       "4:8",
@@ -6506,10 +6513,10 @@
   "repose": {
     "root": "reposer",
     "translit": "repose",
-    "en": "rests; may rest",
-    "pt": "repouse; descanse; pouse; repousa",
-    "es": "repose; descanse; reposa",
-    "id": "beristirahat; hinggap",
+    "en": "rest",
+    "pt": "descansa",
+    "es": "descansa",
+    "id": "beristirahatlah",
     "pos": "VERB",
     "verses": [
       "4:10",
@@ -6621,7 +6628,7 @@
     "pt": "espada",
     "es": "espada",
     "id": "pedang",
-    "pos": "ADJ",
+    "pos": "NOUN",
     "pos_counts": {
       "ADJ": 2,
       "NOUN": 1
@@ -6664,7 +6671,7 @@
     "en": "she; it",
     "pt": "ela",
     "es": "ella",
-    "id": "dia (perempuan); ia",
+    "id": "ia; dia",
     "pos": "PRON",
     "verses": [
       "4:2",
@@ -6780,10 +6787,11 @@
   "échappe": {
     "root": "échapper",
     "translit": "échappe",
-    "en": "escapes; flees",
-    "pt": "escapa; foge",
-    "es": "escapa; huye",
-    "id": "luput; melarikan diri"
+    "en": "escape",
+    "pt": "escape",
+    "es": "escape",
+    "id": "lolos; luput",
+    "pos": "VERB"
   },
   "regard": {
     "root": "regard",
@@ -6796,11 +6804,11 @@
   "nu": {
     "root": "nu",
     "translit": "nu",
-    "en": "naked; stripped",
-    "pt": "despido; nu",
-    "es": "desnudo; despojado",
+    "en": "naked; bare",
+    "pt": "nu; descalço",
+    "es": "desnudo",
     "id": "telanjang",
-    "pos": "SYM",
+    "pos": "ADJ",
     "verses": [
       "4:13"
     ]
@@ -6907,8 +6915,8 @@
     "en": "without",
     "translit": "sans",
     "pt": "sem",
-    "id": "sem",
-    "es": "pecado",
+    "id": "tanpa",
+    "es": "sin",
     "pos": "ADP",
     "verses": [
       "4:15",
@@ -6970,9 +6978,9 @@
     "root": "assurance",
     "translit": "assurance",
     "en": "confidence; assurance",
-    "pt": "confiança; segurança",
+    "pt": "confiança; certeza",
     "es": "confianza; seguridad",
-    "id": "keyakinan; kepercayaan",
+    "id": "keyakinan; kepastian",
     "pos": "NOUN",
     "pos_counts": {
       "NOUN": 4,
@@ -6989,7 +6997,7 @@
   "obtenir": {
     "root": "obtenir",
     "translit": "obtenir",
-    "en": "obtain",
+    "en": "to obtain",
     "pt": "obter; alcançar",
     "es": "obtener; alcanzar",
     "id": "memperoleh",
@@ -7206,9 +7214,9 @@
   "offrir": {
     "root": "offrir",
     "translit": "offrir",
-    "en": "to offer; to present",
-    "pt": "oferecer; apresentar",
-    "es": "ofrecer; presentar",
+    "en": "to offer",
+    "pt": "oferecer",
+    "es": "ofrecer",
     "id": "mempersembahkan",
     "pos": "VERB",
     "verses": [
@@ -7248,7 +7256,7 @@
     "en": "honor",
     "pt": "honra",
     "es": "honor; honra",
-    "id": "kehormatan",
+    "id": "hormat",
     "pos": "NOUN",
     "verses": [
       "2:7",
@@ -7258,11 +7266,11 @@
   },
   "on": {
     "root": "on",
-    "translit": "On",
-    "en": "one; they; someone",
-    "pt": "se; a gente; alguém",
-    "es": "se; uno; alguien",
-    "id": "orang; seseorang",
+    "translit": "on",
+    "en": "one; they; people",
+    "pt": "se; alguém",
+    "es": "se; uno",
+    "id": "orang",
     "pos": "PRON",
     "verses": [
       "3:13",
@@ -7274,10 +7282,10 @@
   },
   "y": {
     "root": "y",
-    "en": "there; at it; of it (adverbial pronoun)",
-    "translit": "y",
-    "pt": "ali",
-    "id": "ali",
+    "en": "there",
+    "translit": "y.",
+    "pt": "lá; ali",
+    "id": "di sana",
     "es": "allí",
     "pos": "PRON",
     "verses": [
@@ -7304,7 +7312,7 @@
   },
   "aaron": {
     "root": "Aaron",
-    "translit": "Aaron",
+    "translit": "aaron",
     "en": "Aaron",
     "pt": "Arão",
     "es": "Aarón",
@@ -7341,9 +7349,9 @@
     "root": "ailleurs",
     "translit": "ailleurs",
     "en": "elsewhere; besides",
-    "pt": "alhures; em outra parte; nos demais lugares",
-    "es": "en otra parte; en los demás lugares",
-    "id": "di tempat lain; kepada semua orang lain",
+    "pt": "além disso; em outro lugar",
+    "es": "además; en otra parte",
+    "id": "di tempat lain; lagipula",
     "pos": "ADV",
     "verses": [
       "5:6",
@@ -7446,10 +7454,10 @@
   "pouvait": {
     "root": "pouvoir",
     "translit": "pouvait",
-    "en": "could; was able",
+    "en": "could",
     "pt": "podia",
     "es": "podía",
-    "id": "dapat; mampu",
+    "id": "dapat",
     "pos": "VERB",
     "verses": [
       "5:7",
@@ -7564,9 +7572,9 @@
     "root": "obéir",
     "translit": "obéissent",
     "en": "obey",
-    "pt": "obedeçam; obedecem",
-    "es": "obedezcan; obedecen",
-    "id": "menaati; patuh",
+    "pt": "obedecem",
+    "es": "obedecen",
+    "id": "taat; patuh",
     "pos": "VERB",
     "verses": [
       "5:9"
@@ -7581,13 +7589,13 @@
     "id": "penulis"
   },
   "éternel": {
-    "root": "Éternel; éternel",
-    "translit": "Éternel",
+    "root": "Éternel",
+    "translit": "éternel",
     "en": "LORD; Eternal",
-    "pt": "Eterno; SENHOR; eterno",
-    "es": "Eterno; SEÑOR; eterno",
-    "id": "TUHAN; Kekal",
-    "pos": "ADJ",
+    "pt": "SENHOR; Eterno",
+    "es": "SEÑOR; Eterno",
+    "id": "TUHAN",
+    "pos": "PROPN",
     "pos_counts": {
       "ADJ": 4,
       "NOUN": 1
@@ -7670,10 +7678,10 @@
   "expliquer": {
     "root": "expliquer",
     "translit": "expliquer",
-    "en": "to explain; to interpret",
-    "pt": "explicar; interpretar",
-    "es": "explicar; interpretar",
-    "id": "menjelaskan; menafsirkan",
+    "en": "to explain",
+    "pt": "explicar",
+    "es": "explicar",
+    "id": "menerangkan",
     "pos": "VERB",
     "verses": [
       "5:11"
@@ -7683,8 +7691,8 @@
     "root": "être",
     "translit": "êtes",
     "en": "you are",
-    "pt": "sois; estais; são",
-    "es": "sois; estáis; son",
+    "pt": "sois",
+    "es": "sois",
     "id": "kamu adalah",
     "pos": "AUX",
     "verses": [
@@ -7754,10 +7762,10 @@
   "devriez": {
     "root": "devoir",
     "translit": "devriez",
-    "en": "ought; should",
-    "pt": "deveríeis; deveriam",
-    "es": "deberíais; deberían",
-    "id": "seharusnya",
+    "en": "you ought",
+    "pt": "deveríeis",
+    "es": "deberíais",
+    "id": "seharusnya kamu",
     "pos": "VERB",
     "verses": [
       "5:12"
@@ -7821,12 +7829,12 @@
     ]
   },
   "enseigne": {
-    "root": "enseigner; enseigne",
+    "root": "enseigner",
     "translit": "enseigne",
-    "en": "teaches; sign; ensign",
-    "pt": "ensina; insígnia; sinal",
-    "es": "enseña; estandarte; señal",
-    "id": "mengajar; tanda; panji",
+    "en": "teach",
+    "pt": "ensina",
+    "es": "enseña",
+    "id": "ajarlah",
     "pos": "VERB",
     "verses": [
       "5:12"
@@ -7859,11 +7867,11 @@
   },
   "non": {
     "root": "non",
-    "en": "no",
+    "en": "no; not",
     "translit": "non",
     "pt": "não",
-    "id": "daí",
-    "es": "ningún",
+    "id": "bukan; tidak",
+    "es": "no",
     "pos": "ADV",
     "verses": [
       "5:5",
@@ -8072,10 +8080,12 @@
   },
   "abandon": {
     "root": "abandon",
-    "en": "abandonment; isolation; separation; acquiescence; resignation; cession; relinquishment; renunciation; surrender",
+    "en": "abandonment; desolation",
     "translit": "abandon",
     "pt": "abandono",
-    "id": "separação"
+    "id": "ditinggalkan",
+    "es": "abandono",
+    "pos": "NOUN"
   },
   "mortes": {
     "root": "mort; mourir",
@@ -8115,10 +8125,10 @@
   },
   "imposition": {
     "root": "imposition",
-    "en": "imposition",
+    "en": "laying on",
     "translit": "imposition",
     "pt": "imposição",
-    "id": "imposição",
+    "id": "penumpangan",
     "es": "imposición",
     "pos": "NOUN",
     "verses": [
@@ -8281,9 +8291,9 @@
   "amener": {
     "root": "amener",
     "translit": "amener",
-    "en": "to bring; lead",
-    "pt": "trazer; conduzir",
-    "es": "traer; llevar",
+    "en": "to bring",
+    "pt": "trazer",
+    "es": "traer",
     "id": "membawa",
     "pos": "VERB",
     "verses": [
@@ -8419,8 +8429,8 @@
     "translit": "épines",
     "en": "thorns",
     "pt": "espinhos",
-    "es": "espinas",
-    "id": "duri-duri",
+    "es": "espinos",
+    "id": "duri",
     "pos": "NOUN",
     "verses": [
       "6:8"
@@ -8639,9 +8649,9 @@
     "root": "œuvre",
     "translit": "œuvre",
     "en": "work; deed",
-    "pt": "obra; trabalho",
+    "pt": "obra",
     "es": "obra",
-    "id": "perbuatan",
+    "id": "pekerjaan",
     "pos": "NOUN",
     "verses": [
       "13:21"
@@ -8734,12 +8744,12 @@
     ]
   },
   "montre": {
-    "root": "montrer; montre",
+    "root": "montrer",
     "translit": "montre",
-    "en": "show; shows; watch",
-    "pt": "mostre; mostra; mostro",
-    "es": "muestre; muestra; muestro",
-    "id": "menunjukkan; tunjukkanlah",
+    "en": "show; shows",
+    "pt": "mostra",
+    "es": "muestra",
+    "id": "tunjukkan",
     "pos": "VERB",
     "verses": [
       "6:11"
@@ -8748,10 +8758,11 @@
   "empressement": {
     "root": "empressement",
     "translit": "empressement",
-    "en": "eagerness; care; zeal",
-    "pt": "zelo; solicitude; prontidão",
-    "es": "solicitud; esmero",
-    "id": "kesungguhan; perhatian"
+    "en": "eagerness; haste",
+    "pt": "pressa; zelo",
+    "es": "prisa; diligencia",
+    "id": "kesungguhan; cepat",
+    "pos": "NOUN"
   },
   "pleine": {
     "root": "plein",
@@ -8771,7 +8782,7 @@
     "en": "hope",
     "pt": "esperança",
     "es": "esperanza",
-    "id": "pengharapan; harapan",
+    "id": "harapan",
     "pos": "NOUN",
     "verses": [
       "3:6",
@@ -8861,7 +8872,7 @@
   },
   "abraham": {
     "root": "Abraham",
-    "translit": "Abraham",
+    "translit": "abraham",
     "en": "Abraham",
     "pt": "Abraão",
     "es": "Abraham",
@@ -9183,10 +9194,11 @@
   "ayons": {
     "root": "avoir",
     "translit": "ayons",
-    "en": "have; let us have",
+    "en": "we have",
     "pt": "tenhamos",
     "es": "tengamos",
-    "id": "marilah memiliki"
+    "id": "kami miliki",
+    "pos": "AUX"
   },
   "puissant": {
     "root": "puissant",
@@ -9232,10 +9244,10 @@
   "attacher": {
     "root": "attacher",
     "translit": "attacher",
-    "en": "pay attention; hold fast; attach; tie",
-    "pt": "apegar; atentar; ligar; prender",
-    "es": "atender; aferrar; atar; unir",
-    "id": "memperhatikan; berpegang; mengikat",
+    "en": "to hold on; to attach",
+    "pt": "apegar-se",
+    "es": "apegarse",
+    "id": "berpegang",
     "pos": "VERB",
     "verses": [
       "2:1"
@@ -9266,7 +9278,7 @@
     "en": "anchor",
     "translit": "ancre",
     "pt": "âncora",
-    "id": "sauh",
+    "id": "sauh; jangkar",
     "es": "ancla",
     "pos": "NOUN",
     "verses": [
@@ -9293,7 +9305,7 @@
     "en": "beyond",
     "pt": "além",
     "es": "más allá",
-    "id": "melampaui",
+    "id": "di seberang; melampaui",
     "pos": "ADV",
     "verses": [
       "6:19"
@@ -9514,12 +9526,13 @@
     "id": "orang; seseorang"
   },
   "interprète": {
-    "root": "interprète",
-    "en": "interpreter",
+    "root": "interpréter",
+    "en": "representative; interpreter",
     "translit": "interprète",
-    "pt": "intérprete",
-    "id": "mengartikannya",
-    "es": "interprete"
+    "pt": "intérprete; representante",
+    "id": "wakil; juru bicara",
+    "es": "intérprete; representante",
+    "pos": "NOUN"
   },
   "d’abord": {
     "root": "d'abord",
@@ -9545,12 +9558,13 @@
     ]
   },
   "puis": {
-    "root": "pouvoir; puis",
+    "root": "pouvoir",
     "translit": "puis",
-    "en": "can; am able; then; afterwards",
-    "pt": "posso; depois; em seguida",
-    "es": "puedo; luego; después",
-    "id": "dapat; lalu; kemudian"
+    "en": "can I; may I",
+    "pt": "posso",
+    "es": "puedo",
+    "id": "dapatkah aku",
+    "pos": "VERB"
   },
   "salem</b>": {
     "root": "salem</b>",
@@ -9646,10 +9660,10 @@
   "voyez": {
     "root": "voir",
     "translit": "voyez",
-    "en": "see; behold!",
-    "pt": "vedes; vede",
-    "es": "veis; ved; miren",
-    "id": "lihatlah",
+    "en": "do you see",
+    "pt": "vedes",
+    "es": "veis",
+    "id": "kamu lihat",
     "pos": "VERB",
     "verses": [
       "10:25"
@@ -9951,10 +9965,10 @@
   "atteste": {
     "root": "attester",
     "translit": "atteste",
-    "en": "testifies; attests; testify",
-    "pt": "atesta; testifica; dá testemunho; atesto; testifico",
-    "es": "atestigua; testifica; da testimonio; atestiguo",
-    "id": "memberi kesaksian; bersaksi",
+    "en": "testifies; affirms",
+    "pt": "atesta; testifica",
+    "es": "atestigua; afirma",
+    "id": "menyaksikan; menegaskan",
     "pos": "VERB",
     "verses": [
       "10:15"
@@ -10050,10 +10064,11 @@
   "lève": {
     "root": "lever",
     "translit": "lève",
-    "en": "lift up; raise",
-    "pt": "levanta; ergue",
-    "es": "levanta; alza",
-    "id": "angkatlah"
+    "en": "arise; lift",
+    "pt": "levanta-te",
+    "es": "levántate",
+    "id": "bangunlah",
+    "pos": "VERB"
   },
   "d’aaron": {
     "root": "d’aaron",
@@ -10318,10 +10333,10 @@
   "inutilité": {
     "root": "inutilité",
     "translit": "inutilité",
-    "en": "uselessness; unprofitableness; inutility",
+    "en": "uselessness; vanity",
     "pt": "inutilidade",
     "es": "inutilidad",
-    "id": "ketidakbergunaan; kesia-siaan",
+    "id": "kesia-siaan",
     "pos": "NOUN",
     "verses": [
       "7:18"
@@ -10359,11 +10374,11 @@
   "approchons": {
     "root": "approcher",
     "translit": "approchons",
-    "en": "draw near; approach",
-    "pt": "aproximamos; achegamos",
-    "es": "acercamos; aproximamos",
-    "id": "mendekat; menghampiri",
-    "pos": "NOUN",
+    "en": "let us approach",
+    "pt": "aproximemo-nos",
+    "es": "acerquémonos",
+    "id": "marilah kita mendekati",
+    "pos": "VERB",
     "pos_counts": {
       "NOUN": 2,
       "VERB": 1
@@ -10378,9 +10393,9 @@
     "root": "autre",
     "translit": "autres",
     "en": "others",
-    "pt": "outros; outras",
-    "es": "otros; otras",
-    "id": "yang lain",
+    "pt": "outros",
+    "es": "otros",
+    "id": "lain",
     "pos": "ADJ",
     "verses": [
       "3:13",
@@ -10412,9 +10427,9 @@
   "alliance": {
     "root": "alliance",
     "translit": "alliance",
-    "en": "covenant; alliance",
-    "pt": "aliança; concerto; pacto",
-    "es": "pacto; alianza",
+    "en": "covenant",
+    "pt": "aliança",
+    "es": "alianza; pacto",
     "id": "perjanjian",
     "pos": "NOUN",
     "verses": [
@@ -10484,7 +10499,7 @@
   "possède": {
     "root": "posséder",
     "translit": "possède",
-    "en": "possesses; owns",
+    "en": "possesses",
     "pt": "possui",
     "es": "posee",
     "id": "memiliki",
@@ -10553,7 +10568,7 @@
     "pt": "inocente",
     "es": "inocente",
     "id": "tidak bersalah",
-    "pos": "ADV",
+    "pos": "ADJ",
     "verses": [
       "7:26"
     ]
@@ -10880,10 +10895,10 @@
   "ombre": {
     "root": "ombre",
     "translit": "ombre",
-    "en": "shadow; shade",
+    "en": "shadow",
     "pt": "sombra",
     "es": "sombra",
-    "id": "bayang-bayang; naungan",
+    "id": "bayangan",
     "pos": "NOUN",
     "verses": [
       "8:5",
@@ -11065,8 +11080,8 @@
     "root": "avoir",
     "translit": "aurait",
     "en": "would have",
-    "pt": "teria; haveria",
-    "es": "habría; tendría",
+    "pt": "teria",
+    "es": "tendría",
     "id": "akan",
     "pos": "AUX",
     "verses": [
@@ -11137,10 +11152,11 @@
   "adresse": {
     "root": "adresser",
     "translit": "adresse",
-    "en": "speaks; addresses",
-    "pt": "dirige; fala",
-    "es": "dirige; habla",
-    "id": "disampaikan"
+    "en": "address; directs",
+    "pt": "dirige",
+    "es": "dirige",
+    "id": "mengarahkan",
+    "pos": "VERB"
   },
   "<b>les": {
     "root": "<b>les",
@@ -11239,9 +11255,9 @@
     "root": "avoir",
     "translit": "ai",
     "en": "have",
-    "pt": "tenho; hei",
-    "es": "he; tengo",
-    "id": "memiliki; sudah",
+    "pt": "tenho",
+    "es": "he",
+    "id": "telah; mempunyai",
     "pos": "AUX",
     "verses": [
       "1:5",
@@ -11597,10 +11613,10 @@
   "ancienne": {
     "root": "ancien",
     "translit": "ancienne",
-    "en": "old; ancient; former",
-    "pt": "antiga; velha",
-    "es": "antigua; vieja",
-    "id": "lama; kuno",
+    "en": "former; old",
+    "pt": "antiga",
+    "es": "antigua",
+    "id": "dahulu; lama",
     "pos": "ADJ",
     "verses": [
       "8:13"
@@ -11609,10 +11625,10 @@
   "ancien": {
     "root": "ancien",
     "translit": "ancien",
-    "en": "old; ancient; elder",
-    "pt": "antigo; ancião; presbítero",
-    "es": "antiguo; anciano",
-    "id": "lama; tua; penatua",
+    "en": "ancient",
+    "pt": "antigo",
+    "es": "anciano; antiguo",
+    "id": "lanjut usia; tua",
     "pos": "ADJ",
     "verses": [
       "8:13"
@@ -11689,10 +11705,11 @@
   "appelle": {
     "root": "appeler",
     "translit": "appelle",
-    "en": "call; calls",
-    "pt": "chame; chama; chamo",
-    "es": "llame; llama; llamo",
-    "id": "memanggil; panggillah"
+    "en": "am called; calls",
+    "pt": "chama",
+    "es": "llama",
+    "id": "memanggil",
+    "pos": "VERB"
   },
   "sacré": {
     "root": "sacré",
@@ -11826,7 +11843,7 @@
     "pt": "altar",
     "es": "altar",
     "id": "mezbah",
-    "pos": "ADJ",
+    "pos": "NOUN",
     "pos_counts": {
       "ADJ": 1,
       "PROPN": 1,
@@ -11844,7 +11861,8 @@
     "en": "incense",
     "pt": "incenso",
     "es": "incienso",
-    "id": "kemenyan; dupa"
+    "id": "kemenyan; ukupan",
+    "pos": "NOUN"
   },
   "coffre": {
     "root": "coffre",
@@ -12029,7 +12047,7 @@
     "en": "being",
     "pt": "sendo; estando",
     "es": "siendo; estando",
-    "id": "menjadi; sedang; karena",
+    "id": "menjadi; berada",
     "pos": "AUX",
     "verses": [
       "1:3",
@@ -12070,10 +12088,11 @@
   "accomplissent": {
     "root": "accomplir",
     "translit": "accomplissent",
-    "en": "perform; fulfill",
-    "pt": "cumpram; realizem",
-    "es": "cumplan; realicen",
-    "id": "melakukan; menggenapi"
+    "en": "fulfill",
+    "pt": "cumprem",
+    "es": "cumplen",
+    "id": "menggenapi",
+    "pos": "VERB"
   },
   "rituel": {
     "root": "rituel",
@@ -12170,10 +12189,10 @@
   "peuvent": {
     "root": "pouvoir",
     "translit": "peuvent",
-    "en": "can; are able",
+    "en": "can",
     "pt": "podem",
     "es": "pueden",
-    "id": "dapat; bisa; mampu",
+    "id": "dapat",
     "pos": "VERB",
     "verses": [
       "9:9",
@@ -12252,7 +12271,7 @@
     "en": "foods",
     "pt": "alimentos",
     "es": "alimentos",
-    "id": "makanan-makanan",
+    "id": "makanan",
     "pos": "NOUN",
     "verses": [
       "9:10",
@@ -12814,10 +12833,11 @@
   "objets": {
     "root": "objet",
     "translit": "objets",
-    "en": "objects; articles",
-    "pt": "objetos; artigos",
-    "es": "objetos; artículos",
-    "id": "barang-barang; benda-benda"
+    "en": "articles; objects",
+    "pt": "objetos",
+    "es": "objetos",
+    "id": "barang-barang",
+    "pos": "NOUN"
   },
   "d’ailleurs": {
     "root": "d’ailleurs",
@@ -13162,10 +13182,10 @@
   "mêmes": {
     "root": "même",
     "translit": "mêmes",
-    "en": "same; very",
+    "en": "themselves; same",
     "pt": "mesmos",
     "es": "mismos",
-    "id": "yang sama",
+    "id": "sendiri; sama",
     "pos": "ADJ",
     "verses": [
       "9:23",
@@ -13175,12 +13195,12 @@
     ]
   },
   "présente": {
-    "root": "présent; présenter",
+    "root": "présenter",
     "translit": "présente",
-    "en": "present; presents; offers",
-    "pt": "presente; apresenta",
-    "es": "presente; presenta",
-    "id": "saat ini; hadir; mempersembahkan",
+    "en": "present; show yourself",
+    "pt": "apresenta-te",
+    "es": "preséntate",
+    "id": "perlihatkanlah dirimu",
     "pos": "VERB",
     "verses": [
       "9:9"
@@ -13209,11 +13229,11 @@
   "approchent": {
     "root": "approcher",
     "translit": "approchent",
-    "en": "approach; draw near",
-    "pt": "aproximam-se; chegam; trazem",
-    "es": "se acercan; llegan",
-    "id": "mendekat; datang",
-    "pos": "NOUN",
+    "en": "approach",
+    "pt": "aproximam-se",
+    "es": "se acercan",
+    "id": "mendekat",
+    "pos": "VERB",
     "verses": [
       "7:25"
     ]
@@ -13255,18 +13275,19 @@
   "prennent": {
     "root": "prendre",
     "translit": "prennent",
-    "en": "take",
-    "pt": "tomam; pegam",
-    "es": "toman; cogen",
-    "id": "mengambil"
+    "en": "take; eat",
+    "pt": "tomam; comem",
+    "es": "toman; comen",
+    "id": "mengambil; makan",
+    "pos": "VERB"
   },
   "auraient": {
     "root": "avoir",
     "translit": "auraient",
     "en": "would have",
-    "pt": "teriam; haveriam",
-    "es": "habrían; tendrían",
-    "id": "tentulah telah",
+    "pt": "teriam",
+    "es": "tendrían",
+    "id": "akan memiliki",
     "pos": "AUX",
     "verses": [
       "10:2",
@@ -13301,10 +13322,10 @@
   "aucune": {
     "root": "aucun",
     "translit": "aucune",
-    "en": "no; none; any",
-    "pt": "nenhuma; alguma",
-    "es": "ninguna; alguna",
-    "id": "tidak ada; satu pun",
+    "en": "no; any",
+    "pt": "nenhuma",
+    "es": "ninguna",
+    "id": "tidak ada",
     "pos": "DET",
     "verses": [
       "9:17",
@@ -13316,10 +13337,11 @@
   "rappelle": {
     "root": "rappeler",
     "translit": "rappelle",
-    "en": "repeats; reminds",
-    "pt": "lembra; repete",
-    "es": "repite; recuerda",
-    "id": "mengungkit-ungkit"
+    "en": "remember",
+    "pt": "lembra-te",
+    "es": "recuerda",
+    "id": "ingatlah",
+    "pos": "VERB"
   },
   "souvenir": {
     "root": "souvenir",
@@ -13336,11 +13358,11 @@
   "ôte": {
     "root": "ôter",
     "translit": "ôte",
-    "en": "remove; take away",
+    "en": "take away; remove",
     "pt": "tira; remove",
     "es": "quita; remueve",
-    "id": "pindahkanlah; singkirkanlah",
-    "pos": "ADV",
+    "id": "ambillah; singkirkan",
+    "pos": "VERB",
     "verses": [
       "10:4"
     ]
@@ -13548,10 +13570,10 @@
   "viens": {
     "root": "venir",
     "translit": "viens",
-    "en": "come!",
-    "pt": "vem; venho",
-    "es": "ven; vengo",
-    "id": "datanglah",
+    "en": "I come",
+    "pt": "venho",
+    "es": "vengo",
+    "id": "aku datang",
     "pos": "VERB",
     "verses": [
       "10:7",
@@ -13582,10 +13604,10 @@
   "établir": {
     "root": "établir",
     "translit": "établir",
-    "en": "to establish; to settle",
-    "pt": "estabelecer; habitar",
-    "es": "establecer; habitar",
-    "id": "menetapkan; mendiami",
+    "en": "to establish",
+    "pt": "estabelecer",
+    "es": "establecer",
+    "id": "menetapkan",
     "pos": "VERB",
     "proper": true,
     "verses": [
@@ -13644,10 +13666,10 @@
   "ôter": {
     "root": "ôter",
     "translit": "ôter",
-    "en": "remove; take away",
+    "en": "to take away; to remove",
     "pt": "tirar; remover",
     "es": "quitar; remover",
-    "id": "menyingkirkan",
+    "id": "mengambil; menyingkirkan",
     "pos": "VERB",
     "verses": [
       "10:11"
@@ -13765,10 +13787,11 @@
   "intelligence": {
     "root": "intelligence",
     "translit": "intelligence",
-    "en": "understanding; intelligence",
-    "pt": "entendimento; inteligência",
-    "es": "entendimiento; inteligencia",
-    "id": "pengertian; akal budi"
+    "en": "intelligence; understanding",
+    "pt": "inteligência; entendimento",
+    "es": "inteligencia; entendimiento",
+    "id": "kecerdasan; pengertian",
+    "pos": "NOUN"
   },
   "désordres": {
     "root": "désordres",
@@ -13963,10 +13986,10 @@
   "assemblée": {
     "root": "assemblée",
     "translit": "assemblée",
-    "en": "assembly; congregation",
-    "pt": "congregação; assembleia",
-    "es": "asamblea; congregación",
-    "id": "jemaat; perhimpunan",
+    "en": "assembly",
+    "pt": "assembleia",
+    "es": "asamblea",
+    "id": "jemaah; perkumpulan",
     "pos": "NOUN",
     "verses": [
       "2:12",
@@ -14071,11 +14094,11 @@
   },
   "attente": {
     "root": "attente",
-    "en": "expectation",
+    "en": "expectation; hope",
     "translit": "attente",
-    "pt": "expectativa",
-    "id": "harapan",
-    "es": "sombra",
+    "pt": "expectativa; esperança",
+    "id": "pengharapan",
+    "es": "expectativa; esperanza",
     "pos": "NOUN",
     "verses": [
       "10:27"
@@ -14246,9 +14269,9 @@
     "root": "avoir",
     "translit": "aura",
     "en": "will have",
-    "pt": "terá; haverá",
-    "es": "tendrá; habrá",
-    "id": "akan mempunyai",
+    "pt": "terá",
+    "es": "tendrá",
+    "id": "akan memiliki",
     "pos": "AUX",
     "verses": [
       "10:29"
@@ -14322,10 +14345,11 @@
   "fais": {
     "root": "faire",
     "translit": "fais",
-    "en": "do; make",
-    "pt": "faço; fazes; faz; faze",
-    "es": "hago; haces; hace; haz",
-    "id": "membuat; lakukan"
+    "en": "make; do",
+    "pt": "faze",
+    "es": "haz",
+    "id": "buatlah",
+    "pos": "VERB"
   },
   "paierai": {
     "root": "payer",
@@ -14609,10 +14633,11 @@
   "arrache": {
     "root": "arracher",
     "translit": "arrache",
-    "en": "pulls out; snatches away; plucks",
-    "pt": "arranca; tira",
-    "es": "arranca; saca",
-    "id": "mencabut; merenggut"
+    "en": "plucks out; tears out",
+    "pt": "arranca",
+    "es": "arranca",
+    "id": "mencabut; cungkillah",
+    "pos": "VERB"
   },
   "sachant": {
     "root": "savoir",
@@ -14629,10 +14654,11 @@
   "aviez": {
     "root": "avoir",
     "translit": "aviez",
-    "en": "had",
-    "pt": "tínheis; havíeis",
+    "en": "you had",
+    "pt": "tínheis",
     "es": "teníais; habíais",
-    "id": "kamu dahulu mempunyai"
+    "id": "kamu mempunyai",
+    "pos": "AUX"
   },
   "possessions": {
     "root": "possession",
@@ -14739,10 +14765,10 @@
   "tardera": {
     "root": "tarder",
     "translit": "tardera",
-    "en": "will delay; will tarry",
-    "pt": "tardará; demorará",
-    "es": "tardará; demorará",
-    "id": "akan berlambat-lambat; menunda",
+    "en": "will delay",
+    "pt": "demorará",
+    "es": "tardará",
+    "id": "akan berlambat-lambat",
     "pos": "VERB",
     "verses": [
       "10:37"
@@ -14778,11 +14804,11 @@
   },
   "retire": {
     "root": "retirer",
-    "translit": "Retire",
-    "en": "stay; withdraw",
-    "pt": "retira; recolhe",
-    "es": "detén; retira",
-    "id": "tariklah; tahanlah",
+    "translit": "retire",
+    "en": "withdraw; step back",
+    "pt": "retira; afasta-te",
+    "es": "retira; apártate",
+    "id": "mundur; tarik",
     "pos": "VERB",
     "verses": [
       "10:38"
@@ -14791,11 +14817,11 @@
   "âme": {
     "root": "âme",
     "translit": "âme",
-    "en": "soul; life; person",
-    "pt": "alma; vida; ser",
-    "es": "alma; vida",
-    "id": "jiwa; nyawa",
-    "pos": "ADJ",
+    "en": "soul",
+    "pt": "alma",
+    "es": "alma",
+    "id": "jiwa",
+    "pos": "NOUN",
     "pos_counts": {
       "ADJ": 2,
       "NOUN": 2,
@@ -14857,10 +14883,10 @@
   "espère": {
     "root": "espérer",
     "translit": "espère",
-    "en": "wait; hope",
-    "pt": "espera",
-    "es": "espera",
-    "id": "nantikanlah",
+    "en": "hope; wait for",
+    "pt": "espero",
+    "es": "espero",
+    "id": "aku berharap",
     "pos": "VERB",
     "verses": [
       "11:1"
@@ -14937,12 +14963,13 @@
     "es": "venido"
   },
   "manifeste": {
-    "root": "manifeste; manifester",
+    "root": "manifester",
     "translit": "manifeste",
-    "en": "manifest; evident; manifests",
-    "pt": "manifesta; evidente; manifesto",
-    "es": "manifiesta; evidente; manifiesto",
-    "id": "nyata; menyatakan"
+    "en": "manifest; revive",
+    "pt": "manifesta",
+    "es": "manifiesta",
+    "id": "nyatakanlah",
+    "pos": "VERB"
   },
   "qu’abel": {
     "root": "que; Abel",
@@ -15059,10 +15086,10 @@
   },
   "avant": {
     "root": "avant",
-    "en": "before; in front of",
+    "en": "before",
     "translit": "avant",
     "pt": "antes",
-    "id": "antes",
+    "id": "sebelum",
     "es": "antes",
     "pos": "ADP",
     "verses": [
@@ -15079,11 +15106,12 @@
   },
   "plaire": {
     "root": "plaire",
-    "en": "please",
+    "en": "to please",
     "translit": "plaire",
     "pt": "agradar",
-    "id": "disukai",
-    "es": "agradare"
+    "id": "menyenangkan",
+    "es": "agradar",
+    "pos": "VERB"
   },
   "s’approche": {
     "root": "se; approcher",
@@ -15160,8 +15188,8 @@
     "en": "ark",
     "pt": "arca",
     "es": "arca",
-    "id": "bahtera; tabut",
-    "pos": "VERB",
+    "id": "tabut; bahtera",
+    "pos": "NOUN",
     "pos_counts": {
       "VERB": 2,
       "ADJ": 1,
@@ -15216,10 +15244,10 @@
   "obéit": {
     "root": "obéir",
     "translit": "obéit",
-    "en": "obeyed",
-    "pt": "obedeceu",
-    "es": "obedeció",
-    "id": "menaati",
+    "en": "obeys",
+    "pt": "obedece",
+    "es": "obedece",
+    "id": "taat",
     "pos": "VERB",
     "verses": [
       "11:8"
@@ -15236,7 +15264,7 @@
   "héritage": {
     "root": "héritage",
     "translit": "héritage",
-    "en": "inheritance; heritage",
+    "en": "inheritance",
     "pt": "herança",
     "es": "herencia",
     "id": "warisan; milik pusaka",
@@ -15308,10 +15336,10 @@
   "étranger": {
     "root": "étranger",
     "translit": "étranger",
-    "en": "stranger; foreigner; foreign",
-    "pt": "estrangeiro",
-    "es": "extranjero; forastero",
-    "id": "orang asing",
+    "en": "strange; foreign",
+    "pt": "estranho",
+    "es": "extraño",
+    "id": "asing",
     "pos": "ADJ",
     "verses": [
       "9:25"
@@ -15320,11 +15348,11 @@
   "habitant": {
     "root": "habitant",
     "translit": "habitant",
-    "en": "sojourner; resident; inhabitant",
-    "pt": "habitante; peregrino; forasteiro",
-    "es": "habitante; advenedizo; forastero",
-    "id": "pendatang; penumpang; penduduk",
-    "pos": "VERB",
+    "en": "inhabitant; sojourner",
+    "pt": "habitante",
+    "es": "habitante",
+    "id": "penduduk",
+    "pos": "NOUN",
     "verses": [
       "11:9"
     ]
@@ -15343,7 +15371,7 @@
   },
   "isaac": {
     "root": "Isaac",
-    "translit": "Isaac",
+    "translit": "isaac",
     "en": "Isaac",
     "pt": "Isaque",
     "es": "Isaac",
@@ -15467,10 +15495,10 @@
   "âge": {
     "root": "âge",
     "translit": "âge",
-    "en": "age; youth; generation",
-    "pt": "idade; geração",
-    "es": "edad; generación",
-    "id": "masa; usia; angkatan",
+    "en": "age",
+    "pt": "idade",
+    "es": "edad",
+    "id": "umur",
     "pos": "NOUN",
     "verses": [
       "11:11"
@@ -15534,7 +15562,7 @@
     "en": "man",
     "pt": "homem",
     "es": "hombre",
-    "id": "pria; manusia",
+    "id": "manusia; orang",
     "pos": "NOUN",
     "verses": [
       "2:6",
@@ -15546,10 +15574,10 @@
   },
   "déjà": {
     "root": "déjà",
-    "en": "already; by now; yet",
+    "en": "already",
     "translit": "déjà",
     "pt": "já",
-    "id": "telah",
+    "id": "sudah",
     "es": "ya",
     "pos": "ADV",
     "verses": [
@@ -15570,7 +15598,7 @@
     "en": "born",
     "pt": "nascidos",
     "es": "nacidos",
-    "id": "dilahirkan",
+    "id": "lahir",
     "pos": "VERB",
     "verses": [
       "11:28",
@@ -15727,10 +15755,10 @@
   "étrangers": {
     "root": "étranger",
     "translit": "étrangers",
-    "en": "strangers; foreigners; foreign",
-    "pt": "estrangeiros",
-    "es": "extranjeros; forasteros",
-    "id": "orang-orang asing",
+    "en": "foreign; strange",
+    "pt": "estrangeiros; estranhos",
+    "es": "extranjeros; extraños",
+    "id": "asing",
     "pos": "ADJ",
     "verses": [
       "11:13"
@@ -15898,10 +15926,11 @@
   "auras": {
     "root": "avoir",
     "translit": "auras",
-    "en": "will have",
-    "pt": "terás; haverás",
-    "es": "tendrás; habrás",
-    "id": "akan mempunyai"
+    "en": "you will have",
+    "pt": "terás",
+    "es": "tendrás",
+    "id": "engkau akan mempunyai",
+    "pos": "VERB"
   },
   "descendance</b>": {
     "root": "descendance</b>",
@@ -16100,7 +16129,8 @@
     "en": "bones",
     "pt": "ossos",
     "es": "huesos",
-    "id": "tulang-tulang"
+    "id": "tulang-belulang",
+    "pos": "NOUN"
   },
   "naissance": {
     "root": "naissance",
@@ -16471,10 +16501,10 @@
   "autant": {
     "root": "autant",
     "translit": "autant",
-    "en": "as much; as many",
-    "pt": "tanto; tantos",
-    "es": "tanto; tantos",
-    "id": "sebanyak",
+    "en": "as much; so much",
+    "pt": "tanto",
+    "es": "tanto",
+    "id": "sebanyak; sejauh",
     "pos": "ADV",
     "verses": [
       "1:4",
@@ -16566,13 +16596,13 @@
     ]
   },
   "sept": {
-    "root": "sept",
-    "translit": "sept",
-    "en": "seven",
-    "pt": "sete",
-    "es": "siete",
-    "id": "tujuh",
-    "pos": "NUM",
+    "root": "septante",
+    "translit": "sept.",
+    "en": "Septuagint",
+    "pt": "Septuaginta",
+    "es": "Septuaginta",
+    "id": "Septuaginta",
+    "pos": "PROPN",
     "verses": [
       "11:30"
     ]
@@ -17510,10 +17540,11 @@
   "prends": {
     "root": "prendre",
     "translit": "prends",
-    "en": "take; takes",
-    "pt": "tomo; tomas; toma",
-    "es": "tomo; tomas; toma",
-    "id": "mengambil; ambillah"
+    "en": "take",
+    "pt": "toma",
+    "es": "toma",
+    "id": "ambillah",
+    "pos": "VERB"
   },
   "légère": {
     "root": "léger",
@@ -17549,11 +17580,12 @@
   },
   "corrige": {
     "root": "corriger",
-    "en": "correct",
+    "en": "corrects",
     "translit": "corrige",
-    "pt": "corrigir",
-    "id": "apontados",
-    "es": "corriges"
+    "pt": "corrige",
+    "id": "menegur",
+    "es": "corrige",
+    "pos": "VERB"
   },
   "aime</b>": {
     "root": "aime</b>",
@@ -17566,10 +17598,11 @@
   "donne": {
     "root": "donner",
     "translit": "donne",
-    "en": "gives; give",
-    "pt": "dá; dou",
-    "es": "da; doy",
-    "id": "memberi"
+    "en": "give; gives",
+    "pt": "dá",
+    "es": "da",
+    "id": "berikanlah",
+    "pos": "VERB"
   },
   "coups": {
     "root": "coup",
@@ -17597,12 +17630,12 @@
   },
   "traite": {
     "root": "traiter",
-    "translit": "Traite",
-    "en": "treat; deal with",
+    "translit": "traite",
+    "en": "treat",
     "pt": "trata",
     "es": "trata",
-    "id": "perlakukanlah",
-    "pos": "NOUN",
+    "id": "perlakukan",
+    "pos": "VERB",
     "verses": [
       "12:7"
     ]
@@ -17710,9 +17743,10 @@
     "root": "intérêt",
     "translit": "intérêt",
     "en": "interest",
-    "pt": "juros; ganho",
-    "es": "interés; logro",
-    "id": "riba"
+    "pt": "juro; interesse",
+    "es": "interés",
+    "id": "bunga uang",
+    "pos": "NOUN"
   },
   "sainteté": {
     "root": "sainteté",
@@ -17740,12 +17774,12 @@
   },
   "abord": {
     "root": "abord",
-    "en": "access; admission; admittance; relation; understanding; acquaintance; approach; encounter",
+    "en": "approach; first",
     "translit": "abord",
-    "pt": "acesso",
-    "id": "jalan masuk",
-    "es": "entrada",
-    "pos": "ADV",
+    "pt": "início; abordagem",
+    "id": "permulaan; pendekatan",
+    "es": "principio; acceso",
+    "pos": "NOUN",
     "verses": [
       "2:3",
       "4:6",
@@ -17811,11 +17845,12 @@
   },
   "redressez": {
     "root": "redresser",
-    "en": "correct",
+    "en": "lift up; restore",
     "translit": "redressez",
-    "pt": "corrigir",
-    "id": "apontados",
-    "es": "corriges"
+    "pt": "levantai; restaurai",
+    "id": "angkatlah; perbaikilah",
+    "es": "levantad; restaurad",
+    "pos": "VERB"
   },
   "retombent": {
     "root": "retomber",
@@ -17848,10 +17883,11 @@
   "préparez": {
     "root": "préparer",
     "translit": "préparez",
-    "en": "prepare; consecrate",
-    "pt": "preparai; consagrai",
+    "en": "prepare",
+    "pt": "preparai",
     "es": "preparad",
-    "id": "siapkanlah; kuduskanlah"
+    "id": "siapkanlah",
+    "pos": "VERB"
   },
   "pieds": {
     "root": "pied",
@@ -18195,10 +18231,11 @@
   "obscurité": {
     "root": "obscurité",
     "translit": "obscurité",
-    "en": "mist; darkness",
-    "pt": "névoa; escuridão",
-    "es": "oscuridad; niebla",
-    "id": "kegelapan"
+    "en": "darkness",
+    "pt": "escuridão; trevas",
+    "es": "oscuridad; tinieblas",
+    "id": "kegelapan",
+    "pos": "NOUN"
   },
   "ténèbres": {
     "root": "ténèbres",
@@ -18536,10 +18573,11 @@
   "avertit": {
     "root": "avertir",
     "translit": "avertit",
-    "en": "warns; opens the ear",
-    "pt": "adverte; avisa",
-    "es": "advierte; avisa",
-    "id": "memperingatkan; membuka telinga"
+    "en": "told; informed",
+    "pt": "avisou",
+    "es": "avisó",
+    "id": "memberitahukan",
+    "pos": "VERB"
   },
   "voix": {
     "root": "voix",
@@ -18559,10 +18597,10 @@
   "ébranla": {
     "root": "ébranler",
     "translit": "ébranla",
-    "en": "shook",
-    "pt": "abalou; sacudiu",
-    "es": "conmovió; sacudió",
-    "id": "menggoncangkan",
+    "en": "shook; quaked",
+    "pt": "tremeu",
+    "es": "tembló",
+    "id": "berguncang",
     "pos": "VERB",
     "verses": [
       "12:26"
@@ -18673,11 +18711,11 @@
   "montrons": {
     "root": "montrer",
     "translit": "montrons",
-    "en": "let us show; we show",
-    "pt": "mostremos; demonstremos",
-    "es": "mostremos; demostremos",
-    "id": "marilah kita menunjukkan; mengucap syukur",
-    "pos": "NOUN",
+    "en": "let us deal",
+    "pt": "mostremo-nos",
+    "es": "tratemos",
+    "id": "marilah kita bertindak",
+    "pos": "VERB",
     "verses": [
       "12:28"
     ]
@@ -18754,10 +18792,11 @@
   "insu": {
     "root": "insu",
     "translit": "insu",
-    "en": "without my knowledge (à mon insu); unawares",
-    "pt": "sem eu saber (à mon insu)",
-    "es": "sin yo saberlo (à mon insu)",
-    "id": "tanpa sepengetahuanku (à mon insu)"
+    "en": "knowledge (à l'insu = without knowledge)",
+    "pt": "desconhecimento",
+    "es": "desconocimiento",
+    "id": "tanpa sepengetahuan",
+    "pos": "NOUN"
   },
   "logé": {
     "root": "loger",
@@ -18903,10 +18942,10 @@
   "pouvons": {
     "root": "pouvoir",
     "translit": "pouvons",
-    "en": "can; are able to; may",
+    "en": "can we",
     "pt": "podemos",
     "es": "podemos",
-    "id": "dapat; bisa",
+    "id": "dapatkah kami",
     "pos": "VERB",
     "verses": [
       "13:6"
@@ -18951,10 +18990,11 @@
   "regardez": {
     "root": "regarder",
     "translit": "regardez",
-    "en": "look at; consider; behold",
-    "pt": "olhais; olhai; vedes; considerais",
-    "es": "miráis; mirad; veis; consideráis",
-    "id": "memandang; lihatlah; perhatikanlah"
+    "en": "look",
+    "pt": "olhai",
+    "es": "mirad",
+    "id": "lihatlah",
+    "pos": "VERB"
   },
   "l’issue": {
     "root": "le; issue",
@@ -18967,11 +19007,11 @@
   "imitez": {
     "root": "imiter",
     "translit": "imitez",
-    "en": "imitate; follow",
-    "pt": "imitai",
-    "es": "imitad",
-    "id": "contohlah; teladanilah",
-    "pos": "ADJ",
+    "en": "learn; imitate",
+    "pt": "imiteis",
+    "es": "imitéis",
+    "id": "meniru",
+    "pos": "VERB",
     "verses": [
       "13:7"
     ]
@@ -18979,10 +19019,10 @@
   "hier": {
     "root": "hier",
     "translit": "hier",
-    "en": "yesterday; last night",
+    "en": "yesterday",
     "pt": "ontem",
     "es": "ayer",
-    "id": "kemarin; semalam",
+    "id": "kemarin",
     "pos": "ADV",
     "verses": [
       "13:8"
@@ -18991,10 +19031,10 @@
   "laissez": {
     "root": "laisser",
     "translit": "laissez",
-    "en": "let; allow; leave",
-    "pt": "deixeis; deixai; permiti",
-    "es": "dejéis; dejad; permitid",
-    "id": "biarkan; membiarkan",
+    "en": "leave; let",
+    "pt": "deixai",
+    "es": "dejad",
+    "id": "biarkanlah",
     "pos": "VERB",
     "verses": [
       "13:9"
@@ -19003,10 +19043,10 @@
   "entraîner": {
     "root": "entraîner",
     "translit": "entraîner",
-    "en": "carry away; lead astray; drag away",
-    "pt": "arrastar; levar",
-    "es": "llevar; arrastrar",
-    "id": "menyesatkan; menyeret",
+    "en": "to sweep away; to drag",
+    "pt": "arrastar",
+    "es": "arrastrar",
+    "id": "menghanyutkan",
     "pos": "VERB",
     "verses": [
       "13:9"
@@ -19080,7 +19120,7 @@
     "en": "animals",
     "pt": "animais",
     "es": "animales",
-    "id": "hewan; binatang",
+    "id": "binatang-binatang",
     "pos": "NOUN",
     "verses": [
       "13:11"
@@ -19177,18 +19217,19 @@
   "humiliation": {
     "root": "humiliation",
     "translit": "humiliation",
-    "en": "humiliation; lowliness",
+    "en": "humiliation",
     "pt": "humilhação",
     "es": "humillación",
-    "id": "kerendahan; kehinaan"
+    "id": "kerendahan",
+    "pos": "NOUN"
   },
   "ici": {
     "root": "ici",
     "translit": "ici",
-    "en": "here; this",
-    "pt": "aqui; este",
-    "es": "aquí; este",
-    "id": "di sini; ini",
+    "en": "here",
+    "pt": "aqui",
+    "es": "aquí",
+    "id": "di sini",
     "pos": "ADV",
     "verses": [
       "4:5",
@@ -19211,11 +19252,11 @@
   "offrons": {
     "root": "offrir",
     "translit": "offrons",
-    "en": "offer; we offer",
-    "pt": "oferecemos; ofertamos",
+    "en": "we offer",
+    "pt": "oferecemos",
     "es": "ofrecemos",
     "id": "kami mempersembahkan",
-    "pos": "NOUN",
+    "pos": "VERB",
     "verses": [
       "13:15"
     ]
@@ -19299,8 +19340,8 @@
     "root": "obéir",
     "translit": "obéissez",
     "en": "obey",
-    "pt": "obedecei; obedeceis",
-    "es": "obedeced; obedecen",
+    "pt": "obedeceis",
+    "es": "obedecéis",
     "id": "taatilah",
     "pos": "VERB",
     "verses": [
@@ -19331,9 +19372,10 @@
     "root": "avoir",
     "translit": "auront",
     "en": "will have",
-    "pt": "terão; haverão",
-    "es": "tendrán; habrán",
-    "id": "akan memiliki"
+    "pt": "terão",
+    "es": "tendrán",
+    "id": "akan memiliki",
+    "pos": "AUX"
   },
   "comptes": {
     "root": "compter",
@@ -19346,10 +19388,11 @@
   "puissent": {
     "root": "pouvoir",
     "translit": "puissent",
-    "en": "may; can",
+    "en": "may they",
     "pt": "possam",
     "es": "puedan",
-    "id": "dapat"
+    "id": "kiranya mereka",
+    "pos": "VERB"
   },
   "soupirant": {
     "root": "soupirer",
@@ -19361,11 +19404,11 @@
   },
   "avantage": {
     "root": "avantage",
-    "en": "advantage; benefit; gain; profit",
+    "en": "advantage; more",
     "translit": "avantage",
-    "pt": "vantagem",
-    "id": "gunanya",
-    "es": "pro",
+    "pt": "vantagem; mais",
+    "id": "keuntungan; lebih",
+    "es": "ventaja; más",
     "pos": "NOUN",
     "verses": [
       "13:17"
@@ -19394,11 +19437,12 @@
   },
   "encourage": {
     "root": "encourager",
-    "en": "to encourager",
+    "en": "encourage",
     "translit": "encourage",
-    "pt": "encorajar",
-    "id": "memberi semangat",
-    "es": "animarlos"
+    "pt": "encoraja",
+    "id": "kuatkanlah",
+    "es": "anima",
+    "pos": "VERB"
   },
   "instamment": {
     "root": "instamment",
@@ -19484,12 +19528,12 @@
     "id": "Amin"
   },
   "demande": {
-    "root": "demander; demande",
+    "root": "demander",
     "translit": "demande",
-    "en": "ask; asks; request",
-    "pt": "peço; pede; pedido; petição",
-    "es": "pido; pide; petición",
-    "id": "meminta; permintaan",
+    "en": "asks; requires",
+    "pt": "pede; exige",
+    "es": "pide; exige",
+    "id": "meminta",
     "pos": "VERB",
     "verses": [
       "13:19"
@@ -19528,12 +19572,12 @@
   },
   "sachez": {
     "root": "savoir",
-    "translit": "Sachez",
+    "translit": "sachez",
     "en": "know",
-    "pt": "sabei; saibam",
-    "es": "sabed; sepan",
+    "pt": "sabei",
+    "es": "sabed",
     "id": "ketahuilah",
-    "pos": "ADP",
+    "pos": "VERB",
     "verses": [
       "13:23"
     ]
@@ -19566,10 +19610,11 @@
   "arrive": {
     "root": "arriver",
     "translit": "arrive",
-    "en": "comes; happens",
+    "en": "arrives; happens",
     "pt": "chega; acontece",
     "es": "llega; sucede",
-    "id": "datang; terjadi"
+    "id": "datang; terjadi",
+    "pos": "VERB"
   },
   "assez": {
     "root": "assez",
@@ -19601,11 +19646,11 @@
   },
   "saluez": {
     "root": "saluer",
-    "translit": "Saluez",
-    "en": "greet; salute",
-    "pt": "saudai; saúdem",
-    "es": "saludad; saluden",
-    "id": "sampaikanlah salam; berilah salam",
+    "translit": "saluez",
+    "en": "greet",
+    "pt": "saudai",
+    "es": "saludad",
+    "id": "berilah salam",
     "pos": "VERB",
     "proper": true,
     "verses": [
@@ -21688,10 +21733,10 @@
   "épreuve": {
     "root": "épreuve",
     "translit": "épreuve",
-    "en": "trial; proof; test",
+    "en": "test; trial",
     "pt": "prova; provação",
     "es": "prueba",
-    "id": "ujian; pencobaan",
+    "id": "ujian; cobaan",
     "pos": "NOUN",
     "verses": [
       "11:17"
@@ -23647,10 +23692,10 @@
   "très": {
     "root": "très",
     "translit": "très",
-    "en": "very; exceedingly",
-    "pt": "muito; muitíssimo; bem",
-    "es": "muy; sumamente",
-    "id": "sangat; amat",
+    "en": "very; most",
+    "pt": "muito; altíssimo",
+    "es": "muy; altísimo",
+    "id": "sangat; maha",
     "pos": "ADV",
     "pos_counts": {
       "ADV": 3,
@@ -23678,10 +23723,10 @@
   "excellent": {
     "root": "excellent",
     "translit": "excellent",
-    "en": "excellent; best",
+    "en": "best; excellent",
     "pt": "excelente",
     "es": "excelente",
-    "id": "terbaik; unggul",
+    "id": "terbaik",
     "pos": "ADJ",
     "pos_counts": {
       "ADJ": 1,
@@ -23761,13 +23806,13 @@
     ]
   },
   "restes": {
-    "root": "reste; rester",
+    "root": "rester",
     "translit": "restes",
-    "en": "remnant; remains; you remain",
-    "pt": "restos; remanescente; ficas",
-    "es": "restos; remanente; quedas",
-    "id": "sisa-sisa; engkau tinggal",
-    "pos": "ADJ",
+    "en": "you remain",
+    "pt": "permaneces",
+    "es": "quedas",
+    "id": "engkau tinggal",
+    "pos": "VERB",
     "verses": [
       "1:12"
     ]
@@ -23873,10 +23918,10 @@
   "esprit": {
     "root": "esprit",
     "translit": "esprit",
-    "en": "spirit; mind; ghost",
-    "pt": "espírito; mente",
-    "es": "espíritu; mente",
-    "id": "roh; akal budi",
+    "en": "spirit; mind",
+    "pt": "espírito",
+    "es": "espíritu",
+    "id": "roh",
     "pos": "NOUN",
     "pos_counts": {
       "NOUN": 4,
@@ -23893,10 +23938,10 @@
   "ajoute": {
     "root": "ajouter",
     "translit": "ajoute",
-    "en": "adds; add",
-    "pt": "acrescenta; adiciona",
-    "es": "añade; agrega",
-    "id": "menambahkan; tambahkan",
+    "en": "adds",
+    "pt": "acrescenta",
+    "es": "añade",
+    "id": "menambah",
     "pos": "VERB",
     "verses": [
       "10:16"
@@ -23915,12 +23960,12 @@
     ]
   },
   "entrée": {
-    "root": "entrer; entrée",
+    "root": "entrée",
     "translit": "entrée",
-    "en": "entered; entrance; door",
-    "pt": "entrada; porta",
-    "es": "entrada; puerta",
-    "id": "masuk; pintu masuk",
+    "en": "entrance",
+    "pt": "entrada",
+    "es": "entrada",
+    "id": "pintu masuk",
     "pos": "NOUN",
     "verses": [
       "10:19"
@@ -24185,10 +24230,10 @@
   "faut": {
     "root": "falloir",
     "translit": "faut",
-    "en": "is necessary; must",
-    "pt": "é necessário; é preciso; cumpre",
-    "es": "es necesario; hace falta",
-    "id": "perlu; harus",
+    "en": "is necessary",
+    "pt": "é preciso",
+    "es": "es menester",
+    "id": "harus",
     "pos": "VERB",
     "verses": [
       "11:6"
@@ -24369,10 +24414,10 @@
   "pensait": {
     "root": "penser",
     "translit": "pensait",
-    "en": "thought; set his heart",
-    "pt": "pensasse; pensava",
-    "es": "pensara; pensaba",
-    "id": "memikirkan; mengarahkan hati-Nya",
+    "en": "thought",
+    "pt": "pensava",
+    "es": "pensaba",
+    "id": "berpikir",
     "pos": "VERB",
     "verses": [
       "11:19"
@@ -24605,10 +24650,10 @@
   "enveloppe": {
     "root": "envelopper",
     "translit": "enveloppe",
-    "en": "bind up; wrap",
-    "pt": "ata; envolve",
-    "es": "ata",
-    "id": "bungkuslah",
+    "en": "covers; wraps",
+    "pt": "envolve",
+    "es": "envuelve",
+    "id": "menyelubungi",
     "pos": "VERB",
     "verses": [
       "12:1"
@@ -24699,12 +24744,12 @@
     ]
   },
   "frappe": {
-    "root": "frapper; frappe",
+    "root": "frapper",
     "translit": "frappe",
-    "en": "knock; knocks; strike; strikes",
-    "pt": "bato; bate; firo; fere",
-    "es": "llamo; llama; golpeo; golpea; hiero; hiere",
-    "id": "mengetuk; memukul",
+    "en": "strike; strikes",
+    "pt": "fere",
+    "es": "hiere",
+    "id": "pukul",
     "pos": "VERB",
     "verses": [
       "12:6"
@@ -24725,10 +24770,11 @@
   "Supportez": {
     "root": "supporter",
     "translit": "supportez",
-    "en": "bear with; endure; tolerate",
-    "pt": "suportais; suportai; suportam",
-    "es": "soportáis; soportad; soportan",
-    "id": "sabar menanggung; menahan; membiarkan"
+    "en": "bear with",
+    "pt": "suportai",
+    "es": "soportaos",
+    "id": "sabarlah",
+    "pos": "VERB"
   },
   "qu’un": {
     "root": "que; un",
@@ -24846,13 +24892,13 @@
     ]
   },
   "mets": {
-    "root": "mettre; mets",
+    "root": "mettre",
     "translit": "mets",
-    "en": "put; set; dish; food",
-    "pt": "põe; põe-te; ponho; prato; iguaria",
-    "es": "pon; pongo; plato; manjar",
-    "id": "taruhlah; hidangan; makanan",
-    "pos": "NOUN",
+    "en": "set; put",
+    "pt": "põe",
+    "es": "pon",
+    "id": "taruhlah",
+    "pos": "VERB",
     "verses": [
       "12:16"
     ]
@@ -25100,10 +25146,10 @@
     "root": "avoir",
     "translit": "ayez",
     "en": "have",
-    "pt": "tenhais; tende",
-    "es": "tengáis; tengan",
+    "pt": "tenhais",
+    "es": "tengáis",
     "id": "milikilah",
-    "pos": "VERB",
+    "pos": "AUX",
     "verses": [
       "13:17"
     ]
@@ -25562,12 +25608,12 @@
     ]
   },
   "fixe": {
-    "root": "fixer; fixe",
+    "root": "fixer",
     "translit": "fixe",
-    "en": "sets; fixes; fixed",
-    "pt": "fixa; determina; estabelece; fixo",
-    "es": "fija; determina; fijo",
-    "id": "menetapkan; tetap",
+    "en": "appoint; fix",
+    "pt": "fixa; estabelece",
+    "es": "fija; señala",
+    "id": "tetapkan",
     "pos": "VERB",
     "verses": [
       "4:7"
@@ -25600,10 +25646,10 @@
   "exemple": {
     "root": "exemple",
     "translit": "exemple",
-    "en": "example; instance",
+    "en": "example",
     "pt": "exemplo",
     "es": "ejemplo",
-    "id": "misalnya; contoh",
+    "id": "teladan",
     "pos": "NOUN",
     "verses": [
       "4:11"
@@ -25711,7 +25757,7 @@
     "en": "men",
     "pt": "homens",
     "es": "hombres",
-    "id": "orang-orang; manusia",
+    "id": "orang-orang",
     "pos": "NOUN",
     "verses": [
       "5:1",
@@ -25816,10 +25862,10 @@
   "ferons": {
     "root": "faire",
     "translit": "ferons",
-    "en": "will do; will make",
+    "en": "shall we do",
     "pt": "faremos",
     "es": "haremos",
-    "id": "kami akan melakukan; kami akan membuat",
+    "id": "kami akan berbuat",
     "pos": "VERB",
     "verses": [
       "6:3"
@@ -25865,7 +25911,7 @@
     "root": "herbe",
     "translit": "herbe",
     "en": "grass; herb",
-    "pt": "erva; capim; relva",
+    "pt": "erva; relva",
     "es": "hierba",
     "id": "rumput",
     "pos": "NOUN",
@@ -25875,11 +25921,11 @@
   },
   "utile": {
     "root": "utile",
-    "en": "advantageous; useful",
+    "en": "useful; profitable",
     "translit": "utile",
-    "pt": "útil",
-    "id": "útil",
-    "es": "útil",
+    "pt": "útil; proveitoso",
+    "id": "berguna",
+    "es": "útil; provechoso",
     "pos": "ADJ",
     "verses": [
       "6:7"
@@ -25913,22 +25959,22 @@
   "attendons": {
     "root": "attendre",
     "translit": "attendons",
-    "en": "wait; delay",
-    "pt": "esperamos; aguardamos",
-    "es": "esperamos; aguardamos",
-    "id": "menunggu",
+    "en": "we wait for",
+    "pt": "esperamos",
+    "es": "esperamos",
+    "id": "kita menantikan",
     "pos": "VERB",
     "verses": [
       "6:9"
     ]
   },
   "concerne": {
-    "root": "concerne",
-    "en": "concern; relate",
+    "root": "concerner",
+    "en": "concerns",
     "translit": "concerne",
     "pt": "concerne",
-    "id": "concerne",
-    "es": "buen",
+    "id": "mengenai",
+    "es": "concierne",
     "pos": "VERB",
     "verses": [
       "6:9",
@@ -26083,10 +26129,10 @@
   "exercent": {
     "root": "exercer",
     "translit": "exercent",
-    "en": "exercise; serve; practice",
-    "pt": "exerçam; exercem; sirvam",
-    "es": "ejerzan; ejercen; sirvan",
-    "id": "melayani; menjalankan",
+    "en": "are executed; exercise",
+    "pt": "exercem",
+    "es": "ejercen",
+    "id": "berlaku; menjalankan",
     "pos": "VERB",
     "verses": [
       "7:5"
@@ -26143,10 +26189,10 @@
   "dites": {
     "root": "dire",
     "translit": "dites",
-    "en": "said; spoken; you say; say",
-    "pt": "ditas; dizeis; dizei",
-    "es": "dichas; decís; decid",
-    "id": "dikatakan; kamu katakan; katakanlah",
+    "en": "tell; say",
+    "pt": "dizei",
+    "es": "decid",
+    "id": "katakanlah",
     "pos": "VERB",
     "verses": [
       "7:13"
@@ -26179,10 +26225,10 @@
   "paraît": {
     "root": "paraître",
     "translit": "paraît",
-    "en": "appears; seems",
-    "pt": "parece; aparece",
-    "es": "parece; aparece",
-    "id": "tampak; kelihatan",
+    "en": "appears",
+    "pt": "parece",
+    "es": "parece",
+    "id": "tampaknya",
     "pos": "VERB",
     "verses": [
       "7:15"
@@ -26281,10 +26327,10 @@
   "image": {
     "root": "image",
     "translit": "image",
-    "en": "image; picture; likeness",
-    "pt": "imagem; figura",
-    "es": "imagen; figura",
-    "id": "gambar; rupa; citra",
+    "en": "image",
+    "pt": "imagem",
+    "es": "imagen",
+    "id": "patung; gambar",
     "pos": "NOUN",
     "verses": [
       "8:5"
@@ -26305,10 +26351,11 @@
   "Aie": {
     "root": "avoir",
     "translit": "aie",
-    "en": "have; may have",
+    "en": "have",
     "pt": "tenha",
     "es": "tenga",
-    "id": "memiliki; kiranya memiliki"
+    "id": "milikilah",
+    "pos": "VERB"
   },
   "établie": {
     "root": "établir",
@@ -26323,32 +26370,33 @@
     ]
   },
   "blâme": {
-    "root": "blâmer; blâme",
+    "root": "blâmer",
     "translit": "blâme",
-    "en": "blame; blames; reproach",
-    "pt": "censure; censura; repreensão",
-    "es": "culpe; culpa; reproche",
-    "id": "menyalahkan; celaan",
-    "pos": "NOUN",
+    "en": "finds fault; blames",
+    "pt": "culpa; censura",
+    "es": "culpa; reprende",
+    "id": "menyalahkan",
+    "pos": "VERB",
     "verses": [
       "8:8"
     ]
   },
   "Israël": {
     "root": "Israël",
-    "translit": "Israël",
+    "translit": "israël",
     "en": "Israel",
     "pt": "Israel",
     "es": "Israel",
-    "id": "Israel"
+    "id": "Israel",
+    "pos": "PROPN"
   },
   "saisis": {
     "root": "saisir",
-    "translit": "Saisis",
-    "en": "seized; take hold of; grasp",
-    "pt": "tomados; pega; empunha",
-    "es": "sobrecogidos; toma; empuña",
-    "id": "dicekam; ambillah; peganglah",
+    "translit": "saisis",
+    "en": "seize",
+    "pt": "agarra; toma",
+    "es": "agarra; toma",
+    "id": "tangkaplah",
     "pos": "VERB",
     "verses": [
       "8:9"
@@ -26463,10 +26511,10 @@
   "époque": {
     "root": "époque",
     "translit": "époque",
-    "en": "time; season; period",
+    "en": "time; period",
     "pt": "época; tempo",
     "es": "época; tiempo",
-    "id": "waktu; masa",
+    "id": "zaman; waktu",
     "pos": "NOUN",
     "verses": [
       "9:10"
@@ -26559,10 +26607,10 @@
   "devaient": {
     "root": "devoir",
     "translit": "devaient",
-    "en": "ought; should; were to",
-    "pt": "deviam; haviam de",
-    "es": "debían; habían de",
-    "id": "harus; semestinya",
+    "en": "were to; had to",
+    "pt": "deviam",
+    "es": "debían",
+    "id": "seharusnya",
     "pos": "VERB",
     "verses": [
       "9:23"
@@ -26774,10 +26822,10 @@
   "oracles": {
     "root": "oracle",
     "translit": "oracles",
-    "en": "oracles; divinations",
-    "pt": "oráculos; adivinhações",
-    "es": "oráculos; adivinaciones",
-    "id": "tenungan; sabda",
+    "en": "visions; oracles",
+    "pt": "oráculos; visões",
+    "es": "oráculos; visiones",
+    "id": "penglihatan",
     "pos": "NOUN",
     "verses": [
       "5:12",
@@ -26802,11 +26850,12 @@
   },
   "Amen": {
     "root": "amen",
-    "translit": "Amen",
-    "en": "Amen",
-    "pt": "Amém",
-    "es": "Amén",
-    "id": "Amin"
+    "translit": "amen",
+    "en": "amen",
+    "pt": "amém",
+    "es": "amén",
+    "id": "amin",
+    "pos": "INTJ"
   },
   "servitude": {
     "root": "servitude",
@@ -27278,11 +27327,12 @@
   },
   "annonce": {
     "root": "annoncer",
-    "translit": "Annonce",
-    "en": "announce; declare; tell",
-    "pt": "anuncia; declara",
-    "es": "anuncia; declara",
-    "id": "beritahukanlah; umumkanlah"
+    "translit": "annonce",
+    "en": "declare; announces",
+    "pt": "anuncia",
+    "es": "anuncia",
+    "id": "memberitahukan",
+    "pos": "VERB"
   },
   "ete": {
     "root": "ete",
@@ -27335,10 +27385,11 @@
   "laisse": {
     "root": "laisser",
     "translit": "laisse",
-    "en": "let; leave; allow",
-    "pt": "deixa; permite",
-    "es": "deja; permite",
-    "id": "membiarkan; meninggalkan"
+    "en": "let; leave",
+    "pt": "deixa",
+    "es": "deja",
+    "id": "biarkanlah",
+    "pos": "VERB"
   },
   "jesus": {
     "root": "jesus",
@@ -27675,12 +27726,13 @@
     "es": "pecado"
   },
   "attaches": {
-    "root": "attache; attacher",
+    "root": "attacher",
     "translit": "attaches",
-    "en": "ties; bands; fastenings; you tie",
-    "pt": "amarras; laços; ataduras; atas",
-    "es": "ataduras; lazos; atas",
-    "id": "tali-tali pengikat"
+    "en": "you bind",
+    "pt": "atas",
+    "es": "atas",
+    "id": "engkau mengikat",
+    "pos": "VERB"
   },
   "jusqua": {
     "root": "jusqua",
@@ -28472,10 +28524,11 @@
   "attache": {
     "root": "attacher",
     "translit": "attache",
-    "en": "binds; fastens; ties",
-    "pt": "ata; prende; liga",
-    "es": "ata; une; sujeta",
-    "id": "mengikat; memasang"
+    "en": "binds; clings",
+    "pt": "apega-se; ata",
+    "es": "se apega; ata",
+    "id": "melekat; mengikat",
+    "pos": "VERB"
   },
   "pretres": {
     "root": "pretres",
@@ -29054,10 +29107,11 @@
   "purifie": {
     "root": "purifier",
     "translit": "purifie",
-    "en": "purifies; cleanse",
-    "pt": "purifica; purifique",
-    "es": "purifica; purifique",
-    "id": "mentahirkan"
+    "en": "purify; cleanse",
+    "pt": "purifica",
+    "es": "purifica",
+    "id": "tahirkankah",
+    "pos": "VERB"
   },
   "purifiees": {
     "root": "purifiees",
@@ -29150,10 +29204,11 @@
   "ote": {
     "root": "ôter",
     "translit": "ote",
-    "en": "remove; take off",
-    "pt": "tira; remove",
-    "es": "quita",
-    "id": "bukalah"
+    "en": "be removed",
+    "pt": "ergue-te",
+    "es": "quítate",
+    "id": "terangkatlah",
+    "pos": "VERB"
   },
   "agree": {
     "root": "agree",
@@ -29231,9 +29286,10 @@
     "root": "donner",
     "translit": "donnes",
     "en": "give",
-    "pt": "dás",
-    "es": "das",
-    "id": "memberi"
+    "pt": "dá",
+    "es": "da",
+    "id": "berikanlah",
+    "pos": "VERB"
   },
   "egalement": {
     "root": "egalement",
@@ -29287,9 +29343,10 @@
     "root": "laver",
     "translit": "lave",
     "en": "wash",
-    "pt": "lavo; lava",
-    "es": "lavo; lava",
-    "id": "membasuh"
+    "pt": "lava-te",
+    "es": "lávate",
+    "id": "mandilah",
+    "pos": "VERB"
   },
   "reconnaitre": {
     "root": "reconnaitre",
@@ -29398,10 +29455,11 @@
   "outrage": {
     "root": "outrage",
     "translit": "outrage",
-    "en": "outrage; insult; abuse",
-    "pt": "afronte; ultraje; agravo",
+    "en": "outrage; insult; wrong",
+    "pt": "ultraje; agravo",
     "es": "ultraje; agravio",
-    "id": "penghinaan"
+    "id": "penghinaan; kelaliman",
+    "pos": "NOUN"
   },
   "plutot": {
     "root": "plutot",
@@ -29454,10 +29512,11 @@
   "accepte": {
     "root": "accepter",
     "translit": "accepte",
-    "en": "accepts; accept",
-    "pt": "aceita; aceito; aceite",
-    "es": "acepta; acepto; acepte",
-    "id": "menerima; berkenan"
+    "en": "accepts; takes",
+    "pt": "aceita",
+    "es": "acepta",
+    "id": "menerima",
+    "pos": "VERB"
   },
   "recompense": {
     "root": "recompense",
@@ -29517,10 +29576,11 @@
   "transporte": {
     "root": "transporter",
     "translit": "transporte",
-    "en": "removes; moves; carries away",
-    "pt": "transporta; remove; muda",
-    "es": "transporta; remueve; traslada",
-    "id": "memindahkan"
+    "en": "move",
+    "pt": "transporta-te",
+    "es": "pásate",
+    "id": "pindahlah",
+    "pos": "VERB"
   },
   "noe": {
     "root": "noe",
@@ -29533,10 +29593,11 @@
   "anime": {
     "root": "animer",
     "translit": "anime",
-    "en": "animates; inspires; moves",
-    "pt": "anima; move; inspira",
-    "es": "anima; mueve; inspira",
-    "id": "menggerakkan; menghidupkan"
+    "en": "gives life; animates",
+    "pt": "anima; dá vida",
+    "es": "anima; da vida",
+    "id": "memberi hidup",
+    "pos": "VERB"
   },
   "repond": {
     "root": "repond",
@@ -29603,11 +29664,12 @@
   },
   "avance": {
     "root": "avancer",
-    "translit": "Avance",
-    "en": "reach hither; put forth",
-    "pt": "chega; põe",
-    "es": "pon; acerca",
-    "id": "taruhlah"
+    "translit": "avance",
+    "en": "stretch out; advance",
+    "pt": "estende; avança",
+    "es": "extiende; avanza",
+    "id": "ulurkan; maju",
+    "pos": "VERB"
   },
   "deja": {
     "root": "deja",
@@ -29750,12 +29812,13 @@
     "es": "preferente"
   },
   "maltraite": {
-    "root": "maltraite",
-    "en": "abuse",
-    "translit": "maltraité",
-    "pt": "afrontar",
-    "id": "afrontar",
-    "es": "afrontar"
+    "root": "maltraiter",
+    "en": "mistreats; oppresses",
+    "translit": "maltraite",
+    "pt": "maltrata",
+    "id": "menindas",
+    "es": "maltrata",
+    "pos": "VERB"
   },
   "ephemere": {
     "root": "ephemere",
@@ -30043,12 +30106,13 @@
     "id": "membawa; pintu-pintu gerbang"
   },
   "entoures": {
-    "root": "entoures",
-    "en": "surround",
-    "translit": "entourés",
-    "pt": "cercar",
-    "id": "mengelilingi",
-    "es": "surround"
+    "root": "entourer",
+    "en": "you surround",
+    "translit": "entoures",
+    "pt": "cercas",
+    "id": "engkau memagari",
+    "es": "rodeas",
+    "pos": "VERB"
   },
   "nuee": {
     "root": "nuee",
@@ -30106,11 +30170,12 @@
   },
   "oublie": {
     "root": "oublier",
-    "translit": "Oublie",
+    "translit": "oublie",
     "en": "forget",
-    "pt": "esquece",
-    "es": "olvida",
-    "id": "lupakanlah"
+    "pt": "esqueças",
+    "es": "olvides",
+    "id": "melupakan",
+    "pos": "VERB"
   },
   "legere": {
     "root": "legere",
@@ -30409,10 +30474,11 @@
   "honore": {
     "root": "honorer",
     "translit": "honore",
-    "en": "honors; honor!",
+    "en": "honors",
     "pt": "honra",
     "es": "honra",
-    "id": "hormatilah; menghormati"
+    "id": "menghormati",
+    "pos": "VERB"
   },
   "ladultere": {
     "root": "ladultere",
@@ -30448,10 +30514,11 @@
   "apporte": {
     "root": "apporter",
     "translit": "apporte",
-    "en": "brings",
-    "pt": "traz",
+    "en": "bring",
+    "pt": "traze",
     "es": "trae",
-    "id": "mendatangkan"
+    "id": "bawalah",
+    "pos": "VERB"
   },
   "brules": {
     "root": "brules",
@@ -31106,10 +31173,11 @@
   "abaisse": {
     "root": "abaisser",
     "translit": "abaisse",
-    "en": "bow down; bring low",
-    "pt": "inclina; abaixa",
-    "es": "inclina; abaja",
-    "id": "sendengkanlah; tundukkanlah"
+    "en": "brings low",
+    "pt": "abate; humilha",
+    "es": "abate; humilla",
+    "id": "merendahkan",
+    "pos": "VERB"
   },
   "celebrerai": {
     "root": "celebrerai",
@@ -31534,11 +31602,11 @@
   "supportez": {
     "root": "supporter",
     "translit": "supportez",
-    "en": "bear with; endure; tolerate",
-    "pt": "suportais; suportai; suportam",
-    "es": "soportáis; soportad; soportan",
-    "id": "sabar menanggung; menahan; membiarkan",
-    "pos": "PROPN",
+    "en": "bear with",
+    "pt": "suportai",
+    "es": "soportaos",
+    "id": "sabarlah",
+    "pos": "VERB",
     "proper": true,
     "verses": [
       "12:7"
@@ -31573,12 +31641,12 @@
   },
   "amen": {
     "root": "amen",
-    "translit": "Amen",
-    "en": "Amen",
-    "pt": "Amém",
-    "es": "Amén",
-    "id": "Amin",
-    "pos": "NOUN",
+    "translit": "amen",
+    "en": "amen",
+    "pt": "amém",
+    "es": "amén",
+    "id": "amin",
+    "pos": "INTJ",
     "pos_counts": {
       "NOUN": 1,
       "PROPN": 1
@@ -31646,11 +31714,11 @@
   "eût": {
     "root": "avoir",
     "translit": "eût",
-    "en": "had; would have",
-    "pt": "tivesse; houvesse",
-    "es": "tuviera; hubiera",
-    "id": "memiliki",
-    "pos": "NOUN",
+    "en": "had",
+    "pt": "tivesse",
+    "es": "hubiera",
+    "id": "telah",
+    "pos": "AUX",
     "pos_counts": {
       "NOUN": 1,
       "PRON": 1
@@ -31724,18 +31792,18 @@
   "aie": {
     "root": "avoir",
     "translit": "aie",
-    "en": "have; may have",
+    "en": "have",
     "pt": "tenha",
     "es": "tenga",
-    "id": "memiliki; kiranya memiliki",
-    "pos": "NOUN",
+    "id": "milikilah",
+    "pos": "VERB",
     "verses": [
       "8:5"
     ]
   },
   "israël": {
     "root": "Israël",
-    "translit": "Israël",
+    "translit": "israël",
     "en": "Israel",
     "pt": "Israel",
     "es": "Israel",
@@ -31904,10 +31972,10 @@
   "eussent": {
     "root": "avoir",
     "translit": "eussent",
-    "en": "had; might have",
-    "pt": "tivessem; houvessem",
-    "es": "tuvieran; hubieran",
-    "id": "memiliki; harus",
+    "en": "had",
+    "pt": "tivessem",
+    "es": "hubieran",
+    "id": "telah",
     "pos": "AUX",
     "verses": [
       "4:3"
@@ -32039,12 +32107,12 @@
     ]
   },
   "offre": {
-    "root": "offrir; offre",
+    "root": "offrir",
     "translit": "offre",
-    "en": "offers; offer",
-    "pt": "oferece; oferta",
-    "es": "ofrece; oferta",
-    "id": "mempersembahkan; tawaran",
+    "en": "offer",
+    "pt": "oferece",
+    "es": "ofrece",
+    "id": "persembahkan",
     "pos": "VERB",
     "verses": [
       "9:7",
@@ -32080,9 +32148,9 @@
   "glorifions": {
     "root": "glorifier",
     "translit": "glorifions",
-    "en": "we boast; we glory",
-    "pt": "gloriamos; vangloriamos",
-    "es": "gloriamos; alabamos",
+    "en": "we boast",
+    "pt": "nos gloriamos",
+    "es": "nos gloriamos",
     "id": "kami bermegah",
     "pos": "VERB",
     "verses": [
@@ -32152,10 +32220,10 @@
   "établit": {
     "root": "établir",
     "translit": "établit",
-    "en": "establishes; established",
-    "pt": "estabelece; estabeleceu",
-    "es": "establece; estableció",
-    "id": "menetapkan; mengangkat",
+    "en": "appoints; sets",
+    "pt": "estabelece",
+    "es": "establece",
+    "id": "mengangkat",
     "pos": "VERB",
     "verses": [
       "7:28"
@@ -32176,11 +32244,11 @@
   "oint": {
     "root": "oindre",
     "translit": "oint",
-    "en": "anointed",
+    "en": "anointed one",
     "pt": "ungido",
     "es": "ungido",
-    "id": "diurapi",
-    "pos": "VERB",
+    "id": "orang yang diurapi",
+    "pos": "NOUN",
     "verses": [
       "1:9"
     ]
@@ -32456,10 +32524,10 @@
   "origine": {
     "root": "origine",
     "translit": "origine",
-    "en": "origin; birth",
+    "en": "origin; beginning",
     "pt": "origem",
     "es": "origen",
-    "id": "asal-usul; permulaan",
+    "id": "asal; mula",
     "pos": "NOUN",
     "verses": [
       "7:6"
@@ -32468,10 +32536,10 @@
   "opprobre": {
     "root": "opprobre",
     "translit": "opprobre",
-    "en": "reproach; shame; disgrace",
-    "pt": "opróbrio; vergonha",
-    "es": "oprobio; oprobio; vergüenza",
-    "id": "cela; aib",
+    "en": "reproach; disgrace",
+    "pt": "opróbrio",
+    "es": "oprobio",
+    "id": "aib; cela",
     "pos": "NOUN",
     "verses": [
       "11:26",
@@ -32562,9 +32630,9 @@
   "livrez": {
     "root": "livrer",
     "translit": "livrez",
-    "en": "deliver; hand over",
+    "en": "hand over; deliver",
     "pt": "entregai",
-    "es": "entregad; entreguen",
+    "es": "entregad",
     "id": "serahkanlah",
     "pos": "VERB",
     "verses": [
@@ -32650,11 +32718,11 @@
   "suivez": {
     "root": "suivre",
     "translit": "suivez",
-    "en": "follow; make",
-    "pt": "segui; fazei",
-    "es": "seguid; haced",
-    "id": "luruskanlah; ikutilah",
-    "pos": "PRON",
+    "en": "follow",
+    "pt": "segui",
+    "es": "seguid",
+    "id": "ikutlah",
+    "pos": "VERB",
     "verses": [
       "12:13"
     ]
@@ -32942,9 +33010,9 @@
     "root": "opprobre",
     "translit": "opprobres",
     "en": "reproaches",
-    "pt": "opróbrios; afrontas",
-    "es": "oprobios; vituperios",
-    "id": "celaan-celaan",
+    "pt": "opróbios",
+    "es": "oprobios",
+    "id": "cercaan",
     "pos": "NOUN",
     "verses": [
       "10:33"
@@ -32953,10 +33021,10 @@
   "ordonnance": {
     "root": "ordonnance",
     "translit": "ordonnance",
-    "en": "ordinance; decree; statute",
-    "pt": "ordenança; decreto; estatuto",
-    "es": "ordenanza; estatuto",
-    "id": "ketetapan; peraturan",
+    "en": "ordinance; decree",
+    "pt": "ordenança",
+    "es": "ordenanza",
+    "id": "peraturan; ketetapan",
     "pos": "NOUN",
     "verses": [
       "7:16",
@@ -32978,10 +33046,10 @@
   "pardonnerai": {
     "root": "pardonner",
     "translit": "pardonnerai",
-    "en": "I will forgive; I will pardon",
+    "en": "shall I forgive",
     "pt": "perdoarei",
     "es": "perdonaré",
-    "id": "Aku akan mengampuni",
+    "id": "aku harus mengampuni",
     "pos": "VERB",
     "verses": [
       "8:12"
@@ -33072,16 +33140,16 @@
     "es": "reciba"
   },
   "perçoivent": {
-    "root": "perçoivent",
-    "translit": "",
+    "root": "percevoir",
+    "translit": "perçoivent",
     "pos": "VERB",
     "verses": [
       "7:8"
     ],
-    "pt": "recebem",
-    "id": "menerima",
-    "en": "receive tithes",
-    "es": "recibir"
+    "pt": "cobram",
+    "id": "memungut",
+    "en": "collect",
+    "es": "cobran"
   },
   "prennes": {
     "root": "prendre",
@@ -33646,10 +33714,10 @@
   "exciter": {
     "root": "exciter",
     "translit": "exciter",
-    "en": "to stir up; to incite; to provoke",
-    "pt": "incitar; despertar; provocar",
-    "es": "incitar; estimular; provocar",
-    "id": "menghasut; membangkitkan; memancing",
+    "en": "to provoke; to stir up",
+    "pt": "provocar",
+    "es": "provocar",
+    "id": "membangkitkan",
     "pos": "VERB",
     "verses": [
       "10:24"
@@ -33670,11 +33738,11 @@
   "fortifiez": {
     "root": "fortifier",
     "translit": "fortifiez",
-    "en": "strengthen; be strong",
-    "pt": "fortalecei; fortificai-vos",
-    "es": "fortaleced; esforzaos",
-    "id": "kuatkanlah; jadilah kuat",
-    "pos": "PROPN",
+    "en": "be strong; strengthen",
+    "pt": "fortalecei-vos",
+    "es": "esforzaos",
+    "id": "kuatkanlah",
+    "pos": "VERB",
     "proper": true,
     "verses": [
       "12:12"
@@ -34009,12 +34077,12 @@
   },
   "écrirai": {
     "root": "écrire",
-    "translit": "ecrirai",
+    "translit": "écrirai",
     "en": "I will write",
     "pt": "escreverei",
     "es": "escribiré",
     "id": "aku akan menulis",
-    "pos": "NOUN",
+    "pos": "VERB",
     "verses": [
       "8:10",
       "10:16"
@@ -34022,12 +34090,12 @@
   },
   "élevât": {
     "root": "élever",
-    "translit": "elevat",
-    "en": "might raise; might lift up",
-    "pt": "levantasse; exaltasse",
-    "es": "levantase; exaltase",
-    "id": "mengangkat",
-    "pos": "ADJ",
+    "translit": "élevât",
+    "en": "lifted",
+    "pt": "elevasse",
+    "es": "levantase",
+    "id": "terangkat",
+    "pos": "VERB",
     "verses": [
       "2:10"
     ]
@@ -34065,20 +34133,22 @@
     "id": "mereka"
   },
   "A": {
-    "root": "à; avoir",
-    "translit": "A",
-    "en": "to; at; in; for; has",
-    "pt": "a; em; para; por; tem; há",
-    "es": "a; en; para; por; tiene; hay",
-    "id": "ke; di; untuk; kepada; mempunyai; ada"
+    "root": "avoir",
+    "translit": "a.",
+    "en": "has",
+    "pt": "tem",
+    "es": "tiene",
+    "id": "memiliki; punya",
+    "pos": "VERB"
   },
   "Laisse": {
     "root": "laisser",
     "translit": "laisse",
-    "en": "leave",
+    "en": "let; leave",
     "pt": "deixa",
     "es": "deja",
-    "id": "tinggalkanlah"
+    "id": "biarkanlah",
+    "pos": "VERB"
   },
   "Moïse": {
     "root": "Moïse",
@@ -34103,19 +34173,21 @@
   },
   "Jésus": {
     "root": "Jésus",
-    "translit": "Jésus",
+    "translit": "jésus",
     "en": "Jesus",
-    "pt": "Jesus (Javé salva)",
+    "pt": "Jesus",
     "es": "Jesús",
-    "id": "Yesus"
+    "id": "Yesus",
+    "pos": "PROPN"
   },
   "Christ": {
     "root": "Christ",
-    "translit": "Christ",
+    "translit": "christ",
     "en": "Christ",
-    "pt": "Cristo (o Ungido)",
+    "pt": "Cristo",
     "es": "Cristo",
-    "id": "Kristus"
+    "id": "Kristus",
+    "pos": "PROPN"
   },
   "Jésus-Christ": {
     "root": "Jésus-Christ",
@@ -34127,27 +34199,30 @@
   },
   "Aaron": {
     "root": "Aaron",
-    "translit": "Aaron",
+    "translit": "aaron",
     "en": "Aaron",
     "pt": "Arão",
     "es": "Aarón",
-    "id": "Harun"
+    "id": "Harun",
+    "pos": "PROPN"
   },
   "Abraham": {
     "root": "Abraham",
-    "translit": "Abraham",
+    "translit": "abraham",
     "en": "Abraham",
     "pt": "Abraão",
     "es": "Abraham",
-    "id": "Abraham"
+    "id": "Abraham",
+    "pos": "PROPN"
   },
   "Isaac": {
     "root": "Isaac",
-    "translit": "Isaac",
+    "translit": "isaac",
     "en": "Isaac",
     "pt": "Isaque",
     "es": "Isaac",
-    "id": "Ishak"
+    "id": "Ishak",
+    "pos": "PROPN"
   },
   "Jacob": {
     "root": "Jacob",
@@ -34318,12 +34393,13 @@
     "id": "Rahab"
   },
   "Éternel": {
-    "root": "Éternel; éternel",
-    "translit": "Éternel",
+    "root": "Éternel",
+    "translit": "éternel",
     "en": "LORD; Eternal",
-    "pt": "Eterno; SENHOR; eterno",
-    "es": "Eterno; SEÑOR; eterno",
-    "id": "TUHAN; Kekal"
+    "pt": "SENHOR; Eterno",
+    "es": "SEÑOR; Eterno",
+    "id": "TUHAN",
+    "pos": "PROPN"
   },
   "Dieu": {
     "root": "Dieu",
@@ -34426,12 +34502,13 @@
     "id": "sekarang"
   },
   "Demande": {
-    "root": "demander; demande",
+    "root": "demander",
     "translit": "demande",
-    "en": "ask; asks; request",
-    "pt": "peço; pede; pedido; petição",
-    "es": "pido; pide; petición",
-    "id": "meminta; permintaan"
+    "en": "asks; requires",
+    "pt": "pede; exige",
+    "es": "pide; exige",
+    "id": "meminta",
+    "pos": "VERB"
   },
   "Sur": {
     "root": "sur",
@@ -34532,10 +34609,11 @@
   "Prends": {
     "root": "prendre",
     "translit": "prends",
-    "en": "take; takes",
-    "pt": "tomo; tomas; toma",
-    "es": "tomo; tomas; toma",
-    "id": "mengambil; ambillah"
+    "en": "take",
+    "pt": "toma",
+    "es": "toma",
+    "id": "ambillah",
+    "pos": "VERB"
   },
   "recherchez": {
     "root": "rechercher",
@@ -34565,10 +34643,11 @@
   "Lève": {
     "root": "lever",
     "translit": "lève",
-    "en": "lift up; raise",
-    "pt": "levanta; ergue",
-    "es": "levanta; alza",
-    "id": "angkatlah"
+    "en": "arise; lift",
+    "pt": "levanta-te",
+    "es": "levántate",
+    "id": "bangunlah",
+    "pos": "VERB"
   },
   "Parmi": {
     "root": "parmi",
@@ -34597,10 +34676,11 @@
   "Fais": {
     "root": "faire",
     "translit": "fais",
-    "en": "do; make",
-    "pt": "faço; fazes; faz; faze",
-    "es": "hago; haces; hace; haz",
-    "id": "membuat; lakukan"
+    "en": "make; do",
+    "pt": "faze",
+    "es": "haz",
+    "id": "buatlah",
+    "pos": "VERB"
   },
   "Combien": {
     "root": "combien",
@@ -34645,10 +34725,11 @@
   "Or": {
     "root": "or",
     "translit": "or",
-    "en": "gold; now; however",
-    "pt": "ouro; ora; porém",
-    "es": "oro; ahora bien; mas",
-    "id": "emas; adapun; namun"
+    "en": "gold; now",
+    "pt": "ouro; ora",
+    "es": "oro; ahora",
+    "id": "emas",
+    "pos": "NOUN"
   },
   "Puisqu’ils": {
     "root": "puisque",
@@ -34692,11 +34773,12 @@
   },
   "Avance": {
     "root": "avancer",
-    "translit": "Avance",
-    "en": "reach hither; put forth",
-    "pt": "chega; põe",
-    "es": "pon; acerca",
-    "id": "taruhlah"
+    "translit": "avance",
+    "en": "stretch out; advance",
+    "pt": "estende; avança",
+    "es": "extiende; avanza",
+    "id": "ulurkan; maju",
+    "pos": "VERB"
   },
   "Israélites": {
     "root": "Israélite",
@@ -34860,19 +34942,21 @@
   },
   "On": {
     "root": "on",
-    "translit": "On",
-    "en": "one; they; someone",
-    "pt": "se; a gente; alguém",
-    "es": "se; uno; alguien",
-    "id": "orang; seseorang"
+    "translit": "on",
+    "en": "one; they; people",
+    "pt": "se; alguém",
+    "es": "se; uno",
+    "id": "orang",
+    "pos": "PRON"
   },
   "Traite": {
     "root": "traiter",
-    "translit": "Traite",
-    "en": "treat; deal with",
+    "translit": "traite",
+    "en": "treat",
     "pt": "trata",
     "es": "trata",
-    "id": "perlakukanlah"
+    "id": "perlakukan",
+    "pos": "VERB"
   },
   "Commence": {
     "root": "commencer",
@@ -34909,10 +34993,11 @@
   "Rappelle": {
     "root": "rappeler",
     "translit": "rappelle",
-    "en": "repeats; reminds",
-    "pt": "lembra; repete",
-    "es": "repite; recuerda",
-    "id": "mengungkit-ungkit"
+    "en": "remember",
+    "pt": "lembra-te",
+    "es": "recuerda",
+    "id": "ingatlah",
+    "pos": "VERB"
   },
   "sétablir": {
     "root": "se; établir",
@@ -34940,11 +35025,12 @@
   },
   "Sachez": {
     "root": "savoir",
-    "translit": "Sachez",
+    "translit": "sachez",
     "en": "know",
-    "pt": "sabei; saibam",
-    "es": "sabed; sepan",
-    "id": "ketahuilah"
+    "pt": "sabei",
+    "es": "sabed",
+    "id": "ketahuilah",
+    "pos": "VERB"
   },
   "Éternellement": {
     "root": "éternellement",
@@ -34957,10 +35043,11 @@
   "Ote": {
     "root": "ôter",
     "translit": "ote",
-    "en": "remove; take off",
-    "pt": "tira; remove",
-    "es": "quita",
-    "id": "bukalah"
+    "en": "be removed",
+    "pt": "ergue-te",
+    "es": "quítate",
+    "id": "terangkatlah",
+    "pos": "VERB"
   },
   "d’On": {
     "root": "de + On",
@@ -34985,11 +35072,12 @@
   },
   "Saluez": {
     "root": "saluer",
-    "translit": "Saluez",
-    "en": "greet; salute",
-    "pt": "saudai; saúdem",
-    "es": "saludad; saluden",
-    "id": "sampaikanlah salam; berilah salam"
+    "translit": "saluez",
+    "en": "greet",
+    "pt": "saudai",
+    "es": "saludad",
+    "id": "berilah salam",
+    "pos": "VERB"
   },
   "subsistent": {
     "root": "subsister",
@@ -35141,11 +35229,12 @@
   },
   "Aucun": {
     "root": "aucun",
-    "translit": "Aucun",
-    "en": "no one; none; not any",
-    "pt": "ninguém; nenhum",
-    "es": "ninguno; nadie",
-    "id": "tidak seorang pun"
+    "translit": "aucun",
+    "en": "no; none; any",
+    "pt": "nenhum",
+    "es": "ninguno",
+    "id": "tidak ada; satu pun",
+    "pos": "DET"
   },
   "nenseignera": {
     "root": "enseigner",
@@ -35457,10 +35546,11 @@
   "Très": {
     "root": "très",
     "translit": "très",
-    "en": "very; exceedingly",
-    "pt": "muito; muitíssimo; bem",
-    "es": "muy; sumamente",
-    "id": "sangat; amat"
+    "en": "very; most",
+    "pt": "muito; altíssimo",
+    "es": "muy; altísimo",
+    "id": "sangat; maha",
+    "pos": "ADV"
   },
   "Voici": {
     "root": "voici",
@@ -35488,11 +35578,12 @@
   },
   "Saisis": {
     "root": "saisir",
-    "translit": "Saisis",
-    "en": "seized; take hold of; grasp",
-    "pt": "tomados; pega; empunha",
-    "es": "sobrecogidos; toma; empuña",
-    "id": "dicekam; ambillah; peganglah"
+    "translit": "saisis",
+    "en": "seize",
+    "pt": "agarra; toma",
+    "es": "agarra; toma",
+    "id": "tangkaplah",
+    "pos": "VERB"
   },
   "Jamais": {
     "root": "jamais",
@@ -35544,11 +35635,12 @@
   },
   "Retire": {
     "root": "retirer",
-    "translit": "Retire",
-    "en": "stay; withdraw",
-    "pt": "retira; recolhe",
-    "es": "detén; retira",
-    "id": "tariklah; tahanlah"
+    "translit": "retire",
+    "en": "withdraw; step back",
+    "pt": "retira; afasta-te",
+    "es": "retira; apártate",
+    "id": "mundur; tarik",
+    "pos": "VERB"
   },
   "Sachant": {
     "root": "savoir",
@@ -35569,10 +35661,11 @@
   "Dites": {
     "root": "dire",
     "translit": "dites",
-    "en": "said; spoken; you say; say",
-    "pt": "ditas; dizeis; dizei",
-    "es": "dichas; decís; decid",
-    "id": "dikatakan; kamu katakan; katakanlah"
+    "en": "tell; say",
+    "pt": "dizei",
+    "es": "decid",
+    "id": "katakanlah",
+    "pos": "VERB"
   },
   "Parle": {
     "root": "parler",
@@ -35648,11 +35741,12 @@
   },
   "Voyons": {
     "root": "voir",
-    "translit": "Voyons",
-    "en": "let us see; let us know",
-    "pt": "vejamos; conheçamos",
-    "es": "veamos; conozcamos",
-    "id": "marilah kita melihat; mengetahui"
+    "translit": "voyons",
+    "en": "let us see",
+    "pt": "vejamos",
+    "es": "veamos",
+    "id": "marilah kita lihat",
+    "pos": "VERB"
   },
   "Puisqu’il": {
     "root": "puisque",
@@ -35665,26 +35759,29 @@
   "Ajoute": {
     "root": "ajouter",
     "translit": "ajoute",
-    "en": "adds; add",
-    "pt": "acrescenta; adiciona",
-    "es": "añade; agrega",
-    "id": "menambahkan; tambahkan"
+    "en": "adds",
+    "pt": "acrescenta",
+    "es": "añade",
+    "id": "menambah",
+    "pos": "VERB"
   },
   "Repose": {
     "root": "reposer",
     "translit": "repose",
-    "en": "rests; may rest",
-    "pt": "repouse; descanse; pouse; repousa",
-    "es": "repose; descanse; reposa",
-    "id": "beristirahat; hinggap"
+    "en": "rest",
+    "pt": "descansa",
+    "es": "descansa",
+    "id": "beristirahatlah",
+    "pos": "VERB"
   },
   "Oublie": {
     "root": "oublier",
-    "translit": "Oublie",
+    "translit": "oublie",
     "en": "forget",
-    "pt": "esquece",
-    "es": "olvida",
-    "id": "lupakanlah"
+    "pt": "esqueças",
+    "es": "olvides",
+    "id": "melupakan",
+    "pos": "VERB"
   },
   "Pourvu": {
     "root": "pourvoir",
@@ -35705,10 +35802,11 @@
   "Prenez": {
     "root": "prendre",
     "translit": "prenez",
-    "en": "take; beware",
-    "pt": "tomai; pegai; tende",
-    "es": "tomad; tened",
-    "id": "ambillah; berhati-hatilah"
+    "en": "take; consider",
+    "pt": "tomai",
+    "es": "tomad",
+    "id": "perhatikanlah",
+    "pos": "VERB"
   },
   "Semblables": {
     "root": "semblable",
@@ -35720,11 +35818,12 @@
   },
   "Espère": {
     "root": "espérer",
-    "translit": "Espère",
-    "en": "hope; wait",
-    "pt": "espera",
-    "es": "espera; aguarda",
-    "id": "nantikanlah; berharaplah"
+    "translit": "espère",
+    "en": "hope; wait for",
+    "pt": "espero",
+    "es": "espero",
+    "id": "aku berharap",
+    "pos": "VERB"
   },
   "J’irai": {
     "root": "aller",
@@ -35760,11 +35859,12 @@
   },
   "Annonce": {
     "root": "annoncer",
-    "translit": "Annonce",
-    "en": "announce; declare; tell",
-    "pt": "anuncia; declara",
-    "es": "anuncia; declara",
-    "id": "beritahukanlah; umumkanlah"
+    "translit": "annonce",
+    "en": "declare; announces",
+    "pt": "anuncia",
+    "es": "anuncia",
+    "id": "memberitahukan",
+    "pos": "VERB"
   },
   "Tu": {
     "root": "tu",
@@ -35927,12 +36027,13 @@
     "id": "akan menyesal"
   },
   "Restes": {
-    "root": "reste; rester",
+    "root": "rester",
     "translit": "restes",
-    "en": "remnant; remains; you remain",
-    "pt": "restos; remanescente; ficas",
-    "es": "restos; remanente; quedas",
-    "id": "sisa-sisa; engkau tinggal"
+    "en": "you remain",
+    "pt": "permaneces",
+    "es": "quedas",
+    "id": "engkau tinggal",
+    "pos": "VERB"
   },
   "Retombent": {
     "root": "retomber",
@@ -36193,10 +36294,11 @@
   "Possède": {
     "root": "posséder",
     "translit": "possède",
-    "en": "possesses; owns",
+    "en": "possesses",
     "pt": "possui",
     "es": "posee",
-    "id": "memiliki"
+    "id": "memiliki",
+    "pos": "VERB"
   },
   "Quelles": {
     "root": "quel",
@@ -36236,15 +36338,17 @@
     "en": "altar",
     "pt": "altar",
     "es": "altar",
-    "id": "mezbah"
+    "id": "mezbah",
+    "pos": "NOUN"
   },
   "Avoir": {
     "root": "avoir",
     "translit": "avoir",
     "en": "to have",
-    "pt": "ter; haver",
-    "es": "tener; haber",
-    "id": "memiliki; mempunyai"
+    "pt": "ter",
+    "es": "tener",
+    "id": "mempunyai",
+    "pos": "VERB"
   },
   "Change": {
     "root": "changer",
@@ -36297,10 +36401,11 @@
   "Établit": {
     "root": "établir",
     "translit": "établit",
-    "en": "establishes; established",
-    "pt": "estabelece; estabeleceu",
-    "es": "establece; estableció",
-    "id": "menetapkan; mengangkat"
+    "en": "appoints; sets",
+    "pt": "estabelece",
+    "es": "establece",
+    "id": "mengangkat",
+    "pos": "VERB"
   },
   "Éternelle": {
     "root": "éternel",
@@ -36313,10 +36418,11 @@
   "Expliquer": {
     "root": "expliquer",
     "translit": "expliquer",
-    "en": "to explain; to interpret",
-    "pt": "explicar; interpretar",
-    "es": "explicar; interpretar",
-    "id": "menjelaskan; menafsirkan"
+    "en": "to explain",
+    "pt": "explicar",
+    "es": "explicar",
+    "id": "menerangkan",
+    "pos": "VERB"
   },
   "Fabrique": {
     "root": "fabriquer",
@@ -36354,9 +36460,10 @@
     "root": "herbe",
     "translit": "herbe",
     "en": "grass; herb",
-    "pt": "erva; capim; relva",
+    "pt": "erva; relva",
     "es": "hierba",
-    "id": "rumput"
+    "id": "rumput",
+    "pos": "NOUN"
   },
   "Ici": {
     "root": "ici",
@@ -36364,7 +36471,8 @@
     "en": "here",
     "pt": "aqui",
     "es": "aquí",
-    "id": "di sini"
+    "id": "di sini",
+    "pos": "ADV"
   },
   "Immuable": {
     "root": "immuable",
@@ -36457,18 +36565,20 @@
   "Ombre": {
     "root": "ombre",
     "translit": "ombre",
-    "en": "shadow; shade",
+    "en": "shadow",
     "pt": "sombra",
     "es": "sombra",
-    "id": "bayang-bayang; naungan"
+    "id": "bayangan",
+    "pos": "NOUN"
   },
   "Oracles": {
     "root": "oracle",
     "translit": "oracles",
-    "en": "oracles; divinations",
-    "pt": "oráculos; adivinhações",
-    "es": "oráculos; adivinaciones",
-    "id": "tenungan; sabda"
+    "en": "visions; oracles",
+    "pt": "oráculos; visões",
+    "es": "oráculos; visiones",
+    "id": "penglihatan",
+    "pos": "NOUN"
   },
   "Ordonnée": {
     "root": "ordonner",
@@ -36481,10 +36591,11 @@
   "Origine": {
     "root": "origine",
     "translit": "origine",
-    "en": "origin; birth",
+    "en": "origin; beginning",
     "pt": "origem",
     "es": "origen",
-    "id": "asal-usul; permulaan"
+    "id": "asal; mula",
+    "pos": "NOUN"
   },
   "Parabole": {
     "root": "parabole",
@@ -36497,10 +36608,11 @@
   "Pardonnerai": {
     "root": "pardonner",
     "translit": "pardonnerai",
-    "en": "I will forgive; I will pardon",
+    "en": "shall I forgive",
     "pt": "perdoarei",
     "es": "perdonaré",
-    "id": "Aku akan mengampuni"
+    "id": "aku harus mengampuni",
+    "pos": "VERB"
   },
   "Périront": {
     "root": "périr",
@@ -36521,10 +36633,11 @@
   "Préparez": {
     "root": "préparer",
     "translit": "préparez",
-    "en": "prepare; consecrate",
-    "pt": "preparai; consagrai",
+    "en": "prepare",
+    "pt": "preparai",
     "es": "preparad",
-    "id": "siapkanlah; kuduskanlah"
+    "id": "siapkanlah",
+    "pos": "VERB"
   },
   "Prélever": {
     "root": "prélever",
@@ -36551,9 +36664,9 @@
     "id": "sekalipun mereka; jika mereka"
   },
   "qu’": {
-    "root": "qu’",
+    "root": "que",
     "def": "",
-    "translit": "",
+    "translit": "qu’",
     "pos": "SCONJ",
     "pos_counts": {
       "SCONJ": 43,
@@ -36568,13 +36681,17 @@
       "2:6",
       "2:9",
       "2:15"
-    ]
+    ],
+    "en": "that; which; what",
+    "pt": "que; o que",
+    "es": "que; lo que",
+    "id": "bahwa; yang; apa"
   },
   "l’": {
-    "root": "l’",
+    "root": "le",
     "def": "",
-    "translit": "",
-    "pos": "NOUN",
+    "translit": "l’",
+    "pos": "DET",
     "pos_counts": {
       "NOUN": 83,
       "ADJ": 12,
@@ -36586,21 +36703,29 @@
       "1:9",
       "1:10",
       "2:3"
-    ]
+    ],
+    "en": "the",
+    "pt": "o; a",
+    "es": "el; la",
+    "id": "itu"
   },
   "empreinte": {
     "root": "empreinte",
     "def": "",
-    "translit": "",
-    "pos": "ADJ",
+    "translit": "empreinte",
+    "pos": "NOUN",
     "verses": [
       "1:3"
-    ]
+    ],
+    "en": "exact representation; imprint",
+    "pt": "expressa imagem",
+    "es": "imagen misma",
+    "id": "gambar wujud"
   },
   "s’": {
-    "root": "s’",
+    "root": "se",
     "def": "",
-    "translit": "",
+    "translit": "s’",
     "pos": "PRON",
     "pos_counts": {
       "PRON": 10,
@@ -36615,13 +36740,17 @@
       "3:13",
       "4:10",
       "5:4"
-    ]
+    ],
+    "en": "oneself; himself; herself; themselves",
+    "pt": "se",
+    "es": "se",
+    "id": "diri sendiri"
   },
   "d’": {
-    "root": "d’",
+    "root": "de",
     "def": "",
-    "translit": "",
-    "pos": "ADV",
+    "translit": "d’",
+    "pos": "ADP",
     "pos_counts": {
       "ADV": 68,
       "PROPN": 19,
@@ -36635,25 +36764,33 @@
       "1:9",
       "2:1",
       "2:3"
-    ]
+    ],
+    "en": "of; from",
+    "pt": "de",
+    "es": "de",
+    "id": "dari"
   },
   "-t": {
     "root": "-t",
     "def": "",
-    "translit": "",
-    "pos": "PRON",
+    "translit": "-t",
+    "pos": "PART",
     "verses": [
       "1:5",
       "1:13",
       "3:18",
       "9:14",
       "11:19"
-    ]
+    ],
+    "en": "euphonic t",
+    "pt": "t eufônico",
+    "es": "t eufónica",
+    "id": "t eufonik"
   },
   "-il": {
-    "root": "-il",
+    "root": "il",
     "def": "",
-    "translit": "",
+    "translit": "-il",
     "pos": "PRON",
     "verses": [
       "1:5",
@@ -36661,49 +36798,69 @@
       "3:17",
       "3:18",
       "7:11"
-    ]
+    ],
+    "en": "he; it",
+    "pt": "ele",
+    "es": "él",
+    "id": "dia; ia"
   },
   "né": {
-    "root": "né",
+    "root": "naître",
     "def": "",
-    "translit": "",
+    "translit": "né",
     "pos": "VERB",
     "verses": [
       "1:6"
-    ]
+    ],
+    "en": "born",
+    "pt": "nascido",
+    "es": "nacido",
+    "id": "lahir"
   },
   "adorent": {
-    "root": "adorent",
+    "root": "adorer",
     "def": "",
-    "translit": "",
-    "pos": "ADV",
+    "translit": "adorent",
+    "pos": "VERB",
     "verses": [
       "1:6"
-    ]
+    ],
+    "en": "worship",
+    "pt": "adoram",
+    "es": "adoran",
+    "id": "menyembah"
   },
   "équité": {
     "root": "équité",
     "def": "",
-    "translit": "",
+    "translit": "équité",
     "pos": "NOUN",
     "verses": [
       "1:8"
-    ]
+    ],
+    "en": "equity; uprightness",
+    "pt": "equidade; retidão",
+    "es": "equidad; rectitud",
+    "id": "keadilan; kebenaran"
   },
   "iniquité": {
     "root": "iniquité",
     "def": "",
-    "translit": "",
+    "translit": "iniquité",
     "pos": "NOUN",
     "verses": [
       "1:9"
-    ]
+    ],
+    "en": "iniquity",
+    "pt": "iniquidade",
+    "es": "iniquidad",
+    "id": "kejahatan; kesalahan"
   },
   "c’": {
-    "root": "c’",
+    "root": "ce",
     "def": "",
-    "translit": "",
-    "pos": "ADJ",
+    "translit": "c’",
+    "pos": "PRON",
     "pos_counts": {
       "ADJ": 53,
       "NOUN": 12
@@ -36714,32 +36871,44 @@
       "2:11",
       "2:14",
       "2:16"
-    ]
+    ],
+    "en": "it; this; that",
+    "pt": "isto; isso",
+    "es": "esto; eso",
+    "id": "ini; itu"
   },
   "ouvrage": {
     "root": "ouvrage",
     "def": "",
-    "translit": "",
+    "translit": "ouvrage",
     "pos": "NOUN",
     "verses": [
       "1:10"
-    ]
+    ],
+    "en": "work",
+    "pt": "obra",
+    "es": "obra",
+    "id": "pekerjaan; karya"
   },
   "assieds": {
-    "root": "assieds",
+    "root": "asseoir",
     "def": "",
-    "translit": "",
-    "pos": "PROPN",
+    "translit": "assieds",
+    "pos": "VERB",
     "proper": true,
     "verses": [
       "1:13"
-    ]
+    ],
+    "en": "sit",
+    "pt": "assenta-te",
+    "es": "siéntate",
+    "id": "duduklah"
   },
   "jusqu’": {
-    "root": "jusqu’",
+    "root": "jusque",
     "def": "",
-    "translit": "",
-    "pos": "PROPN",
+    "translit": "jusqu’",
+    "pos": "ADP",
     "proper": true,
     "verses": [
       "1:13",
@@ -36747,31 +36916,43 @@
       "3:14",
       "4:12",
       "6:11"
-    ]
+    ],
+    "en": "until; up to",
+    "pt": "até",
+    "es": "hasta",
+    "id": "sampai; hingga"
   },
   "-ils": {
-    "root": "-ils",
+    "root": "il",
     "def": "",
-    "translit": "",
+    "translit": "-ils",
     "pos": "PRON",
     "verses": [
       "1:14"
-    ]
+    ],
+    "en": "they",
+    "pt": "eles",
+    "es": "ellos",
+    "id": "mereka"
   },
   "elles": {
-    "root": "elles",
+    "root": "elle",
     "def": "",
-    "translit": "",
+    "translit": "elles",
     "pos": "PRON",
     "verses": [
       "2:1",
       "9:23"
-    ]
+    ],
+    "en": "they",
+    "pt": "elas",
+    "es": "ellas",
+    "id": "mereka"
   },
   "échapperons": {
-    "root": "échapperons",
+    "root": "échapper",
     "def": "",
-    "translit": "",
+    "translit": "échapperons",
     "pos": "VERB",
     "pos_counts": {
       "VERB": 1,
@@ -36780,12 +36961,16 @@
     "verses": [
       "2:3",
       "12:25"
-    ]
+    ],
+    "en": "shall we escape",
+    "pt": "escaparemos",
+    "es": "escaparemos",
+    "id": "kami akan luput"
   },
   "-nous": {
-    "root": "-nous",
+    "root": "nous",
     "def": "",
-    "translit": "",
+    "translit": "-nous",
     "pos": "PRON",
     "verses": [
       "2:3",
@@ -36793,13 +36978,17 @@
       "4:11",
       "4:16",
       "10:22"
-    ]
+    ],
+    "en": "we; us",
+    "pt": "nós",
+    "es": "nosotros",
+    "id": "kita; kami"
   },
   "n’": {
-    "root": "n’",
+    "root": "ne",
     "def": "",
-    "translit": "",
-    "pos": "PRON",
+    "translit": "n’",
+    "pos": "ADV",
     "pos_counts": {
       "PRON": 25,
       "PROPN": 16,
@@ -36813,43 +37002,59 @@
       "2:11",
       "2:16",
       "3:8"
-    ]
+    ],
+    "en": "not",
+    "pt": "não",
+    "es": "no",
+    "id": "tidak"
   },
   "quelqu’": {
-    "root": "quelqu’",
+    "root": "quelque",
     "def": "",
-    "translit": "",
-    "pos": "SCONJ",
+    "translit": "quelqu’",
+    "pos": "PRON",
     "verses": [
       "2:6",
       "3:4",
       "3:12"
-    ]
+    ],
+    "en": "some; any",
+    "pt": "algum; alguém",
+    "es": "algún; alguien",
+    "id": "seseorang; sesuatu"
   },
   "-ce": {
-    "root": "-ce",
+    "root": "ce",
     "def": "",
-    "translit": "",
+    "translit": "-ce",
     "pos": "PRON",
     "verses": [
       "2:6"
-    ]
+    ],
+    "en": "this; it",
+    "pt": "isto; isso",
+    "es": "esto; eso",
+    "id": "ini; itu"
   },
   "dessous": {
     "root": "dessous",
     "def": "",
-    "translit": "",
-    "pos": "NOUN",
+    "translit": "dessous",
+    "pos": "ADV",
     "verses": [
       "2:7",
       "2:9"
-    ]
+    ],
+    "en": "under; below",
+    "pt": "embaixo; debaixo",
+    "es": "debajo; abajo",
+    "id": "di bawah"
   },
   "j’": {
-    "root": "j’",
+    "root": "je",
     "def": "",
-    "translit": "",
-    "pos": "PROPN",
+    "translit": "j’",
+    "pos": "PRON",
     "pos_counts": {
       "PROPN": 2,
       "ADJ": 2
@@ -36860,79 +37065,111 @@
       "10:7",
       "12:26",
       "13:23"
-    ]
+    ],
+    "en": "I",
+    "pt": "eu",
+    "es": "yo",
+    "id": "aku; saya"
   },
   "annoncerai": {
-    "root": "annoncerai",
+    "root": "annoncer",
     "def": "",
-    "translit": "",
+    "translit": "annoncerai",
     "pos": "VERB",
     "verses": [
       "2:12"
-    ]
+    ],
+    "en": "I will tell; I will declare",
+    "pt": "anunciarei",
+    "es": "anunciaré",
+    "id": "aku akan memberitahukan"
   },
   "expiation": {
     "root": "expiation",
     "def": "",
-    "translit": "",
+    "translit": "expiation",
     "pos": "NOUN",
     "verses": [
       "2:17"
-    ]
+    ],
+    "en": "atonement; guilt offering",
+    "pt": "expiação",
+    "es": "expiación",
+    "id": "penebus salah"
   },
   "endurcissez": {
-    "root": "endurcissez",
+    "root": "endurcir",
     "def": "",
-    "translit": "",
+    "translit": "endurcissez",
     "pos": "VERB",
     "verses": [
       "3:8",
       "3:15",
       "4:7"
-    ]
+    ],
+    "en": "harden",
+    "pt": "endureçais",
+    "es": "endurezcáis",
+    "id": "keraskanlah"
   },
   "éprouver": {
     "root": "éprouver",
     "def": "",
-    "translit": "",
+    "translit": "éprouver",
     "pos": "VERB",
     "verses": [
       "3:9"
-    ]
+    ],
+    "en": "to experience",
+    "pt": "experimentar",
+    "es": "experimentar",
+    "id": "mengalami"
   },
   "égare": {
-    "root": "égare",
+    "root": "égarer",
     "def": "",
-    "translit": "",
+    "translit": "égare",
     "pos": "VERB",
     "verses": [
       "3:10"
-    ]
+    ],
+    "en": "wanders; strays",
+    "pt": "desvia-se",
+    "es": "se desvía",
+    "id": "sesat"
   },
   "entreront": {
-    "root": "entreront",
+    "root": "entrer",
     "def": "",
-    "translit": "",
+    "translit": "entreront",
     "pos": "VERB",
     "verses": [
       "3:11",
       "4:3",
       "4:5"
-    ]
+    ],
+    "en": "will enter",
+    "pt": "entrarão",
+    "es": "entrarán",
+    "id": "akan masuk"
   },
   "exhortez": {
-    "root": "exhortez",
+    "root": "exhorter",
     "def": "",
-    "translit": "",
+    "translit": "exhortez",
     "pos": "VERB",
     "verses": [
       "3:13"
-    ]
+    ],
+    "en": "encourage; exhort",
+    "pt": "exortai",
+    "es": "exhortad",
+    "id": "nasihatilah"
   },
   "-vous": {
-    "root": "-vous",
+    "root": "vous",
     "def": "",
-    "translit": "",
+    "translit": "-vous",
     "pos": "PRON",
     "verses": [
       "3:13",
@@ -36940,21 +37177,29 @@
       "10:32",
       "12:25",
       "13:3"
-    ]
+    ],
+    "en": "you",
+    "pt": "vós; vocês",
+    "es": "vosotros; ustedes",
+    "id": "kamu; kalian"
   },
   "endurcisse": {
-    "root": "endurcisse",
+    "root": "endurcir",
     "def": "",
-    "translit": "",
-    "pos": "ADJ",
+    "translit": "endurcisse",
+    "pos": "VERB",
     "verses": [
       "3:13"
-    ]
+    ],
+    "en": "be hardened",
+    "pt": "endureça",
+    "es": "se endurezca",
+    "id": "menjadi tegar"
   },
   "égypte": {
-    "root": "égypte",
+    "root": "Égypte",
     "def": "",
-    "translit": "",
+    "translit": "égypte",
     "pos": "PROPN",
     "proper": true,
     "verses": [
@@ -36962,22 +37207,30 @@
       "8:9",
       "11:26",
       "11:27"
-    ]
+    ],
+    "en": "Egypt",
+    "pt": "Egito",
+    "es": "Egipto",
+    "id": "Mesir"
   },
   "entreraient": {
-    "root": "entreraient",
+    "root": "entrer",
     "def": "",
-    "translit": "",
+    "translit": "entreraient",
     "pos": "VERB",
     "verses": [
       "3:18"
-    ]
+    ],
+    "en": "would enter",
+    "pt": "entrariam",
+    "es": "entrarían",
+    "id": "akan masuk"
   },
   "entendirent": {
-    "root": "entendirent",
+    "root": "entendre",
     "def": "",
-    "translit": "",
-    "pos": "ADV",
+    "translit": "entendirent",
+    "pos": "VERB",
     "pos_counts": {
       "ADV": 1,
       "VERB": 1
@@ -36985,21 +37238,29 @@
     "verses": [
       "4:2",
       "12:19"
-    ]
+    ],
+    "en": "heard",
+    "pt": "ouviram",
+    "es": "oyeron",
+    "id": "mendengar"
   },
   "efforçons": {
-    "root": "efforçons",
+    "root": "efforcer",
     "def": "",
-    "translit": "",
-    "pos": "NOUN",
+    "translit": "efforçons",
+    "pos": "VERB",
     "verses": [
       "4:11"
-    ]
+    ],
+    "en": "let us strive",
+    "pt": "esforcemo-nos",
+    "es": "esforcémonos",
+    "id": "marilah kita berusaha"
   },
   "ordre": {
     "root": "ordre",
     "def": "",
-    "translit": "",
+    "translit": "ordre",
     "pos": "NOUN",
     "verses": [
       "5:6",
@@ -37007,31 +37268,43 @@
       "6:20",
       "7:5",
       "7:11"
-    ]
+    ],
+    "en": "order; command",
+    "pt": "ordem",
+    "es": "orden",
+    "id": "perintah; aturan"
   },
   "obéissance": {
     "root": "obéissance",
     "def": "",
-    "translit": "",
+    "translit": "obéissance",
     "pos": "NOUN",
     "verses": [
       "5:8"
-    ]
+    ],
+    "en": "obedience",
+    "pt": "obediência",
+    "es": "obediencia",
+    "id": "ketaatan"
   },
   "auteur": {
     "root": "auteur",
     "def": "",
-    "translit": "",
+    "translit": "auteur",
     "pos": "NOUN",
     "verses": [
       "5:9"
-    ]
+    ],
+    "en": "creator; author",
+    "pt": "autor; criador",
+    "es": "autor; creador",
+    "id": "pencipta"
   },
   "dessus": {
     "root": "dessus",
     "def": "",
-    "translit": "",
-    "pos": "PROPN",
+    "translit": "dessus",
+    "pos": "ADV",
     "pos_counts": {
       "PROPN": 2,
       "NOUN": 1
@@ -37040,34 +37313,50 @@
     "verses": [
       "5:11",
       "9:5"
-    ]
+    ],
+    "en": "above; over",
+    "pt": "acima; sobre",
+    "es": "encima; sobre",
+    "id": "di atas"
   },
   "expérience": {
     "root": "expérience",
     "def": "",
-    "translit": "",
+    "translit": "expérience",
     "pos": "NOUN",
     "verses": [
       "5:13"
-    ]
+    ],
+    "en": "experience",
+    "pt": "experiência",
+    "es": "experiencia",
+    "id": "pengalaman"
   },
   "usage": {
     "root": "usage",
     "def": "",
-    "translit": "",
+    "translit": "usage",
     "pos": "NOUN",
     "verses": [
       "5:14"
-    ]
+    ],
+    "en": "custom; usage",
+    "pt": "costume; uso",
+    "es": "costumbre; uso",
+    "id": "kebiasaan; adat"
   },
   "exposent": {
-    "root": "exposent",
+    "root": "exposer",
     "def": "",
-    "translit": "",
-    "pos": "ADJ",
+    "translit": "exposent",
+    "pos": "VERB",
     "verses": [
       "6:6"
-    ]
+    ],
+    "en": "expose",
+    "pt": "expõem",
+    "es": "exponen",
+    "id": "mempermalukan"
   },
   "ignominie": {
     "root": "ignominie",
@@ -37082,63 +37371,87 @@
   "amour": {
     "root": "amour",
     "def": "",
-    "translit": "",
+    "translit": "amour",
     "pos": "NOUN",
     "verses": [
       "6:10",
       "13:1",
       "13:5"
-    ]
+    ],
+    "en": "love",
+    "pt": "amor",
+    "es": "amor",
+    "id": "kasih; cinta"
   },
   "évidence": {
     "root": "évidence",
     "def": "",
-    "translit": "",
+    "translit": "évidence",
     "pos": "NOUN",
     "verses": [
       "6:17"
-    ]
+    ],
+    "en": "clearness; evidence",
+    "pt": "evidência",
+    "es": "evidencia",
+    "id": "nyata; bukti"
   },
   "immuabilité": {
     "root": "immuabilité",
     "def": "",
-    "translit": "",
+    "translit": "immuabilité",
     "pos": "NOUN",
     "verses": [
       "6:17"
-    ]
+    ],
+    "en": "unchangeableness",
+    "pt": "imutabilidade",
+    "es": "inmutabilidad",
+    "id": "tidak berubah"
   },
   "offrant": {
-    "root": "offrant",
+    "root": "offrir",
     "def": "",
-    "translit": "",
+    "translit": "offrant",
     "pos": "VERB",
     "verses": [
       "7:27"
-    ]
+    ],
+    "en": "offering",
+    "pt": "oferecendo",
+    "es": "ofreciendo",
+    "id": "mempersembahkan"
   },
   "éternité": {
     "root": "éternité",
     "def": "",
-    "translit": "",
+    "translit": "éternité",
     "pos": "NOUN",
     "verses": [
       "7:28"
-    ]
+    ],
+    "en": "eternity",
+    "pt": "eternidade",
+    "es": "eternidad",
+    "id": "kekekalan"
   },
   "expression": {
     "root": "expression",
     "def": "",
-    "translit": "",
+    "translit": "expression",
     "pos": "NOUN",
     "verses": [
       "8:8"
-    ]
+    ],
+    "en": "expression",
+    "pt": "expressão",
+    "es": "expresión",
+    "id": "ungkapan"
   },
   "-là": {
-    "root": "-là",
+    "root": "là",
     "def": "",
-    "translit": "",
+    "translit": "-là",
     "pos": "ADV",
     "pos_counts": {
       "ADV": 2,
@@ -37151,31 +37464,43 @@
       "10:16",
       "11:39",
       "12:25"
-    ]
+    ],
+    "en": "that; there",
+    "pt": "lá; aquele",
+    "es": "allá; aquel",
+    "id": "itu; sana"
   },
   "enseignera": {
-    "root": "enseignera",
+    "root": "enseigner",
     "def": "",
-    "translit": "",
+    "translit": "enseignera",
     "pos": "VERB",
     "verses": [
       "8:11"
-    ]
+    ],
+    "en": "will teach",
+    "pt": "ensinará",
+    "es": "enseñará",
+    "id": "akan mengajar"
   },
   "hysope": {
     "root": "hysope",
     "def": "",
-    "translit": "",
+    "translit": "hysope",
     "pos": "NOUN",
     "verses": [
       "9:19"
-    ]
+    ],
+    "en": "hyssop",
+    "pt": "hissopo",
+    "es": "hisopo",
+    "id": "hisop"
   },
   "aspersion": {
     "root": "aspersion",
     "def": "",
-    "translit": "",
-    "pos": "ADJ",
+    "translit": "aspersion",
+    "pos": "NOUN",
     "pos_counts": {
       "ADJ": 2,
       "NOUN": 2
@@ -37185,266 +37510,378 @@
       "9:21",
       "11:28",
       "12:24"
-    ]
+    ],
+    "en": "sprinkling",
+    "pt": "aspersão",
+    "es": "aspersión",
+    "id": "pemercikan"
   },
   "attendent": {
-    "root": "attendent",
+    "root": "attendre",
     "def": "",
-    "translit": "",
+    "translit": "attendent",
     "pos": "VERB",
     "verses": [
       "9:28"
-    ]
+    ],
+    "en": "wait for",
+    "pt": "esperam",
+    "es": "esperan",
+    "id": "menantikan"
   },
   "exacte": {
-    "root": "exacte",
+    "root": "exact",
     "def": "",
-    "translit": "",
+    "translit": "exacte",
     "pos": "ADJ",
     "verses": [
       "10:1"
-    ]
+    ],
+    "en": "exact; true",
+    "pt": "exata",
+    "es": "exacta",
+    "id": "sebenarnya; tepat"
   },
   "-on": {
-    "root": "-on",
+    "root": "on",
     "def": "",
-    "translit": "",
+    "translit": "-on",
     "pos": "PRON",
     "verses": [
       "10:2"
-    ]
+    ],
+    "en": "one; they; people",
+    "pt": "alguém; se",
+    "es": "uno; se",
+    "id": "orang"
   },
   "abandonnons": {
-    "root": "abandonnons",
+    "root": "abandonner",
     "def": "",
-    "translit": "",
+    "translit": "abandonnons",
     "pos": "VERB",
     "verses": [
       "10:25"
-    ]
+    ],
+    "en": "let us leave",
+    "pt": "abandonemos",
+    "es": "abandonemos",
+    "id": "marilah kita tinggalkan"
   },
   "exhortons": {
-    "root": "exhortons",
+    "root": "exhorter",
     "def": "",
-    "translit": "",
+    "translit": "exhortons",
     "pos": "VERB",
     "verses": [
       "10:25"
-    ]
+    ],
+    "en": "let us encourage",
+    "pt": "exortemo-nos",
+    "es": "exhortémonos",
+    "id": "marilah kita menasihati"
   },
   "approcher": {
     "root": "approcher",
     "def": "",
-    "translit": "",
+    "translit": "approcher",
     "pos": "VERB",
     "verses": [
       "10:25"
-    ]
+    ],
+    "en": "to approach",
+    "pt": "aproximar-se",
+    "es": "acercarse",
+    "id": "mendekat"
   },
   "ardeur": {
     "root": "ardeur",
     "def": "",
-    "translit": "",
-    "pos": "ADJ",
+    "translit": "ardeur",
+    "pos": "NOUN",
     "verses": [
       "10:27"
-    ]
+    ],
+    "en": "heat; ardor; fierceness",
+    "pt": "ardor; furor",
+    "es": "ardor; furor",
+    "id": "nyala; kehangatan"
   },
   "pensez": {
-    "root": "pensez",
+    "root": "penser",
     "def": "",
-    "translit": "",
+    "translit": "pensez",
     "pos": "VERB",
     "verses": [
       "10:29"
-    ]
+    ],
+    "en": "you think",
+    "pt": "pensais",
+    "es": "pensáis",
+    "id": "kamu pikir"
   },
   "souvenez": {
-    "root": "souvenez",
+    "root": "souvenir",
     "def": "",
-    "translit": "",
-    "pos": "PROPN",
+    "translit": "souvenez",
+    "pos": "VERB",
     "proper": true,
     "verses": [
       "10:32",
       "13:3",
       "13:7"
-    ]
+    ],
+    "en": "remember",
+    "pt": "lembrai-vos",
+    "es": "acordaos",
+    "id": "ingatlah"
   },
   "abandonnez": {
-    "root": "abandonnez",
+    "root": "abandonner",
     "def": "",
-    "translit": "",
+    "translit": "abandonnez",
     "pos": "VERB",
     "verses": [
       "10:35"
-    ]
+    ],
+    "en": "abandon; forsake",
+    "pt": "abandoneis",
+    "es": "abandonad; abandonen",
+    "id": "tinggalkanlah"
   },
   "abel": {
-    "root": "abel",
+    "root": "Abel",
     "def": "",
-    "translit": "",
+    "translit": "abel",
     "pos": "PROPN",
     "proper": true,
     "verses": [
       "11:4",
       "12:24"
-    ]
+    ],
+    "en": "Abel",
+    "pt": "Abel",
+    "es": "Abel",
+    "id": "Abel"
   },
   "énoch": {
-    "root": "énoch",
+    "root": "Énoch",
     "def": "",
-    "translit": "",
+    "translit": "énoch",
     "pos": "PROPN",
     "proper": true,
     "verses": [
       "11:5"
-    ]
+    ],
+    "en": "Enoch",
+    "pt": "Enoque",
+    "es": "Enoc",
+    "id": "Henokh"
   },
   "approche": {
-    "root": "approche",
+    "root": "approcher",
     "def": "",
-    "translit": "",
-    "pos": "NOUN",
+    "translit": "approche",
+    "pos": "VERB",
     "verses": [
       "11:6"
-    ]
+    ],
+    "en": "approaches",
+    "pt": "aproxima-se",
+    "es": "se acerca",
+    "id": "mendekat"
   },
   "obtient": {
-    "root": "obtient",
+    "root": "obtenir",
     "def": "",
-    "translit": "",
-    "pos": "ADV",
+    "translit": "obtient",
+    "pos": "VERB",
     "verses": [
       "11:7"
-    ]
+    ],
+    "en": "obtains",
+    "pt": "obtém",
+    "es": "obtiene",
+    "id": "memperoleh"
   },
   "architecte": {
     "root": "architecte",
     "def": "",
-    "translit": "",
+    "translit": "architecte",
     "pos": "NOUN",
     "verses": [
       "11:10"
-    ]
+    ],
+    "en": "architect; builder",
+    "pt": "arquiteto",
+    "es": "arquitecto",
+    "id": "arsitek"
   },
   "recouvra": {
-    "root": "recouvra",
+    "root": "recouvrer",
     "def": "",
-    "translit": "",
-    "pos": "NOUN",
+    "translit": "recouvra",
+    "pos": "VERB",
     "verses": [
       "11:19"
-    ]
+    ],
+    "en": "received back",
+    "pt": "recobrou",
+    "es": "volvió a recibir",
+    "id": "menerima kembali"
   },
   "extrémité": {
     "root": "extrémité",
     "def": "",
-    "translit": "",
+    "translit": "extrémité",
     "pos": "NOUN",
     "verses": [
       "11:21"
-    ]
+    ],
+    "en": "end; extremity",
+    "pt": "extremidade",
+    "es": "extremidad",
+    "id": "ujung"
   },
   "exterminateur": {
     "root": "exterminateur",
     "def": "",
-    "translit": "",
-    "pos": "ADJ",
+    "translit": "exterminateur",
+    "pos": "NOUN",
     "verses": [
       "11:28"
-    ]
+    ],
+    "en": "destroyer",
+    "pt": "exterminador",
+    "es": "destructor",
+    "id": "pembinasa"
   },
   "dirai": {
-    "root": "dirai",
+    "root": "dire",
     "def": "",
-    "translit": "",
-    "pos": "PROPN",
+    "translit": "dirai",
+    "pos": "VERB",
     "proper": true,
     "verses": [
       "11:32"
-    ]
+    ],
+    "en": "shall I say",
+    "pt": "direi",
+    "es": "diré",
+    "id": "akan kukatakan"
   },
   "-je": {
-    "root": "-je",
+    "root": "je",
     "def": "",
-    "translit": "",
-    "pos": "PROPN",
+    "translit": "-je",
+    "pos": "PRON",
     "proper": true,
     "verses": [
       "11:32"
-    ]
+    ],
+    "en": "I",
+    "pt": "eu",
+    "es": "yo",
+    "id": "aku; saya"
   },
   "acceptèrent": {
-    "root": "acceptèrent",
+    "root": "accepter",
     "def": "",
-    "translit": "",
+    "translit": "acceptèrent",
     "pos": "VERB",
     "verses": [
       "11:35"
-    ]
+    ],
+    "en": "accepted",
+    "pt": "aceitaram",
+    "es": "aceptaron",
+    "id": "menerima"
   },
   "exhortation": {
     "root": "exhortation",
     "def": "",
-    "translit": "",
+    "translit": "exhortation",
     "pos": "NOUN",
     "verses": [
       "12:5",
       "13:22"
-    ]
+    ],
+    "en": "exhortation",
+    "pt": "exortação",
+    "es": "exhortación",
+    "id": "nasihat"
   },
   "amertume": {
     "root": "amertume",
     "def": "",
-    "translit": "",
-    "pos": "ADJ",
+    "translit": "amertume",
+    "pos": "NOUN",
     "verses": [
       "12:15"
-    ]
+    ],
+    "en": "bitterness",
+    "pt": "amargura",
+    "es": "amargura",
+    "id": "kepahitan"
   },
   "aînesse": {
     "root": "aînesse",
     "def": "",
-    "translit": "",
-    "pos": "VERB",
+    "translit": "aînesse",
+    "pos": "NOUN",
     "verses": [
       "12:16"
-    ]
+    ],
+    "en": "birthright",
+    "pt": "primogenitura",
+    "es": "primogenitura",
+    "id": "hak kesulungan"
   },
   "gardez": {
-    "root": "gardez",
+    "root": "garder",
     "def": "",
-    "translit": "",
+    "translit": "gardez",
     "pos": "VERB",
     "proper": true,
     "verses": [
       "12:25"
-    ]
+    ],
+    "en": "beware; keep",
+    "pt": "guardai-vos",
+    "es": "guardaos",
+    "id": "awaslah"
   },
   "entendre": {
     "root": "entendre",
     "def": "",
-    "translit": "",
+    "translit": "entendre",
     "pos": "VERB",
     "verses": [
       "12:25"
-    ]
+    ],
+    "en": "to hear",
+    "pt": "ouvir",
+    "es": "oír",
+    "id": "mendengar"
   },
   "ébranlerai": {
-    "root": "ébranlerai",
+    "root": "ébranler",
     "def": "",
-    "translit": "",
+    "translit": "ébranlerai",
     "pos": "VERB",
     "verses": [
       "12:26"
-    ]
+    ],
+    "en": "I will shake",
+    "pt": "abalarei",
+    "es": "haré temblar",
+    "id": "aku akan mengguncangkan"
   },
   "oubliez": {
-    "root": "oubliez",
+    "root": "oublier",
     "def": "",
-    "translit": "",
-    "pos": "PROPN",
+    "translit": "oubliez",
+    "pos": "VERB",
     "pos_counts": {
       "PROPN": 1,
       "VERB": 1
@@ -37453,80 +37890,224 @@
     "verses": [
       "13:2",
       "13:16"
-    ]
+    ],
+    "en": "forget",
+    "pt": "esqueçais",
+    "es": "olvidéis",
+    "id": "lupakan"
   },
   "hospitalité": {
     "root": "hospitalité",
     "def": "",
-    "translit": "",
-    "pos": "ADJ",
+    "translit": "hospitalité",
+    "pos": "NOUN",
     "verses": [
       "13:2"
-    ]
+    ],
+    "en": "hospitality",
+    "pt": "hospitalidade",
+    "es": "hospitalidad",
+    "id": "tumpangan; keramahan"
   },
   "exerçant": {
-    "root": "exerçant",
+    "root": "exercer",
     "def": "",
-    "translit": "",
-    "pos": "ADJ",
+    "translit": "exerçant",
+    "pos": "VERB",
     "verses": [
       "13:2"
-    ]
+    ],
+    "en": "practicing; showing",
+    "pt": "exercendo; praticando",
+    "es": "ejerciendo; practicando",
+    "id": "melakukan"
   },
   "argent": {
     "root": "argent",
     "def": "",
-    "translit": "",
+    "translit": "argent",
     "pos": "NOUN",
     "verses": [
       "13:5"
-    ]
+    ],
+    "en": "silver; money",
+    "pt": "prata; dinheiro",
+    "es": "plata; dinero",
+    "id": "perak; uang"
   },
   "contentez": {
-    "root": "contentez",
+    "root": "contenter",
     "def": "",
-    "translit": "",
+    "translit": "contentez",
     "pos": "VERB",
     "proper": true,
     "verses": [
       "13:5"
-    ]
+    ],
+    "en": "be content",
+    "pt": "contentai-vos",
+    "es": "contentaos",
+    "id": "cukupkanlah dirimu"
   },
   "abandonnerai": {
-    "root": "abandonnerai",
+    "root": "abandonner",
     "def": "",
-    "translit": "",
-    "pos": "AUX",
+    "translit": "abandonnerai",
+    "pos": "VERB",
     "verses": [
       "13:5"
-    ]
+    ],
+    "en": "I will abandon",
+    "pt": "abandonarei",
+    "es": "abandonaré",
+    "id": "aku akan meninggalkan"
   },
   "bas": {
     "root": "bas",
     "def": "",
-    "translit": "",
+    "translit": "bas",
     "pos": "NOUN",
     "verses": [
       "13:14"
-    ]
+    ],
+    "en": "low; below",
+    "pt": "baixo",
+    "es": "bajo",
+    "id": "bawah"
   },
   "irai": {
-    "root": "irai",
+    "root": "aller",
     "def": "",
-    "translit": "",
+    "translit": "irai",
     "pos": "VERB",
     "verses": [
       "13:23"
-    ]
+    ],
+    "en": "I will go",
+    "pt": "irei",
+    "es": "iré",
+    "id": "aku akan pergi"
   },
   "italie": {
-    "root": "italie",
+    "root": "Italie",
     "def": "",
-    "translit": "",
+    "translit": "italie",
     "pos": "PROPN",
     "proper": true,
     "verses": [
       "13:24"
-    ]
+    ],
+    "en": "Italy",
+    "pt": "Itália",
+    "es": "Italia",
+    "id": "Italia"
+  },
+  "a.": {
+    "root": "avoir",
+    "translit": "a.",
+    "en": "has",
+    "pt": "tem",
+    "es": "tiene",
+    "id": "memiliki; punya",
+    "pos": "VERB"
+  },
+  "c": {
+    "root": "ce",
+    "translit": "c’",
+    "en": "it; this; that",
+    "pt": "isto; isso",
+    "es": "esto; eso",
+    "id": "ini; itu",
+    "pos": "PRON"
+  },
+  "d": {
+    "root": "de",
+    "translit": "d’",
+    "en": "of; from",
+    "pt": "de",
+    "es": "de",
+    "id": "dari",
+    "pos": "ADP"
+  },
+  "j": {
+    "root": "je",
+    "translit": "j’",
+    "en": "I",
+    "pt": "eu",
+    "es": "yo",
+    "id": "aku; saya",
+    "pos": "PRON"
+  },
+  "jusqu": {
+    "root": "jusque",
+    "translit": "jusqu’",
+    "en": "until; up to",
+    "pt": "até",
+    "es": "hasta",
+    "id": "sampai; hingga",
+    "pos": "ADP"
+  },
+  "l": {
+    "root": "le",
+    "translit": "l’",
+    "en": "the",
+    "pt": "o; a",
+    "es": "el; la",
+    "id": "itu",
+    "pos": "DET"
+  },
+  "n": {
+    "root": "ne",
+    "translit": "n’",
+    "en": "not",
+    "pt": "não",
+    "es": "no",
+    "id": "tidak",
+    "pos": "ADV"
+  },
+  "qu": {
+    "root": "que",
+    "translit": "qu’",
+    "en": "that; which; what",
+    "pt": "que; o que",
+    "es": "que; lo que",
+    "id": "bahwa; yang; apa",
+    "pos": "SCONJ"
+  },
+  "quelqu": {
+    "root": "quelque",
+    "translit": "quelqu’",
+    "en": "some; any",
+    "pt": "algum; alguém",
+    "es": "algún; alguien",
+    "id": "seseorang; sesuatu",
+    "pos": "PRON"
+  },
+  "s": {
+    "root": "se",
+    "translit": "s’",
+    "en": "oneself; himself; herself; themselves",
+    "pt": "se",
+    "es": "se",
+    "id": "diri sendiri",
+    "pos": "PRON"
+  },
+  "y.": {
+    "root": "y",
+    "translit": "y.",
+    "en": "there",
+    "pt": "lá; ali",
+    "es": "allí",
+    "id": "di sana",
+    "pos": "PRON"
+  },
+  "sept.": {
+    "root": "septante",
+    "translit": "sept.",
+    "en": "Septuagint",
+    "pt": "Septuaginta",
+    "es": "Septuaginta",
+    "id": "Septuaginta",
+    "pos": "PROPN"
   }
 }
