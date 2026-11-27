@@ -21,11 +21,16 @@
     "pos": "ADP",
     "verses": [
       "1:1",
-      "1:11",
-      "2:22",
-      "2:23",
-      "3:13"
-    ]
+      "1:6",
+      "1:7",
+      "1:9",
+      "1:11"
+    ],
+    "pos_counts": {
+      "CCONJ+PRON": 18,
+      "CCONJ+PART": 6,
+      "ADP": 6
+    }
   },
   "ايام": {
     "root": "يوم",
@@ -95,7 +100,6 @@
     "id": "bumi; tanah",
     "pos": "NOUN",
     "verses": [
-      "1:1",
       "2:10"
     ]
   },
@@ -135,8 +139,8 @@
     "pos": "PRON",
     "pos_counts": {
       "ADP": 17,
-      "PRON": 9,
-      "DET": 4
+      "PRON": 7,
+      "DET": 2
     },
     "verses": [
       "1:1",
@@ -153,7 +157,15 @@
     "pt": "casa de",
     "es": "casa de",
     "id": "seisi rumah",
-    "pos": "NOUN"
+    "pos": "NOUN",
+    "pos_counts": {
+      "NOUN": 1,
+      "ADP+VERB": 2
+    },
+    "verses": [
+      "1:19",
+      "4:11"
+    ]
   },
   "لحم": {
     "root": "لحم",
@@ -161,7 +173,19 @@
     "en": "lehem (in Bethlehem); meat; flesh",
     "pt": "lém (em Belém); carne",
     "es": "lén (en Belén); carne",
-    "id": "lehem (dalam Betlehem); daging"
+    "id": "lehem (dalam Betlehem); daging",
+    "pos": "ADP+NOUN",
+    "pos_counts": {
+      "ADP+NOUN": 3,
+      "ADP+VERB": 2
+    },
+    "verses": [
+      "1:1",
+      "1:2",
+      "1:19",
+      "1:22",
+      "2:4"
+    ]
   },
   "يهوذا": {
     "root": "ي ه و ذ ا",
@@ -172,9 +196,7 @@
     "id": "Yehuda",
     "pos": "VERB",
     "verses": [
-      "1:1",
-      "1:2",
-      "1:7"
+      "1:1"
     ]
   },
   "ليتغرب": {
@@ -191,7 +213,15 @@
     "en": "provinces of; country of",
     "pt": "províncias de; país de",
     "es": "provincias de; país de",
-    "id": "daerah; negeri"
+    "id": "daerah; negeri",
+    "pos": "ADP",
+    "verses": [
+      "1:2",
+      "1:6",
+      "1:22",
+      "2:6",
+      "4:3"
+    ]
   },
   "مواب": {
     "root": "موآب",
@@ -215,7 +245,11 @@
     "en": "and his wife",
     "pt": "e sua mulher; e sua esposa",
     "es": "y su mujer; y su esposa",
-    "id": "dan istrinya"
+    "id": "dan istrinya",
+    "pos": "CCONJ",
+    "verses": [
+      "1:1"
+    ]
   },
   "وابناه": {
     "root": "واب",
@@ -241,13 +275,8 @@
     "es": "el varón",
     "id": "orang itu",
     "pos": "NOUN",
-    "pos_counts": {
-      "NOUN": 2,
-      "ADJ": 1
-    },
     "verses": [
       "3:8",
-      "3:16",
       "3:18"
     ]
   },
@@ -281,7 +310,11 @@
     "translit": "wasma",
     "pt": "nome",
     "es": "nombre",
-    "id": "namanya"
+    "id": "namanya",
+    "pos": "CCONJ+VERB",
+    "verses": [
+      "1:2"
+    ]
   },
   "ابنيه": {
     "root": "بني",
@@ -321,7 +354,11 @@
     "en": "and they came",
     "pt": "e chegaram",
     "es": "y llegaron",
-    "id": "lalu sampailah mereka"
+    "id": "lalu sampailah mereka",
+    "pos": "CCONJ+PART",
+    "verses": [
+      "1:2"
+    ]
   },
   "الى": {
     "root": "إلى",
@@ -349,7 +386,11 @@
     "en": "and they were",
     "pt": "e estavam; e eram",
     "es": "y estaban; y eran",
-    "id": "dan mereka"
+    "id": "dan mereka",
+    "pos": "CCONJ+PART+VERB",
+    "verses": [
+      "1:2"
+    ]
   },
   "هناك": {
     "root": "هناك",
@@ -365,7 +406,11 @@
     "translit": "wmat",
     "pt": "morreu (morrer)",
     "es": "murió",
-    "id": "mati"
+    "id": "mati",
+    "pos": "CCONJ",
+    "verses": [
+      "1:3"
+    ]
   },
   "وبقيت": {
     "root": "وبق",
@@ -383,13 +428,8 @@
     "es": "ella; a saber; esto es",
     "id": "dia; yaitu",
     "pos": "PRON",
-    "pos_counts": {
-      "PRON": 1,
-      "VERB": 1
-    },
     "verses": [
-      "4:7",
-      "4:15"
+      "4:7"
     ]
   },
   "وابناها": {
@@ -487,7 +527,11 @@
     "translit": "waqama",
     "pt": "arca",
     "es": "arca",
-    "id": "bahtera"
+    "id": "bahtera",
+    "pos": "CCONJ+PART",
+    "verses": [
+      "1:4"
+    ]
   },
   "نحو": {
     "root": "نحو",
@@ -581,7 +625,11 @@
     "translit": "abnyha",
     "pt": "filhos",
     "es": "hijos",
-    "id": "anak-anak lelaki"
+    "id": "anak-anak lelaki",
+    "pos": "PRON",
+    "verses": [
+      "1:5"
+    ]
   },
   "ومن": {
     "root": "من",
@@ -589,7 +637,12 @@
     "en": "and from; and of",
     "pt": "e de; e dentre",
     "es": "y de; y desde",
-    "id": "dan dari"
+    "id": "dan dari",
+    "pos": "CCONJ+PRON",
+    "verses": [
+      "1:5",
+      "4:10"
+    ]
   },
   "رجلها": {
     "root": "رجل",
@@ -648,15 +701,10 @@
     "id": "ada; adalah",
     "pos": "VERB",
     "verses": [
-      "1:6",
-      "1:13",
-      "1:16",
-      "1:20",
-      "2:16"
+      "4:6"
     ],
     "pos_counts": {
-      "VERB": 10,
-      "SCONJ": 2,
+      "VERB": 1,
       "PRON": 1
     }
   },
@@ -735,7 +783,11 @@
     "translit": "wkhrjt",
     "pt": "fora; para fora",
     "es": "fuera",
-    "id": "keluar"
+    "id": "keluar",
+    "pos": "CCONJ+PART+VERB",
+    "verses": [
+      "1:7"
+    ]
   },
   "المكان": {
     "root": "كون",
@@ -804,7 +856,11 @@
     "translit": "wsrn",
     "pt": "para fora",
     "es": "Produzca",
-    "id": "Hendaklah"
+    "id": "Hendaklah",
+    "pos": "CCONJ+AUX",
+    "verses": [
+      "1:7"
+    ]
   },
   "الطريق": {
     "root": "طرق",
@@ -845,11 +901,16 @@
     "pos": "VERB",
     "verses": [
       "1:8",
-      "1:15",
-      "2:13",
+      "2:2",
       "2:19",
-      "3:5"
-    ]
+      "3:5",
+      "4:14"
+    ],
+    "pos_counts": {
+      "VERB": 3,
+      "CCONJ+PART": 1,
+      "CCONJ": 1
+    }
   },
   "لكنتيها": {
     "root": "كنن",
@@ -894,7 +955,15 @@
     "pt": "uma",
     "es": "una",
     "id": "satu",
-    "pos": "ADJ"
+    "pos": "ADJ",
+    "pos_counts": {
+      "ADJ": 1,
+      "CCONJ+PART": 2
+    },
+    "verses": [
+      "1:8",
+      "1:9"
+    ]
   },
   "امها": {
     "root": "أمه",
@@ -970,7 +1039,11 @@
     "translit": "wlyatkma",
     "pt": "levantou (levantar)",
     "es": "alzó",
-    "id": "melayangkan"
+    "id": "melayangkan",
+    "pos": "CCONJ+PART+PRON",
+    "verses": [
+      "1:9"
+    ]
   },
   "تجدا": {
     "root": "تجد",
@@ -1111,7 +1184,16 @@
     "en": "why",
     "pt": "por que",
     "es": "por qué",
-    "id": "mengapa"
+    "id": "mengapa",
+    "pos": "ADP+PART",
+    "pos_counts": {
+      "ADP+PART": 1,
+      "ADP+PRON+PART": 1
+    },
+    "verses": [
+      "1:11",
+      "1:21"
+    ]
   },
   "تذهبان": {
     "root": "تذه",
@@ -1119,7 +1201,11 @@
     "translit": "tdhhban",
     "pt": "ir",
     "es": "andarás",
-    "id": "menjalar"
+    "id": "menjalar",
+    "pos": "VERB+PRON",
+    "verses": [
+      "1:11"
+    ]
   },
   "معي؟": {
     "root": "مع",
@@ -1164,7 +1250,12 @@
     "en": "after",
     "pt": "depois de; após",
     "es": "después de; tras",
-    "id": "setelah; sesudah"
+    "id": "setelah; sesudah",
+    "pos": "ADP+NOUN",
+    "verses": [
+      "2:11",
+      "2:18"
+    ]
   },
   "حتى": {
     "root": "حتى",
@@ -1189,7 +1280,14 @@
     "pt": "aquilo",
     "es": "eso",
     "id": "itu",
-    "pos": "PRON"
+    "pos": "PRON",
+    "pos_counts": {
+      "PRON": 1,
+      "ADP+PRON+PART": 1
+    },
+    "verses": [
+      "1:11"
+    ]
   },
   "رجالا؟": {
     "root": "رجا",
@@ -1197,7 +1295,11 @@
     "translit": "rjala?",
     "pt": "maridos",
     "es": "maridos",
-    "id": "suami"
+    "id": "suami",
+    "pos": "NOUN",
+    "verses": [
+      "1:11"
+    ]
   },
   "واذهبا": {
     "root": "ذهب",
@@ -1248,7 +1350,11 @@
     "en": "to the man of",
     "pt": "ao homem de",
     "es": "al hombre de",
-    "id": "kepada abdi"
+    "id": "kepada abdi",
+    "pos": "ADP+VERB",
+    "verses": [
+      "1:12"
+    ]
   },
   "وان": {
     "root": "إِنْ",
@@ -1256,7 +1362,17 @@
     "en": "and if; although",
     "pt": "e se; embora",
     "es": "y si; aunque",
-    "id": "dan jika; meskipun"
+    "id": "dan jika; meskipun",
+    "pos": "CCONJ",
+    "pos_counts": {
+      "CCONJ": 2,
+      "CCONJ+ADV": 1
+    },
+    "verses": [
+      "1:12",
+      "3:13",
+      "4:4"
+    ]
   },
   "قلت": {
     "root": "ق و ل",
@@ -1276,11 +1392,13 @@
     "pos": "VERB",
     "pos_counts": {
       "VERB": 1,
-      "PRON": 2
+      "PRON": 2,
+      "ADP+PRON": 1
     },
     "verses": [
       "1:12",
-      "2:21"
+      "2:21",
+      "4:10"
     ]
   },
   "رجاء": {
@@ -1305,14 +1423,13 @@
     "pos": "ADV",
     "pos_counts": {
       "ADV": 1,
-      "ADJ": 7
+      "ADJ": 4
     },
     "verses": [
       "1:12",
-      "1:14",
       "2:15",
       "2:16",
-      "2:21"
+      "4:5"
     ]
   },
   "باني": {
@@ -1353,9 +1470,7 @@
     "id": "malam ini",
     "pos": "NOUN",
     "verses": [
-      "1:12",
-      "3:2",
-      "3:13"
+      "1:12"
     ]
   },
   "والد": {
@@ -1388,7 +1503,11 @@
     "en": "to them; for them",
     "pt": "a eles; para eles; lhes",
     "es": "a ellos; para ellos; les",
-    "id": "kepada mereka; bagi mereka"
+    "id": "kepada mereka; bagi mereka",
+    "pos": "ADP+PRON",
+    "verses": [
+      "1:13"
+    ]
   },
   "يكبروا؟": {
     "root": "يكب",
@@ -1396,7 +1515,11 @@
     "translit": "ykbrwa?",
     "pt": "entristece",
     "es": "amargura",
-    "id": "pahit"
+    "id": "pahit",
+    "pos": "VERB",
+    "verses": [
+      "1:13"
+    ]
   },
   "تنحجزان": {
     "root": "حجز",
@@ -1428,7 +1551,11 @@
     "translit": "lrjl?",
     "pt": "entristece",
     "es": "amargura",
-    "id": "pahit"
+    "id": "pahit",
+    "pos": "ADP+NOUN",
+    "verses": [
+      "1:13"
+    ]
   },
   "لا": {
     "root": "لا",
@@ -1440,10 +1567,10 @@
     "pos": "PART",
     "verses": [
       "1:13",
-      "1:16",
-      "1:20",
       "2:8",
-      "2:9"
+      "2:9",
+      "2:22",
+      "3:3"
     ]
   },
   "فاني": {
@@ -1476,11 +1603,10 @@
     "pos": "ADV",
     "pos_counts": {
       "ADV": 1,
-      "NOUN": 2
+      "NOUN": 1
     },
     "verses": [
-      "1:13",
-      "1:20"
+      "1:13"
     ]
   },
   "اجلكما": {
@@ -1568,7 +1694,11 @@
     "en": "and as for; but",
     "pt": "e quanto a; mas; porém",
     "es": "y en cuanto a; pero; mas",
-    "id": "dan adapun; tetapi"
+    "id": "dan adapun; tetapi",
+    "pos": "CCONJ",
+    "verses": [
+      "1:14"
+    ]
   },
   "فلصقت": {
     "root": "فلص",
@@ -1652,7 +1782,15 @@
     "translit": "wra'",
     "pt": "atrás",
     "id": "di belakang",
-    "es": "detrás"
+    "es": "detrás",
+    "pos": "CCONJ+VERB",
+    "verses": [
+      "1:15",
+      "2:2",
+      "2:3",
+      "2:7",
+      "3:10"
+    ]
   },
   "تلحي": {
     "root": "تلح",
@@ -1676,7 +1814,11 @@
     "en": "and come back; return",
     "pt": "e volte; e regresse",
     "es": "y vuelva",
-    "id": "lalu kembali"
+    "id": "lalu kembali",
+    "pos": "CCONJ+PART+VERB",
+    "verses": [
+      "1:16"
+    ]
   },
   "عنك": {
     "root": "عن",
@@ -1708,7 +1850,11 @@
     "en": "you go",
     "pt": "fores; fores para",
     "es": "fueres; vas",
-    "id": "engkau pergi"
+    "id": "engkau pergi",
+    "pos": "NOUN+PRON",
+    "verses": [
+      "1:16"
+    ]
   },
   "اذهب": {
     "root": "ذ ه ب",
@@ -1838,7 +1984,11 @@
     "en": "and so; and thus; and even so",
     "pt": "e assim; e do mesmo modo",
     "es": "y así; y de igual modo",
-    "id": "dan demikianlah"
+    "id": "dan demikianlah",
+    "pos": "CCONJ+PART",
+    "verses": [
+      "1:17"
+    ]
   },
   "يزيد": {
     "root": "زيد",
@@ -2015,7 +2165,13 @@
     "en": "and was",
     "pt": "e era; e estava",
     "es": "y era; y estaba",
-    "id": "dan adalah"
+    "id": "dan adalah",
+    "pos": "CCONJ+VERB",
+    "verses": [
+      "1:19",
+      "2:1",
+      "3:8"
+    ]
   },
   "عند": {
     "root": "ع-ن-د",
@@ -2051,7 +2207,6 @@
     "pos": "NOUN",
     "verses": [
       "1:19",
-      "2:18",
       "4:2"
     ]
   },
@@ -2148,11 +2303,10 @@
     "pos": "ADJ",
     "pos_counts": {
       "ADJ": 1,
-      "NOUN": 2
+      "NOUN": 1
     },
     "verses": [
-      "1:20",
-      "1:21"
+      "1:20"
     ]
   },
   "امرني": {
@@ -2329,7 +2483,6 @@
     "id": "jelai",
     "pos": "NOUN",
     "verses": [
-      "1:22",
       "2:23",
       "3:15",
       "3:17"
@@ -2386,7 +2539,14 @@
     "pt": "sua roupa; vestidura",
     "es": "su vestido",
     "id": "pakaiannya",
-    "pos": "NOUN"
+    "pos": "NOUN",
+    "pos_counts": {
+      "NOUN": 1,
+      "ADP+NOUN": 1
+    },
+    "verses": [
+      "2:1"
+    ]
   },
   "عشيرة": {
     "root": "عشر",
@@ -2475,8 +2635,13 @@
     "pos": "NOUN",
     "verses": [
       "2:2",
+      "2:10",
       "2:13"
-    ]
+    ],
+    "pos_counts": {
+      "NOUN": 2,
+      "ADV": 1
+    }
   },
   "عينيه": {
     "root": "عين",
@@ -2516,7 +2681,11 @@
     "en": "and came; rose",
     "pt": "e vieram; transbordaram",
     "es": "y vinieron",
-    "id": "dan datanglah"
+    "id": "dan datanglah",
+    "pos": "CCONJ+PART",
+    "verses": [
+      "2:3"
+    ]
   },
   "والتقطت": {
     "root": "وال",
@@ -2535,9 +2704,6 @@
     "id": "para penyabit itu",
     "pos": "NOUN",
     "verses": [
-      "2:3",
-      "2:5",
-      "2:7",
       "2:14"
     ]
   },
@@ -2593,7 +2759,14 @@
     "en": "and behold",
     "pt": "e eis que",
     "es": "y he aquí",
-    "id": "dan tampaklah"
+    "id": "dan tampaklah",
+    "pos": "CCONJ+PART",
+    "verses": [
+      "2:4",
+      "2:9",
+      "3:8",
+      "4:1"
+    ]
   },
   "ببوعز": {
     "root": "ببو",
@@ -2618,7 +2791,18 @@
     "translit": "wqal",
     "pt": "disse (dizer)",
     "es": "dijo",
-    "id": "Berfirmanlah"
+    "id": "Berfirmanlah",
+    "pos": "CCONJ+PART+VERB",
+    "pos_counts": {
+      "CCONJ+PART+VERB": 1,
+      "CCONJ+PART": 1,
+      "CCONJ": 1
+    },
+    "verses": [
+      "2:4",
+      "2:11",
+      "4:2"
+    ]
   },
   "للحصادين": {
     "root": "للح",
@@ -2650,7 +2834,11 @@
     "en": "to him; for him",
     "pt": "a ele; para ele; lhe",
     "es": "a él; para él; le",
-    "id": "kepadanya; baginya"
+    "id": "kepadanya; baginya",
+    "pos": "ADP+PRON",
+    "verses": [
+      "4:16"
+    ]
   },
   "يباركك": {
     "root": "برك",
@@ -2775,7 +2963,11 @@
     "en": "and she said",
     "pt": "e disse",
     "es": "y dijo",
-    "id": "dan berkata"
+    "id": "dan berkata",
+    "pos": "CCONJ+VERB",
+    "verses": [
+      "2:10"
+    ]
   },
   "دعوني": {
     "root": "ودع",
@@ -2799,7 +2991,11 @@
     "translit": "wajma",
     "pt": "ajuntar",
     "es": "almacenalo",
-    "id": "kumpulkanlah"
+    "id": "kumpulkanlah",
+    "pos": "CCONJ+PART",
+    "verses": [
+      "2:7"
+    ]
   },
   "بين": {
     "root": "بين",
@@ -2849,8 +3045,7 @@
     "pos": "NOUN",
     "verses": [
       "2:7",
-      "3:13",
-      "3:14"
+      "3:13"
     ]
   },
   "الان": {
@@ -3021,7 +3216,16 @@
     "en": "stay close to; keep with",
     "pt": "ajunta-te a; fica perto de",
     "es": "quédate junto a",
-    "id": "tetaplah bersama"
+    "id": "tetaplah bersama",
+    "pos": "ADP",
+    "pos_counts": {
+      "ADP": 1,
+      "ADP+VERB": 1
+    },
+    "verses": [
+      "2:8",
+      "2:21"
+    ]
   },
   "فتياتي": {
     "root": "فتو",
@@ -3102,7 +3306,11 @@
     "translit": "ymswk?",
     "pt": "tocar",
     "es": "tocaréis",
-    "id": "raba"
+    "id": "raba",
+    "pos": "VERB",
+    "verses": [
+      "2:9"
+    ]
   },
   "عطشت": {
     "root": "عطش",
@@ -3233,7 +3441,13 @@
     "en": "and I",
     "pt": "e eu",
     "es": "y yo",
-    "id": "dan aku"
+    "id": "dan aku",
+    "pos": "CCONJ",
+    "verses": [
+      "2:10",
+      "2:13",
+      "4:4"
+    ]
   },
   "غريبة؟": {
     "root": "غري",
@@ -3282,7 +3496,11 @@
     "translit": "bhmatk",
     "pt": "vir",
     "es": "sucederá",
-    "id": "terjadi"
+    "id": "terjadi",
+    "pos": "ADP",
+    "verses": [
+      "2:11"
+    ]
   },
   "موت": {
     "root": "موت",
@@ -3330,7 +3548,11 @@
     "translit": "ward",
     "pt": "terra",
     "es": "seco",
-    "id": "kering"
+    "id": "kering",
+    "pos": "CCONJ",
+    "verses": [
+      "2:11"
+    ]
   },
   "مولدك": {
     "root": "مول",
@@ -3369,8 +3591,16 @@
     "id": "tidak",
     "pos": "PART",
     "verses": [
-      "3:13"
-    ]
+      "2:11",
+      "2:20",
+      "3:10",
+      "3:13",
+      "4:14"
+    ],
+    "pos_counts": {
+      "PART": 4,
+      "ADP+DET": 1
+    }
   },
   "تعرفيه": {
     "root": "تعر",
@@ -3468,7 +3698,16 @@
     "pt": "e para que",
     "es": "y para que",
     "id": "dan supaya",
-    "pos": "SCONJ"
+    "pos": "SCONJ",
+    "pos_counts": {
+      "SCONJ": 1,
+      "PART+PRON": 1,
+      "ADP+PART": 1
+    },
+    "verses": [
+      "2:12",
+      "4:14"
+    ]
   },
   "تحتمي": {
     "root": "تحت",
@@ -3558,7 +3797,14 @@
     "pt": "não és",
     "es": "no eres",
     "id": "engkau bukan",
-    "pos": "VERB"
+    "pos": "VERB",
+    "pos_counts": {
+      "VERB": 1,
+      "PART+VERB": 1
+    },
+    "verses": [
+      "2:13"
+    ]
   },
   "كواحدة": {
     "root": "كوا",
@@ -3582,7 +3828,11 @@
     "en": "time",
     "pt": "tempo",
     "es": "tiempo",
-    "id": "waktu"
+    "id": "waktu",
+    "pos": "CCONJ+VERB",
+    "verses": [
+      "2:14"
+    ]
   },
   "الاكل": {
     "root": "أكل",
@@ -3611,7 +3861,11 @@
     "translit": "wkly",
     "pt": "comer",
     "es": "comer",
-    "id": "makan"
+    "id": "makan",
+    "pos": "CCONJ+PART",
+    "verses": [
+      "2:14"
+    ]
   },
   "الخبز": {
     "root": "خبز",
@@ -3631,7 +3885,11 @@
     "en": "and dip",
     "pt": "e molha",
     "es": "y moja",
-    "id": "dan celupkanlah"
+    "id": "dan celupkanlah",
+    "pos": "CCONJ",
+    "verses": [
+      "2:14"
+    ]
   },
   "لقمتك": {
     "root": "لقم",
@@ -3711,7 +3969,11 @@
     "en": "and left over",
     "pt": "e sobrou",
     "es": "y sobró",
-    "id": "dan masih ada sisa"
+    "id": "dan masih ada sisa",
+    "pos": "CCONJ+PART",
+    "verses": [
+      "2:14"
+    ]
   },
   "عنها": {
     "root": "عن",
@@ -3719,7 +3981,11 @@
     "translit": "anha",
     "pt": "de; desde",
     "es": "de",
-    "id": "dari"
+    "id": "dari",
+    "pos": "PRON",
+    "verses": [
+      "2:18"
+    ]
   },
   "قامت": {
     "root": "قام",
@@ -3792,7 +4058,13 @@
     "en": "and not; and no",
     "pt": "e não; nem",
     "es": "y no; ni",
-    "id": "dan tidak ada"
+    "id": "dan tidak ada",
+    "pos": "CCONJ+PART",
+    "verses": [
+      "2:15",
+      "2:16",
+      "4:10"
+    ]
   },
   "تؤذوها": {
     "root": "تؤذ",
@@ -3808,7 +4080,11 @@
     "en": "and pull out; and let fall",
     "pt": "e tirai; e deixai cair",
     "es": "y sacad; y dejad caer",
-    "id": "dan tariklah; dan jatuhkanlah"
+    "id": "dan tariklah; dan jatuhkanlah",
+    "pos": "CCONJ+SCONJ",
+    "verses": [
+      "2:16"
+    ]
   },
   "الشمائل": {
     "root": "شمل",
@@ -3984,7 +4260,11 @@
     "en": "and where",
     "pt": "e onde",
     "es": "y dónde",
-    "id": "dan di mana"
+    "id": "dan di mana",
+    "pos": "CCONJ+PART",
+    "verses": [
+      "2:19"
+    ]
   },
   "اشتغلت؟": {
     "root": "اشت",
@@ -4187,9 +4467,6 @@
     "id": "katanya; berkatalah ia",
     "pos": "VERB",
     "verses": [
-      "2:4",
-      "2:6",
-      "3:15",
       "4:3"
     ]
   },
@@ -4361,11 +4638,13 @@
     "pos_counts": {
       "PRON": 1,
       "CCONJ": 2,
-      "ADV": 2
+      "ADP+PRON": 2,
+      "ADP+CCONJ": 1,
+      "ADV": 1
     },
     "verses": [
       "3:1",
-      "3:11",
+      "3:13",
       "4:15"
     ]
   },
@@ -4500,7 +4779,11 @@
     "translit": "wanzly",
     "pt": "bebendo",
     "es": "beber",
-    "id": "minum"
+    "id": "minum",
+    "pos": "CCONJ+PART",
+    "verses": [
+      "3:3"
+    ]
   },
   "البيدر": {
     "root": "ب د ر",
@@ -4511,9 +4794,7 @@
     "id": "tempat pengirikan itu",
     "pos": "NOUN",
     "verses": [
-      "3:3",
-      "3:6",
-      "3:14"
+      "3:6"
     ]
   },
   "ولكن": {
@@ -4533,7 +4814,6 @@
     "id": "kamu ketahui",
     "pos": "VERB",
     "verses": [
-      "2:11",
       "3:3"
     ]
   },
@@ -4563,7 +4843,11 @@
     "en": "and when; and Matthew",
     "pt": "e quando; e Mateus",
     "es": "y cuando; y Mateo",
-    "id": "dan ketika; dan Matius"
+    "id": "dan ketika; dan Matius",
+    "pos": "CCONJ+VERB",
+    "verses": [
+      "3:4"
+    ]
   },
   "اضطجع": {
     "root": "ضجع",
@@ -4599,7 +4883,11 @@
     "translit": "wadkhly",
     "pt": "rei",
     "es": "rey",
-    "id": "raja"
+    "id": "raja",
+    "pos": "CCONJ+PART",
+    "verses": [
+      "3:4"
+    ]
   },
   "واكشفي": {
     "root": "واك",
@@ -4607,7 +4895,11 @@
     "translit": "wakshfy",
     "pt": "dizer",
     "es": "declaraste",
-    "id": "kauberitahukan"
+    "id": "kauberitahukan",
+    "pos": "CCONJ+VERB",
+    "verses": [
+      "3:4"
+    ]
   },
   "ناحية": {
     "root": "نحو",
@@ -4639,7 +4931,11 @@
     "en": "and he",
     "pt": "e ele",
     "es": "y él",
-    "id": "dan Dia"
+    "id": "dan Dia",
+    "pos": "CCONJ+PART",
+    "verses": [
+      "3:4"
+    ]
   },
   "يخبرك": {
     "root": "يخب",
@@ -4733,7 +5029,11 @@
     "en": "and drank",
     "pt": "e bebeu",
     "es": "y bebió",
-    "id": "dan minum"
+    "id": "dan minum",
+    "pos": "CCONJ+PART",
+    "verses": [
+      "3:7"
+    ]
   },
   "وطاب": {
     "root": "وطا",
@@ -4741,7 +5041,11 @@
     "translit": "wtab",
     "pt": "para baixo",
     "es": "descendió",
-    "id": "turunlah"
+    "id": "turunlah",
+    "pos": "CCONJ+PART",
+    "verses": [
+      "3:7"
+    ]
   },
   "قلبه": {
     "root": "قلب",
@@ -4757,7 +5061,16 @@
     "en": "and he entered",
     "pt": "e entrou",
     "es": "y entró",
-    "id": "dan dia masuk"
+    "id": "dan dia masuk",
+    "pos": "CCONJ+PART",
+    "pos_counts": {
+      "CCONJ+PART": 1,
+      "CCONJ+PART+VERB": 1
+    },
+    "verses": [
+      "3:7",
+      "4:13"
+    ]
   },
   "ليضطجع": {
     "root": "ليض",
@@ -4765,7 +5078,11 @@
     "translit": "lydtja",
     "pt": "mentira; deitar-se",
     "es": "durmamos",
-    "id": "tidur"
+    "id": "tidur",
+    "pos": "ADP+VERB",
+    "verses": [
+      "3:7"
+    ]
   },
   "طرف": {
     "root": "طرف",
@@ -4833,7 +5150,11 @@
     "translit": "antsaf",
     "pt": "mulher",
     "es": "mujer",
-    "id": "perempuan"
+    "id": "perempuan",
+    "pos": "SCONJ",
+    "verses": [
+      "3:8"
+    ]
   },
   "الليل": {
     "root": "ليل",
@@ -4867,7 +5188,11 @@
     "en": "with the wife of",
     "pt": "com a mulher de",
     "es": "con la mujer de",
-    "id": "dengan isteri"
+    "id": "dengan isteri",
+    "pos": "INTJ",
+    "verses": [
+      "3:8"
+    ]
   },
   "مضطجعة": {
     "root": "ضجع",
@@ -5099,7 +5424,12 @@
     "translit": "walan",
     "pt": "agora",
     "es": "ahora",
-    "id": "sekarang"
+    "id": "sekarang",
+    "pos": "CCONJ",
+    "verses": [
+      "3:11",
+      "3:12"
+    ]
   },
   "تخافي": {
     "root": "تخا",
@@ -5246,10 +5576,6 @@
     "es": "el pariente redentor",
     "id": "penebus; kaum kerabat",
     "pos": "NOUN",
-    "pos_counts": {
-      "NOUN": 1,
-      "ADJ": 1
-    },
     "verses": [
       "3:13"
     ]
@@ -5304,7 +5630,11 @@
     "en": "then I; and I",
     "pt": "eu também; então eu",
     "es": "yo también; entonces yo",
-    "id": "maka Aku pun"
+    "id": "maka Aku pun",
+    "pos": "CCONJ+PRON",
+    "verses": [
+      "3:13"
+    ]
   },
   "اقضي": {
     "root": "أقض",
@@ -5466,7 +5796,11 @@
     "translit": "wwdaha",
     "pt": "pôs (pôr)",
     "es": "pusieron",
-    "id": "membentangkannya"
+    "id": "membentangkannya",
+    "pos": "CCONJ+VERB+PRON",
+    "verses": [
+      "3:15"
+    ]
   },
   "عليها": {
     "root": "على",
@@ -5485,8 +5819,7 @@
     "id": "masuk",
     "pos": "VERB",
     "verses": [
-      "3:15",
-      "4:13"
+      "3:15"
     ]
   },
   "فاخبرتها": {
@@ -5595,7 +5928,11 @@
     "translit": "yhda",
     "pt": "resto; descanso",
     "es": "aliviará",
-    "id": "penghiburan"
+    "id": "penghiburan",
+    "pos": "VERB",
+    "verses": [
+      "3:18"
+    ]
   },
   "يتمم": {
     "root": "تمم",
@@ -5636,7 +5973,11 @@
     "en": "and sat",
     "pt": "e assentou-se",
     "es": "y se sentó",
-    "id": "dan duduk"
+    "id": "dan duduk",
+    "pos": "CCONJ",
+    "verses": [
+      "4:1"
+    ]
   },
   "بالولي": {
     "root": "بال",
@@ -5791,7 +6132,11 @@
     "translit": "lakhyna",
     "pt": "irmão",
     "es": "hermano",
-    "id": "adik"
+    "id": "adik",
+    "pos": "ADP+VERB+PART",
+    "verses": [
+      "4:3"
+    ]
   },
   "فقلت": {
     "root": "ق و ل",
@@ -5852,7 +6197,11 @@
     "en": "so if; then if",
     "pt": "então se; pois se",
     "es": "entonces si; pues si",
-    "id": "maka jika"
+    "id": "maka jika",
+    "pos": "CCONJ+PART",
+    "verses": [
+      "4:4"
+    ]
   },
   "تفك": {
     "root": "ف ك ك",
@@ -5893,7 +6242,14 @@
     "pt": "e não há",
     "es": "y no hay",
     "id": "dan tidak ada",
-    "pos": "VERB"
+    "pos": "VERB",
+    "pos_counts": {
+      "VERB": 1,
+      "ADP+VERB": 1
+    },
+    "verses": [
+      "4:4"
+    ]
   },
   "غيرك": {
     "root": "غير",
@@ -5990,7 +6346,11 @@
     "en": "of myself",
     "pt": "de mim mesmo",
     "es": "de mí mismo",
-    "id": "tentang diri-Ku sendiri"
+    "id": "tentang diri-Ku sendiri",
+    "pos": "ADP+VERB",
+    "verses": [
+      "4:6"
+    ]
   },
   "لئلا": {
     "root": "لئل",
@@ -6099,7 +6459,11 @@
     "en": "for the sake of; because of",
     "pt": "por causa de; por amor de",
     "es": "por causa de; por amor de",
-    "id": "demi; karena"
+    "id": "demi; karena",
+    "pos": "ADP+VERB",
+    "verses": [
+      "4:7"
+    ]
   },
   "اثبات": {
     "root": "إثب",
@@ -6159,7 +6523,11 @@
     "translit": "wkhla",
     "pt": "fora",
     "es": "de",
-    "id": "dari"
+    "id": "dari",
+    "pos": "CCONJ",
+    "verses": [
+      "4:8"
+    ]
   },
   "للشيوخ": {
     "root": "للش",
@@ -6220,7 +6588,11 @@
     "en": "belonging to Elimelech",
     "pt": "de Elimeleque",
     "es": "de Elimelec",
-    "id": "milik Elimelekh"
+    "id": "milik Elimelekh",
+    "pos": "ADP+VERB",
+    "verses": [
+      "4:9"
+    ]
   },
   "وكل": {
     "root": "وكل",
@@ -6252,7 +6624,11 @@
     "en": "and so; and such",
     "pt": "e tal; e assim",
     "es": "y tal; y así",
-    "id": "dan sekian; dan demikian"
+    "id": "dan sekian; dan demikian",
+    "pos": "CCONJ+VERB",
+    "verses": [
+      "4:10"
+    ]
   },
   "اشتريتها": {
     "root": "شري",
@@ -6276,7 +6652,11 @@
     "en": "be cut off",
     "pt": "será exterminado",
     "es": "será exterminado",
-    "id": "dilenyapkan"
+    "id": "dilenyapkan",
+    "pos": "VERB",
+    "verses": [
+      "4:10"
+    ]
   },
   "اخوته": {
     "root": "أ خ و",
@@ -6607,7 +6987,11 @@
     "translit": "larjaa",
     "pt": "embora",
     "es": "aunque",
-    "id": "meskipun"
+    "id": "meskipun",
+    "pos": "ADP+NOUN",
+    "verses": [
+      "4:15"
+    ]
   },
   "نفس": {
     "root": "نفس",
@@ -6656,7 +7040,11 @@
     "en": "and she",
     "pt": "e ela",
     "es": "y ella",
-    "id": "dan dia perempuan"
+    "id": "dan dia perempuan",
+    "pos": "CCONJ+VERB",
+    "verses": [
+      "4:15"
+    ]
   },
   "خير": {
     "root": "خير",
@@ -6709,7 +7097,11 @@
     "translit": "wwdath",
     "pt": "tomou (tomar)",
     "es": "Tomó",
-    "id": "mengambil"
+    "id": "mengambil",
+    "pos": "CCONJ+VERB",
+    "verses": [
+      "4:16"
+    ]
   },
   "حضنها": {
     "root": "ح-ض-ن",
@@ -6763,12 +7155,7 @@
     "es": "un nombre; renombre",
     "id": "nama",
     "pos": "NOUN",
-    "pos_counts": {
-      "VERB": 1,
-      "NOUN": 1
-    },
     "verses": [
-      "1:2",
       "4:17"
     ]
   },
@@ -6805,7 +7192,11 @@
     "translit": "wdawn",
     "pt": "vizinhos",
     "es": "vecinos",
-    "id": "tetangga"
+    "id": "tetangga",
+    "pos": "CCONJ",
+    "verses": [
+      "4:17"
+    ]
   },
   "عوبيد": {
     "root": "ع ب د",
@@ -6874,7 +7265,11 @@
     "translit": "whsrwn",
     "pt": "Hezrom",
     "es": "Hezrón",
-    "id": "Hezron"
+    "id": "Hezron",
+    "pos": "CCONJ+PART",
+    "verses": [
+      "4:19"
+    ]
   },
   "رام": {
     "root": "رام",
@@ -6894,7 +7289,11 @@
     "en": "and Ram",
     "pt": "e Rão (Ram)",
     "es": "y Ram",
-    "id": "dan Ram"
+    "id": "dan Ram",
+    "pos": "CCONJ+VERB",
+    "verses": [
+      "4:19"
+    ]
   },
   "عميناداب": {
     "root": "عميناداب",
@@ -6942,7 +7341,11 @@
     "en": "and Salmon",
     "pt": "e Salmom",
     "es": "y Salmón",
-    "id": "dan Salmon"
+    "id": "dan Salmon",
+    "pos": "CCONJ+VERB",
+    "verses": [
+      "4:21"
+    ]
   },
   "وبوعز": {
     "root": "بوعز",
@@ -7066,13 +7469,8 @@
     "id": "dia; yaitu",
     "pos": "PRON",
     "verses": [
-      "4:7",
-      "4:15"
-    ],
-    "pos_counts": {
-      "PRON": 1,
-      "VERB": 1
-    }
+      "4:7"
+    ]
   },
   "أَنْتَ": {
     "root": "أ ن ت",
@@ -7114,7 +7512,11 @@
     "en": "and she",
     "pt": "e ela",
     "es": "y ella",
-    "id": "dan dia perempuan"
+    "id": "dan dia perempuan",
+    "pos": "CCONJ+VERB",
+    "verses": [
+      "4:15"
+    ]
   },
   "أَنَا": {
     "root": "أنا",
@@ -7155,15 +7557,10 @@
     "id": "ada; adalah",
     "pos": "VERB",
     "verses": [
-      "1:6",
-      "1:13",
-      "1:16",
-      "1:20",
-      "2:16"
+      "4:6"
     ],
     "pos_counts": {
-      "VERB": 10,
-      "SCONJ": 2,
+      "VERB": 1,
       "PRON": 1
     }
   },
@@ -7189,7 +7586,17 @@
     "en": "and if; although",
     "pt": "e se; embora",
     "es": "y si; aunque",
-    "id": "dan jika; meskipun"
+    "id": "dan jika; meskipun",
+    "pos": "CCONJ",
+    "pos_counts": {
+      "CCONJ": 2,
+      "CCONJ+ADV": 1
+    },
+    "verses": [
+      "1:12",
+      "3:13",
+      "4:4"
+    ]
   },
   "لَكَ": {
     "root": "لك",
@@ -7202,11 +7609,13 @@
     "pos_counts": {
       "PRON": 1,
       "CCONJ": 2,
-      "ADV": 2
+      "ADP+PRON": 2,
+      "ADP+CCONJ": 1,
+      "ADV": 1
     },
     "verses": [
       "3:1",
-      "3:11",
+      "3:13",
       "4:15"
     ]
   },
@@ -7254,11 +7663,16 @@
     "pos": "ADP",
     "verses": [
       "1:1",
-      "1:11",
-      "2:22",
-      "2:23",
-      "3:13"
-    ]
+      "1:6",
+      "1:7",
+      "1:9",
+      "1:11"
+    ],
+    "pos_counts": {
+      "CCONJ+PRON": 18,
+      "CCONJ+PART": 6,
+      "ADP": 6
+    }
   },
   "الْيَوْمِ": {
     "root": "يوم",
@@ -7294,7 +7708,14 @@
     "en": "and behold",
     "pt": "e eis que",
     "es": "y he aquí",
-    "id": "dan tampaklah"
+    "id": "dan tampaklah",
+    "pos": "CCONJ+PART",
+    "verses": [
+      "2:4",
+      "2:9",
+      "3:8",
+      "4:1"
+    ]
   },
   "حَتَّى": {
     "root": "حتى",
@@ -7377,7 +7798,12 @@
     "en": "and from; and of",
     "pt": "e de; e dentre",
     "es": "y de; y desde",
-    "id": "dan dari"
+    "id": "dan dari",
+    "pos": "CCONJ+PRON",
+    "verses": [
+      "1:5",
+      "4:10"
+    ]
   },
   "أَنْتُمْ": {
     "root": "أَنْتُمْ",
@@ -7393,7 +7819,11 @@
     "en": "be cut off",
     "pt": "será exterminado",
     "es": "será exterminado",
-    "id": "dilenyapkan"
+    "id": "dilenyapkan",
+    "pos": "VERB",
+    "verses": [
+      "4:10"
+    ]
   },
   "هذِهِ": {
     "root": "هذا",
@@ -7423,7 +7853,11 @@
     "en": "and drank",
     "pt": "e bebeu",
     "es": "y bebió",
-    "id": "dan minum"
+    "id": "dan minum",
+    "pos": "CCONJ+PART",
+    "verses": [
+      "3:7"
+    ]
   },
   "الرِّدَاءَ": {
     "root": "ردأ",
@@ -7499,7 +7933,12 @@
     "en": "and from; and of",
     "pt": "e de; e dentre",
     "es": "y de; y desde",
-    "id": "dan dari"
+    "id": "dan dari",
+    "pos": "CCONJ+PRON",
+    "verses": [
+      "1:5",
+      "4:10"
+    ]
   },
   "لِكَيْ": {
     "root": "كي",
@@ -7508,7 +7947,16 @@
     "pt": "e para que",
     "es": "y para que",
     "id": "dan supaya",
-    "pos": "SCONJ"
+    "pos": "SCONJ",
+    "pos_counts": {
+      "SCONJ": 1,
+      "PART+PRON": 1,
+      "ADP+PART": 1
+    },
+    "verses": [
+      "2:12",
+      "4:14"
+    ]
   },
   "فَإِنِّي": {
     "root": "إنن",
@@ -7602,7 +8050,12 @@
     "en": "and from; and of",
     "pt": "e de; e dentre",
     "es": "y de; y desde",
-    "id": "dan dari"
+    "id": "dan dari",
+    "pos": "CCONJ+PRON",
+    "verses": [
+      "1:5",
+      "4:10"
+    ]
   },
   "حَدَثَ": {
     "root": "حدث",
@@ -7729,7 +8182,11 @@
     "en": "then I; and I",
     "pt": "eu também; então eu",
     "es": "yo también; entonces yo",
-    "id": "maka Aku pun"
+    "id": "maka Aku pun",
+    "pos": "CCONJ+PRON",
+    "verses": [
+      "3:13"
+    ]
   },
   "فَإِنْ": {
     "root": "ان",
@@ -7737,7 +8194,11 @@
     "en": "so if; then if",
     "pt": "então se; pois se",
     "es": "entonces si; pues si",
-    "id": "maka jika"
+    "id": "maka jika",
+    "pos": "CCONJ+PART",
+    "verses": [
+      "4:4"
+    ]
   },
   "يَفُكُّ": {
     "root": "ف ك ك",
@@ -7773,7 +8234,11 @@
     "en": "and he",
     "pt": "e ele",
     "es": "y él",
-    "id": "dan Dia"
+    "id": "dan Dia",
+    "pos": "CCONJ+PART",
+    "verses": [
+      "3:4"
+    ]
   },
   "يَهُوذَا": {
     "root": "ي ه و ذ ا",
@@ -7784,9 +8249,7 @@
     "id": "Yehuda",
     "pos": "VERB",
     "verses": [
-      "1:1",
-      "1:2",
-      "1:7"
+      "1:1"
     ]
   },
   "وَهكَذَا": {
@@ -7795,7 +8258,11 @@
     "en": "and so; and thus; and even so",
     "pt": "e assim; e do mesmo modo",
     "es": "y así; y de igual modo",
-    "id": "dan demikianlah"
+    "id": "dan demikianlah",
+    "pos": "CCONJ+PART",
+    "verses": [
+      "1:17"
+    ]
   },
   "إِنْ": {
     "root": "كون",
@@ -7806,16 +8273,11 @@
     "id": "ada; adalah",
     "pos": "VERB",
     "pos_counts": {
-      "VERB": 10,
-      "SCONJ": 2,
+      "VERB": 1,
       "PRON": 1
     },
     "verses": [
-      "1:6",
-      "1:13",
-      "1:16",
-      "1:20",
-      "2:16"
+      "4:6"
     ]
   },
   "نَحْوِ": {
@@ -7832,7 +8294,11 @@
     "en": "for the sake of; because of",
     "pt": "por causa de; por amor de",
     "es": "por causa de; por amor de",
-    "id": "demi; karena"
+    "id": "demi; karena",
+    "pos": "ADP+VERB",
+    "verses": [
+      "4:7"
+    ]
   },
   "لِيَهُوذَا": {
     "root": "يهوذا",
@@ -7993,7 +8459,11 @@
     "en": "and as for; but",
     "pt": "e quanto a; mas; porém",
     "es": "y en cuanto a; pero; mas",
-    "id": "dan adapun; tetapi"
+    "id": "dan adapun; tetapi",
+    "pos": "CCONJ",
+    "verses": [
+      "1:14"
+    ]
   },
   "بَلْ": {
     "root": "ب ل",
@@ -8121,7 +8591,11 @@
     "en": "and so; and such",
     "pt": "e tal; e assim",
     "es": "y tal; y así",
-    "id": "dan sekian; dan demikian"
+    "id": "dan sekian; dan demikian",
+    "pos": "CCONJ+VERB",
+    "verses": [
+      "4:10"
+    ]
   },
   "إِلأَّ": {
     "root": "إلا",
@@ -8310,9 +8784,6 @@
     "id": "para penyabit itu",
     "pos": "NOUN",
     "verses": [
-      "2:3",
-      "2:5",
-      "2:7",
       "2:14"
     ]
   },
@@ -8322,7 +8793,11 @@
     "en": "and come back; return",
     "pt": "e volte; e regresse",
     "es": "y vuelva",
-    "id": "lalu kembali"
+    "id": "lalu kembali",
+    "pos": "CCONJ+PART+VERB",
+    "verses": [
+      "1:16"
+    ]
   },
   "مُرَّةٌ": {
     "root": "م ر ر",
@@ -8342,7 +8817,11 @@
     "en": "and left over",
     "pt": "e sobrou",
     "es": "y sobró",
-    "id": "dan masih ada sisa"
+    "id": "dan masih ada sisa",
+    "pos": "CCONJ+PART",
+    "verses": [
+      "2:14"
+    ]
   },
   "جَبَّارَ": {
     "root": "جبر",
@@ -8369,7 +8848,6 @@
     "id": "jelai",
     "pos": "NOUN",
     "verses": [
-      "1:22",
       "2:23",
       "3:15",
       "3:17"
@@ -8483,7 +8961,11 @@
     "en": "and Ram",
     "pt": "e Rão (Ram)",
     "es": "y Ram",
-    "id": "dan Ram"
+    "id": "dan Ram",
+    "pos": "CCONJ+VERB",
+    "verses": [
+      "4:19"
+    ]
   },
   "نَحْشُونَ": {
     "root": "نحشون",
@@ -8527,7 +9009,19 @@
     "en": "lehem (in Bethlehem); meat; flesh",
     "pt": "lém (em Belém); carne",
     "es": "lén (en Belén); carne",
-    "id": "lehem (dalam Betlehem); daging"
+    "id": "lehem (dalam Betlehem); daging",
+    "pos": "ADP+NOUN",
+    "pos_counts": {
+      "ADP+NOUN": 3,
+      "ADP+VERB": 2
+    },
+    "verses": [
+      "1:1",
+      "1:2",
+      "1:19",
+      "1:22",
+      "2:4"
+    ]
   },
   "قِطْعَةُ": {
     "root": "قطع",
@@ -8605,7 +9099,11 @@
     "en": "and Salmon",
     "pt": "e Salmom",
     "es": "y Salmón",
-    "id": "dan Salmon"
+    "id": "dan Salmon",
+    "pos": "CCONJ+VERB",
+    "verses": [
+      "4:21"
+    ]
   },
   "وَبُوعَزُ": {
     "root": "بوعز",
@@ -8675,7 +9173,14 @@
     "pt": "não és",
     "es": "no eres",
     "id": "engkau bukan",
-    "pos": "VERB"
+    "pos": "VERB",
+    "pos_counts": {
+      "VERB": 1,
+      "PART+VERB": 1
+    },
+    "verses": [
+      "2:13"
+    ]
   },
   "وَكُنْ": {
     "root": "كون",
@@ -8710,8 +9215,8 @@
     ],
     "pos_counts": {
       "ADP": 17,
-      "PRON": 9,
-      "DET": 4
+      "PRON": 7,
+      "DET": 2
     }
   },
   "رِجْلَكَ": {
@@ -8756,7 +9261,13 @@
     "en": "and I",
     "pt": "e eu",
     "es": "y yo",
-    "id": "dan aku"
+    "id": "dan aku",
+    "pos": "CCONJ",
+    "verses": [
+      "2:10",
+      "2:13",
+      "4:4"
+    ]
   },
   "يَقْدِرُ": {
     "root": "قدر",
@@ -8900,7 +9411,19 @@
     "en": "lehem (in Bethlehem); meat; flesh",
     "pt": "lém (em Belém); carne",
     "es": "lén (en Belén); carne",
-    "id": "lehem (dalam Betlehem); daging"
+    "id": "lehem (dalam Betlehem); daging",
+    "pos": "ADP+NOUN",
+    "pos_counts": {
+      "ADP+NOUN": 3,
+      "ADP+VERB": 2
+    },
+    "verses": [
+      "1:1",
+      "1:2",
+      "1:19",
+      "1:22",
+      "2:4"
+    ]
   },
   "اضْطَرَبَ": {
     "root": "ضرب",
@@ -8925,7 +9448,11 @@
     "en": "and when; and Matthew",
     "pt": "e quando; e Mateus",
     "es": "y cuando; y Mateo",
-    "id": "dan ketika; dan Matius"
+    "id": "dan ketika; dan Matius",
+    "pos": "CCONJ+VERB",
+    "verses": [
+      "3:4"
+    ]
   },
   "فَإِنَّ": {
     "root": "ان",
@@ -8933,7 +9460,11 @@
     "en": "so if; then if",
     "pt": "então se; pois se",
     "es": "entonces si; pues si",
-    "id": "maka jika"
+    "id": "maka jika",
+    "pos": "CCONJ+PART",
+    "verses": [
+      "4:4"
+    ]
   },
   "لَيْسَ": {
     "root": "ليس",
@@ -8942,7 +9473,14 @@
     "pt": "e não há",
     "es": "y no hay",
     "id": "dan tidak ada",
-    "pos": "VERB"
+    "pos": "VERB",
+    "pos_counts": {
+      "VERB": 1,
+      "ADP+VERB": 1
+    },
+    "verses": [
+      "4:4"
+    ]
   },
   "وَهُنَاكَ": {
     "root": "هناك",
@@ -9014,7 +9552,11 @@
     "en": "and came; rose",
     "pt": "e vieram; transbordaram",
     "es": "y vinieron",
-    "id": "dan datanglah"
+    "id": "dan datanglah",
+    "pos": "CCONJ+PART",
+    "verses": [
+      "2:3"
+    ]
   },
   "افْعَلْ": {
     "root": "فعل",
@@ -9264,7 +9806,13 @@
     "en": "and not; and no",
     "pt": "e não; nem",
     "es": "y no; ni",
-    "id": "dan tidak ada"
+    "id": "dan tidak ada",
+    "pos": "CCONJ+PART",
+    "verses": [
+      "2:15",
+      "2:16",
+      "4:10"
+    ]
   },
   "فَأَصْنَعَ": {
     "root": "صَنَعَ",
@@ -9280,7 +9828,17 @@
     "en": "and if; although",
     "pt": "e se; embora",
     "es": "y si; aunque",
-    "id": "dan jika; meskipun"
+    "id": "dan jika; meskipun",
+    "pos": "CCONJ",
+    "pos_counts": {
+      "CCONJ": 2,
+      "CCONJ+ADV": 1
+    },
+    "verses": [
+      "1:12",
+      "3:13",
+      "4:4"
+    ]
   },
   "مَعَهَا": {
     "root": "مع",
@@ -9380,16 +9938,11 @@
     "id": "ada; adalah",
     "pos": "VERB",
     "pos_counts": {
-      "VERB": 10,
-      "SCONJ": 2,
+      "VERB": 1,
       "PRON": 1
     },
     "verses": [
-      "1:6",
-      "1:13",
-      "1:16",
-      "1:20",
-      "2:16"
+      "4:6"
     ]
   },
   "امْرَأَتَيْنِ": {
@@ -9422,8 +9975,13 @@
     "pos": "NOUN",
     "verses": [
       "2:2",
+      "2:10",
       "2:13"
-    ]
+    ],
+    "pos_counts": {
+      "NOUN": 2,
+      "ADV": 1
+    }
   },
   "آخَرَ": {
     "root": "أخر",
@@ -9596,7 +10154,11 @@
     "en": "and they came",
     "pt": "e chegaram",
     "es": "y llegaron",
-    "id": "lalu sampailah mereka"
+    "id": "lalu sampailah mereka",
+    "pos": "CCONJ+PART",
+    "verses": [
+      "1:2"
+    ]
   },
   "لِيَتَغَرَّبَ": {
     "root": "غَرَبَ",
@@ -9742,7 +10304,19 @@
     "en": "lehem (in Bethlehem); meat; flesh",
     "pt": "lém (em Belém); carne",
     "es": "lén (en Belén); carne",
-    "id": "lehem (dalam Betlehem); daging"
+    "id": "lehem (dalam Betlehem); daging",
+    "pos": "ADP+NOUN",
+    "pos_counts": {
+      "ADP+NOUN": 3,
+      "ADP+VERB": 2
+    },
+    "verses": [
+      "1:1",
+      "1:2",
+      "1:19",
+      "1:22",
+      "2:4"
+    ]
   },
   "لِنَفْسِكَ": {
     "root": "نَفْس",
@@ -9839,16 +10413,11 @@
     "id": "ada; adalah",
     "pos": "VERB",
     "pos_counts": {
-      "VERB": 10,
-      "SCONJ": 2,
+      "VERB": 1,
       "PRON": 1
     },
     "verses": [
-      "1:6",
-      "1:13",
-      "1:16",
-      "1:20",
-      "2:16"
+      "4:6"
     ]
   },
   "كُنْتَ": {
@@ -9936,7 +10505,11 @@
     "en": "with the wife of",
     "pt": "com a mulher de",
     "es": "con la mujer de",
-    "id": "dengan isteri"
+    "id": "dengan isteri",
+    "pos": "INTJ",
+    "verses": [
+      "3:8"
+    ]
   },
   "وَقْتٍ": {
     "root": "وَقْت",
@@ -9944,7 +10517,11 @@
     "en": "time",
     "pt": "tempo",
     "es": "tiempo",
-    "id": "waktu"
+    "id": "waktu",
+    "pos": "CCONJ+VERB",
+    "verses": [
+      "2:14"
+    ]
   },
   "غَرِيبَةً": {
     "root": "غرب",
@@ -9964,8 +10541,13 @@
     "pos": "NOUN",
     "verses": [
       "2:2",
+      "2:10",
       "2:13"
-    ]
+    ],
+    "pos_counts": {
+      "NOUN": 2,
+      "ADV": 1
+    }
   },
   "نِعْمَةَ": {
     "root": "ن ع م",
@@ -9977,8 +10559,13 @@
     "pos": "NOUN",
     "verses": [
       "2:2",
+      "2:10",
       "2:13"
-    ]
+    ],
+    "pos_counts": {
+      "NOUN": 2,
+      "ADV": 1
+    }
   },
   "نِعْمَةِ": {
     "root": "ن ع م",
@@ -9990,8 +10577,13 @@
     "pos": "NOUN",
     "verses": [
       "2:2",
+      "2:10",
       "2:13"
-    ]
+    ],
+    "pos_counts": {
+      "NOUN": 2,
+      "ADV": 1
+    }
   },
   "نِعْمَةً": {
     "root": "ن ع م",
@@ -10003,8 +10595,13 @@
     "pos": "NOUN",
     "verses": [
       "2:2",
+      "2:10",
       "2:13"
-    ]
+    ],
+    "pos_counts": {
+      "NOUN": 2,
+      "ADV": 1
+    }
   },
   "كُلِّ": {
     "root": "كلل",
@@ -10040,8 +10637,8 @@
     "pos": "PRON",
     "pos_counts": {
       "ADP": 17,
-      "PRON": 9,
-      "DET": 4
+      "PRON": 7,
+      "DET": 2
     },
     "verses": [
       "1:1",
@@ -10068,8 +10665,8 @@
     ],
     "pos_counts": {
       "ADP": 17,
-      "PRON": 9,
-      "DET": 4
+      "PRON": 7,
+      "DET": 2
     }
   },
   "أَبُو": {
@@ -10392,13 +10989,8 @@
     "pos": "NOUN",
     "verses": [
       "3:8",
-      "3:16",
       "3:18"
-    ],
-    "pos_counts": {
-      "NOUN": 2,
-      "ADJ": 1
-    }
+    ]
   },
   "الرَّجُلَ": {
     "root": "رجل",
@@ -10410,13 +11002,8 @@
     "pos": "NOUN",
     "verses": [
       "3:8",
-      "3:16",
       "3:18"
-    ],
-    "pos_counts": {
-      "NOUN": 2,
-      "ADJ": 1
-    }
+    ]
   },
   "الرَّجُلِ": {
     "root": "رجل",
@@ -10426,13 +11013,8 @@
     "es": "el varón",
     "id": "orang itu",
     "pos": "NOUN",
-    "pos_counts": {
-      "NOUN": 2,
-      "ADJ": 1
-    },
     "verses": [
       "3:8",
-      "3:16",
       "3:18"
     ]
   },
@@ -10442,7 +11024,11 @@
     "en": "to the man of",
     "pt": "ao homem de",
     "es": "al hombre de",
-    "id": "kepada abdi"
+    "id": "kepada abdi",
+    "pos": "ADP+VERB",
+    "verses": [
+      "1:12"
+    ]
   },
   "رِجَال": {
     "root": "رجل",
@@ -10688,8 +11274,8 @@
     ],
     "pos_counts": {
       "ADP": 17,
-      "PRON": 9,
-      "DET": 4
+      "PRON": 7,
+      "DET": 2
     }
   },
   "الشَّعْبُ": {
@@ -10957,7 +11543,11 @@
     "en": "and where",
     "pt": "e onde",
     "es": "y dónde",
-    "id": "dan di mana"
+    "id": "dan di mana",
+    "pos": "CCONJ+PART",
+    "verses": [
+      "2:19"
+    ]
   },
   "لِمَ": {
     "root": "لم",
@@ -10968,8 +11558,16 @@
     "id": "tidak",
     "pos": "PART",
     "verses": [
-      "3:13"
-    ]
+      "2:11",
+      "2:20",
+      "3:10",
+      "3:13",
+      "4:14"
+    ],
+    "pos_counts": {
+      "PART": 4,
+      "ADP+DET": 1
+    }
   },
   "قُلْتِ": {
     "root": "ق و ل",
@@ -10997,7 +11595,6 @@
     "pos": "NOUN",
     "verses": [
       "1:19",
-      "2:18",
       "4:2"
     ]
   },
@@ -11130,7 +11727,17 @@
     "en": "and if; although",
     "pt": "e se; embora",
     "es": "y si; aunque",
-    "id": "dan jika; meskipun"
+    "id": "dan jika; meskipun",
+    "pos": "CCONJ",
+    "pos_counts": {
+      "CCONJ": 2,
+      "CCONJ+ADV": 1
+    },
+    "verses": [
+      "1:12",
+      "3:13",
+      "4:4"
+    ]
   },
   "لَمْ": {
     "root": "لم",
@@ -11141,8 +11748,16 @@
     "id": "tidak",
     "pos": "PART",
     "verses": [
-      "3:13"
-    ]
+      "2:11",
+      "2:20",
+      "3:10",
+      "3:13",
+      "4:14"
+    ],
+    "pos_counts": {
+      "PART": 4,
+      "ADP+DET": 1
+    }
   },
   "فَأَخَذَتْ": {
     "root": "أ خ ذ",
@@ -11183,7 +11798,17 @@
     "en": "and if; although",
     "pt": "e se; embora",
     "es": "y si; aunque",
-    "id": "dan jika; meskipun"
+    "id": "dan jika; meskipun",
+    "pos": "CCONJ",
+    "pos_counts": {
+      "CCONJ": 2,
+      "CCONJ+ADV": 1
+    },
+    "verses": [
+      "1:12",
+      "3:13",
+      "4:4"
+    ]
   },
   "لاَ": {
     "root": "لا",
@@ -11195,10 +11820,10 @@
     "pos": "PART",
     "verses": [
       "1:13",
-      "1:16",
-      "1:20",
       "2:8",
-      "2:9"
+      "2:9",
+      "2:22",
+      "3:3"
     ]
   },
   "إِلاَّ": {
@@ -11232,7 +11857,17 @@
     "en": "and if; although",
     "pt": "e se; embora",
     "es": "y si; aunque",
-    "id": "dan jika; meskipun"
+    "id": "dan jika; meskipun",
+    "pos": "CCONJ",
+    "pos_counts": {
+      "CCONJ": 2,
+      "CCONJ+ADV": 1
+    },
+    "verses": [
+      "1:12",
+      "3:13",
+      "4:4"
+    ]
   },
   "لَسْتُ": {
     "root": "ليس",
@@ -11241,7 +11876,14 @@
     "pt": "não és",
     "es": "no eres",
     "id": "engkau bukan",
-    "pos": "VERB"
+    "pos": "VERB",
+    "pos_counts": {
+      "VERB": 1,
+      "PART+VERB": 1
+    },
+    "verses": [
+      "2:13"
+    ]
   },
   "قَبِلَ": {
     "root": "قبل",
@@ -11265,8 +11907,8 @@
     "pos": "PRON",
     "pos_counts": {
       "ADP": 17,
-      "PRON": 9,
-      "DET": 4
+      "PRON": 7,
+      "DET": 2
     },
     "verses": [
       "1:1",
@@ -11350,7 +11992,13 @@
     "en": "and was",
     "pt": "e era; e estava",
     "es": "y era; y estaba",
-    "id": "dan adalah"
+    "id": "dan adalah",
+    "pos": "CCONJ+VERB",
+    "verses": [
+      "1:19",
+      "2:1",
+      "3:8"
+    ]
   },
   "فِيهِ": {
     "root": "في",
@@ -11411,9 +12059,6 @@
     "id": "katanya; berkatalah ia",
     "pos": "VERB",
     "verses": [
-      "2:4",
-      "2:6",
-      "3:15",
       "4:3"
     ]
   },
@@ -11424,7 +12069,14 @@
     "pt": "não és",
     "es": "no eres",
     "id": "engkau bukan",
-    "pos": "VERB"
+    "pos": "VERB",
+    "pos_counts": {
+      "VERB": 1,
+      "PART+VERB": 1
+    },
+    "verses": [
+      "2:13"
+    ]
   },
   "ابْنُ": {
     "root": "بني",
@@ -11564,7 +12216,12 @@
     "en": "and from; and of",
     "pt": "e de; e dentre",
     "es": "y de; y desde",
-    "id": "dan dari"
+    "id": "dan dari",
+    "pos": "CCONJ+PRON",
+    "verses": [
+      "1:5",
+      "4:10"
+    ]
   },
   "عُشْرٍ": {
     "root": "عشر",
@@ -11611,16 +12268,11 @@
     "id": "ada; adalah",
     "pos": "VERB",
     "pos_counts": {
-      "VERB": 10,
-      "SCONJ": 2,
+      "VERB": 1,
       "PRON": 1
     },
     "verses": [
-      "1:6",
-      "1:13",
-      "1:16",
-      "1:20",
-      "2:16"
+      "4:6"
     ]
   },
   "فَإِنِ": {
@@ -11629,7 +12281,11 @@
     "en": "so if; then if",
     "pt": "então se; pois se",
     "es": "entonces si; pues si",
-    "id": "maka jika"
+    "id": "maka jika",
+    "pos": "CCONJ+PART",
+    "verses": [
+      "4:4"
+    ]
   },
   "سِنِينَ": {
     "root": "سنو",
@@ -11915,9 +12571,7 @@
     "id": "tempat pengirikan itu",
     "pos": "NOUN",
     "verses": [
-      "3:3",
-      "3:6",
-      "3:14"
+      "3:6"
     ]
   },
   "الْبَيْدَرَ": {
@@ -11929,9 +12583,7 @@
     "id": "tempat pengirikan itu",
     "pos": "NOUN",
     "verses": [
-      "3:3",
-      "3:6",
-      "3:14"
+      "3:6"
     ]
   },
   "بَيْدَرِ": {
@@ -11974,10 +12626,6 @@
     "es": "el pariente redentor",
     "id": "penebus; kaum kerabat",
     "pos": "NOUN",
-    "pos_counts": {
-      "NOUN": 1,
-      "ADJ": 1
-    },
     "verses": [
       "3:13"
     ]
@@ -11990,10 +12638,6 @@
     "es": "el pariente redentor",
     "id": "penebus; kaum kerabat",
     "pos": "NOUN",
-    "pos_counts": {
-      "NOUN": 1,
-      "ADJ": 1
-    },
     "verses": [
       "3:13"
     ]
@@ -12080,7 +12724,6 @@
     "pos": "NOUN",
     "verses": [
       "1:19",
-      "2:18",
       "4:2"
     ]
   },
@@ -12159,7 +12802,11 @@
     "en": "of myself",
     "pt": "de mim mesmo",
     "es": "de mí mismo",
-    "id": "tentang diri-Ku sendiri"
+    "id": "tentang diri-Ku sendiri",
+    "pos": "ADP+VERB",
+    "verses": [
+      "4:6"
+    ]
   },
   "أَعْطَانِي": {
     "root": "ع ط و",
@@ -12175,7 +12822,11 @@
     "en": "and sat",
     "pt": "e assentou-se",
     "es": "y se sentó",
-    "id": "dan duduk"
+    "id": "dan duduk",
+    "pos": "CCONJ",
+    "verses": [
+      "4:1"
+    ]
   },
   "الْمَسَاءُ": {
     "root": "مسو",
@@ -12198,7 +12849,6 @@
     "id": "bumi; tanah",
     "pos": "NOUN",
     "verses": [
-      "1:1",
       "2:10"
     ]
   },
@@ -12217,7 +12867,15 @@
     "pt": "uma",
     "es": "una",
     "id": "satu",
-    "pos": "ADJ"
+    "pos": "ADJ",
+    "pos_counts": {
+      "ADJ": 1,
+      "CCONJ+PART": 2
+    },
+    "verses": [
+      "1:8",
+      "1:9"
+    ]
   },
   "الْخُبْزَ": {
     "root": "خبز",
@@ -12289,11 +12947,16 @@
     "pos": "ADP",
     "verses": [
       "1:1",
-      "1:11",
-      "2:22",
-      "2:23",
-      "3:13"
-    ]
+      "1:6",
+      "1:7",
+      "1:9",
+      "1:11"
+    ],
+    "pos_counts": {
+      "CCONJ+PRON": 18,
+      "CCONJ+PART": 6,
+      "ADP": 6
+    }
   },
   "الْكَلاَمَ": {
     "root": "كلم",
@@ -12353,7 +13016,16 @@
     "en": "why",
     "pt": "por que",
     "es": "por qué",
-    "id": "mengapa"
+    "id": "mengapa",
+    "pos": "ADP+PART",
+    "pos_counts": {
+      "ADP+PART": 1,
+      "ADP+PRON+PART": 1
+    },
+    "verses": [
+      "1:11",
+      "1:21"
+    ]
   },
   "عَلَيْكِ": {
     "root": "عَلَى",
@@ -12410,7 +13082,16 @@
     "en": "and he entered",
     "pt": "e entrou",
     "es": "y entró",
-    "id": "dan dia masuk"
+    "id": "dan dia masuk",
+    "pos": "CCONJ+PART",
+    "pos_counts": {
+      "CCONJ+PART": 1,
+      "CCONJ+PART+VERB": 1
+    },
+    "verses": [
+      "3:7",
+      "4:13"
+    ]
   },
   "وَإِنَّ": {
     "root": "إِنْ",
@@ -12418,7 +13099,17 @@
     "en": "and if; although",
     "pt": "e se; embora",
     "es": "y si; aunque",
-    "id": "dan jika; meskipun"
+    "id": "dan jika; meskipun",
+    "pos": "CCONJ",
+    "pos_counts": {
+      "CCONJ": 2,
+      "CCONJ+ADV": 1
+    },
+    "verses": [
+      "1:12",
+      "3:13",
+      "4:4"
+    ]
   },
   "فَذَهَبَتْ": {
     "root": "ذهب",
@@ -12628,7 +13319,14 @@
     "pt": "sua roupa; vestidura",
     "es": "su vestido",
     "id": "pakaiannya",
-    "pos": "NOUN"
+    "pos": "NOUN",
+    "pos_counts": {
+      "NOUN": 1,
+      "ADP+NOUN": 1
+    },
+    "verses": [
+      "2:1"
+    ]
   },
   "عِنْدِ": {
     "root": "ع-ن-د",
@@ -12648,7 +13346,11 @@
     "en": "to the man of",
     "pt": "ao homem de",
     "es": "al hombre de",
-    "id": "kepada abdi"
+    "id": "kepada abdi",
+    "pos": "ADP+VERB",
+    "verses": [
+      "1:12"
+    ]
   },
   "آخُذُ": {
     "root": "أخذ",
@@ -12808,7 +13510,11 @@
     "en": "you go",
     "pt": "fores; fores para",
     "es": "fueres; vas",
-    "id": "engkau pergi"
+    "id": "engkau pergi",
+    "pos": "NOUN+PRON",
+    "verses": [
+      "1:16"
+    ]
   },
   "فَضَلَ": {
     "root": "فضل",
@@ -12873,7 +13579,15 @@
     "en": "province; country",
     "pt": "província; país",
     "es": "provincia; país",
-    "id": "daerah; negeri"
+    "id": "daerah; negeri",
+    "pos": "ADP",
+    "verses": [
+      "1:2",
+      "1:6",
+      "1:22",
+      "2:6",
+      "4:3"
+    ]
   },
   "بِلاَدِ": {
     "root": "بلد",
@@ -12881,7 +13595,15 @@
     "en": "provinces of; country of",
     "pt": "províncias de; país de",
     "es": "provincias de; país de",
-    "id": "daerah; negeri"
+    "id": "daerah; negeri",
+    "pos": "ADP",
+    "verses": [
+      "1:2",
+      "1:6",
+      "1:22",
+      "2:6",
+      "4:3"
+    ]
   },
   "شَعْبِهَا": {
     "root": "شعب",
@@ -12900,8 +13622,7 @@
     "id": "masuk",
     "pos": "VERB",
     "verses": [
-      "3:15",
-      "4:13"
+      "3:15"
     ]
   },
   "وَاحِدَةٌ": {
@@ -12911,7 +13632,15 @@
     "pt": "uma",
     "es": "una",
     "id": "satu",
-    "pos": "ADJ"
+    "pos": "ADJ",
+    "pos_counts": {
+      "ADJ": 1,
+      "CCONJ+PART": 2
+    },
+    "verses": [
+      "1:8",
+      "1:9"
+    ]
   },
   "اذْهَبِ": {
     "root": "ذ ه ب",
@@ -12935,7 +13664,11 @@
     "en": "and she said",
     "pt": "e disse",
     "es": "y dijo",
-    "id": "dan berkata"
+    "id": "dan berkata",
+    "pos": "CCONJ+VERB",
+    "verses": [
+      "2:10"
+    ]
   },
   "خَرَجَتِ": {
     "root": "خرج",
@@ -13024,11 +13757,13 @@
     "pos": "VERB",
     "verses": [
       "1:12",
-      "2:21"
+      "2:21",
+      "4:10"
     ],
     "pos_counts": {
       "VERB": 1,
-      "PRON": 2
+      "PRON": 2,
+      "ADP+PRON": 1
     }
   },
   "مِنِّي": {
@@ -13045,7 +13780,11 @@
     "en": "and his wife",
     "pt": "e sua mulher; e sua esposa",
     "es": "y su mujer; y su esposa",
-    "id": "dan istrinya"
+    "id": "dan istrinya",
+    "pos": "CCONJ",
+    "verses": [
+      "1:1"
+    ]
   },
   "أَفْسَدَ": {
     "root": "ف-س-د",
@@ -13093,9 +13832,7 @@
     "id": "malam ini",
     "pos": "NOUN",
     "verses": [
-      "1:12",
-      "3:2",
-      "3:13"
+      "1:12"
     ]
   },
   "قَلَبَ": {
@@ -13169,7 +13906,12 @@
     "en": "after",
     "pt": "depois de; após",
     "es": "después de; tras",
-    "id": "setelah; sesudah"
+    "id": "setelah; sesudah",
+    "pos": "ADP+NOUN",
+    "verses": [
+      "2:11",
+      "2:18"
+    ]
   },
   "وَاسْمُ": {
     "root": "سمو",
@@ -13202,7 +13944,11 @@
     "en": "to him; for him",
     "pt": "a ele; para ele; lhe",
     "es": "a él; para él; le",
-    "id": "kepadanya; baginya"
+    "id": "kepadanya; baginya",
+    "pos": "ADP+PRON",
+    "verses": [
+      "4:16"
+    ]
   },
   "لَهَا": {
     "root": "ل",
@@ -13218,7 +13964,11 @@
     "en": "to them; for them",
     "pt": "a eles; para eles; lhes",
     "es": "a ellos; para ellos; les",
-    "id": "kepada mereka; bagi mereka"
+    "id": "kepada mereka; bagi mereka",
+    "pos": "ADP+PRON",
+    "verses": [
+      "1:13"
+    ]
   },
   "لَهُمُ": {
     "root": "ل",
@@ -13226,7 +13976,11 @@
     "en": "to them; for them",
     "pt": "a eles; para eles; lhes",
     "es": "a ellos; para ellos; les",
-    "id": "kepada mereka; bagi mereka"
+    "id": "kepada mereka; bagi mereka",
+    "pos": "ADP+PRON",
+    "verses": [
+      "1:13"
+    ]
   },
   "لَكُمَا": {
     "root": "ذا",
@@ -13235,7 +13989,14 @@
     "pt": "aquilo",
     "es": "eso",
     "id": "itu",
-    "pos": "PRON"
+    "pos": "PRON",
+    "pos_counts": {
+      "PRON": 1,
+      "ADP+PRON+PART": 1
+    },
+    "verses": [
+      "1:11"
+    ]
   },
   "لَحْمٌ": {
     "root": "لحم",
@@ -13243,7 +14004,19 @@
     "en": "lehem (in Bethlehem); meat; flesh",
     "pt": "lém (em Belém); carne",
     "es": "lén (en Belén); carne",
-    "id": "lehem (dalam Betlehem); daging"
+    "id": "lehem (dalam Betlehem); daging",
+    "pos": "ADP+NOUN",
+    "pos_counts": {
+      "ADP+NOUN": 3,
+      "ADP+VERB": 2
+    },
+    "verses": [
+      "1:1",
+      "1:2",
+      "1:19",
+      "1:22",
+      "2:4"
+    ]
   },
   "وَسَجَدْتَ": {
     "root": "سجد",
@@ -13276,7 +14049,11 @@
     "en": "and when; and Matthew",
     "pt": "e quando; e Mateus",
     "es": "y cuando; y Mateo",
-    "id": "dan ketika; dan Matius"
+    "id": "dan ketika; dan Matius",
+    "pos": "CCONJ+VERB",
+    "verses": [
+      "3:4"
+    ]
   },
   "فِعْلُ": {
     "root": "فعل",
@@ -13485,7 +14262,19 @@
     "en": "lehem (in Bethlehem); meat; flesh",
     "pt": "lém (em Belém); carne",
     "es": "lén (en Belén); carne",
-    "id": "lehem (dalam Betlehem); daging"
+    "id": "lehem (dalam Betlehem); daging",
+    "pos": "ADP+NOUN",
+    "pos_counts": {
+      "ADP+NOUN": 3,
+      "ADP+VERB": 2
+    },
+    "verses": [
+      "1:1",
+      "1:2",
+      "1:19",
+      "1:22",
+      "2:4"
+    ]
   },
   "مَغْمُومَةً": {
     "root": "غمم",
@@ -13550,7 +14339,15 @@
     "pt": "casa de",
     "es": "casa de",
     "id": "seisi rumah",
-    "pos": "NOUN"
+    "pos": "NOUN",
+    "pos_counts": {
+      "NOUN": 1,
+      "ADP+VERB": 2
+    },
+    "verses": [
+      "1:19",
+      "4:11"
+    ]
   },
   "رَجُلَكِ": {
     "root": "ر ج ل",
@@ -13574,7 +14371,11 @@
     "en": "and they were",
     "pt": "e estavam; e eram",
     "es": "y estaban; y eran",
-    "id": "dan mereka"
+    "id": "dan mereka",
+    "pos": "CCONJ+PART+VERB",
+    "verses": [
+      "1:2"
+    ]
   },
   "أَيْنَ": {
     "root": "أَيْنَ",
@@ -13627,7 +14428,12 @@
     "en": "after",
     "pt": "depois de; após",
     "es": "después de; tras",
-    "id": "setelah; sesudah"
+    "id": "setelah; sesudah",
+    "pos": "ADP+NOUN",
+    "verses": [
+      "2:11",
+      "2:18"
+    ]
   },
   "مرة،": {
     "root": "مرر",
@@ -13635,7 +14441,11 @@
     "en": "bitter",
     "pt": "amarga; amargo",
     "es": "amargo; amarga",
-    "id": "pahit; getir"
+    "id": "pahit; getir",
+    "pos": "NOUN",
+    "verses": [
+      "1:20"
+    ]
   },
   "مُرَّةً،": {
     "root": "مرر",
@@ -13643,7 +14453,11 @@
     "en": "bitter",
     "pt": "amarga; amargo",
     "es": "amargo; amarga",
-    "id": "pahit; getir"
+    "id": "pahit; getir",
+    "pos": "NOUN",
+    "verses": [
+      "1:20"
+    ]
   },
   "بَيْتِ": {
     "root": "بيت",
@@ -13652,7 +14466,15 @@
     "pt": "casa de",
     "es": "casa de",
     "id": "seisi rumah",
-    "pos": "NOUN"
+    "pos": "NOUN",
+    "pos_counts": {
+      "NOUN": 1,
+      "ADP+VERB": 2
+    },
+    "verses": [
+      "1:19",
+      "4:11"
+    ]
   },
   "اخر،": {
     "root": "أخر",
@@ -13685,7 +14507,15 @@
     "pt": "casa de",
     "es": "casa de",
     "id": "seisi rumah",
-    "pos": "NOUN"
+    "pos": "NOUN",
+    "pos_counts": {
+      "NOUN": 1,
+      "ADP+VERB": 2
+    },
+    "verses": [
+      "1:19",
+      "4:11"
+    ]
   },
   "وَلكِنِ": {
     "root": "لٰكِنَّ",
@@ -13710,7 +14540,15 @@
     "pt": "casa de",
     "es": "casa de",
     "id": "seisi rumah",
-    "pos": "NOUN"
+    "pos": "NOUN",
+    "pos_counts": {
+      "NOUN": 1,
+      "ADP+VERB": 2
+    },
+    "verses": [
+      "1:19",
+      "4:11"
+    ]
   },
   "نَفْسُ": {
     "root": "نفس",
@@ -13791,7 +14629,12 @@
     "en": "after",
     "pt": "depois de; após",
     "es": "después de; tras",
-    "id": "setelah; sesudah"
+    "id": "setelah; sesudah",
+    "pos": "ADP+NOUN",
+    "verses": [
+      "2:11",
+      "2:18"
+    ]
   },
   "بَيْتٌ": {
     "root": "بيت",
@@ -13800,7 +14643,15 @@
     "pt": "casa de",
     "es": "casa de",
     "id": "seisi rumah",
-    "pos": "NOUN"
+    "pos": "NOUN",
+    "pos_counts": {
+      "NOUN": 1,
+      "ADP+VERB": 2
+    },
+    "verses": [
+      "1:19",
+      "4:11"
+    ]
   },
   "عَنِ": {
     "root": "لعن",
@@ -13958,12 +14809,11 @@
     "id": "Mahakuasa",
     "pos": "ADJ",
     "verses": [
-      "1:20",
-      "1:21"
+      "1:20"
     ],
     "pos_counts": {
       "ADJ": 1,
-      "NOUN": 2
+      "NOUN": 1
     }
   },
   "أَمَرَّنِي": {
@@ -14004,7 +14854,16 @@
     "en": "stay close to; keep with",
     "pt": "ajunta-te a; fica perto de",
     "es": "quédate junto a",
-    "id": "tetaplah bersama"
+    "id": "tetaplah bersama",
+    "pos": "ADP",
+    "pos_counts": {
+      "ADP": 1,
+      "ADP+VERB": 1
+    },
+    "verses": [
+      "2:8",
+      "2:21"
+    ]
   },
   "فَتَيَاتِي": {
     "root": "فتو",
@@ -14028,7 +14887,11 @@
     "en": "and dip",
     "pt": "e molha",
     "es": "y moja",
-    "id": "dan celupkanlah"
+    "id": "dan celupkanlah",
+    "pos": "CCONJ",
+    "verses": [
+      "2:14"
+    ]
   },
   "لُقْمَتَكِ": {
     "root": "لقم",
@@ -14044,7 +14907,11 @@
     "en": "and pull out; and let fall",
     "pt": "e tirai; e deixai cair",
     "es": "y sacad; y dejad caer",
-    "id": "dan tariklah; dan jatuhkanlah"
+    "id": "dan tariklah; dan jatuhkanlah",
+    "pos": "CCONJ+SCONJ",
+    "verses": [
+      "2:16"
+    ]
   },
   "الشَّمَائِلِ": {
     "root": "شمل",
@@ -14097,7 +14964,11 @@
     "en": "belonging to Elimelech",
     "pt": "de Elimeleque",
     "es": "de Elimelec",
-    "id": "milik Elimelekh"
+    "id": "milik Elimelekh",
+    "pos": "ADP+VERB",
+    "verses": [
+      "4:9"
+    ]
   },
   "لِكِلْيُونَ": {
     "root": "كليون",
@@ -14193,8 +15064,8 @@
     "pos": "PRON",
     "pos_counts": {
       "ADP": 17,
-      "PRON": 9,
-      "DET": 4
+      "PRON": 7,
+      "DET": 2
     },
     "verses": [
       "1:1",
@@ -14211,7 +15082,15 @@
     "pt": "casa de",
     "es": "casa de",
     "id": "seisi rumah",
-    "pos": "NOUN"
+    "pos": "NOUN",
+    "pos_counts": {
+      "NOUN": 1,
+      "ADP+VERB": 2
+    },
+    "verses": [
+      "1:19",
+      "4:11"
+    ]
   },
   "حَسَنٌ": {
     "root": "حسن",
@@ -14230,9 +15109,7 @@
     "id": "malam ini",
     "pos": "NOUN",
     "verses": [
-      "1:12",
-      "3:2",
-      "3:13"
+      "1:12"
     ]
   },
   "تَنْظُرْ": {
@@ -14292,8 +15169,13 @@
     "pos": "NOUN",
     "verses": [
       "2:2",
+      "2:10",
       "2:13"
-    ]
+    ],
+    "pos_counts": {
+      "NOUN": 2,
+      "ADV": 1
+    }
   },
   "نِعْمَةُ": {
     "root": "ن ع م",
@@ -14305,8 +15187,13 @@
     "pos": "NOUN",
     "verses": [
       "2:2",
+      "2:10",
       "2:13"
-    ]
+    ],
+    "pos_counts": {
+      "NOUN": 2,
+      "ADV": 1
+    }
   },
   "إِّلاَّ": {
     "root": "إلا",
@@ -14404,7 +15291,12 @@
     "en": "after",
     "pt": "depois de; após",
     "es": "después de; tras",
-    "id": "setelah; sesudah"
+    "id": "setelah; sesudah",
+    "pos": "ADP+NOUN",
+    "verses": [
+      "2:11",
+      "2:18"
+    ]
   },
   "اذْهَبَا": {
     "root": "ذهب",
@@ -14623,17 +15515,12 @@
     "translit": "isman",
     "pos": "NOUN",
     "verses": [
-      "1:2",
       "4:17"
     ],
     "en": "a name; renown",
     "pt": "um nome; renome",
     "es": "un nombre; renombre",
-    "id": "nama",
-    "pos_counts": {
-      "VERB": 1,
-      "NOUN": 1
-    }
+    "id": "nama"
   },
   "ابْنَيْ": {
     "root": "ابْنَيْ",
@@ -14774,19 +15661,14 @@
     "translit": "kāna",
     "pos": "VERB",
     "verses": [
-      "1:6",
-      "1:13",
-      "1:16",
-      "1:20",
-      "2:16"
+      "4:6"
     ],
     "en": "was; were",
     "pt": "era; estava",
     "es": "era; estaba",
     "id": "ada; adalah",
     "pos_counts": {
-      "VERB": 10,
-      "SCONJ": 2,
+      "VERB": 1,
       "PRON": 1
     }
   },
@@ -14876,15 +15758,20 @@
     "pos": "VERB",
     "verses": [
       "1:8",
-      "1:15",
-      "2:13",
+      "2:2",
       "2:19",
-      "3:5"
+      "3:5",
+      "4:14"
     ],
     "en": "and she said",
     "pt": "e ela disse",
     "es": "y ella dijo",
-    "id": "maka berkatalah ia"
+    "id": "maka berkatalah ia",
+    "pos_counts": {
+      "VERB": 3,
+      "CCONJ+PART": 1,
+      "CCONJ": 1
+    }
   },
   "ِكَنَتَيْ": {
     "root": "ِكَنَتَيْ",
@@ -15129,10 +16016,9 @@
     "pos": "ADV",
     "verses": [
       "1:12",
-      "1:14",
       "2:15",
       "2:16",
-      "2:21"
+      "4:5"
     ],
     "en": "also",
     "pt": "também",
@@ -15140,7 +16026,7 @@
     "id": "juga",
     "pos_counts": {
       "ADV": 1,
-      "ADJ": 7
+      "ADJ": 4
     }
   },
   "اللَّيْلَة": {
@@ -15149,9 +16035,7 @@
     "translit": "al-laylah",
     "pos": "NOUN",
     "verses": [
-      "1:12",
-      "3:2",
-      "3:13"
+      "1:12"
     ],
     "en": "tonight; this night",
     "pt": "esta noite",
@@ -15205,8 +16089,7 @@
     "translit": "jiddan",
     "pos": "ADV",
     "verses": [
-      "1:13",
-      "1:20"
+      "1:13"
     ],
     "en": "very; exceedingly",
     "pt": "muito; grandemente",
@@ -15214,7 +16097,7 @@
     "id": "sangat; amat",
     "pos_counts": {
       "ADV": 1,
-      "NOUN": 2
+      "NOUN": 1
     }
   },
   "الرَّبِّ": {
@@ -15471,7 +16354,6 @@
     "pos": "NOUN",
     "verses": [
       "1:19",
-      "2:18",
       "4:2"
     ],
     "en": "the city",
@@ -15559,8 +16441,7 @@
     "translit": "al-qadīru",
     "pos": "ADJ",
     "verses": [
-      "1:20",
-      "1:21"
+      "1:20"
     ],
     "en": "Almighty",
     "pt": "Todo-Poderoso",
@@ -15568,7 +16449,7 @@
     "id": "Mahakuasa",
     "pos_counts": {
       "ADJ": 1,
-      "NOUN": 2
+      "NOUN": 1
     }
   },
   "دَخَلَة": {
@@ -15759,8 +16640,7 @@
     "pos": "NOUN",
     "verses": [
       "2:7",
-      "3:13",
-      "3:14"
+      "3:13"
     ],
     "en": "the morning",
     "pt": "a manhã",
@@ -16002,7 +16882,6 @@
     "translit": "taʿrifī",
     "pos": "VERB",
     "verses": [
-      "2:11",
       "3:3"
     ],
     "en": "you knew",
@@ -16067,15 +16946,20 @@
     "pos": "VERB",
     "verses": [
       "1:8",
-      "1:15",
-      "2:13",
+      "2:2",
       "2:19",
-      "3:5"
+      "3:5",
+      "4:14"
     ],
     "en": "and she said",
     "pt": "e ela disse",
     "es": "y ella dijo",
-    "id": "maka berkatalah ia"
+    "id": "maka berkatalah ia",
+    "pos_counts": {
+      "VERB": 3,
+      "CCONJ+PART": 1,
+      "CCONJ": 1
+    }
   },
   "أَنَكَ": {
     "root": "أن",
@@ -16174,10 +17058,10 @@
     "pos": "PART",
     "verses": [
       "1:13",
-      "1:16",
-      "1:20",
       "2:8",
-      "2:9"
+      "2:9",
+      "2:22",
+      "3:3"
     ],
     "en": "and not; nor",
     "pt": "e não; nem",
@@ -16199,19 +17083,14 @@
     "translit": "kāna",
     "pos": "VERB",
     "verses": [
-      "1:6",
-      "1:13",
-      "1:16",
-      "1:20",
-      "2:16"
+      "4:6"
     ],
     "en": "was; were",
     "pt": "era; estava",
     "es": "era; estaba",
     "id": "ada; adalah",
     "pos_counts": {
-      "VERB": 10,
-      "SCONJ": 2,
+      "VERB": 1,
       "PRON": 1
     }
   },
@@ -16407,11 +17286,13 @@
     "pos_counts": {
       "PRON": 1,
       "CCONJ": 2,
-      "ADV": 2
+      "ADP+PRON": 2,
+      "ADP+CCONJ": 1,
+      "ADV": 1
     },
     "verses": [
       "3:1",
-      "3:11",
+      "3:13",
       "4:15"
     ],
     "en": "and to you (fem.)",
@@ -16448,7 +17329,6 @@
     "translit": "taʿrifī",
     "pos": "VERB",
     "verses": [
-      "2:11",
       "3:3"
     ],
     "en": "you knew",
@@ -17407,12 +18287,11 @@
     "translit": "",
     "pos": "VERB",
     "verses": [
-      "4:7",
-      "4:15"
+      "4:7"
     ],
     "pos_counts": {
-      "PRON": 1,
-      "VERB": 1
+      "VERB": 1,
+      "PRON": 1
     }
   },
   "سَبْعَةِ": {
@@ -17474,17 +18353,12 @@
     "translit": "isman",
     "pos": "NOUN",
     "verses": [
-      "1:2",
       "4:17"
     ],
     "en": "a name; renown",
     "pt": "um nome; renome",
     "es": "un nombre; renombre",
-    "id": "nama",
-    "pos_counts": {
-      "VERB": 1,
-      "NOUN": 1
-    }
+    "id": "nama"
   },
   "ُلِد": {
     "root": "ولد",
@@ -17825,16 +18699,11 @@
     "id": "bahwa",
     "pos": "SCONJ",
     "pos_counts": {
-      "VERB": 10,
-      "SCONJ": 2,
+      "SCONJ": 1,
       "PRON": 1
     },
     "verses": [
-      "1:6",
-      "1:13",
-      "1:16",
-      "1:20",
-      "2:16"
+      "4:6"
     ]
   },
   "َبَيْن": {
@@ -17922,11 +18791,13 @@
     "pos_counts": {
       "PRON": 1,
       "CCONJ": 2,
-      "ADV": 2
+      "ADP+PRON": 2,
+      "ADP+CCONJ": 1,
+      "ADV": 1
     },
     "verses": [
       "3:1",
-      "3:11",
+      "3:13",
       "4:15"
     ]
   },
@@ -17940,7 +18811,6 @@
     "pos": "NOUN",
     "verses": [
       "1:19",
-      "2:18",
       "4:2"
     ]
   },
@@ -17995,9 +18865,7 @@
     "id": "malam",
     "pos": "NOUN",
     "verses": [
-      "1:12",
-      "3:2",
-      "3:13"
+      "1:12"
     ]
   },
   "حَسَبَ": {
@@ -18118,9 +18986,7 @@
     "id": "malam itu",
     "pos": "NOUN",
     "verses": [
-      "1:12",
-      "3:2",
-      "3:13"
+      "1:12"
     ]
   },
   "هم": {
@@ -18198,16 +19064,11 @@
     "id": "bahwa; untuk",
     "pos": "SCONJ",
     "pos_counts": {
-      "VERB": 10,
-      "SCONJ": 2,
+      "SCONJ": 1,
       "PRON": 1
     },
     "verses": [
-      "1:6",
-      "1:13",
-      "1:16",
-      "1:20",
-      "2:16"
+      "4:6"
     ]
   },
   "ِبَاسَ": {
@@ -18217,7 +19078,14 @@
     "pt": "sua roupa; vestidura",
     "es": "su vestido",
     "id": "pakaiannya",
-    "pos": "NOUN"
+    "pos": "NOUN",
+    "pos_counts": {
+      "NOUN": 1,
+      "ADP+NOUN": 1
+    },
+    "verses": [
+      "2:1"
+    ]
   },
   "َالِي": {
     "root": "نفتل",
@@ -18242,7 +19110,15 @@
     "pt": "casa de",
     "es": "casa de",
     "id": "seisi rumah",
-    "pos": "NOUN"
+    "pos": "NOUN",
+    "pos_counts": {
+      "NOUN": 1,
+      "ADP+VERB": 2
+    },
+    "verses": [
+      "1:19",
+      "4:11"
+    ]
   },
   "عَشَرِ": {
     "root": "عشر",
@@ -18484,7 +19360,6 @@
     "id": "jelai",
     "pos": "NOUN",
     "verses": [
-      "1:22",
       "2:23",
       "3:15",
       "3:17"
@@ -18521,8 +19396,7 @@
     "pos": "NOUN",
     "verses": [
       "2:7",
-      "3:13",
-      "3:14"
+      "3:13"
     ]
   },
   "َمَتِ": {
@@ -18555,16 +19429,11 @@
     "id": "bahwa",
     "pos": "SCONJ",
     "pos_counts": {
-      "VERB": 10,
-      "SCONJ": 2,
+      "SCONJ": 1,
       "PRON": 1
     },
     "verses": [
-      "1:6",
-      "1:13",
-      "1:16",
-      "1:20",
-      "2:16"
+      "4:6"
     ]
   },
   "َاذ": {
@@ -18902,16 +19771,11 @@
     "id": "sebab",
     "pos": "SCONJ",
     "pos_counts": {
-      "VERB": 10,
-      "SCONJ": 2,
+      "SCONJ": 1,
       "PRON": 1
     },
     "verses": [
-      "1:6",
-      "1:13",
-      "1:16",
-      "1:20",
-      "2:16"
+      "4:6"
     ]
   },
   "الْقَدِيرُ": {
@@ -18924,11 +19788,10 @@
     "pos": "ADJ",
     "pos_counts": {
       "ADJ": 1,
-      "NOUN": 2
+      "NOUN": 1
     },
     "verses": [
-      "1:20",
-      "1:21"
+      "1:20"
     ]
   },
   "قَبَلَ": {
@@ -19149,16 +20012,10 @@
     "pos": "CCONJ",
     "pos_counts": {
       "CCONJ": 1,
-      "VERB": 10,
-      "SCONJ": 2,
       "PRON": 1
     },
     "verses": [
-      "1:6",
-      "1:13",
-      "1:16",
-      "1:20",
-      "2:16"
+      "4:6"
     ]
   },
   "الْفَتاة": {
@@ -19299,8 +20156,8 @@
     "pos": "PRON",
     "pos_counts": {
       "ADP": 17,
-      "PRON": 9,
-      "DET": 4
+      "PRON": 7,
+      "DET": 2
     },
     "verses": [
       "1:1",
@@ -19701,7 +20558,14 @@
     "pt": "não és",
     "es": "no eres",
     "id": "engkau bukan",
-    "pos": "VERB"
+    "pos": "VERB",
+    "pos_counts": {
+      "VERB": 1,
+      "PART+VERB": 1
+    },
+    "verses": [
+      "2:13"
+    ]
   },
   "آخَر": {
     "root": "أخر",
@@ -19735,7 +20599,16 @@
     "pt": "e para que",
     "es": "y para que",
     "id": "dan supaya",
-    "pos": "SCONJ"
+    "pos": "SCONJ",
+    "pos_counts": {
+      "SCONJ": 1,
+      "PART+PRON": 1,
+      "ADP+PART": 1
+    },
+    "verses": [
+      "2:12",
+      "4:14"
+    ]
   },
   "الْخَلَّ": {
     "root": "خلل",
@@ -19802,7 +20675,15 @@
     "pt": "uma",
     "es": "una",
     "id": "satu",
-    "pos": "ADJ"
+    "pos": "ADJ",
+    "pos_counts": {
+      "ADJ": 1,
+      "CCONJ+PART": 2
+    },
+    "verses": [
+      "1:8",
+      "1:9"
+    ]
   },
   "َمِعٌ": {
     "root": "جمع",
@@ -19878,11 +20759,13 @@
     "pos": "VERB",
     "pos_counts": {
       "VERB": 1,
-      "PRON": 2
+      "PRON": 2,
+      "ADP+PRON": 1
     },
     "verses": [
       "1:12",
-      "2:21"
+      "2:21",
+      "4:10"
     ]
   },
   "ْيَع": {
@@ -19975,7 +20858,6 @@
     "id": "bumi; tanah",
     "pos": "NOUN",
     "verses": [
-      "1:1",
       "2:10"
     ]
   },
@@ -20251,11 +21133,13 @@
     "pos_counts": {
       "PRON": 1,
       "CCONJ": 2,
-      "ADV": 2
+      "ADP+PRON": 2,
+      "ADP+CCONJ": 1,
+      "ADV": 1
     },
     "verses": [
       "3:1",
-      "3:11",
+      "3:13",
       "4:15"
     ]
   },
@@ -20360,7 +21244,6 @@
     "id": "bumi; tanah",
     "pos": "NOUN",
     "verses": [
-      "1:1",
       "2:10"
     ]
   },
@@ -20392,7 +21275,14 @@
     "pt": "aquilo",
     "es": "eso",
     "id": "itu",
-    "pos": "PRON"
+    "pos": "PRON",
+    "pos_counts": {
+      "PRON": 1,
+      "ADP+PRON+PART": 1
+    },
+    "verses": [
+      "1:11"
+    ]
   },
   "ْكُمْ": {
     "root": "كم",
@@ -20633,16 +21523,11 @@
     "id": "jika; sesungguhnya",
     "pos": "SCONJ",
     "pos_counts": {
-      "VERB": 10,
-      "SCONJ": 2,
+      "SCONJ": 1,
       "PRON": 1
     },
     "verses": [
-      "1:6",
-      "1:13",
-      "1:16",
-      "1:20",
-      "2:16"
+      "4:6"
     ]
   },
   "لَٰمْ": {
@@ -20654,8 +21539,16 @@
     "id": "tidak",
     "pos": "PART",
     "verses": [
-      "3:13"
-    ]
+      "2:11",
+      "2:20",
+      "3:10",
+      "3:13",
+      "4:14"
+    ],
+    "pos_counts": {
+      "PART": 4,
+      "ADP+DET": 1
+    }
   },
   "قِائِلاً": {
     "root": "قول",
@@ -20702,11 +21595,13 @@
     "pos_counts": {
       "PRON": 1,
       "CCONJ": 2,
-      "ADV": 2
+      "ADP+PRON": 2,
+      "ADP+CCONJ": 1,
+      "ADV": 1
     },
     "verses": [
       "3:1",
-      "3:11",
+      "3:13",
       "4:15"
     ]
   },
@@ -21519,16 +22414,11 @@
     "id": "ada; adalah",
     "pos": "VERB",
     "pos_counts": {
-      "VERB": 10,
-      "SCONJ": 2,
+      "VERB": 1,
       "PRON": 1
     },
     "verses": [
-      "1:6",
-      "1:13",
-      "1:16",
-      "1:20",
-      "2:16"
+      "4:6"
     ]
   },
   "َفِي": {
@@ -21541,11 +22431,16 @@
     "pos": "ADP",
     "verses": [
       "1:1",
-      "1:11",
-      "2:22",
-      "2:23",
-      "3:13"
-    ]
+      "1:6",
+      "1:7",
+      "1:9",
+      "1:11"
+    ],
+    "pos_counts": {
+      "CCONJ+PRON": 18,
+      "CCONJ+PART": 6,
+      "ADP": 6
+    }
   },
   "ِرِجْلِ": {
     "root": "رجل",
@@ -21633,14 +22528,13 @@
     "pos": "ADV",
     "pos_counts": {
       "ADV": 1,
-      "ADJ": 7
+      "ADJ": 4
     },
     "verses": [
       "1:12",
-      "1:14",
       "2:15",
       "2:16",
-      "2:21"
+      "4:5"
     ]
   },
   "مَلِ": {
@@ -21844,13 +22738,8 @@
     "es": "el varón",
     "id": "orang itu",
     "pos": "NOUN",
-    "pos_counts": {
-      "NOUN": 2,
-      "ADJ": 1
-    },
     "verses": [
       "3:8",
-      "3:16",
       "3:18"
     ]
   },
@@ -21861,7 +22750,14 @@
     "pt": "e não há",
     "es": "y no hay",
     "id": "dan tidak ada",
-    "pos": "VERB"
+    "pos": "VERB",
+    "pos_counts": {
+      "VERB": 1,
+      "ADP+VERB": 1
+    },
+    "verses": [
+      "4:4"
+    ]
   },
   "َسْتَ": {
     "root": "ليس",

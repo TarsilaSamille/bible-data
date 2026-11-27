@@ -288,14 +288,15 @@
     "pos": "NOUN",
     "pos_counts": {
       "ADJ": 23,
-      "NOUN": 8
+      "NOUN": 8,
+      "ADJ+NOUN": 4
     },
     "verses": [
       "1:3",
       "1:22",
       "2:9",
       "2:20",
-      "3:16"
+      "3:9"
     ]
   },
   "δυνάστης": {
@@ -419,8 +420,8 @@
     "id": "pergi; berjalan; maju",
     "pos": "VERB",
     "pos_counts": {
-      "VERB": 48,
-      "NOUN": 41,
+      "VERB": 54,
+      "NOUN": 47,
       "PART": 15,
       "PRON": 4,
       "ADV": 3,
@@ -444,7 +445,7 @@
     "pos": "NUM",
     "pos_counts": {
       "NUM": 1,
-      "ADP": 105,
+      "ADP": 91,
       "NOUN": 3
     },
     "verses": [
@@ -452,7 +453,7 @@
       "1:11",
       "1:14",
       "1:16",
-      "1:28"
+      "2:2"
     ]
   },
   "εἷς": {
@@ -465,7 +466,7 @@
     "pos": "NUM",
     "pos_counts": {
       "NUM": 1,
-      "ADP": 105,
+      "ADP": 91,
       "NOUN": 3
     },
     "verses": [
@@ -473,7 +474,7 @@
       "1:11",
       "1:14",
       "1:16",
-      "1:28"
+      "2:2"
     ]
   },
   "εὐσέβεια": {
@@ -688,12 +689,11 @@
     "id": "memanggil, mengundang",
     "pos": "PART",
     "pos_counts": {
-      "PART": 2,
+      "PART": 1,
       "VERB": 1
     },
     "verses": [
       "1:24",
-      "9:15",
       "16:17"
     ]
   },
@@ -722,12 +722,17 @@
     "id": "mengarahkan; meluruskan; menuntun; berhasil",
     "pos": "VERB",
     "verses": [
+      "1:3",
+      "4:26",
       "9:15",
       "13:13",
-      "15:8",
-      "15:21",
-      "21:2"
-    ]
+      "15:8"
+    ],
+    "pos_counts": {
+      "VERB": 7,
+      "ADJ+VERB": 1,
+      "NOUN+VERB": 1
+    }
   },
   "καταιγίς": {
     "root": "καταιγίς",
@@ -1378,8 +1383,13 @@
     "id": "kecerdikan; kepandaian; kelicikan",
     "pos": "ADJ",
     "verses": [
+      "1:4",
       "8:5"
-    ]
+    ],
+    "pos_counts": {
+      "NOUN": 1,
+      "ADJ": 1
+    }
   },
   "παραβολή": {
     "root": "παραβολή",
@@ -1694,7 +1704,20 @@
     "en": "to pay attention; to take heed; to beware",
     "pt": "prestar atenção; atender; acautelar-se; guardar-se",
     "es": "prestar atención; atender; guardarse; cuidar",
-    "id": "memperhatikan; waspada; berhati-hati"
+    "id": "memperhatikan; waspada; berhati-hati",
+    "pos": "PART+VERB",
+    "pos_counts": {
+      "PART+VERB": 3,
+      "NOUN+VERB": 3,
+      "ADV+VERB": 2
+    },
+    "verses": [
+      "1:24",
+      "1:30",
+      "4:1",
+      "4:20",
+      "5:1"
+    ]
   },
   "προἵημι": {
     "root": "προἵημι",
@@ -2229,8 +2252,8 @@
     "id": "hidup; jiwa",
     "pos": "NOUN",
     "pos_counts": {
-      "NOUN": 39,
-      "VERB": 4,
+      "NOUN": 42,
+      "VERB": 7,
       "ADV": 2,
       "PART": 1,
       "ADJ": 1
@@ -2239,8 +2262,8 @@
       "1:19",
       "2:10",
       "3:22",
-      "6:21",
-      "6:26"
+      "6:16",
+      "6:21"
     ]
   },
   "ἀγαθός": {
@@ -2301,7 +2324,7 @@
     "id": "mendengar; mendengarkan",
     "pos": "NOUN",
     "pos_counts": {
-      "NOUN": 11,
+      "NOUN": 5,
       "VERB": 5,
       "INTJ": 3,
       "PRON": 2,
@@ -2310,9 +2333,9 @@
     "verses": [
       "1:5",
       "1:8",
-      "1:28",
       "1:33",
-      "4:1"
+      "4:1",
+      "4:10"
     ]
   },
   "ἀληθής": {
@@ -2463,15 +2486,15 @@
     "pos": "NOUN",
     "pos_counts": {
       "VERB": 4,
-      "ADJ": 1,
-      "NOUN": 1
+      "NOUN": 3,
+      "ADJ": 1
     },
     "verses": [
       "1:7",
       "8:22",
+      "8:23",
       "9:10",
-      "15:33",
-      "16:3"
+      "15:33"
     ]
   },
   "ἀσεβής": {
@@ -2661,8 +2684,8 @@
     "id": "aku",
     "pos": "PRON",
     "pos_counts": {
-      "NOUN": 36,
-      "VERB": 6,
+      "NOUN": 41,
+      "VERB": 10,
       "ADJ": 6,
       "PART": 5,
       "ADV": 4,
@@ -2836,15 +2859,15 @@
     "id": "pikiran",
     "pos": "NOUN",
     "pos_counts": {
-      "NOUN": 7,
+      "NOUN": 10,
       "ADJ": 2
     },
     "verses": [
       "1:4",
       "2:11",
-      "5:2",
-      "8:12",
-      "16:18"
+      "3:21",
+      "4:1",
+      "5:2"
     ]
   },
   "ἐξετασμός": {
@@ -3060,7 +3083,7 @@
       "1:26",
       "1:27",
       "2:10",
-      "5:10"
+      "6:15"
     ]
   },
   "ἔχω": {
@@ -3073,10 +3096,10 @@
     "pos": "VERB",
     "verses": [
       "1:22",
-      "1:24",
-      "1:30",
       "3:27",
-      "4:1"
+      "6:7",
+      "7:10",
+      "12:19"
     ]
   },
   "ἡμέτερος": {
@@ -3137,17 +3160,14 @@
     "pos": "PRON",
     "pos_counts": {
       "CCONJ": 27,
-      "NOUN": 19,
-      "VERB": 3,
-      "PRON": 1,
-      "ADJ": 1
+      "PRON": 1
     },
     "verses": [
       "1:27",
-      "3:9",
-      "3:10",
       "3:14",
-      "3:17"
+      "5:3",
+      "6:8",
+      "6:28"
     ]
   },
   "ἰδού": {
@@ -3172,7 +3192,11 @@
     "en": "Israel",
     "pt": "Israel",
     "es": "Israel",
-    "id": "Israel"
+    "id": "Israel",
+    "pos": "NOUN",
+    "verses": [
+      "1:1"
+    ]
   },
   "ἵνα": {
     "root": "ἵνα",
@@ -3689,8 +3713,13 @@
     "id": "dan aku; aku juga",
     "pos": "NOUN",
     "verses": [
+      "1:26",
       "4:3"
-    ]
+    ],
+    "pos_counts": {
+      "PART+ADV": 1,
+      "NOUN": 1
+    }
   },
   "αποαιρεω": {
     "root": "ἀφαιρέω",
@@ -3762,7 +3791,11 @@
     "en": "to despise; to count as nothing",
     "pt": "desprezar; reduzir a nada",
     "es": "menospreciar; reducir a nada",
-    "id": "menghina; menganggap tidak ada"
+    "id": "menghina; menganggap tidak ada",
+    "pos": "VERB",
+    "verses": [
+      "1:7"
+    ]
   },
   "εθελω": {
     "root": "ἐθέλω",
@@ -3894,7 +3927,7 @@
       "1:26",
       "1:27",
       "2:10",
-      "5:10"
+      "6:15"
     ]
   },
   "λεγω": {
@@ -3981,7 +4014,15 @@
     "en": "to listen to; to heed; to hear",
     "pt": "ouvir; escutar; atender",
     "es": "escuchar; atender; oír",
-    "id": "mendengarkan; mengindahkan"
+    "id": "mendengarkan; mengindahkan",
+    "pos": "ADP+NOUN",
+    "verses": [
+      "1:28",
+      "8:6",
+      "8:34",
+      "12:15",
+      "21:13"
+    ]
   },
   "απο": {
     "root": "ἀπό",
@@ -4045,10 +4086,10 @@
     "pos": "VERB",
     "verses": [
       "1:22",
-      "1:24",
-      "1:30",
       "3:27",
-      "4:1"
+      "6:7",
+      "7:10",
+      "12:19"
     ]
   },
   "τοιγαρουν": {
@@ -4085,8 +4126,8 @@
     "id": "hidup; jiwa",
     "pos": "NOUN",
     "pos_counts": {
-      "NOUN": 39,
-      "VERB": 4,
+      "NOUN": 42,
+      "VERB": 7,
       "ADV": 2,
       "PART": 1,
       "ADJ": 1
@@ -4095,8 +4136,8 @@
       "1:19",
       "2:10",
       "3:22",
-      "6:21",
-      "6:26"
+      "6:16",
+      "6:21"
     ]
   },
   "μισεω": {
@@ -4192,7 +4233,7 @@
     "pos": "NUM",
     "pos_counts": {
       "NUM": 1,
-      "ADP": 105,
+      "ADP": 91,
       "NOUN": 3
     },
     "verses": [
@@ -4200,7 +4241,7 @@
       "1:11",
       "1:14",
       "1:16",
-      "1:28"
+      "2:2"
     ]
   },
   "αποωθεω": {
@@ -4246,15 +4287,15 @@
     "pos": "NOUN",
     "pos_counts": {
       "VERB": 4,
-      "ADJ": 1,
-      "NOUN": 1
+      "NOUN": 3,
+      "ADJ": 1
     },
     "verses": [
       "1:7",
       "8:22",
+      "8:23",
       "9:10",
-      "15:33",
-      "16:3"
+      "15:33"
     ]
   },
   "μη": {
@@ -4515,7 +4556,7 @@
     "id": "mendengar; mendengarkan",
     "pos": "NOUN",
     "pos_counts": {
-      "NOUN": 11,
+      "NOUN": 5,
       "VERB": 5,
       "INTJ": 3,
       "PRON": 2,
@@ -4524,9 +4565,9 @@
     "verses": [
       "1:5",
       "1:8",
-      "1:28",
       "1:33",
-      "4:1"
+      "4:1",
+      "4:10"
     ]
   },
   "αγω": {
@@ -4903,12 +4944,11 @@
     "id": "memanggil, mengundang",
     "pos": "PART",
     "pos_counts": {
-      "PART": 2,
+      "PART": 1,
       "VERB": 1
     },
     "verses": [
       "1:24",
-      "9:15",
       "16:17"
     ]
   },
@@ -5094,17 +5134,14 @@
     "pos": "PRON",
     "pos_counts": {
       "CCONJ": 27,
-      "NOUN": 19,
-      "VERB": 3,
-      "PRON": 1,
-      "ADJ": 1
+      "PRON": 1
     },
     "verses": [
       "1:27",
-      "3:9",
-      "3:10",
       "3:14",
-      "3:17"
+      "5:3",
+      "6:8",
+      "6:28"
     ]
   },
   "πολιορκια": {
@@ -5177,7 +5214,20 @@
     "en": "to pay attention; to take heed; to beware",
     "pt": "prestar atenção; atender; acautelar-se; guardar-se",
     "es": "prestar atención; atender; guardarse; cuidar",
-    "id": "memperhatikan; waspada; berhati-hati"
+    "id": "memperhatikan; waspada; berhati-hati",
+    "pos": "PART+VERB",
+    "pos_counts": {
+      "PART+VERB": 3,
+      "NOUN+VERB": 3,
+      "ADV+VERB": 2
+    },
+    "verses": [
+      "1:24",
+      "1:30",
+      "4:1",
+      "4:20",
+      "5:1"
+    ]
   },
   "αφρων": {
     "root": "αφρων",
@@ -5226,8 +5276,13 @@
     "id": "kecerdikan; kepandaian; kelicikan",
     "pos": "ADJ",
     "verses": [
+      "1:4",
       "8:5"
-    ]
+    ],
+    "pos_counts": {
+      "NOUN": 1,
+      "ADJ": 1
+    }
   },
   "λογος": {
     "root": "λόγος",
@@ -6097,12 +6152,17 @@
     "id": "mengarahkan; meluruskan; menuntun; berhasil",
     "pos": "VERB",
     "verses": [
+      "1:3",
+      "4:26",
       "9:15",
       "13:13",
-      "15:8",
-      "15:21",
-      "21:2"
-    ]
+      "15:8"
+    ],
+    "pos_counts": {
+      "VERB": 7,
+      "ADJ+VERB": 1,
+      "NOUN+VERB": 1
+    }
   },
   "πτερωτος": {
     "root": "πτερωτός",
@@ -6198,8 +6258,8 @@
     "id": "pergi; berjalan; maju",
     "pos": "VERB",
     "pos_counts": {
-      "VERB": 48,
-      "NOUN": 41,
+      "VERB": 54,
+      "NOUN": 47,
       "PART": 15,
       "PRON": 4,
       "ADV": 3,
@@ -6356,14 +6416,15 @@
     "pos": "NOUN",
     "pos_counts": {
       "ADJ": 23,
-      "NOUN": 8
+      "NOUN": 8,
+      "ADJ+NOUN": 4
     },
     "verses": [
       "1:3",
       "1:22",
       "2:9",
       "2:20",
-      "3:16"
+      "3:9"
     ]
   },
   "υπευθυνος": {
@@ -6600,8 +6661,8 @@
     "id": "aku",
     "pos": "PRON",
     "pos_counts": {
-      "NOUN": 36,
-      "VERB": 6,
+      "NOUN": 41,
+      "VERB": 10,
       "ADJ": 6,
       "PART": 5,
       "ADV": 4,
@@ -6672,7 +6733,11 @@
     "en": "Israel",
     "pt": "Israel",
     "es": "Israel",
-    "id": "Israel"
+    "id": "Israel",
+    "pos": "NOUN",
+    "verses": [
+      "1:1"
+    ]
   },
   "νηπιος": {
     "root": "νήπιος",
@@ -6904,15 +6969,15 @@
     "id": "pikiran",
     "pos": "NOUN",
     "pos_counts": {
-      "NOUN": 7,
+      "NOUN": 10,
       "ADJ": 2
     },
     "verses": [
       "1:4",
       "2:11",
-      "5:2",
-      "8:12",
-      "16:18"
+      "3:21",
+      "4:1",
+      "5:2"
     ]
   },
   "κυβερνησις": {
@@ -7216,6 +7281,7 @@
       "ADJ": 16,
       "VERB": 2,
       "PART": 1,
+      "ADJ+VERB": 1,
       "NOUN": 1,
       "ADV": 1
     },
@@ -7224,7 +7290,7 @@
       "8:30",
       "8:31",
       "10:1",
-      "12:25"
+      "12:20"
     ]
   },
   "ζωή": {
@@ -7236,17 +7302,21 @@
     "id": "hidup",
     "pos": "NOUN",
     "pos_counts": {
-      "VERB": 11,
-      "ADJ": 7,
-      "NOUN": 4,
-      "PART": 3
+      "VERB": 12,
+      "NOUN": 9,
+      "ADJ": 8,
+      "PART": 3,
+      "ADJ+NOUN": 2,
+      "VERB+NOUN": 2,
+      "NOUN+VERB": 1,
+      "NOUN+ADJ": 1
     },
     "verses": [
+      "2:19",
       "3:2",
       "3:16",
       "3:18",
-      "4:13",
-      "4:22"
+      "4:10"
     ]
   },
   "θεῖος": {
@@ -7563,10 +7633,11 @@
     "pos": "ADP",
     "pos_counts": {
       "NOUN": 18,
+      "VERB": 7,
       "PART": 6,
-      "VERB": 6,
       "ADP": 4,
-      "ADV": 2,
+      "ADV": 3,
+      "NOUN+ADP": 1,
       "ADJ": 1
     },
     "verses": [
@@ -7574,7 +7645,7 @@
       "2:18",
       "3:7",
       "5:14",
-      "7:8"
+      "7:1"
     ]
   },
   "πιστός": {
@@ -7745,14 +7816,13 @@
     "pos": "VERB",
     "pos_counts": {
       "VERB": 1,
-      "ADJ": 2,
       "ADV": 1,
+      "ADJ": 1,
       "PART": 1
     },
     "verses": [
       "2:18",
       "8:28",
-      "19:4",
       "22:28"
     ]
   },
@@ -7806,6 +7876,7 @@
     "id": "suara; bunyi; seruan",
     "pos": "NOUN",
     "verses": [
+      "2:3",
       "5:13",
       "8:4",
       "26:25",
@@ -7821,16 +7892,16 @@
     "id": "bersukacita; bergembira",
     "pos": "VERB",
     "pos_counts": {
-      "VERB": 3,
       "PART": 2,
+      "VERB": 2,
       "NOUN": 1
     },
     "verses": [
       "2:14",
       "6:16",
-      "8:30",
       "17:19",
-      "23:25"
+      "23:25",
+      "24:19"
     ]
   },
   "χρηστός": {
@@ -7985,10 +8056,12 @@
     "pos": "ADJ",
     "pos_counts": {
       "ADJ": 2,
+      "ADV+VERB": 1,
       "ADV": 1,
       "PART": 1
     },
     "verses": [
+      "2:17",
       "3:1",
       "4:5",
       "31:5",
@@ -8016,15 +8089,15 @@
     "id": "pikiran",
     "pos": "NOUN",
     "pos_counts": {
-      "NOUN": 7,
+      "NOUN": 10,
       "ADJ": 2
     },
     "verses": [
       "1:4",
       "2:11",
-      "5:2",
-      "8:12",
-      "16:18"
+      "3:21",
+      "4:1",
+      "5:2"
     ]
   },
   "ὅσιος": {
@@ -8118,17 +8191,10 @@
     "id": "wahai; oh",
     "pos": "INTJ",
     "verses": [
-      "1:3",
-      "1:7",
       "2:13",
-      "2:17",
-      "4:8"
-    ],
-    "pos_counts": {
-      "VERB": 20,
-      "INTJ": 3,
-      "NOUN": 3
-    }
+      "6:6",
+      "8:4"
+    ]
   },
   "ῥύομαι": {
     "root": "ῥύομαι",
@@ -8246,10 +8312,11 @@
     "pos": "ADP",
     "pos_counts": {
       "NOUN": 18,
+      "VERB": 7,
       "PART": 6,
-      "VERB": 6,
       "ADP": 4,
-      "ADV": 2,
+      "ADV": 3,
+      "NOUN+ADP": 1,
       "ADJ": 1
     },
     "verses": [
@@ -8257,7 +8324,7 @@
       "2:18",
       "3:7",
       "5:14",
-      "7:8"
+      "7:1"
     ]
   },
   "θανατος": {
@@ -8400,6 +8467,7 @@
     "id": "suara; bunyi; seruan",
     "pos": "NOUN",
     "verses": [
+      "2:3",
       "5:13",
       "8:4",
       "26:25",
@@ -8416,10 +8484,12 @@
     "pos": "ADJ",
     "pos_counts": {
       "ADJ": 2,
+      "ADV+VERB": 1,
       "ADV": 1,
       "PART": 1
     },
     "verses": [
+      "2:17",
       "3:1",
       "4:5",
       "31:5",
@@ -8471,6 +8541,7 @@
       "ADJ": 16,
       "VERB": 2,
       "PART": 1,
+      "ADJ+VERB": 1,
       "NOUN": 1,
       "ADV": 1
     },
@@ -8479,7 +8550,7 @@
       "8:30",
       "8:31",
       "10:1",
-      "12:25"
+      "12:20"
     ]
   },
   "νουθετησις": {
@@ -8557,17 +8628,21 @@
     "id": "hidup",
     "pos": "NOUN",
     "pos_counts": {
-      "VERB": 11,
-      "ADJ": 7,
-      "NOUN": 4,
-      "PART": 3
+      "VERB": 12,
+      "NOUN": 9,
+      "ADJ": 8,
+      "PART": 3,
+      "ADJ+NOUN": 2,
+      "VERB+NOUN": 2,
+      "NOUN+VERB": 1,
+      "NOUN+ADJ": 1
     },
     "verses": [
+      "2:19",
       "3:2",
       "3:16",
       "3:18",
-      "4:13",
-      "4:22"
+      "4:10"
     ]
   },
   "ους": {
@@ -8841,17 +8916,10 @@
     "es": "oh",
     "id": "wahai; oh",
     "pos": "INTJ",
-    "pos_counts": {
-      "VERB": 20,
-      "INTJ": 3,
-      "NOUN": 3
-    },
     "verses": [
-      "1:3",
-      "1:7",
       "2:13",
-      "2:17",
-      "4:8"
+      "6:6",
+      "8:4"
     ]
   },
   "τιθημι": {
@@ -8864,14 +8932,13 @@
     "pos": "VERB",
     "pos_counts": {
       "VERB": 1,
-      "ADJ": 2,
       "ADV": 1,
+      "ADJ": 1,
       "PART": 1
     },
     "verses": [
       "2:18",
       "8:28",
-      "19:4",
       "22:28"
     ]
   },
@@ -9033,16 +9100,16 @@
     "id": "bersukacita; bergembira",
     "pos": "VERB",
     "pos_counts": {
-      "VERB": 3,
       "PART": 2,
+      "VERB": 2,
       "NOUN": 1
     },
     "verses": [
       "2:14",
       "6:16",
-      "8:30",
       "17:19",
-      "23:25"
+      "23:25",
+      "24:19"
     ]
   },
   "ρυομαι": {
@@ -9449,15 +9516,16 @@
     "id": "damai; sejahtera; ketenteraman",
     "pos": "NOUN",
     "pos_counts": {
-      "NOUN": 3,
-      "ADJ": 2
+      "NOUN": 4,
+      "ADJ": 2,
+      "VERB": 1
     },
     "verses": [
       "3:2",
+      "3:17",
       "3:23",
       "4:27",
-      "12:20",
-      "17:1"
+      "12:20"
     ]
   },
   "εἶπον": {
@@ -9472,8 +9540,8 @@
       "3:28",
       "5:12",
       "7:4",
-      "7:13",
-      "8:6"
+      "8:6",
+      "9:4"
     ]
   },
   "εὐλογέω": {
@@ -9959,9 +10027,14 @@
     "id": "kekenyangan, kelimpahan, kepuasan",
     "pos": "NOUN",
     "verses": [
+      "3:10",
       "26:16",
       "27:7"
-    ]
+    ],
+    "pos_counts": {
+      "NOUN": 2,
+      "NOUN+VERB": 1
+    }
   },
   "πλοῦτος": {
     "root": "πλοῦτος",
@@ -10013,7 +10086,12 @@
     "en": "to stumble; to strike against; to trip",
     "pt": "tropeçar; bater contra; chocar-se",
     "es": "tropezar; chocar contra",
-    "id": "tersandung; membentur"
+    "id": "tersandung; membentur",
+    "pos": "VERB",
+    "verses": [
+      "3:23",
+      "4:19"
+    ]
   },
   "προςτίθημι": {
     "root": "προστίθημι",
@@ -10029,7 +10107,11 @@
       "9:11",
       "9:18",
       "10:22"
-    ]
+    ],
+    "pos_counts": {
+      "VERB": 7,
+      "PART+ADJ": 1
+    }
   },
   "πρός": {
     "root": "πρός",
@@ -10040,19 +10122,17 @@
     "id": "untuk; kepada; terhadap",
     "pos": "NOUN",
     "pos_counts": {
-      "NOUN": 19,
-      "PART": 8,
-      "VERB": 7,
-      "ADV": 5,
-      "ADJ": 1,
-      "PRON": 1
+      "NOUN": 12,
+      "PART": 4,
+      "VERB": 2,
+      "ADJ": 1
     },
     "verses": [
-      "1:24",
-      "1:30",
-      "3:23",
       "3:30",
-      "4:1"
+      "5:3",
+      "5:8",
+      "5:20",
+      "6:6"
     ]
   },
   "πτόησις": {
@@ -11237,19 +11317,17 @@
     "id": "untuk; kepada; terhadap",
     "pos": "NOUN",
     "pos_counts": {
-      "NOUN": 19,
-      "PART": 8,
-      "VERB": 7,
-      "ADV": 5,
-      "ADJ": 1,
-      "PRON": 1
+      "NOUN": 12,
+      "PART": 4,
+      "VERB": 2,
+      "ADJ": 1
     },
     "verses": [
-      "1:24",
-      "1:30",
-      "3:23",
       "3:30",
-      "4:1"
+      "5:3",
+      "5:8",
+      "5:20",
+      "6:6"
     ]
   },
   "ματην": {
@@ -11373,8 +11451,8 @@
       "3:28",
       "5:12",
       "7:4",
-      "7:13",
-      "8:6"
+      "8:6",
+      "9:4"
     ]
   },
   "ενπορευομαι": {
@@ -11403,9 +11481,14 @@
     "id": "kekenyangan, kepenuhan",
     "pos": "NOUN",
     "verses": [
+      "3:10",
       "26:16",
       "27:7"
-    ]
+    ],
+    "pos_counts": {
+      "NOUN": 2,
+      "NOUN+VERB": 1
+    }
   },
   "ασφαλης": {
     "root": "ἀσφαλής",
@@ -11740,7 +11823,11 @@
       "9:11",
       "9:18",
       "10:22"
-    ]
+    ],
+    "pos_counts": {
+      "VERB": 7,
+      "PART+ADJ": 1
+    }
   },
   "βιος": {
     "root": "βίος",
@@ -12620,7 +12707,12 @@
     "en": "to stumble; to strike against; to trip",
     "pt": "tropeçar; bater contra; chocar-se",
     "es": "tropezar; chocar contra",
-    "id": "tersandung; membentur"
+    "id": "tersandung; membentur",
+    "pos": "VERB",
+    "verses": [
+      "3:23",
+      "4:19"
+    ]
   },
   "ρηγνυμι": {
     "root": "ῥήγνυμι",
@@ -12931,15 +13023,16 @@
     "id": "damai; sejahtera; ketenteraman",
     "pos": "NOUN",
     "pos_counts": {
-      "NOUN": 3,
-      "ADJ": 2
+      "NOUN": 4,
+      "ADJ": 2,
+      "VERB": 1
     },
     "verses": [
       "3:2",
+      "3:17",
       "3:23",
       "4:27",
-      "12:20",
-      "17:1"
+      "12:20"
     ]
   },
   "ρεω": {
@@ -13294,10 +13387,12 @@
     "pos": "NOUN",
     "pos_counts": {
       "NOUN": 2,
+      "NOUN+VERB": 1,
       "VERB": 1
     },
     "verses": [
       "4:16",
+      "6:18",
       "11:15",
       "19:7"
     ]
@@ -13437,7 +13532,11 @@
     "translit": "perilambanō",
     "pt": "abraçar, envolver, cercar",
     "es": "abrazar, envolver, rodear",
-    "id": "memeluk, mendekap, mencakup"
+    "id": "memeluk, mendekap, mencakup",
+    "pos": "NOUN+VERB",
+    "verses": [
+      "4:8"
+    ]
   },
   "περιχαρακόω": {
     "root": "περιχαρακόω",
@@ -14588,7 +14687,11 @@
     "translit": "perilambanō",
     "pt": "abraçar, envolver, cercar",
     "es": "abrazar, envolver, rodear",
-    "id": "memeluk, mendekap, mencakup"
+    "id": "memeluk, mendekap, mencakup",
+    "pos": "NOUN+VERB",
+    "verses": [
+      "4:8"
+    ]
   },
   "κακοποιεω": {
     "root": "κακοποιέω",
@@ -14600,10 +14703,12 @@
     "pos": "NOUN",
     "pos_counts": {
       "NOUN": 2,
+      "NOUN+VERB": 1,
       "VERB": 1
     },
     "verses": [
       "4:16",
+      "6:18",
       "11:15",
       "19:7"
     ]
@@ -14645,7 +14750,7 @@
     "id": "perempuan; istri",
     "pos": "NOUN",
     "pos_counts": {
-      "NOUN": 15,
+      "NOUN": 17,
       "VERB": 8,
       "ADJ": 1,
       "PART": 1,
@@ -14714,7 +14819,15 @@
     "en": "to enter; to come in",
     "pt": "entrar",
     "es": "entrar",
-    "id": "masuk"
+    "id": "masuk",
+    "pos": "ADP+VERB",
+    "verses": [
+      "5:10",
+      "6:29",
+      "11:2",
+      "23:10",
+      "27:10"
+    ]
   },
   "θύρα": {
     "root": "θύρα",
@@ -15023,9 +15136,13 @@
       "5:15",
       "9:5",
       "9:18",
-      "26:6",
-      "31:5"
-    ]
+      "23:7",
+      "26:6"
+    ],
+    "pos_counts": {
+      "VERB": 7,
+      "NOUN": 1
+    }
   },
   "πόρνη": {
     "root": "πόρνη",
@@ -15106,6 +15223,7 @@
     "id": "jemaah; perkumpulan; majelis",
     "pos": "NOUN",
     "verses": [
+      "5:14",
       "21:16"
     ]
   },
@@ -15183,9 +15301,14 @@
     "pos": "VERB",
     "verses": [
       "5:23",
+      "10:21",
       "11:7",
       "15:10"
-    ]
+    ],
+    "pos_counts": {
+      "VERB": 3,
+      "ADJ": 1
+    }
   },
   "φαῦλος": {
     "root": "φαῦλος",
@@ -15395,10 +15518,10 @@
     "pos": "NOUN",
     "verses": [
       "5:5",
+      "5:23",
       "9:6",
-      "18:13",
-      "19:3",
-      "26:5"
+      "18:2",
+      "18:13"
     ]
   },
   "ἁμαρτία": {
@@ -15552,17 +15675,14 @@
     "pos": "PRON",
     "verses": [
       "1:27",
-      "3:9",
-      "3:10",
       "3:14",
-      "3:17"
+      "5:3",
+      "6:8",
+      "6:28"
     ],
     "pos_counts": {
       "CCONJ": 27,
-      "NOUN": 19,
-      "VERB": 3,
-      "PRON": 1,
-      "ADJ": 1
+      "PRON": 1
     }
   },
   "ἰσχύς": {
@@ -15973,10 +16093,10 @@
     "pos": "NOUN",
     "verses": [
       "5:5",
+      "5:23",
       "9:6",
-      "18:13",
-      "19:3",
-      "26:5"
+      "18:2",
+      "18:13"
     ]
   },
   "σκοπευω": {
@@ -16224,9 +16344,13 @@
       "5:15",
       "9:5",
       "9:18",
-      "26:6",
-      "31:5"
-    ]
+      "23:7",
+      "26:6"
+    ],
+    "pos_counts": {
+      "VERB": 7,
+      "NOUN": 1
+    }
   },
   "κατατριβω": {
     "root": "κατατρίβω",
@@ -16271,9 +16395,14 @@
     "pos": "VERB",
     "verses": [
       "5:23",
+      "10:21",
       "11:7",
       "15:10"
-    ]
+    ],
+    "pos_counts": {
+      "VERB": 3,
+      "ADJ": 1
+    }
   },
   "ειςερχομαι": {
     "root": "εἰσέρχομαι",
@@ -16281,7 +16410,15 @@
     "en": "to enter; to come in",
     "pt": "entrar",
     "es": "entrar",
-    "id": "masuk"
+    "id": "masuk",
+    "pos": "ADP+VERB",
+    "verses": [
+      "5:10",
+      "6:29",
+      "11:2",
+      "23:10",
+      "27:10"
+    ]
   },
   "βιοτης": {
     "root": "βιότης",
@@ -16739,6 +16876,7 @@
     "id": "jemaah; perkumpulan; majelis",
     "pos": "NOUN",
     "verses": [
+      "5:14",
       "21:16"
     ]
   },
@@ -16751,7 +16889,7 @@
     "id": "perempuan; istri",
     "pos": "NOUN",
     "pos_counts": {
-      "NOUN": 15,
+      "NOUN": 17,
       "VERB": 8,
       "ADJ": 1,
       "PART": 1,
@@ -16957,8 +17095,8 @@
       "2:10"
     ],
     "pos_counts": {
-      "VERB": 48,
-      "NOUN": 41,
+      "VERB": 54,
+      "NOUN": 47,
       "PART": 15,
       "PRON": 4,
       "ADV": 3,
@@ -17252,13 +17390,11 @@
     "pos": "PART",
     "pos_counts": {
       "PART": 2,
-      "NOUN": 2,
-      "VERB": 1
+      "NOUN": 2
     },
     "verses": [
       "6:10",
       "11:31",
-      "19:21",
       "23:14",
       "25:10"
     ]
@@ -17453,10 +17589,11 @@
     "id": "membiarkan hidup; menyelamatkan",
     "pos": "VERB",
     "pos_counts": {
-      "VERB": 1,
+      "VERB": 2,
       "NOUN": 1
     },
     "verses": [
+      "6:32",
       "7:4",
       "22:9"
     ]
@@ -17467,7 +17604,11 @@
     "en": "hunger; famine",
     "pt": "fome; penúria",
     "es": "hambre; hambruna",
-    "id": "kelaparan"
+    "id": "kelaparan",
+    "pos": "VERB+NOUN",
+    "verses": [
+      "6:30"
+    ]
   },
   "ποθεινός": {
     "root": "ποθεινός",
@@ -17487,7 +17628,12 @@
     "en": "to offer; to bring near; to present",
     "pt": "oferecer; trazer; apresentar",
     "es": "ofrecer; traer; presentar",
-    "id": "mempersembahkan; membawa"
+    "id": "mempersembahkan; membawa",
+    "pos": "NOUN+VERB",
+    "verses": [
+      "6:8",
+      "21:27"
+    ]
   },
   "πάγος": {
     "root": "πάγος",
@@ -17582,7 +17728,7 @@
     "id": "patah tulang, remuk, kehancuran",
     "pos": "NOUN",
     "pos_counts": {
-      "NOUN": 3,
+      "NOUN": 4,
       "VERB": 1,
       "ADV": 1,
       "ADJ": 1,
@@ -17591,10 +17737,10 @@
     },
     "verses": [
       "6:15",
+      "10:14",
       "10:15",
       "10:29",
-      "14:28",
-      "16:14"
+      "14:28"
     ]
   },
   "συντρίβω": {
@@ -17681,14 +17827,15 @@
     "id": "harga; nilai; kehormatan",
     "pos": "NOUN",
     "pos_counts": {
+      "NOUN": 2,
       "INTJ": 1,
-      "PRON": 1,
-      "NOUN": 1
+      "PRON": 1
     },
     "verses": [
       "6:26",
       "12:9",
-      "22:9"
+      "22:9",
+      "26:1"
     ]
   },
   "τοιοῦτος": {
@@ -17716,7 +17863,8 @@
     "id": "makanan",
     "pos": "NOUN",
     "verses": [
-      "6:8"
+      "6:8",
+      "30:25"
     ]
   },
   "φείδομαι": {
@@ -18298,7 +18446,8 @@
     "verses": [
       "6:33",
       "17:21",
-      "17:25"
+      "17:25",
+      "31:6"
     ]
   },
   "ὀκνηρός": {
@@ -18615,7 +18764,12 @@
     "en": "to offer; to bring near; to present",
     "pt": "oferecer; trazer; apresentar",
     "es": "ofrecer; traer; presentar",
-    "id": "mempersembahkan; membawa"
+    "id": "mempersembahkan; membawa",
+    "pos": "NOUN+VERB",
+    "verses": [
+      "6:8",
+      "21:27"
+    ]
   },
   "συντριβη": {
     "root": "συντριβή",
@@ -18626,7 +18780,7 @@
     "es": "fractura, quebrantamiento, contusión, ruina",
     "pos": "NOUN",
     "pos_counts": {
-      "NOUN": 3,
+      "NOUN": 4,
       "VERB": 1,
       "ADV": 1,
       "ADJ": 1,
@@ -18635,10 +18789,10 @@
     },
     "verses": [
       "6:15",
+      "10:14",
       "10:15",
       "10:29",
-      "14:28",
-      "16:14"
+      "14:28"
     ]
   },
   "εξαπινης": {
@@ -18806,7 +18960,11 @@
     "en": "hunger; famine",
     "pt": "fome; penúria",
     "es": "hambre; hambruna",
-    "id": "kelaparan"
+    "id": "kelaparan",
+    "pos": "VERB+NOUN",
+    "verses": [
+      "6:30"
+    ]
   },
   "δακτυλος": {
     "root": "δάκτυλος",
@@ -18988,13 +19146,11 @@
     "pos": "PART",
     "pos_counts": {
       "PART": 2,
-      "NOUN": 2,
-      "VERB": 1
+      "NOUN": 2
     },
     "verses": [
       "6:10",
       "11:31",
-      "19:21",
       "23:14",
       "25:10"
     ]
@@ -19304,7 +19460,8 @@
     "verses": [
       "6:33",
       "17:21",
-      "17:25"
+      "17:25",
+      "31:6"
     ]
   },
   "μυρμηξ": {
@@ -19421,10 +19578,11 @@
     "id": "membiarkan hidup; menyelamatkan",
     "pos": "VERB",
     "pos_counts": {
-      "VERB": 1,
+      "VERB": 2,
       "NOUN": 1
     },
     "verses": [
+      "6:32",
       "7:4",
       "22:9"
     ]
@@ -19512,7 +19670,8 @@
     "id": "makanan",
     "pos": "NOUN",
     "verses": [
-      "6:8"
+      "6:8",
+      "30:25"
     ]
   },
   "ουτως": {
@@ -19789,14 +19948,15 @@
     "id": "harga; nilai; kehormatan",
     "pos": "NOUN",
     "pos_counts": {
+      "NOUN": 2,
       "INTJ": 1,
-      "PRON": 1,
-      "NOUN": 1
+      "PRON": 1
     },
     "verses": [
       "6:26",
       "12:9",
-      "22:9"
+      "22:9",
+      "26:1"
     ]
   },
   "οκνηρος": {
@@ -20388,13 +20548,14 @@
     "id": "nazar; doa",
     "pos": "NOUN",
     "pos_counts": {
-      "NOUN": 2,
+      "NOUN": 3,
       "VERB": 1
     },
     "verses": [
       "7:14",
       "15:8",
-      "19:13"
+      "19:13",
+      "31:2"
     ]
   },
   "θυρίς": {
@@ -20717,7 +20878,11 @@
     "en": "to speak to; to address",
     "pt": "dirigir a palavra a; falar a; dizer a",
     "es": "hablar a; dirigirse a; decir a",
-    "id": "berkata kepada; menyapa"
+    "id": "berkata kepada; menyapa",
+    "pos": "NOUN+VERB",
+    "verses": [
+      "7:13"
+    ]
   },
   "σπεύδω": {
     "root": "σπεύδω",
@@ -21503,13 +21668,14 @@
     "id": "nazar; doa",
     "pos": "NOUN",
     "pos_counts": {
-      "NOUN": 2,
+      "NOUN": 3,
       "VERB": 1
     },
     "verses": [
       "7:14",
       "15:8",
-      "19:13"
+      "19:13",
+      "31:2"
     ]
   },
   "εκιπτομαι": {
@@ -22146,7 +22312,11 @@
     "en": "to speak to; to address",
     "pt": "dirigir a palavra a; falar a; dizer a",
     "es": "hablar a; dirigirse a; decir a",
-    "id": "berkata kepada; menyapa"
+    "id": "berkata kepada; menyapa",
+    "pos": "NOUN+VERB",
+    "verses": [
+      "7:13"
+    ]
   },
   "εξω": {
     "root": "ἔξω",
@@ -22230,12 +22400,13 @@
     "id": "memperanakkan; melahirkan",
     "pos": "NOUN",
     "pos_counts": {
-      "NOUN": 2,
-      "VERB": 1
+      "VERB": 2,
+      "NOUN": 2
     },
     "verses": [
       "8:25",
       "11:19",
+      "17:17",
       "23:22"
     ]
   },
@@ -22515,8 +22686,13 @@
     "id": "kecerdikan; kepandaian; kelicikan",
     "pos": "ADJ",
     "verses": [
+      "1:4",
       "8:5"
-    ]
+    ],
+    "pos_counts": {
+      "NOUN": 1,
+      "ADJ": 1
+    }
   },
   "προςχαίρω": {
     "root": "προσχαίρω",
@@ -22524,7 +22700,11 @@
     "en": "to rejoice in; to delight in",
     "pt": "alegrar-se em; deleitar-se com",
     "es": "regocijarse en; deleitarse con",
-    "id": "bersukacita atas; berkenan kepada"
+    "id": "bersukacita atas; berkenan kepada",
+    "pos": "PRON+VERB",
+    "verses": [
+      "8:30"
+    ]
   },
   "προἔρχομαι": {
     "root": "προἔρχομαι",
@@ -23259,7 +23439,11 @@
     "en": "to rejoice in; to delight in",
     "pt": "alegrar-se em; deleitar-se com",
     "es": "regocijarse en; deleitarse con",
-    "id": "bersukacita atas; berkenan kepada"
+    "id": "bersukacita atas; berkenan kepada",
+    "pos": "PRON+VERB",
+    "verses": [
+      "8:30"
+    ]
   },
   "ορος": {
     "root": "ὄρος",
@@ -23314,12 +23498,13 @@
     "id": "memperanakkan; melahirkan",
     "pos": "NOUN",
     "pos_counts": {
-      "NOUN": 2,
-      "VERB": 1
+      "VERB": 2,
+      "NOUN": 2
     },
     "verses": [
       "8:25",
       "11:19",
+      "17:17",
       "23:22"
     ]
   },
@@ -23812,6 +23997,7 @@
     "id": "cemooh",
     "pos": "NOUN",
     "verses": [
+      "9:13",
       "19:13",
       "26:11"
     ]
@@ -23825,8 +24011,13 @@
     "id": "menyeberang; melintasi",
     "pos": "ADJ",
     "verses": [
-      "9:18"
-    ]
+      "9:18",
+      "30:29"
+    ],
+    "pos_counts": {
+      "ADJ": 1,
+      "VERB": 1
+    }
   },
   "διατάσσω": {
     "root": "διατάσσω",
@@ -24099,7 +24290,11 @@
     "translit": "proskaleō",
     "pt": "chamar a si, convocar, convidar",
     "es": "llamar a sí, convocar, invitar",
-    "id": "memanggil, mengundang"
+    "id": "memanggil, mengundang",
+    "pos": "ADV+PART",
+    "verses": [
+      "9:15"
+    ]
   },
   "πέτομαι": {
     "root": "πέτομαι",
@@ -24510,8 +24705,13 @@
     "id": "menyeberang; melintasi",
     "pos": "ADJ",
     "verses": [
-      "9:18"
-    ]
+      "9:18",
+      "30:29"
+    ],
+    "pos_counts": {
+      "ADJ": 1,
+      "VERB": 1
+    }
   },
   "δουλος": {
     "root": "δοῦλος",
@@ -24616,6 +24816,7 @@
     "id": "cemooh",
     "pos": "NOUN",
     "verses": [
+      "9:13",
       "19:13",
       "26:11"
     ]
@@ -24887,7 +25088,11 @@
     "translit": "proskaleō",
     "pt": "chamar a si, convocar, convidar",
     "es": "llamar a sí, convocar, invitar",
-    "id": "memanggil, mengundang"
+    "id": "memanggil, mengundang",
+    "pos": "ADV+PART",
+    "verses": [
+      "9:15"
+    ]
   },
   "θυμα": {
     "root": "θῦμα",
@@ -25170,7 +25375,11 @@
     "en": "to make peace",
     "pt": "fazer a paz; pacificar",
     "es": "hacer la paz; pacificar",
-    "id": "membawa damai; mendamaikan"
+    "id": "membawa damai; mendamaikan",
+    "pos": "NOUN+VERB",
+    "verses": [
+      "10:10"
+    ]
   },
   "εὐλογία": {
     "root": "ευλογια",
@@ -25493,9 +25702,14 @@
     "verses": [
       "10:4",
       "13:7",
+      "18:12",
       "25:7",
       "29:23"
-    ]
+    ],
+    "pos_counts": {
+      "ADJ": 4,
+      "ADJ+VERB": 1
+    }
   },
   "τύπτω": {
     "root": "τύπτω",
@@ -26422,7 +26636,11 @@
     "en": "to make peace",
     "pt": "fazer a paz; pacificar",
     "es": "hacer la paz; pacificar",
-    "id": "membawa damai; mendamaikan"
+    "id": "membawa damai; mendamaikan",
+    "pos": "NOUN+VERB",
+    "verses": [
+      "10:10"
+    ]
   },
   "ακαρδιος": {
     "root": "ἀκάρδιος",
@@ -26523,9 +26741,14 @@
     "verses": [
       "10:4",
       "13:7",
+      "18:12",
       "25:7",
       "29:23"
-    ]
+    ],
+    "pos_counts": {
+      "ADJ": 4,
+      "ADJ+VERB": 1
+    }
   },
   "αργυρος": {
     "root": "αργυρος",
@@ -27066,17 +27289,16 @@
     "id": "jatuh; rebah",
     "pos": "VERB",
     "pos_counts": {
-      "VERB": 3,
+      "VERB": 2,
       "PART": 2,
-      "ADJ": 1,
       "PRON": 1
     },
     "verses": [
       "11:28",
       "24:16",
       "24:17",
-      "25:8",
-      "25:20"
+      "25:26",
+      "29:16"
     ]
   },
   "σπείρω": {
@@ -27192,14 +27414,15 @@
     "pos": "VERB",
     "pos_counts": {
       "VERB": 4,
+      "VERB+NOUN": 2,
       "NOUN": 1
     },
     "verses": [
+      "11:31",
       "21:2",
       "23:5",
       "24:25",
-      "26:5",
-      "26:16"
+      "26:5"
     ]
   },
   "φύλλον": {
@@ -27376,7 +27599,11 @@
     "translit": "elattoneō",
     "pt": "ter de menos, diminuir, faltar",
     "es": "tener de menos, disminuir, carecer",
-    "id": "berkurang, kekurangan, menyusut"
+    "id": "berkurang, kekurangan, menyusut",
+    "pos": "ADJ+VERB",
+    "verses": [
+      "11:24"
+    ]
   },
   "ἐλεήμων": {
     "root": "ελεημων",
@@ -27480,14 +27707,15 @@
     "pos": "VERB",
     "pos_counts": {
       "VERB": 4,
+      "VERB+NOUN": 2,
       "NOUN": 1
     },
     "verses": [
+      "11:31",
       "21:2",
       "23:5",
       "24:25",
-      "26:5",
-      "26:16"
+      "26:5"
     ]
   },
   "διωγμος": {
@@ -27767,7 +27995,11 @@
     "translit": "elattoneō",
     "pt": "ter de menos, diminuir, faltar",
     "es": "tener de menos, disminuir, carecer",
-    "id": "berkurang, kekurangan, menyusut"
+    "id": "berkurang, kekurangan, menyusut",
+    "pos": "ADJ+VERB",
+    "verses": [
+      "11:24"
+    ]
   },
   "διγλωσσος": {
     "root": "δίγλωσσος",
@@ -28190,17 +28422,16 @@
     "id": "jatuh; rebah",
     "pos": "VERB",
     "pos_counts": {
-      "VERB": 3,
+      "VERB": 2,
       "PART": 2,
-      "ADJ": 1,
       "PRON": 1
     },
     "verses": [
       "11:28",
       "24:16",
       "24:17",
-      "25:8",
-      "25:20"
+      "25:26",
+      "29:16"
     ]
   },
   "συνμιγνυμι": {
@@ -28427,7 +28658,11 @@
     "translit": "paramenō",
     "pt": "permanecer, ficar, continuar",
     "es": "permanecer, quedarse, continuar",
-    "id": "tinggal tetap, bertahan, menyertai"
+    "id": "tinggal tetap, bertahan, menyertai",
+    "pos": "VERB",
+    "verses": [
+      "12:7"
+    ]
   },
   "παρασιωπάω": {
     "root": "παρασιωπάω",
@@ -28447,7 +28682,11 @@
     "en": "plunder; booty; spoil; prey",
     "pt": "saque; despojo; presa; butim",
     "es": "botín; despojo; presa; saqueo",
-    "id": "jarahan; rampasan"
+    "id": "jarahan; rampasan",
+    "pos": "NOUN",
+    "verses": [
+      "12:24"
+    ]
   },
   "προςδέω": {
     "root": "προσδέομαι",
@@ -28777,7 +29016,7 @@
     "id": "murka; kemarahan",
     "pos": "NOUN",
     "pos_counts": {
-      "NOUN": 3,
+      "NOUN": 5,
       "VERB": 3,
       "ADJ": 1
     },
@@ -28936,7 +29175,11 @@
     "translit": "paramenō",
     "pt": "permanecer",
     "es": "quédate",
-    "id": "Tinggallah"
+    "id": "Tinggallah",
+    "pos": "VERB",
+    "verses": [
+      "12:7"
+    ]
   },
   "επιτυγχανω": {
     "root": "ἐπιτυγχάνω",
@@ -29378,7 +29621,7 @@
     "id": "murka; kemarahan",
     "pos": "NOUN",
     "pos_counts": {
-      "NOUN": 3,
+      "NOUN": 5,
       "VERB": 3,
       "ADJ": 1
     },
@@ -29408,7 +29651,11 @@
     "en": "plunder; booty; spoil; prey",
     "pt": "saque; despojo; presa; butim",
     "es": "botín; despojo; presa; saqueo",
-    "id": "jarahan; rampasan"
+    "id": "jarahan; rampasan",
+    "pos": "NOUN",
+    "verses": [
+      "12:24"
+    ]
   },
   "αγγελια": {
     "root": "ἀγγελία",
@@ -29511,7 +29758,7 @@
     "id": "menghina, memandang rendah, meremehkan",
     "pos": "VERB",
     "pos_counts": {
-      "VERB": 3,
+      "VERB": 4,
       "PART": 1,
       "ADV": 1
     },
@@ -29519,7 +29766,8 @@
       "13:13",
       "13:15",
       "18:3",
-      "19:16"
+      "19:16",
+      "25:9"
     ]
   },
   "κιχράω": {
@@ -29976,7 +30224,7 @@
     "id": "menghina, memandang rendah, meremehkan",
     "pos": "VERB",
     "pos_counts": {
-      "VERB": 3,
+      "VERB": 4,
       "PART": 1,
       "ADV": 1
     },
@@ -29984,7 +30232,8 @@
       "13:13",
       "13:15",
       "18:3",
-      "19:16"
+      "19:16",
+      "25:9"
     ]
   },
   "βακτηρια": {
@@ -30410,7 +30659,11 @@
     "en": "repentance; change of mind; reflection",
     "pt": "arrependimento; mudança de mente; reflexão",
     "es": "arrepentimiento; cambio de mente; reflexión",
-    "id": "pertobatan; perubahan pikiran"
+    "id": "pertobatan; perubahan pikiran",
+    "pos": "ADJ+NOUN",
+    "verses": [
+      "14:15"
+    ]
   },
   "μίγνυμι": {
     "root": "μίγνυμι",
@@ -30425,7 +30678,6 @@
       "VERB": 1
     },
     "verses": [
-      "14:13",
       "14:16"
     ]
   },
@@ -30483,7 +30735,11 @@
     "en": "deception; error; fraud",
     "pt": "engano; impostura; erro",
     "es": "engaño; error; impostura",
-    "id": "penyesatan; tipu daya"
+    "id": "penyesatan; tipu daya",
+    "pos": "NOUN",
+    "verses": [
+      "14:8"
+    ]
   },
   "πραΰθυμος": {
     "root": "πραΰθυμος",
@@ -30504,7 +30760,11 @@
     "en": "to mingle with; to mix with; to join",
     "pt": "misturar-se com; associar-se a; juntar",
     "es": "mezclarse con; unirse a; juntar",
-    "id": "bercampur dengan; bergabung dengan"
+    "id": "bercampur dengan; bergabung dengan",
+    "pos": "VERB+NOUN",
+    "verses": [
+      "14:13"
+    ]
   },
   "πρόσταγμα": {
     "root": "πρόσταγμα",
@@ -30955,7 +31215,11 @@
     "en": "repentance; change of mind; reflection",
     "pt": "arrependimento; mudança de mente; reflexão",
     "es": "arrepentimiento; cambio de mente; reflexión",
-    "id": "pertobatan; perubahan pikiran"
+    "id": "pertobatan; perubahan pikiran",
+    "pos": "ADJ+NOUN",
+    "verses": [
+      "14:15"
+    ]
   },
   "μιγνυμι": {
     "root": "μίγνυμι",
@@ -30970,7 +31234,6 @@
       "VERB": 1
     },
     "verses": [
-      "14:13",
       "14:16"
     ]
   },
@@ -31270,7 +31533,11 @@
     "en": "deception; error; fraud",
     "pt": "engano; impostura; erro",
     "es": "engaño; error; impostura",
-    "id": "penyesatan; tipu daya"
+    "id": "penyesatan; tipu daya",
+    "pos": "NOUN",
+    "verses": [
+      "14:8"
+    ]
   },
   "οξυθυμος": {
     "root": "ὀξύθυμος",
@@ -31483,7 +31750,8 @@
     "id": "peka; perasa",
     "pos": "ADJ",
     "verses": [
-      "14:10"
+      "14:10",
+      "14:30"
     ]
   },
   "αβουλια": {
@@ -31504,7 +31772,11 @@
     "en": "to mingle with; to mix with; to join",
     "pt": "misturar-se com; associar-se a; juntar",
     "es": "mezclarse con; unirse a; juntar",
-    "id": "bercampur dengan; bergabung dengan"
+    "id": "bercampur dengan; bergabung dengan",
+    "pos": "VERB+NOUN",
+    "verses": [
+      "14:13"
+    ]
   },
   "εναντιος": {
     "root": "εναντιος",
@@ -31886,8 +32158,13 @@
     "id": "tinggal; tetap; menetap",
     "pos": "VERB",
     "verses": [
-      "15:22"
-    ]
+      "15:22",
+      "19:21"
+    ],
+    "pos_counts": {
+      "VERB": 1,
+      "VERB+NOUN": 1
+    }
   },
   "μόσχος": {
     "root": "μόσχος",
@@ -31986,7 +32263,11 @@
     "en": "to accept; to receive; to enjoy",
     "pt": "aceitar; receber; gozar",
     "es": "aceptar; recibir; gozar",
-    "id": "menerima; menikmati"
+    "id": "menerima; menikmati",
+    "pos": "NOUN+VERB",
+    "verses": [
+      "15:15"
+    ]
   },
   "σκυθρωπάζω": {
     "root": "σκυθρωπάζω",
@@ -32390,7 +32671,11 @@
     "en": "to accept; to receive; to enjoy",
     "pt": "aceitar; receber; gozar",
     "es": "aceptar; recibir; gozar",
-    "id": "menerima; menikmati"
+    "id": "menerima; menikmati",
+    "pos": "NOUN+VERB",
+    "verses": [
+      "15:15"
+    ]
   },
   "βουλευω": {
     "root": "βουλεύω",
@@ -32594,8 +32879,13 @@
     "id": "tinggal; tetap; menetap",
     "pos": "VERB",
     "verses": [
-      "15:22"
-    ]
+      "15:22",
+      "19:21"
+    ],
+    "pos_counts": {
+      "VERB": 1,
+      "VERB+NOUN": 1
+    }
   },
   "αγνος": {
     "root": "ἄγνος",
@@ -32962,7 +33252,14 @@
     "pt": "malícia; maldade; insensatez",
     "es": "malicia; maldad; insensatez",
     "id": "kedengkian; niat jahat; kebodohan",
-    "pos": "NOUN"
+    "pos": "NOUN",
+    "pos_counts": {
+      "NOUN": 1,
+      "ADJ+NOUN": 1
+    },
+    "verses": [
+      "16:14"
+    ]
   },
   "καύχησις": {
     "root": "καύχησις",
@@ -33165,7 +33462,11 @@
     "translit": "epignōmosynē",
     "pt": "prudência",
     "es": "prudente",
-    "id": "akal budi"
+    "id": "akal budi",
+    "pos": "NOUN",
+    "verses": [
+      "16:19"
+    ]
   },
   "ὀρύσσω": {
     "root": "ὀρύσσω",
@@ -33529,7 +33830,14 @@
     "pt": "malícia; maldade; insensatez",
     "es": "malicia; maldad; insensatez",
     "id": "kedengkian; niat jahat; kebodohan",
-    "pos": "NOUN"
+    "pos": "NOUN",
+    "pos_counts": {
+      "NOUN": 1,
+      "ADJ+NOUN": 1
+    },
+    "verses": [
+      "16:14"
+    ]
   },
   "γλυκασμα": {
     "root": "γλύκασμα",
@@ -33549,7 +33857,11 @@
     "translit": "epignōmosynē",
     "pt": "prudência",
     "es": "prudente",
-    "id": "akal budi"
+    "id": "akal budi",
+    "pos": "NOUN",
+    "verses": [
+      "16:19"
+    ]
   },
   "μαντειον": {
     "root": "μαντεῖον",
@@ -33763,8 +34075,13 @@
     "verses": [
       "17:26",
       "19:19",
-      "21:11"
-    ]
+      "21:11",
+      "22:3"
+    ],
+    "pos_counts": {
+      "NOUN": 3,
+      "VERB": 1
+    }
   },
   "καταγελάω": {
     "root": "καταγελάω",
@@ -34164,7 +34481,11 @@
     "en": "taste; pleasant flavor; pleasure",
     "pt": "sabor; gosto agradável; prazer",
     "es": "sabor; gusto agradable; placer",
-    "id": "rasa; kelezatan; kesenangan"
+    "id": "rasa; kelezatan; kesenangan",
+    "pos": "NOUN",
+    "verses": [
+      "17:1"
+    ]
   },
   "ὀβολός": {
     "root": "ὀβολός",
@@ -34430,8 +34751,13 @@
     "verses": [
       "17:26",
       "19:19",
-      "21:11"
-    ]
+      "21:11",
+      "22:3"
+    ],
+    "pos_counts": {
+      "NOUN": 3,
+      "VERB": 1
+    }
   },
   "διαλογιζομαι": {
     "root": "διαλογίζομαι",
@@ -34595,7 +34921,11 @@
     "en": "taste; pleasant flavor; pleasure",
     "pt": "sabor; gosto agradável; prazer",
     "es": "sabor; gusto agradable; placer",
-    "id": "rasa; kelezatan; kesenangan"
+    "id": "rasa; kelezatan; kesenangan",
+    "pos": "NOUN",
+    "verses": [
+      "17:1"
+    ]
   },
   "αντιλογια": {
     "root": "ἀντιλογία",
@@ -34898,13 +35228,15 @@
     "pos": "VERB",
     "pos_counts": {
       "VERB": 3,
-      "NOUN": 1
+      "NOUN": 1,
+      "NOUN+VERB": 1
     },
     "verses": [
       "18:9",
       "19:3",
       "23:8",
-      "25:26"
+      "25:26",
+      "27:13"
     ]
   },
   "μεγαλωσύνη": {
@@ -34953,10 +35285,11 @@
     "id": "lapar; kelaparan",
     "pos": "VERB",
     "pos_counts": {
-      "VERB": 2,
+      "VERB": 3,
       "PART": 1
     },
     "verses": [
+      "18:8",
       "19:15",
       "25:21",
       "28:15"
@@ -35357,10 +35690,11 @@
     "id": "lapar; kelaparan",
     "pos": "VERB",
     "pos_counts": {
-      "VERB": 2,
+      "VERB": 3,
       "PART": 1
     },
     "verses": [
+      "18:8",
       "19:15",
       "25:21",
       "28:15"
@@ -35430,13 +35764,15 @@
     "pos": "VERB",
     "pos_counts": {
       "VERB": 3,
-      "NOUN": 1
+      "NOUN": 1,
+      "NOUN+VERB": 1
     },
     "verses": [
       "18:9",
       "19:3",
       "23:8",
-      "25:26"
+      "25:26",
+      "27:13"
     ]
   },
   "αντιδικος": {
@@ -35785,7 +36121,12 @@
     "en": "to bring near; to offer; to present; to approach",
     "pt": "trazer; oferecer; apresentar; aproximar-se",
     "es": "traer; ofrecer; presentar; acercarse",
-    "id": "membawa mendekat; mempersembahkan; mendekat"
+    "id": "membawa mendekat; mempersembahkan; mendekat",
+    "pos": "ADV+VERB",
+    "verses": [
+      "19:24",
+      "24:15"
+    ]
   },
   "συνφέρω": {
     "root": "συμφέρω",
@@ -36277,7 +36618,12 @@
     "en": "to bring near; to offer; to present; to approach",
     "pt": "trazer; oferecer; apresentar; aproximar-se",
     "es": "traer; ofrecer; presentar; acercarse",
-    "id": "membawa mendekat; mempersembahkan; mendekat"
+    "id": "membawa mendekat; mempersembahkan; mendekat",
+    "pos": "ADV+VERB",
+    "verses": [
+      "19:24",
+      "24:15"
+    ]
   },
   "βρυγμος": {
     "root": "βρυγμός",
@@ -36623,7 +36969,10 @@
     "pt": "cãs; cabelos brancos; velhice",
     "id": "uban; rambut putih; masa tua",
     "es": "canas; cabellos blancos; vejez",
-    "pos": "NOUN"
+    "pos": "NOUN",
+    "verses": [
+      "20:20"
+    ]
   },
   "πρεσβύτερος": {
     "root": "πρεσβύτερος",
@@ -36704,14 +37053,15 @@
     "id": "membayar",
     "pos": "ADV",
     "pos_counts": {
+      "PRON": 2,
       "ADV": 1,
-      "PART": 1,
-      "PRON": 1
+      "PART": 1
     },
     "verses": [
       "20:9",
       "24:22",
-      "24:29"
+      "24:29",
+      "27:12"
     ]
   },
   "ἀμφότεροι": {
@@ -36877,7 +37227,10 @@
     "pt": "cãs; cabelos brancos; velhice",
     "es": "canas; cabellos blancos; vejez",
     "id": "uban; rambut putih; masa tua",
-    "pos": "NOUN"
+    "pos": "NOUN",
+    "verses": [
+      "20:20"
+    ]
   },
   "υπομενω": {
     "root": "ὑπομένω",
@@ -36979,14 +37332,15 @@
     "id": "membayar",
     "pos": "ADV",
     "pos_counts": {
+      "PRON": 2,
       "ADV": 1,
-      "PART": 1,
-      "PRON": 1
+      "PART": 1
     },
     "verses": [
       "20:9",
       "24:22",
-      "24:29"
+      "24:29",
+      "27:12"
     ]
   },
   "καταλαλεω": {
@@ -38298,8 +38652,8 @@
     "id": "angkatan",
     "pos": "NOUN",
     "pos_counts": {
-      "VERB": 1,
-      "NOUN": 1
+      "NOUN": 2,
+      "VERB": 1
     },
     "verses": [
       "22:4",
@@ -38734,8 +39088,8 @@
     "id": "angkatan",
     "pos": "NOUN",
     "pos_counts": {
-      "VERB": 1,
-      "NOUN": 1
+      "NOUN": 2,
+      "VERB": 1
     },
     "verses": [
       "22:4",
@@ -39186,7 +39540,12 @@
     "en": "to lead in",
     "pt": "introduzir",
     "es": "introducir",
-    "id": "membawa masuk"
+    "id": "membawa masuk",
+    "pos": "ADP+VERB",
+    "verses": [
+      "23:8",
+      "25:17"
+    ]
   },
   "θρίξ": {
     "root": "θρίξ",
@@ -40344,7 +40703,12 @@
     "en": "to lead in",
     "pt": "introduzir",
     "es": "introducir",
-    "id": "membawa masuk"
+    "id": "membawa masuk",
+    "pos": "ADP+VERB",
+    "verses": [
+      "23:8",
+      "25:17"
+    ]
   },
   "νοητως": {
     "root": "νοητῶς",
@@ -41389,7 +41753,11 @@
     "en": "to defile; to pollute; to besmear",
     "pt": "contaminar; manchar; sujar",
     "es": "contaminar; manchar; ensuciar",
-    "id": "mencemarkan; mengotori"
+    "id": "mencemarkan; mengotori",
+    "pos": "VERB",
+    "verses": [
+      "24:9"
+    ]
   },
   "καταυπνοω": {
     "root": "καθυπνόω",
@@ -41767,7 +42135,16 @@
     "translit": "prospiptō",
     "pt": "prostrar-se diante de, cair aos pés de",
     "es": "postrarse ante, caer a los pies de",
-    "id": "tersungkur di hadapan, menjatuhkan diri"
+    "id": "tersungkur di hadapan, menjatuhkan diri",
+    "pos": "VERB",
+    "pos_counts": {
+      "VERB": 1,
+      "ADJ": 1
+    },
+    "verses": [
+      "25:8",
+      "25:20"
+    ]
   },
   "προσηνής": {
     "root": "προσηνής",
@@ -42272,7 +42649,16 @@
     "translit": "prospiptō",
     "pt": "prostrar-se diante de, cair aos pés de",
     "es": "postrarse ante, caer a los pies de",
-    "id": "tersungkur di hadapan, menjatuhkan diri"
+    "id": "tersungkur di hadapan, menjatuhkan diri",
+    "pos": "VERB",
+    "pos_counts": {
+      "VERB": 1,
+      "ADJ": 1
+    },
+    "verses": [
+      "25:8",
+      "25:20"
+    ]
   },
   "ατειχιστος": {
     "root": "ἀτείχιστος",
@@ -45410,7 +45796,11 @@
     "en": "to flatter with the tongue",
     "pt": "lisonjear com a língua; adular",
     "es": "lisonjear con la lengua; adular",
-    "id": "menyanjung dengan lidah; menjilat"
+    "id": "menyanjung dengan lidah; menjilat",
+    "pos": "NOUN+VERB",
+    "verses": [
+      "28:23"
+    ]
   },
   "ανωφελης": {
     "root": "ἀνωφελής",
@@ -48548,7 +48938,11 @@
     "en": "verse 10a",
     "pt": "versículo 10a",
     "es": "versículo 10a",
-    "id": "ayat 10a"
+    "id": "ayat 10a",
+    "pos": "INTJ",
+    "verses": [
+      "9:10"
+    ]
   },
   "11a": {
     "root": "11a",
@@ -48559,8 +48953,13 @@
     "id": "ayat 11a",
     "pos": "NOUN",
     "verses": [
+      "6:11",
       "26:11"
-    ]
+    ],
+    "pos_counts": {
+      "DET": 1,
+      "NOUN": 1
+    }
   },
   "12a": {
     "root": "12a",
@@ -48576,7 +48975,11 @@
     "en": "verse 12b",
     "pt": "versículo 12b",
     "es": "versículo 12b",
-    "id": "ayat 12b"
+    "id": "ayat 12b",
+    "pos": "DET+NOUN",
+    "verses": [
+      "9:12"
+    ]
   },
   "12c": {
     "root": "12c",
@@ -48584,7 +48987,11 @@
     "en": "verse 12c",
     "pt": "versículo 12c",
     "es": "versículo 12c",
-    "id": "ayat 12c"
+    "id": "ayat 12c",
+    "pos": "DET+NOUN",
+    "verses": [
+      "9:12"
+    ]
   },
   "13a": {
     "root": "13a",
@@ -48644,8 +49051,13 @@
     "id": "ayat 18a",
     "pos": "NOUN",
     "verses": [
+      "9:18",
       "15:18"
-    ]
+    ],
+    "pos_counts": {
+      "ADJ+DET": 1,
+      "NOUN": 1
+    }
   },
   "18b": {
     "root": "18b",
@@ -48653,7 +49065,11 @@
     "en": "verse 18b",
     "pt": "versículo 18b",
     "es": "versículo 18b",
-    "id": "ayat 18b"
+    "id": "ayat 18b",
+    "pos": "DET+NOUN",
+    "verses": [
+      "9:18"
+    ]
   },
   "18c": {
     "root": "18c",
@@ -48661,7 +49077,11 @@
     "en": "verse 18c",
     "pt": "versículo 18c",
     "es": "versículo 18c",
-    "id": "ayat 18c"
+    "id": "ayat 18c",
+    "pos": "DET+NOUN",
+    "verses": [
+      "9:18"
+    ]
   },
   "18d": {
     "root": "18d",
@@ -48721,8 +49141,15 @@
     "id": "ayat 22a",
     "pos": "NOUN",
     "verses": [
+      "3:22",
+      "18:22",
       "24:22"
-    ]
+    ],
+    "pos_counts": {
+      "DET": 1,
+      "INTJ": 1,
+      "NOUN": 1
+    }
   },
   "22b": {
     "root": "22b",
@@ -48754,7 +49181,11 @@
     "en": "verse 22d",
     "pt": "versículo 22d",
     "es": "versículo 22d",
-    "id": "ayat 22d"
+    "id": "ayat 22d",
+    "pos": "VERB",
+    "verses": [
+      "24:22"
+    ]
   },
   "22e": {
     "root": "22e",
@@ -48777,8 +49208,13 @@
     "id": "ayat 27a",
     "pos": "NOUN",
     "verses": [
+      "4:27",
       "15:27"
-    ]
+    ],
+    "pos_counts": {
+      "INTJ": 1,
+      "NOUN": 1
+    }
   },
   "27b": {
     "root": "27b",
@@ -48786,7 +49222,11 @@
     "en": "verse 27b",
     "pt": "versículo 27b",
     "es": "versículo 27b",
-    "id": "ayat 27b"
+    "id": "ayat 27b",
+    "pos": "NOUN",
+    "verses": [
+      "4:27"
+    ]
   },
   "28a": {
     "root": "28a",
@@ -49468,7 +49908,10 @@
     "pt": "cãs; cabelos brancos; velhice",
     "es": "canas; cabellos blancos; vejez",
     "id": "uban; rambut putih; masa tua",
-    "pos": "NOUN"
+    "pos": "NOUN",
+    "verses": [
+      "20:20"
+    ]
   },
   "κιχράω": {
     "root": "κίχρημι",
@@ -49627,10 +50070,10 @@
     "pos": "NOUN",
     "verses": [
       "5:5",
+      "5:23",
       "9:6",
-      "18:13",
-      "19:3",
-      "26:5"
+      "18:2",
+      "18:13"
     ]
   },
   "ὁλόρριζος": {
@@ -49860,19 +50303,17 @@
     "id": "untuk; kepada; terhadap",
     "pos": "NOUN",
     "pos_counts": {
-      "NOUN": 19,
-      "PART": 8,
-      "VERB": 7,
-      "ADV": 5,
-      "ADJ": 1,
-      "PRON": 1
+      "NOUN": 12,
+      "PART": 4,
+      "VERB": 2,
+      "ADJ": 1
     },
     "verses": [
-      "1:24",
-      "1:30",
-      "3:23",
       "3:30",
-      "4:1"
+      "5:3",
+      "5:8",
+      "5:20",
+      "6:6"
     ]
   },
   "κύριος": {
@@ -49904,8 +50345,8 @@
     "id": "aku",
     "pos": "PRON",
     "pos_counts": {
-      "NOUN": 36,
-      "VERB": 6,
+      "NOUN": 41,
+      "VERB": 10,
       "ADJ": 6,
       "PART": 5,
       "ADV": 4,
@@ -49955,7 +50396,15 @@
     "en": "to listen to; to heed; to hear",
     "pt": "ouvir; escutar; atender",
     "es": "escuchar; atender; oír",
-    "id": "mendengarkan; mengindahkan"
+    "id": "mendengarkan; mengindahkan",
+    "pos": "ADP+NOUN",
+    "verses": [
+      "1:28",
+      "8:6",
+      "8:34",
+      "12:15",
+      "21:13"
+    ]
   },
   "ῥύομαι": {
     "root": "ῥύομαι",
@@ -49982,8 +50431,8 @@
     "id": "hidup; jiwa",
     "pos": "NOUN",
     "pos_counts": {
-      "NOUN": 39,
-      "VERB": 4,
+      "NOUN": 42,
+      "VERB": 7,
       "ADV": 2,
       "PART": 1,
       "ADJ": 1
@@ -49992,8 +50441,8 @@
       "1:19",
       "2:10",
       "3:22",
-      "6:21",
-      "6:26"
+      "6:16",
+      "6:21"
     ]
   },
   "ἀπό": {
@@ -50113,7 +50562,11 @@
       "9:11",
       "9:18",
       "10:22"
-    ]
+    ],
+    "pos_counts": {
+      "VERB": 7,
+      "PART+ADJ": 1
+    }
   },
   "δυνατός": {
     "root": "δυνατός",
@@ -50260,15 +50713,16 @@
     "id": "damai; sejahtera; ketenteraman",
     "pos": "NOUN",
     "pos_counts": {
-      "NOUN": 3,
-      "ADJ": 2
+      "NOUN": 4,
+      "ADJ": 2,
+      "VERB": 1
     },
     "verses": [
       "3:2",
+      "3:17",
       "3:23",
       "4:27",
-      "12:20",
-      "17:1"
+      "12:20"
     ]
   },
   "ἐμός": {
@@ -50396,10 +50850,11 @@
     "pos": "ADP",
     "pos_counts": {
       "NOUN": 18,
+      "VERB": 7,
       "PART": 6,
-      "VERB": 6,
       "ADP": 4,
-      "ADV": 2,
+      "ADV": 3,
+      "NOUN+ADP": 1,
       "ADJ": 1
     },
     "verses": [
@@ -50407,7 +50862,7 @@
       "2:18",
       "3:7",
       "5:14",
-      "7:8"
+      "7:1"
     ]
   },
   "ποιέω": {
@@ -50608,7 +51063,11 @@
     "en": "Israel",
     "pt": "Israel",
     "es": "Israel",
-    "id": "Israel"
+    "id": "Israel",
+    "pos": "NOUN",
+    "verses": [
+      "1:1"
+    ]
   },
   "ἐπί": {
     "root": "ἐπί",
@@ -50764,6 +51223,7 @@
       "ADJ": 16,
       "VERB": 2,
       "PART": 1,
+      "ADJ+VERB": 1,
       "NOUN": 1,
       "ADV": 1
     },
@@ -50772,7 +51232,7 @@
       "8:30",
       "8:31",
       "10:1",
-      "12:25"
+      "12:20"
     ]
   },
   "πορεύομαι": {
@@ -50806,8 +51266,8 @@
     "id": "pergi; berjalan; maju",
     "pos": "VERB",
     "pos_counts": {
-      "VERB": 48,
-      "NOUN": 41,
+      "VERB": 54,
+      "NOUN": 47,
       "PART": 15,
       "PRON": 4,
       "ADV": 3,
@@ -51127,9 +51587,14 @@
     "id": "kekenyangan, kepenuhan",
     "pos": "NOUN",
     "verses": [
+      "3:10",
       "26:16",
       "27:7"
-    ]
+    ],
+    "pos_counts": {
+      "NOUN": 2,
+      "NOUN+VERB": 1
+    }
   },
   "μέθη": {
     "root": "μέθη",
@@ -51330,17 +51795,14 @@
     "pos": "PRON",
     "pos_counts": {
       "CCONJ": 27,
-      "NOUN": 19,
-      "VERB": 3,
-      "PRON": 1,
-      "ADJ": 1
+      "PRON": 1
     },
     "verses": [
       "1:27",
-      "3:9",
-      "3:10",
       "3:14",
-      "3:17"
+      "5:3",
+      "6:8",
+      "6:28"
     ]
   },
   "εἶ": {
@@ -51473,17 +51935,10 @@
     "es": "oh",
     "id": "wahai; oh",
     "pos": "INTJ",
-    "pos_counts": {
-      "VERB": 20,
-      "INTJ": 3,
-      "NOUN": 3
-    },
     "verses": [
-      "1:3",
-      "1:7",
       "2:13",
-      "2:17",
-      "4:8"
+      "6:6",
+      "8:4"
     ]
   },
   "εἰκῇ": {
@@ -51771,17 +52226,14 @@
     "pos": "PRON",
     "pos_counts": {
       "CCONJ": 27,
-      "NOUN": 19,
-      "VERB": 3,
-      "PRON": 1,
-      "ADJ": 1
+      "PRON": 1
     },
     "verses": [
       "1:27",
-      "3:9",
-      "3:10",
       "3:14",
-      "3:17"
+      "5:3",
+      "6:8",
+      "6:28"
     ]
   },
   "εὐθὺς": {
@@ -51820,17 +52272,10 @@
     "es": "oh",
     "id": "wahai; oh",
     "pos": "INTJ",
-    "pos_counts": {
-      "VERB": 20,
-      "INTJ": 3,
-      "NOUN": 3
-    },
     "verses": [
-      "1:3",
-      "1:7",
       "2:13",
-      "2:17",
-      "4:8"
+      "6:6",
+      "8:4"
     ]
   },
   "οὒ": {
@@ -51883,17 +52328,14 @@
     "pos": "PRON",
     "pos_counts": {
       "CCONJ": 27,
-      "NOUN": 19,
-      "VERB": 3,
-      "PRON": 1,
-      "ADJ": 1
+      "PRON": 1
     },
     "verses": [
       "1:27",
-      "3:9",
-      "3:10",
       "3:14",
-      "3:17"
+      "5:3",
+      "6:8",
+      "6:28"
     ]
   },
   "ἐλεημοσύνη": {
@@ -52060,7 +52502,11 @@
     "en": "deception; error; fraud",
     "pt": "engano; impostura; erro",
     "es": "engaño; error; impostura",
-    "id": "penyesatan; tipu daya"
+    "id": "penyesatan; tipu daya",
+    "pos": "NOUN",
+    "verses": [
+      "14:8"
+    ]
   },
   "δόλος": {
     "root": "δόλος",
@@ -52234,17 +52680,14 @@
     "pos": "PRON",
     "pos_counts": {
       "CCONJ": 27,
-      "NOUN": 19,
-      "VERB": 3,
-      "PRON": 1,
-      "ADJ": 1
+      "PRON": 1
     },
     "verses": [
       "1:27",
-      "3:9",
-      "3:10",
       "3:14",
-      "3:17"
+      "5:3",
+      "6:8",
+      "6:28"
     ]
   },
   "βάθος": {
@@ -52551,7 +52994,11 @@
     "en": "Israel",
     "pt": "Israel",
     "es": "Israel",
-    "id": "Israel"
+    "id": "Israel",
+    "pos": "NOUN",
+    "verses": [
+      "1:1"
+    ]
   },
   "δὲ": {
     "root": "δέ",
@@ -52711,13 +53158,11 @@
     "pos": "PART",
     "pos_counts": {
       "PART": 2,
-      "NOUN": 2,
-      "VERB": 1
+      "NOUN": 2
     },
     "verses": [
       "6:10",
       "11:31",
-      "19:21",
       "23:14",
       "25:10"
     ]
@@ -52747,8 +53192,8 @@
     "id": "pergi; berjalan; maju",
     "pos": "VERB",
     "pos_counts": {
-      "VERB": 48,
-      "NOUN": 41,
+      "VERB": 54,
+      "NOUN": 47,
       "PART": 15,
       "PRON": 4,
       "ADV": 3,
@@ -52807,7 +53252,7 @@
     "id": "perempuan; istri",
     "pos": "NOUN",
     "pos_counts": {
-      "NOUN": 15,
+      "NOUN": 17,
       "VERB": 8,
       "ADJ": 1,
       "PART": 1,
@@ -52954,8 +53399,8 @@
     "id": "aku",
     "pos": "PRON",
     "pos_counts": {
-      "NOUN": 36,
-      "VERB": 6,
+      "NOUN": 41,
+      "VERB": 10,
       "ADJ": 6,
       "PART": 5,
       "ADV": 4,
@@ -53056,6 +53501,7 @@
     "id": "jemaah; perkumpulan; majelis",
     "pos": "NOUN",
     "verses": [
+      "5:14",
       "21:16"
     ]
   },
@@ -53082,7 +53528,7 @@
     "id": "perempuan; istri",
     "pos": "NOUN",
     "pos_counts": {
-      "NOUN": 15,
+      "NOUN": 17,
       "VERB": 8,
       "ADJ": 1,
       "PART": 1,
@@ -53315,17 +53761,14 @@
     "pos": "PRON",
     "pos_counts": {
       "CCONJ": 27,
-      "NOUN": 19,
-      "VERB": 3,
-      "PRON": 1,
-      "ADJ": 1
+      "PRON": 1
     },
     "verses": [
       "1:27",
-      "3:9",
-      "3:10",
       "3:14",
-      "3:17"
+      "5:3",
+      "6:8",
+      "6:28"
     ]
   },
   "Διὰ": {
@@ -53612,14 +54055,13 @@
     "pos": "VERB",
     "pos_counts": {
       "VERB": 1,
-      "ADJ": 2,
       "ADV": 1,
+      "ADJ": 1,
       "PART": 1
     },
     "verses": [
       "2:18",
       "8:28",
-      "19:4",
       "22:28"
     ]
   },
@@ -53684,7 +54126,7 @@
     "id": "mendengar; mendengarkan",
     "pos": "NOUN",
     "pos_counts": {
-      "NOUN": 11,
+      "NOUN": 5,
       "VERB": 5,
       "INTJ": 3,
       "PRON": 2,
@@ -53693,9 +54135,9 @@
     "verses": [
       "1:5",
       "1:8",
-      "1:28",
       "1:33",
-      "4:1"
+      "4:1",
+      "4:10"
     ]
   },
   "λαμβάνω": {
@@ -54543,17 +54985,14 @@
     "pos": "PRON",
     "pos_counts": {
       "CCONJ": 27,
-      "NOUN": 19,
-      "VERB": 3,
-      "PRON": 1,
-      "ADJ": 1
+      "PRON": 1
     },
     "verses": [
       "1:27",
-      "3:9",
-      "3:10",
       "3:14",
-      "3:17"
+      "5:3",
+      "6:8",
+      "6:28"
     ]
   },
   "ἀρά": {
@@ -54580,17 +55019,10 @@
     "es": "oh",
     "id": "wahai; oh",
     "pos": "INTJ",
-    "pos_counts": {
-      "VERB": 20,
-      "INTJ": 3,
-      "NOUN": 3
-    },
     "verses": [
-      "1:3",
-      "1:7",
       "2:13",
-      "2:17",
-      "4:8"
+      "6:6",
+      "8:4"
     ]
   },
   "κλίνη": {
@@ -54640,15 +55072,15 @@
     "pos": "NOUN",
     "pos_counts": {
       "VERB": 4,
-      "ADJ": 1,
-      "NOUN": 1
+      "NOUN": 3,
+      "ADJ": 1
     },
     "verses": [
       "1:7",
       "8:22",
+      "8:23",
       "9:10",
-      "15:33",
-      "16:3"
+      "15:33"
     ]
   },
   "διααἱρέω": {
@@ -54674,13 +55106,11 @@
     "pos": "PART",
     "pos_counts": {
       "PART": 2,
-      "NOUN": 2,
-      "VERB": 1
+      "NOUN": 2
     },
     "verses": [
       "6:10",
       "11:31",
-      "19:21",
       "23:14",
       "25:10"
     ]
@@ -55087,7 +55517,7 @@
     "pos": "NUM",
     "pos_counts": {
       "NUM": 1,
-      "ADP": 105,
+      "ADP": 91,
       "NOUN": 3
     },
     "verses": [
@@ -55095,7 +55525,7 @@
       "1:11",
       "1:14",
       "1:16",
-      "1:28"
+      "2:2"
     ]
   },
   "εὐλαβέομαι": {
@@ -55143,8 +55573,13 @@
     "verses": [
       "17:26",
       "19:19",
-      "21:11"
-    ]
+      "21:11",
+      "22:3"
+    ],
+    "pos_counts": {
+      "NOUN": 3,
+      "VERB": 1
+    }
   },
   "ἡσυχία": {
     "root": "ἡσυχία",
@@ -55283,7 +55718,11 @@
     "en": "to despise; to count as nothing",
     "pt": "desprezar; reduzir a nada",
     "es": "menospreciar; reducir a nada",
-    "id": "menghina; menganggap tidak ada"
+    "id": "menghina; menganggap tidak ada",
+    "pos": "VERB",
+    "verses": [
+      "1:7"
+    ]
   },
   "ενδιδύσκω": {
     "root": "ἐνδιδύσκω",
@@ -56069,8 +56508,13 @@
     "id": "kecerdikan; kepandaian; kelicikan",
     "pos": "ADJ",
     "verses": [
+      "1:4",
       "8:5"
-    ]
+    ],
+    "pos_counts": {
+      "NOUN": 1,
+      "ADJ": 1
+    }
   },
   "νοήμων": {
     "root": "νοήμων",
@@ -56423,7 +56867,12 @@
     "en": "to stumble; to strike against; to trip",
     "pt": "tropeçar; bater contra; chocar-se",
     "es": "tropezar; chocar contra",
-    "id": "tersandung; membentur"
+    "id": "tersandung; membentur",
+    "pos": "VERB",
+    "verses": [
+      "3:23",
+      "4:19"
+    ]
   },
   "πτόησις": {
     "root": "πτόησις",
@@ -56907,8 +57356,13 @@
     "id": "kecerdikan; kepandaian; kelicikan",
     "pos": "ADJ",
     "verses": [
+      "1:4",
       "8:5"
-    ]
+    ],
+    "pos_counts": {
+      "NOUN": 1,
+      "ADJ": 1
+    }
   },
   "ὑπέρ": {
     "root": "ὑπέρ",
@@ -56961,7 +57415,11 @@
     "en": "to rejoice in; to delight in",
     "pt": "alegrar-se em; deleitar-se com",
     "es": "regocijarse en; deleitarse con",
-    "id": "bersukacita atas; berkenan kepada"
+    "id": "bersukacita atas; berkenan kepada",
+    "pos": "PRON+VERB",
+    "verses": [
+      "8:30"
+    ]
   },
   "ἐνεὐφραίνω": {
     "root": "ἐνευφραίνομαι",
@@ -57260,7 +57718,11 @@
     "en": "to mingle with; to mix with; to join",
     "pt": "misturar-se com; associar-se a; juntar",
     "es": "mezclarse con; unirse a; juntar",
-    "id": "bercampur dengan; bergabung dengan"
+    "id": "bercampur dengan; bergabung dengan",
+    "pos": "VERB+NOUN",
+    "verses": [
+      "14:13"
+    ]
   },
   "μακαριστός": {
     "root": "μακαριστός",
@@ -57696,7 +58158,11 @@
     "en": "to defile; to pollute; to besmear",
     "pt": "contaminar; manchar; sujar",
     "es": "contaminar; manchar; ensuciar",
-    "id": "mencemarkan; mengotori"
+    "id": "mencemarkan; mengotori",
+    "pos": "VERB",
+    "verses": [
+      "24:9"
+    ]
   },
   "ἐκπρίω": {
     "root": "ἐκπρίω; ἐκπρίαμαι",
@@ -58200,8 +58666,13 @@
     "id": "dan aku; aku juga",
     "pos": "NOUN",
     "verses": [
+      "1:26",
       "4:3"
-    ]
+    ],
+    "pos_counts": {
+      "PART+ADV": 1,
+      "NOUN": 1
+    }
   },
   "κείρω": {
     "root": "κείρω",
@@ -58557,7 +59028,8 @@
     "verses": [
       "6:33",
       "17:21",
-      "17:25"
+      "17:25",
+      "31:6"
     ]
   },
   "ὀρφανός": {
@@ -58682,10 +59154,11 @@
     "id": "lapar; kelaparan",
     "pos": "VERB",
     "pos_counts": {
-      "VERB": 2,
+      "VERB": 3,
       "PART": 1
     },
     "verses": [
+      "18:8",
       "19:15",
       "25:21",
       "28:15"
@@ -58970,8 +59443,8 @@
     "id": "pergi; berjalan; maju",
     "pos": "VERB",
     "pos_counts": {
-      "VERB": 48,
-      "NOUN": 41,
+      "VERB": 54,
+      "NOUN": 47,
       "PART": 15,
       "PRON": 4,
       "ADV": 3,
@@ -58995,7 +59468,7 @@
     "pos": "NUM",
     "pos_counts": {
       "NUM": 1,
-      "ADP": 105,
+      "ADP": 91,
       "NOUN": 3
     },
     "verses": [
@@ -59003,7 +59476,7 @@
       "1:11",
       "1:14",
       "1:16",
-      "1:28"
+      "2:2"
     ]
   },
   "Ὁ": {
@@ -59036,17 +59509,14 @@
     "pos": "PRON",
     "pos_counts": {
       "CCONJ": 27,
-      "NOUN": 19,
-      "VERB": 3,
-      "PRON": 1,
-      "ADJ": 1
+      "PRON": 1
     },
     "verses": [
       "1:27",
-      "3:9",
-      "3:10",
       "3:14",
-      "3:17"
+      "5:3",
+      "6:8",
+      "6:28"
     ]
   },
   "Ἢ": {
@@ -59059,17 +59529,14 @@
     "pos": "PRON",
     "pos_counts": {
       "CCONJ": 27,
-      "NOUN": 19,
-      "VERB": 3,
-      "PRON": 1,
-      "ADJ": 1
+      "PRON": 1
     },
     "verses": [
       "1:27",
-      "3:9",
-      "3:10",
       "3:14",
-      "3:17"
+      "5:3",
+      "6:8",
+      "6:28"
     ]
   },
   "σχολῇ": {
@@ -59112,6 +59579,7 @@
     "id": "jemaah; perkumpulan; majelis",
     "pos": "NOUN",
     "verses": [
+      "5:14",
       "21:16"
     ]
   },
@@ -59220,6 +59688,7 @@
     "id": "jemaah; perkumpulan; majelis",
     "pos": "NOUN",
     "verses": [
+      "5:14",
       "21:16"
     ]
   },
@@ -59603,12 +60072,13 @@
     "id": "memperanakkan; melahirkan",
     "pos": "NOUN",
     "pos_counts": {
-      "NOUN": 2,
-      "VERB": 1
+      "VERB": 2,
+      "NOUN": 2
     },
     "verses": [
       "8:25",
       "11:19",
+      "17:17",
       "23:22"
     ]
   },
@@ -59709,8 +60179,13 @@
     "id": "menyeberang; melintasi",
     "pos": "ADJ",
     "verses": [
-      "9:18"
-    ]
+      "9:18",
+      "30:29"
+    ],
+    "pos_counts": {
+      "ADJ": 1,
+      "VERB": 1
+    }
   },
   "διαβολή": {
     "root": "διαβολή",
@@ -60628,10 +61103,12 @@
     "pos": "ADJ",
     "pos_counts": {
       "ADJ": 2,
+      "ADV+VERB": 1,
       "ADV": 1,
       "PART": 1
     },
     "verses": [
+      "2:17",
       "3:1",
       "4:5",
       "31:5",
@@ -60752,13 +61229,14 @@
     "id": "nazar; doa",
     "pos": "NOUN",
     "pos_counts": {
-      "NOUN": 2,
+      "NOUN": 3,
       "VERB": 1
     },
     "verses": [
       "7:14",
       "15:8",
-      "19:13"
+      "19:13",
+      "31:2"
     ]
   },
   "ἐχθρός": {
@@ -60829,7 +61307,11 @@
     "en": "taste; pleasant flavor; pleasure",
     "pt": "sabor; gosto agradável; prazer",
     "es": "sabor; gusto agradable; placer",
-    "id": "rasa; kelezatan; kesenangan"
+    "id": "rasa; kelezatan; kesenangan",
+    "pos": "NOUN",
+    "verses": [
+      "17:1"
+    ]
   },
   "ἡμέτερος": {
     "root": "ἡμέτερος",
@@ -61125,10 +61607,12 @@
     "pos": "NOUN",
     "pos_counts": {
       "NOUN": 2,
+      "NOUN+VERB": 1,
       "VERB": 1
     },
     "verses": [
       "4:16",
+      "6:18",
       "11:15",
       "19:7"
     ]
@@ -61733,8 +62217,13 @@
     "id": "tinggal; tetap; menetap",
     "pos": "VERB",
     "verses": [
-      "15:22"
-    ]
+      "15:22",
+      "19:21"
+    ],
+    "pos_counts": {
+      "VERB": 1,
+      "VERB+NOUN": 1
+    }
   },
   "μερίζω": {
     "root": "μερίζω",
@@ -62089,7 +62578,11 @@
     "en": "to make peace",
     "pt": "fazer a paz; pacificar",
     "es": "hacer la paz; pacificar",
-    "id": "membawa damai; mendamaikan"
+    "id": "membawa damai; mendamaikan",
+    "pos": "NOUN+VERB",
+    "verses": [
+      "10:10"
+    ]
   },
   "ἐπιμίγνυμι": {
     "root": "ἐπιμίγνυμι",
@@ -62378,7 +62871,7 @@
     "id": "murka; kemarahan",
     "pos": "NOUN",
     "pos_counts": {
-      "NOUN": 3,
+      "NOUN": 5,
       "VERB": 3,
       "ADJ": 1
     },
@@ -62658,10 +63151,11 @@
     "id": "membiarkan hidup; menyelamatkan",
     "pos": "VERB",
     "pos_counts": {
-      "VERB": 1,
+      "VERB": 2,
       "NOUN": 1
     },
     "verses": [
+      "6:32",
       "7:4",
       "22:9"
     ]
@@ -62883,7 +63377,11 @@
     "en": "plunder; booty; spoil; prey",
     "pt": "saque; despojo; presa; butim",
     "es": "botín; despojo; presa; saqueo",
-    "id": "jarahan; rampasan"
+    "id": "jarahan; rampasan",
+    "pos": "NOUN",
+    "verses": [
+      "12:24"
+    ]
   },
   "προπορεύομαι": {
     "root": "προπορεύομαι",
@@ -62908,7 +63406,11 @@
     "en": "to accept; to receive; to enjoy",
     "pt": "aceitar; receber; gozar",
     "es": "aceptar; recibir; gozar",
-    "id": "menerima; menikmati"
+    "id": "menerima; menikmati",
+    "pos": "NOUN+VERB",
+    "verses": [
+      "15:15"
+    ]
   },
   "προςέχω": {
     "root": "προςἔχω",
@@ -62916,7 +63418,20 @@
     "en": "to pay attention; to take heed; to beware",
     "pt": "prestar atenção; atender; acautelar-se; guardar-se",
     "es": "prestar atención; atender; guardarse; cuidar",
-    "id": "memperhatikan; waspada; berhati-hati"
+    "id": "memperhatikan; waspada; berhati-hati",
+    "pos": "PART+VERB",
+    "pos_counts": {
+      "PART+VERB": 3,
+      "NOUN+VERB": 3,
+      "ADV+VERB": 2
+    },
+    "verses": [
+      "1:24",
+      "1:30",
+      "4:1",
+      "4:20",
+      "5:1"
+    ]
   },
   "πρόσταγμα": {
     "root": "πρόσταγμα",
@@ -62948,7 +63463,12 @@
     "en": "to offer; to bring near; to present",
     "pt": "oferecer; trazer; apresentar",
     "es": "ofrecer; traer; presentar",
-    "id": "mempersembahkan; membawa"
+    "id": "mempersembahkan; membawa",
+    "pos": "NOUN+VERB",
+    "verses": [
+      "6:8",
+      "21:27"
+    ]
   },
   "προτίθημι": {
     "root": "προτίθημι",
@@ -63357,9 +63877,14 @@
     "verses": [
       "10:4",
       "13:7",
+      "18:12",
       "25:7",
       "29:23"
-    ]
+    ],
+    "pos_counts": {
+      "ADJ": 4,
+      "ADJ+VERB": 1
+    }
   },
   "ταπείνωσις": {
     "root": "ταπείνωσις",
@@ -63727,9 +64252,14 @@
     "pos": "VERB",
     "verses": [
       "5:23",
+      "10:21",
       "11:7",
       "15:10"
-    ]
+    ],
+    "pos_counts": {
+      "VERB": 3,
+      "ADJ": 1
+    }
   },
   "τελευτή": {
     "root": "τελευτή",
@@ -63821,14 +64351,15 @@
     "id": "harga; nilai; kehormatan",
     "pos": "NOUN",
     "pos_counts": {
+      "NOUN": 2,
       "INTJ": 1,
-      "PRON": 1,
-      "NOUN": 1
+      "PRON": 1
     },
     "verses": [
       "6:26",
       "12:9",
-      "22:9"
+      "22:9",
+      "26:1"
     ]
   },
   "τιτρώσκω": {
@@ -64104,14 +64635,15 @@
     "pos": "VERB",
     "pos_counts": {
       "VERB": 4,
+      "VERB+NOUN": 2,
       "NOUN": 1
     },
     "verses": [
+      "11:31",
       "21:2",
       "23:5",
       "24:25",
-      "26:5",
-      "26:16"
+      "26:5"
     ]
   },
   "φανερός": {
@@ -64530,7 +65062,8 @@
     "id": "peka; perasa",
     "pos": "ADJ",
     "verses": [
-      "14:10"
+      "14:10",
+      "14:30"
     ]
   },
   "βδελύσσω": {
@@ -64563,7 +65096,11 @@
     "en": "to flatter with the tongue",
     "pt": "lisonjear com a língua; adular",
     "es": "lisonjear con la lengua; adular",
-    "id": "menyanjung dengan lidah; menjilat"
+    "id": "menyanjung dengan lidah; menjilat",
+    "pos": "NOUN+VERB",
+    "verses": [
+      "28:23"
+    ]
   },
   "γνωστῶς": {
     "root": "γνωστῶς",
@@ -64607,7 +65144,15 @@
     "en": "to enter; to come in",
     "pt": "entrar",
     "es": "entrar",
-    "id": "masuk"
+    "id": "masuk",
+    "pos": "ADP+VERB",
+    "verses": [
+      "5:10",
+      "6:29",
+      "11:2",
+      "23:10",
+      "27:10"
+    ]
   },
   "εὐχερῶς": {
     "root": "εὐχερῶς",
@@ -65170,7 +65715,12 @@
     "en": "to lead in",
     "pt": "introduzir",
     "es": "introducir",
-    "id": "membawa masuk"
+    "id": "membawa masuk",
+    "pos": "ADP+VERB",
+    "verses": [
+      "23:8",
+      "25:17"
+    ]
   },
   "ἐιςἔρχομαι": {
     "root": "εἰσέρχομαι",
@@ -65178,7 +65728,15 @@
     "en": "to enter; to come in",
     "pt": "entrar",
     "es": "entrar",
-    "id": "masuk"
+    "id": "masuk",
+    "pos": "ADP+VERB",
+    "verses": [
+      "5:10",
+      "6:29",
+      "11:2",
+      "23:10",
+      "27:10"
+    ]
   },
   "ἐκπεταννύω": {
     "root": "ἐκπετάννυμι",
@@ -65667,15 +66225,16 @@
     "id": "damai; sejahtera; ketenteraman",
     "pos": "NOUN",
     "pos_counts": {
-      "NOUN": 3,
-      "ADJ": 2
+      "NOUN": 4,
+      "ADJ": 2,
+      "VERB": 1
     },
     "verses": [
       "3:2",
+      "3:17",
       "3:23",
       "4:27",
-      "12:20",
-      "17:1"
+      "12:20"
     ]
   },
   "πολίτης": {
@@ -65827,7 +66386,7 @@
     "pos": "NUM",
     "pos_counts": {
       "NUM": 1,
-      "ADP": 105,
+      "ADP": 91,
       "NOUN": 3
     },
     "verses": [
@@ -65835,7 +66394,7 @@
       "1:11",
       "1:14",
       "1:16",
-      "1:28"
+      "2:2"
     ]
   },
   "ἐξουσία": {
@@ -65888,7 +66447,11 @@
     "en": "Israel",
     "pt": "Israel",
     "es": "Israel",
-    "id": "Israel"
+    "id": "Israel",
+    "pos": "NOUN",
+    "verses": [
+      "1:1"
+    ]
   },
   "κοινωνὸς": {
     "root": "κοινωνός",
@@ -66013,6 +66576,7 @@
     "id": "suara; bunyi; seruan",
     "pos": "NOUN",
     "verses": [
+      "2:3",
       "5:13",
       "8:4",
       "26:25",
@@ -66028,6 +66592,7 @@
     "id": "suara; bunyi; seruan",
     "pos": "NOUN",
     "verses": [
+      "2:3",
       "5:13",
       "8:4",
       "26:25",
@@ -66291,12 +66856,17 @@
     "id": "mengarahkan; meluruskan; menuntun; berhasil",
     "pos": "VERB",
     "verses": [
+      "1:3",
+      "4:26",
       "9:15",
       "13:13",
-      "15:8",
-      "15:21",
-      "21:2"
-    ]
+      "15:8"
+    ],
+    "pos_counts": {
+      "VERB": 7,
+      "ADJ+VERB": 1,
+      "NOUN+VERB": 1
+    }
   },
   "ὀλιγόω": {
     "root": "ὀλιγόω",
@@ -66331,17 +66901,16 @@
     "id": "jatuh; rebah",
     "pos": "VERB",
     "pos_counts": {
-      "VERB": 3,
+      "VERB": 2,
       "PART": 2,
-      "ADJ": 1,
       "PRON": 1
     },
     "verses": [
       "11:28",
       "24:16",
       "24:17",
-      "25:8",
-      "25:20"
+      "25:26",
+      "29:16"
     ]
   },
   "στηρίζω": {
@@ -66474,7 +67043,11 @@
     "en": "repentance; change of mind; reflection",
     "pt": "arrependimento; mudança de mente; reflexão",
     "es": "arrepentimiento; cambio de mente; reflexión",
-    "id": "pertobatan; perubahan pikiran"
+    "id": "pertobatan; perubahan pikiran",
+    "pos": "ADJ+NOUN",
+    "verses": [
+      "14:15"
+    ]
   },
   "ξενισμός": {
     "root": "ξενισμός",
@@ -66684,6 +67257,7 @@
     "id": "suara; bunyi; seruan",
     "pos": "NOUN",
     "verses": [
+      "2:3",
       "5:13",
       "8:4",
       "26:25",
@@ -66774,19 +67348,17 @@
     "id": "untuk; kepada; terhadap",
     "pos": "NOUN",
     "pos_counts": {
-      "NOUN": 19,
-      "PART": 8,
-      "VERB": 7,
-      "ADV": 5,
-      "ADJ": 1,
-      "PRON": 1
+      "NOUN": 12,
+      "PART": 4,
+      "VERB": 2,
+      "ADJ": 1
     },
     "verses": [
-      "1:24",
-      "1:30",
-      "3:23",
       "3:30",
-      "4:1"
+      "5:3",
+      "5:8",
+      "5:20",
+      "6:6"
     ]
   },
   "ὀνόμα[": {
@@ -67053,17 +67625,21 @@
     "id": "hidup",
     "pos": "NOUN",
     "pos_counts": {
-      "VERB": 11,
-      "ADJ": 7,
-      "NOUN": 4,
-      "PART": 3
+      "VERB": 12,
+      "NOUN": 9,
+      "ADJ": 8,
+      "PART": 3,
+      "ADJ+NOUN": 2,
+      "VERB+NOUN": 2,
+      "NOUN+VERB": 1,
+      "NOUN+ADJ": 1
     },
     "verses": [
+      "2:19",
       "3:2",
       "3:16",
       "3:18",
-      "4:13",
-      "4:22"
+      "4:10"
     ]
   },
   "θύρᾳ": {
@@ -67219,16 +67795,16 @@
     "id": "bersukacita; bergembira",
     "pos": "VERB",
     "pos_counts": {
-      "VERB": 3,
       "PART": 2,
+      "VERB": 2,
       "NOUN": 1
     },
     "verses": [
       "2:14",
       "6:16",
-      "8:30",
       "17:19",
-      "23:25"
+      "23:25",
+      "24:19"
     ]
   },
   "ἀδελφὸς": {
@@ -67410,8 +67986,8 @@
       "3:28",
       "5:12",
       "7:4",
-      "7:13",
-      "8:6"
+      "8:6",
+      "9:4"
     ]
   },
   "παρρησίᾳ": {
@@ -67486,7 +68062,11 @@
     "en": "hunger; famine",
     "pt": "fome; penúria",
     "es": "hambre; hambruna",
-    "id": "kelaparan"
+    "id": "kelaparan",
+    "pos": "VERB+NOUN",
+    "verses": [
+      "6:30"
+    ]
   },
   "διψώδης": {
     "root": "διψώδης",
@@ -67911,9 +68491,13 @@
       "5:15",
       "9:5",
       "9:18",
-      "26:6",
-      "31:5"
-    ]
+      "23:7",
+      "26:6"
+    ],
+    "pos_counts": {
+      "VERB": 7,
+      "NOUN": 1
+    }
   },
   "ἀδικία": {
     "root": "ἀδικία",
@@ -68212,10 +68796,11 @@
     "pos": "ADP",
     "pos_counts": {
       "NOUN": 18,
+      "VERB": 7,
       "PART": 6,
-      "VERB": 6,
       "ADP": 4,
-      "ADV": 2,
+      "ADV": 3,
+      "NOUN+ADP": 1,
       "ADJ": 1
     },
     "verses": [
@@ -68223,7 +68808,7 @@
       "2:18",
       "3:7",
       "5:14",
-      "7:8"
+      "7:1"
     ]
   },
   "ἀντὶ": {
@@ -68257,7 +68842,8 @@
     "id": "makanan",
     "pos": "NOUN",
     "verses": [
-      "6:8"
+      "6:8",
+      "30:25"
     ]
   },
   "ἱκανὸς": {
@@ -68429,8 +69015,8 @@
     "id": "hidup; jiwa",
     "pos": "NOUN",
     "pos_counts": {
-      "NOUN": 39,
-      "VERB": 4,
+      "NOUN": 42,
+      "VERB": 7,
       "ADV": 2,
       "PART": 1,
       "ADJ": 1
@@ -68439,8 +69025,8 @@
       "1:19",
       "2:10",
       "3:22",
-      "6:21",
-      "6:26"
+      "6:16",
+      "6:21"
     ]
   },
   "μηδὲ": {
@@ -68476,8 +69062,8 @@
     "id": "hidup; jiwa",
     "pos": "NOUN",
     "pos_counts": {
-      "NOUN": 39,
-      "VERB": 4,
+      "NOUN": 42,
+      "VERB": 7,
       "ADV": 2,
       "PART": 1,
       "ADJ": 1
@@ -68486,8 +69072,8 @@
       "1:19",
       "2:10",
       "3:22",
-      "6:21",
-      "6:26"
+      "6:16",
+      "6:21"
     ]
   },
   "ὁδὸς": {
@@ -68654,8 +69240,8 @@
     "id": "angkatan",
     "pos": "NOUN",
     "pos_counts": {
-      "VERB": 1,
-      "NOUN": 1
+      "NOUN": 2,
+      "VERB": 1
     },
     "verses": [
       "22:4",
@@ -68671,8 +69257,8 @@
     "id": "angkatan",
     "pos": "NOUN",
     "pos_counts": {
-      "VERB": 1,
-      "NOUN": 1
+      "NOUN": 2,
+      "VERB": 1
     },
     "verses": [
       "22:4",
@@ -68824,15 +69410,15 @@
     "pos": "NOUN",
     "pos_counts": {
       "VERB": 4,
-      "ADJ": 1,
-      "NOUN": 1
+      "NOUN": 3,
+      "ADJ": 1
     },
     "verses": [
       "1:7",
       "8:22",
+      "8:23",
       "9:10",
-      "15:33",
-      "16:3"
+      "15:33"
     ]
   },
   "φυγὴ": {
@@ -68931,14 +69517,15 @@
     "id": "harga; nilai; kehormatan",
     "pos": "NOUN",
     "pos_counts": {
+      "NOUN": 2,
       "INTJ": 1,
-      "PRON": 1,
-      "NOUN": 1
+      "PRON": 1
     },
     "verses": [
       "6:26",
       "12:9",
-      "22:9"
+      "22:9",
+      "26:1"
     ]
   },
   "ἀγρὸς": {
@@ -69661,17 +70248,21 @@
     "id": "hidup; kehidupan",
     "pos": "NOUN",
     "pos_counts": {
-      "VERB": 11,
-      "ADJ": 7,
-      "NOUN": 4,
-      "PART": 3
+      "VERB": 12,
+      "NOUN": 9,
+      "ADJ": 8,
+      "PART": 3,
+      "ADJ+NOUN": 2,
+      "VERB+NOUN": 2,
+      "NOUN+VERB": 1,
+      "NOUN+ADJ": 1
     },
     "verses": [
+      "2:19",
       "3:2",
       "3:16",
       "3:18",
-      "4:13",
-      "4:22"
+      "4:10"
     ]
   },
   "θησαυρὸς": {
@@ -69771,17 +70362,21 @@
     "id": "hidup; kehidupan",
     "pos": "NOUN",
     "pos_counts": {
-      "VERB": 11,
-      "ADJ": 7,
-      "NOUN": 4,
-      "PART": 3
+      "VERB": 12,
+      "NOUN": 9,
+      "ADJ": 8,
+      "PART": 3,
+      "ADJ+NOUN": 2,
+      "VERB+NOUN": 2,
+      "NOUN+VERB": 1,
+      "NOUN+ADJ": 1
     },
     "verses": [
+      "2:19",
       "3:2",
       "3:16",
       "3:18",
-      "4:13",
-      "4:22"
+      "4:10"
     ]
   },
   "⸂ἤ·": {
@@ -69835,15 +70430,15 @@
     "pos": "NOUN",
     "pos_counts": {
       "VERB": 4,
-      "ADJ": 1,
-      "NOUN": 1
+      "NOUN": 3,
+      "ADJ": 1
     },
     "verses": [
       "1:7",
       "8:22",
+      "8:23",
       "9:10",
-      "15:33",
-      "16:3"
+      "15:33"
     ]
   },
   "⸀οὐ": {
@@ -69876,7 +70471,7 @@
     "id": "murka; kemarahan",
     "pos": "NOUN",
     "pos_counts": {
-      "NOUN": 3,
+      "NOUN": 5,
       "VERB": 3,
       "ADJ": 1
     },
@@ -70051,8 +70646,8 @@
       "3:28",
       "5:12",
       "7:4",
-      "7:13",
-      "8:6"
+      "8:6",
+      "9:4"
     ]
   },
   "°ἐν": {
@@ -70705,14 +71300,15 @@
     "id": "harga; nilai; kehormatan",
     "pos": "NOUN",
     "pos_counts": {
+      "NOUN": 2,
       "INTJ": 1,
-      "PRON": 1,
-      "NOUN": 1
+      "PRON": 1
     },
     "verses": [
       "6:26",
       "12:9",
-      "22:9"
+      "22:9",
+      "26:1"
     ]
   },
   "ὀργῇ": {
@@ -70724,7 +71320,7 @@
     "id": "murka; kemarahan",
     "pos": "NOUN",
     "pos_counts": {
-      "NOUN": 3,
+      "NOUN": 5,
       "VERB": 3,
       "ADJ": 1
     },
@@ -70925,14 +71521,15 @@
     "pos": "NOUN",
     "pos_counts": {
       "ADJ": 23,
-      "NOUN": 8
+      "NOUN": 8,
+      "ADJ+NOUN": 4
     },
     "verses": [
       "1:3",
       "1:22",
       "2:9",
       "2:20",
-      "3:16"
+      "3:9"
     ]
   },
   "°μὴ": {
@@ -70987,8 +71584,13 @@
     "id": "tinggal; tetap; menetap",
     "pos": "VERB",
     "verses": [
-      "15:22"
-    ]
+      "15:22",
+      "19:21"
+    ],
+    "pos_counts": {
+      "VERB": 1,
+      "VERB+NOUN": 1
+    }
   },
   "⸀ὃ": {
     "root": "ὁ",
@@ -71210,7 +71812,7 @@
       "1:26",
       "1:27",
       "2:10",
-      "5:10"
+      "6:15"
     ]
   },
   "°ἐγὼ": {
@@ -71451,8 +72053,8 @@
       "3:28",
       "5:12",
       "7:4",
-      "7:13",
-      "8:6"
+      "8:6",
+      "9:4"
     ]
   },
   "πότος": {
@@ -71818,7 +72420,14 @@
     "pt": "malícia; maldade; insensatez",
     "es": "malicia; maldad; insensatez",
     "id": "kedengkian; niat jahat; kebodohan",
-    "pos": "NOUN"
+    "pos": "NOUN",
+    "pos_counts": {
+      "NOUN": 1,
+      "ADJ+NOUN": 1
+    },
+    "verses": [
+      "16:14"
+    ]
   },
   "κέλευσμα": {
     "root": "κέλευσμα",

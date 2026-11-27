@@ -97,8 +97,8 @@
       "ADV": 16,
       "ADJ": 10,
       "VERB": 4,
-      "NOUN/ADV": 3,
-      "VERB/ADV": 1,
+      "NOUN+ADV": 3,
+      "VERB+ADV": 1,
       "PRON": 1
     },
     "verses": [
@@ -359,7 +359,11 @@
     "pos": "VERB/NOUN",
     "verses": [
       "26:10"
-    ]
+    ],
+    "pos_counts": {
+      "VERB/NOUN": 1,
+      "VERB+NOUN": 1
+    }
   },
   "ἄγονος": {
     "root": "ἄγονος",
@@ -2013,7 +2017,7 @@
       "VERB": 10,
       "ADJ": 4,
       "ADV": 2,
-      "NOUN/VERB": 1,
+      "NOUN+VERB": 1,
       "PRON": 1,
       "PART": 1
     },
@@ -4796,7 +4800,7 @@
     "pos": "NOUN",
     "pos_counts": {
       "NOUN": 3,
-      "ADJ/NOUN": 1,
+      "ADJ+NOUN": 1,
       "ADV": 1,
       "ADJ": 1
     },
@@ -5902,7 +5906,7 @@
     ],
     "pos_counts": {
       "NOUN": 3,
-      "ADJ/NOUN": 2
+      "ADJ+NOUN": 2
     }
   },
   "γαμβρεύω": {
@@ -8052,7 +8056,7 @@
     "pos_counts": {
       "NOUN": 6,
       "ADJ": 3,
-      "ADJ/NOUN": 1
+      "ADJ+NOUN": 1
     },
     "verses": [
       "15:6",
@@ -8696,7 +8700,7 @@
     ],
     "pos_counts": {
       "NOUN": 1,
-      "NOUN/ADV": 1
+      "NOUN+ADV": 1
     }
   },
   "δωρεά": {
@@ -9327,7 +9331,11 @@
       "8:9",
       "12:15",
       "29:13"
-    ]
+    ],
+    "pos_counts": {
+      "ADP/VERB": 1,
+      "ADP+VERB": 13
+    }
   },
   "ειςακουω": {
     "root": "εἰσακούω",
@@ -9338,8 +9346,9 @@
     "id": "mendengarkan; mengindahkan",
     "pos": "ADP/NOUN",
     "pos_counts": {
-      "ADP/NOUN": 4,
-      "ADP/PRON": 1
+      "ADP/NOUN": 1,
+      "ADP+NOUN": 4,
+      "ADP+PRON": 1
     },
     "verses": [
       "21:17",
@@ -9359,7 +9368,11 @@
     "pos": "ADP/NOUN",
     "verses": [
       "38:9"
-    ]
+    ],
+    "pos_counts": {
+      "ADP/NOUN": 1,
+      "ADP+NOUN": 1
+    }
   },
   "ειςειμι": {
     "root": "εἴσειμι",
@@ -9383,7 +9396,11 @@
       "7:1",
       "7:7",
       "7:9"
-    ]
+    ],
+    "pos_counts": {
+      "ADP/VERB": 1,
+      "ADP+VERB": 56
+    }
   },
   "εἴσοδος": {
     "root": "εἴσοδος",
@@ -9413,7 +9430,7 @@
       "44:30"
     ],
     "pos_counts": {
-      "ADP/NOUN": 3,
+      "ADP+NOUN": 3,
       "VERB": 2
     }
   },
@@ -9443,7 +9460,11 @@
       "27:25",
       "27:33",
       "37:32"
-    ]
+    ],
+    "pos_counts": {
+      "ADP/NOUN": 1,
+      "ADP+NOUN": 6
+    }
   },
   "εἰσφορά": {
     "root": "εἰσφορά",
@@ -11831,7 +11852,7 @@
     "pos": "NOUN",
     "pos_counts": {
       "NOUN": 9,
-      "VERB/NOUN": 1,
+      "VERB+NOUN": 1,
       "VERB": 1
     },
     "verses": [
@@ -11854,7 +11875,7 @@
       "ADP": 1,
       "NUM": 3,
       "ADJ": 1,
-      "PRON/NOUN": 1
+      "PRON+NOUN": 1
     },
     "verses": [
       "16:16",
@@ -14398,7 +14419,7 @@
       "VERB": 5,
       "ADV": 1,
       "ADJ": 1,
-      "ADJ/ADV": 1
+      "ADJ+ADV": 1
     },
     "verses": [
       "1:30",
@@ -16095,9 +16116,9 @@
     "pos_counts": {
       "NOUN": 67,
       "ADJ": 6,
-      "NOUN/ADV": 4,
+      "NOUN+ADV": 4,
       "ADV": 4,
-      "VERB/ADV": 1,
+      "VERB+ADV": 1,
       "DET": 1,
       "VERB": 1
     },
@@ -16145,7 +16166,7 @@
       "ADJ": 13,
       "ADV": 4,
       "VERB": 3,
-      "NOUN/ADV": 2
+      "NOUN+ADV": 2
     },
     "verses": [
       "32:29",
@@ -16322,7 +16343,7 @@
     "pos_counts": {
       "PROPN": 1,
       "NOUN": 159,
-      "NOUN/VERB": 6
+      "NOUN+VERB": 6
     },
     "verses": [
       "30:24",
@@ -16556,10 +16577,10 @@
       "42:37"
     ],
     "pos_counts": {
-      "PRON/NOUN": 2,
-      "PART/NOUN": 1,
+      "PRON+NOUN": 2,
+      "PART+NOUN": 1,
       "VERB": 1,
-      "PART/ADP": 1
+      "PART+ADP": 1
     }
   },
   "καιεμος": {
@@ -16573,7 +16594,11 @@
     "verses": [
       "27:34",
       "27:38"
-    ]
+    ],
+    "pos_counts": {
+      "PART/NOUN": 1,
+      "PART+NOUN": 2
+    }
   },
   "καιν": {
     "root": "Κάϊν",
@@ -16589,7 +16614,7 @@
       "ADV": 2,
       "ADJ": 1,
       "PRON": 1,
-      "VERB/NOUN": 1
+      "VERB+NOUN": 1
     },
     "verses": [
       "4:1",
@@ -16622,7 +16647,7 @@
     "pos_counts": {
       "NOUN": 8,
       "ADJ": 3,
-      "ADJ/NOUN": 1
+      "ADJ+NOUN": 1
     },
     "verses": [
       "5:9",
@@ -18461,7 +18486,11 @@
     "pos": "NOUN/ADV",
     "verses": [
       "10:14"
-    ]
+    ],
+    "pos_counts": {
+      "NOUN/ADV": 1,
+      "NOUN+ADV": 1
+    }
   },
   "κεδμωναιος": {
     "root": "Κεδμωναῖος",
@@ -19904,8 +19933,8 @@
       "VERB": 116,
       "PRON": 5,
       "NOUN": 5,
-      "NOUN/VERB": 2,
-      "PRON/VERB": 1,
+      "NOUN+VERB": 2,
+      "PRON+VERB": 1,
       "PART": 1,
       "ADJ": 1
     },
@@ -21264,7 +21293,11 @@
     "pos": "NOUN/ADV",
     "verses": [
       "46:17"
-    ]
+    ],
+    "pos_counts": {
+      "NOUN/ADV": 1,
+      "NOUN+ADV": 1
+    }
   },
   "μελχισεδεκ": {
     "root": "μελχισεδεκ",
@@ -22398,7 +22431,11 @@
     "pos": "NOUN/ADV",
     "verses": [
       "10:13"
-    ]
+    ],
+    "pos_counts": {
+      "NOUN/ADV": 1,
+      "NOUN+ADV": 1
+    }
   },
   "νεφρός": {
     "root": "νεφρός",
@@ -22673,7 +22710,7 @@
     "pos": "NOUN",
     "pos_counts": {
       "NOUN": 24,
-      "VERB/NOUN": 2,
+      "VERB+NOUN": 2,
       "DET": 1
     },
     "verses": [
@@ -22699,7 +22736,7 @@
       "ADP": 2,
       "DET": 2,
       "PART": 2,
-      "DET/NOUN": 1,
+      "DET+NOUN": 1,
       "ADJ": 1,
       "PRON": 1
     },
@@ -24113,7 +24150,7 @@
     "pos": "ADJ",
     "pos_counts": {
       "ADJ": 1,
-      "NOUN/ADJ": 1
+      "NOUN+ADJ": 1
     },
     "verses": [
       "14:5"
@@ -26302,8 +26339,8 @@
     "pos_counts": {
       "VERB": 15,
       "NOUN": 3,
-      "VERB/NOUN": 1,
-      "NOUN/VERB": 1,
+      "VERB+NOUN": 1,
+      "NOUN+VERB": 1,
       "PRON": 1
     },
     "verses": [
@@ -27250,7 +27287,7 @@
     ],
     "pos_counts": {
       "NOUN": 4,
-      "VERB/NOUN": 1
+      "VERB+NOUN": 1
     }
   },
   "πορφύρα": {
@@ -27753,8 +27790,9 @@
     "id": "membawa mendekat; mempersembahkan; mendekat",
     "pos": "PRON/VERB",
     "pos_counts": {
-      "PRON/VERB": 2,
-      "ADV/VERB": 1
+      "PRON/VERB": 1,
+      "PRON+VERB": 2,
+      "ADV+VERB": 1
     },
     "verses": [
       "27:25",
@@ -27771,7 +27809,11 @@
     "pos": "ADV/VERB",
     "verses": [
       "32:21"
-    ]
+    ],
+    "pos_counts": {
+      "ADV/VERB": 1,
+      "ADV+VERB": 1
+    }
   },
   "προςδίδωμι": {
     "root": "προςδίδωμι",
@@ -27783,7 +27825,11 @@
     "pos": "ADV/VERB",
     "verses": [
       "29:33"
-    ]
+    ],
+    "pos_counts": {
+      "ADV/VERB": 1,
+      "ADV+VERB": 1
+    }
   },
   "προσδοκία": {
     "root": "προσδοκία",
@@ -27807,7 +27853,7 @@
     "pos": "VERB",
     "pos_counts": {
       "VERB": 2,
-      "PART/VERB": 1
+      "PART+VERB": 1
     },
     "verses": [
       "33:6",
@@ -27823,8 +27869,9 @@
     "id": "mendekat; datang kepada",
     "pos": "ADV/VERB",
     "pos_counts": {
-      "ADV/VERB": 2,
-      "NOUN/VERB": 1
+      "ADV/VERB": 1,
+      "ADV+VERB": 2,
+      "NOUN+VERB": 1
     },
     "verses": [
       "29:10",
@@ -27842,7 +27889,8 @@
     "pos": "NOUN/VERB",
     "pos_counts": {
       "NOUN/VERB": 1,
-      "ADV/VERB": 1
+      "NOUN+VERB": 1,
+      "ADV+VERB": 1
     },
     "verses": [
       "20:7",
@@ -27861,7 +27909,11 @@
       "4:5",
       "24:6",
       "34:3"
-    ]
+    ],
+    "pos_counts": {
+      "ADV/VERB": 1,
+      "ADV+VERB": 3
+    }
   },
   "προσήλυτος": {
     "root": "προσήλυτος",
@@ -27881,7 +27933,11 @@
     "pos": "VERB/PART",
     "verses": [
       "28:1"
-    ]
+    ],
+    "pos_counts": {
+      "VERB/PART": 1,
+      "VERB+PART": 1
+    }
   },
   "προςκολλάω": {
     "root": "προσκολλάω",
@@ -27893,7 +27949,11 @@
     "pos": "VERB/NOUN",
     "verses": [
       "2:24"
-    ]
+    ],
+    "pos_counts": {
+      "VERB/NOUN": 1,
+      "VERB+NOUN": 1
+    }
   },
   "πρόσκομμα": {
     "root": "πρόσκομμα",
@@ -27914,7 +27974,7 @@
     "pos_counts": {
       "VERB": 15,
       "NOUN": 7,
-      "VERB/NOUN": 1
+      "VERB+NOUN": 1
     },
     "verses": [
       "18:2",
@@ -27942,7 +28002,11 @@
     "pos": "NOUN/VERB",
     "verses": [
       "19:6"
-    ]
+    ],
+    "pos_counts": {
+      "NOUN/VERB": 1,
+      "NOUN+VERB": 1
+    }
   },
   "προςὀχθίζω": {
     "root": "προσοχθίζω",
@@ -27954,7 +28018,11 @@
     "pos": "NOUN/VERB",
     "verses": [
       "27:46"
-    ]
+    ],
+    "pos_counts": {
+      "NOUN/VERB": 1,
+      "NOUN+VERB": 1
+    }
   },
   "προςπίπτω": {
     "root": "προςπίπτω",
@@ -28020,9 +28088,9 @@
     ],
     "pos_counts": {
       "VERB": 14,
-      "PART/ADJ": 1,
+      "PART+ADJ": 1,
       "ADV": 1,
-      "PART/ADV": 1
+      "PART+ADV": 1
     }
   },
   "προςτρέχω": {
@@ -28049,7 +28117,7 @@
     "pos_counts": {
       "VERB": 1,
       "NOUN": 1,
-      "NOUN/VERB": 1
+      "NOUN+VERB": 1
     },
     "verses": [
       "4:7",
@@ -29866,7 +29934,7 @@
     "id": "Syur",
     "pos": "NOUN",
     "pos_counts": {
-      "PRON/NOUN": 1,
+      "PRON+NOUN": 1,
       "NOUN": 1,
       "VERB": 1
     },
@@ -34166,7 +34234,7 @@
     "pos": "NOUN",
     "pos_counts": {
       "NOUN": 3,
-      "NOUN/ADV": 2,
+      "NOUN+ADV": 2,
       "ADV": 1,
       "VERB": 1
     },
@@ -34476,8 +34544,8 @@
       "DET": 1,
       "ADV": 1,
       "ADP": 1,
-      "VERB/NOUN": 1,
-      "ADJ/NOUN": 1,
+      "VERB+NOUN": 1,
+      "ADJ+NOUN": 1,
       "VERB": 1
     },
     "verses": [
@@ -37742,8 +37810,9 @@
     "id": "mendengarkan; mengindahkan",
     "pos": "ADP/NOUN",
     "pos_counts": {
-      "ADP/NOUN": 4,
-      "ADP/PRON": 1
+      "ADP/NOUN": 1,
+      "ADP+NOUN": 4,
+      "ADP+PRON": 1
     },
     "verses": [
       "21:17",
@@ -37937,9 +38006,9 @@
     ],
     "pos_counts": {
       "VERB": 14,
-      "PART/ADJ": 1,
+      "PART+ADJ": 1,
       "ADV": 1,
-      "PART/ADV": 1
+      "PART+ADV": 1
     }
   },
   "δυνατος": {
@@ -38544,7 +38613,7 @@
       "ADJ": 13,
       "ADV": 4,
       "VERB": 3,
-      "NOUN/ADV": 2
+      "NOUN+ADV": 2
     },
     "verses": [
       "32:29",
@@ -38696,7 +38765,7 @@
     "pos": "NOUN",
     "pos_counts": {
       "NOUN": 24,
-      "VERB/NOUN": 2,
+      "VERB+NOUN": 2,
       "DET": 1
     },
     "verses": [
@@ -39004,7 +39073,7 @@
       "VERB": 10,
       "ADJ": 4,
       "ADV": 2,
-      "NOUN/VERB": 1,
+      "NOUN+VERB": 1,
       "PRON": 1,
       "PART": 1
     },
@@ -39997,7 +40066,7 @@
       "ADP": 1,
       "NUM": 3,
       "ADJ": 1,
-      "PRON/NOUN": 1
+      "PRON+NOUN": 1
     },
     "verses": [
       "16:16",
@@ -40341,7 +40410,7 @@
     "pos_counts": {
       "PROPN": 1,
       "NOUN": 5,
-      "VERB/NOUN": 1
+      "VERB+NOUN": 1
     },
     "verses": [
       "25:3",
@@ -40418,7 +40487,11 @@
     "pos": "VERB/ADV",
     "verses": [
       "25:3"
-    ]
+    ],
+    "pos_counts": {
+      "VERB/ADV": 1,
+      "VERB+ADV": 1
+    }
   },
   "αφερ": {
     "root": "αφερ",
@@ -40750,7 +40823,7 @@
     ],
     "pos_counts": {
       "NOUN": 1,
-      "NOUN/ADV": 1
+      "NOUN+ADV": 1
     }
   },
   "ιαμιν": {
@@ -41477,7 +41550,7 @@
       "ADP": 1,
       "NUM": 3,
       "ADJ": 1,
-      "PRON/NOUN": 1
+      "PRON+NOUN": 1
     },
     "verses": [
       "16:16",
@@ -42758,7 +42831,7 @@
       "ADJ": 13,
       "ADV": 4,
       "VERB": 3,
-      "NOUN/ADV": 2
+      "NOUN+ADV": 2
     },
     "verses": [
       "32:29",
@@ -43108,7 +43181,7 @@
       "ADP": 1,
       "NUM": 3,
       "ADJ": 1,
-      "PRON/NOUN": 1
+      "PRON+NOUN": 1
     },
     "verses": [
       "16:16",
@@ -44522,8 +44595,8 @@
       "ADV": 16,
       "ADJ": 10,
       "VERB": 4,
-      "NOUN/ADV": 3,
-      "VERB/ADV": 1,
+      "NOUN+ADV": 3,
+      "VERB+ADV": 1,
       "PRON": 1
     },
     "verses": [
@@ -44547,8 +44620,8 @@
       "ADV": 16,
       "ADJ": 10,
       "VERB": 4,
-      "NOUN/ADV": 3,
-      "VERB/ADV": 1,
+      "NOUN+ADV": 3,
+      "VERB+ADV": 1,
       "PRON": 1
     },
     "verses": [
@@ -44887,8 +44960,8 @@
       "VERB": 116,
       "PRON": 5,
       "NOUN": 5,
-      "NOUN/VERB": 2,
-      "PRON/VERB": 1,
+      "NOUN+VERB": 2,
+      "PRON+VERB": 1,
       "PART": 1,
       "ADJ": 1
     },
@@ -45265,7 +45338,7 @@
     "pos_counts": {
       "NOUN": 6,
       "ADJ": 3,
-      "ADJ/NOUN": 1
+      "ADJ+NOUN": 1
     },
     "verses": [
       "15:6",
@@ -46163,7 +46236,11 @@
     "pos": "VERB/NOUN",
     "verses": [
       "26:10"
-    ]
+    ],
+    "pos_counts": {
+      "VERB/NOUN": 1,
+      "VERB+NOUN": 1
+    }
   },
   "ἀγνοίᾳ⸃": {
     "root": "ἄγνοια",
@@ -46231,7 +46308,7 @@
     "pos": "ADJ",
     "pos_counts": {
       "ADJ": 1,
-      "NOUN/ADJ": 1
+      "NOUN+ADJ": 1
     },
     "verses": [
       "14:5"
@@ -46247,7 +46324,7 @@
     "pos": "ADJ",
     "pos_counts": {
       "ADJ": 1,
-      "NOUN/ADJ": 1
+      "NOUN+ADJ": 1
     },
     "verses": [
       "14:5"
@@ -46264,7 +46341,7 @@
     "pos_counts": {
       "NOUN": 13,
       "VERB": 3,
-      "NOUN/ADV": 1
+      "NOUN+ADV": 1
     },
     "verses": [
       "16:11",
@@ -46440,7 +46517,7 @@
     ],
     "pos_counts": {
       "ADJ": 9,
-      "ADJ/NOUN": 1
+      "ADJ+NOUN": 1
     }
   },
   "αρβοκ": {
@@ -46687,7 +46764,11 @@
     "verses": [
       "27:34",
       "27:38"
-    ]
+    ],
+    "pos_counts": {
+      "PART/NOUN": 1,
+      "PART+NOUN": 2
+    }
   },
   "ἀποεἰλέω": {
     "root": "ἀπειλέω",
@@ -46985,7 +47066,11 @@
     "pos": "NOUN/ADV",
     "verses": [
       "36:35"
-    ]
+    ],
+    "pos_counts": {
+      "NOUN/ADV": 1,
+      "NOUN+ADV": 1
+    }
   },
   "μασεκκα": {
     "root": "Μασεκκά",
@@ -47527,7 +47612,11 @@
     "pos": "ADP/NOUN",
     "verses": [
       "38:9"
-    ]
+    ],
+    "pos_counts": {
+      "ADP/NOUN": 1,
+      "ADP+NOUN": 1
+    }
   },
   "εκδεχομαι": {
     "root": "ἐκδέχομαι",
@@ -49079,10 +49168,10 @@
       "42:37"
     ],
     "pos_counts": {
-      "PRON/NOUN": 2,
-      "PART/NOUN": 1,
+      "PRON+NOUN": 2,
+      "PART+NOUN": 1,
       "VERB": 1,
-      "PART/ADP": 1
+      "PART+ADP": 1
     }
   },
   "κειρω": {
@@ -50455,7 +50544,11 @@
     "verses": [
       "27:34",
       "27:38"
-    ]
+    ],
+    "pos_counts": {
+      "PART/NOUN": 1,
+      "PART+NOUN": 2
+    }
   },
   "βλεπω": {
     "root": "βλέπω",
@@ -52125,7 +52218,11 @@
       "8:9",
       "12:15",
       "29:13"
-    ]
+    ],
+    "pos_counts": {
+      "ADP/VERB": 1,
+      "ADP+VERB": 13
+    }
   },
   "ειςερχομαι": {
     "root": "εἰσέρχομαι",
@@ -52141,7 +52238,11 @@
       "7:1",
       "7:7",
       "7:9"
-    ]
+    ],
+    "pos_counts": {
+      "ADP/VERB": 1,
+      "ADP+VERB": 56
+    }
   },
   "ειςπορευομαι": {
     "root": "εἰσπορεύομαι",
@@ -52159,7 +52260,7 @@
       "44:30"
     ],
     "pos_counts": {
-      "ADP/NOUN": 3,
+      "ADP+NOUN": 3,
       "VERB": 2
     }
   },
@@ -52177,7 +52278,11 @@
       "27:25",
       "27:33",
       "37:32"
-    ]
+    ],
+    "pos_counts": {
+      "ADP/NOUN": 1,
+      "ADP+NOUN": 6
+    }
   },
   "εκαγω": {
     "root": "ἐξάγω",
@@ -58403,7 +58508,7 @@
     ],
     "pos_counts": {
       "NOUN": 4,
-      "VERB/NOUN": 1
+      "VERB+NOUN": 1
     }
   },
   "ποτιζω": {
@@ -58545,8 +58650,9 @@
     "id": "membawa mendekat; mempersembahkan; mendekat",
     "pos": "PRON/VERB",
     "pos_counts": {
-      "PRON/VERB": 2,
-      "ADV/VERB": 1
+      "PRON/VERB": 1,
+      "PRON+VERB": 2,
+      "ADV+VERB": 1
     },
     "verses": [
       "27:25",
@@ -58563,7 +58669,11 @@
     "pos": "ADV/VERB",
     "verses": [
       "32:21"
-    ]
+    ],
+    "pos_counts": {
+      "ADV/VERB": 1,
+      "ADV+VERB": 1
+    }
   },
   "προςεγγιζω": {
     "root": "προσεγγίζω",
@@ -58575,7 +58685,7 @@
     "pos": "VERB",
     "pos_counts": {
       "VERB": 2,
-      "PART/VERB": 1
+      "PART+VERB": 1
     },
     "verses": [
       "33:6",
@@ -58591,8 +58701,9 @@
     "id": "mendekat; datang kepada",
     "pos": "ADV/VERB",
     "pos_counts": {
-      "ADV/VERB": 2,
-      "NOUN/VERB": 1
+      "ADV/VERB": 1,
+      "ADV+VERB": 2,
+      "NOUN+VERB": 1
     },
     "verses": [
       "29:10",
@@ -58612,7 +58723,11 @@
       "4:5",
       "24:6",
       "34:3"
-    ]
+    ],
+    "pos_counts": {
+      "ADV/VERB": 1,
+      "ADV+VERB": 3
+    }
   },
   "προςέχω": {
     "root": "προςἔχω",
@@ -58626,7 +58741,11 @@
       "4:5",
       "24:6",
       "34:3"
-    ]
+    ],
+    "pos_counts": {
+      "ADV/VERB": 1,
+      "ADV+VERB": 3
+    }
   },
   "προσηλυτος": {
     "root": "προσήλυτος",
@@ -58646,7 +58765,11 @@
     "pos": "VERB/NOUN",
     "verses": [
       "2:24"
-    ]
+    ],
+    "pos_counts": {
+      "VERB/NOUN": 1,
+      "VERB+NOUN": 1
+    }
   },
   "προςκυνεω": {
     "root": "προσκυνέω",
@@ -58659,7 +58782,7 @@
     "pos_counts": {
       "VERB": 15,
       "NOUN": 7,
-      "VERB/NOUN": 1
+      "VERB+NOUN": 1
     },
     "verses": [
       "18:2",
@@ -58679,7 +58802,11 @@
     "pos": "NOUN/VERB",
     "verses": [
       "27:46"
-    ]
+    ],
+    "pos_counts": {
+      "NOUN/VERB": 1,
+      "NOUN+VERB": 1
+    }
   },
   "προςπορευομαι": {
     "root": "προσπορεύομαι",
@@ -58740,7 +58867,7 @@
     "pos_counts": {
       "VERB": 1,
       "NOUN": 1,
-      "NOUN/VERB": 1
+      "NOUN+VERB": 1
     },
     "verses": [
       "4:7",
@@ -61714,7 +61841,7 @@
     ],
     "pos_counts": {
       "NOUN": 1,
-      "NOUN/ADV": 1
+      "NOUN+ADV": 1
     }
   },
   "εβραῖα": {
@@ -61796,7 +61923,11 @@
       "7:1",
       "7:7",
       "7:9"
-    ]
+    ],
+    "pos_counts": {
+      "ADP/VERB": 1,
+      "ADP+VERB": 56
+    }
   },
   "ευδοκιμεω": {
     "root": "εὐδοκιμέω",
@@ -61845,7 +61976,7 @@
     "pos_counts": {
       "PROPN": 1,
       "NOUN": 5,
-      "VERB/NOUN": 1
+      "VERB+NOUN": 1
     },
     "verses": [
       "25:3",
@@ -62428,7 +62559,11 @@
     "pos": "NOUN/VERB",
     "verses": [
       "19:6"
-    ]
+    ],
+    "pos_counts": {
+      "NOUN/VERB": 1,
+      "NOUN+VERB": 1
+    }
   },
   "πεπειρος": {
     "root": "πέπειρος",
@@ -63209,7 +63344,11 @@
       "8:9",
       "12:15",
       "29:13"
-    ]
+    ],
+    "pos_counts": {
+      "ADP/VERB": 1,
+      "ADP+VERB": 13
+    }
   },
   "ἐιςἔρχομαι": {
     "root": "εἰσέρχομαι",
@@ -63225,7 +63364,11 @@
       "7:1",
       "7:7",
       "7:9"
-    ]
+    ],
+    "pos_counts": {
+      "ADP/VERB": 1,
+      "ADP+VERB": 56
+    }
   },
   "ἐκδικήσις": {
     "root": "ἐκδίκησις",
@@ -64562,7 +64705,7 @@
       "ADJ": 13,
       "ADV": 4,
       "VERB": 3,
-      "NOUN/ADV": 2
+      "NOUN+ADV": 2
     },
     "verses": [
       "32:29",
@@ -65746,7 +65889,7 @@
       "ADP": 1,
       "NUM": 3,
       "ADJ": 1,
-      "PRON/NOUN": 1
+      "PRON+NOUN": 1
     },
     "verses": [
       "16:16",
@@ -65910,7 +66053,7 @@
       "VERB": 5,
       "ADV": 1,
       "ADJ": 1,
-      "ADJ/ADV": 1
+      "ADJ+ADV": 1
     },
     "verses": [
       "1:30",
@@ -65988,7 +66131,7 @@
     "pos_counts": {
       "PROPN": 1,
       "NOUN": 159,
-      "NOUN/VERB": 6
+      "NOUN+VERB": 6
     },
     "verses": [
       "30:24",
@@ -66498,7 +66641,7 @@
     "pos": "NOUN",
     "pos_counts": {
       "NOUN": 9,
-      "VERB/NOUN": 1,
+      "VERB+NOUN": 1,
       "VERB": 1
     },
     "verses": [
@@ -66800,8 +66943,8 @@
     "pos_counts": {
       "VERB": 15,
       "NOUN": 3,
-      "VERB/NOUN": 1,
-      "NOUN/VERB": 1,
+      "VERB+NOUN": 1,
+      "NOUN+VERB": 1,
       "PRON": 1
     },
     "verses": [
@@ -69539,7 +69682,7 @@
       "VERB": 5,
       "ADV": 1,
       "ADJ": 1,
-      "ADJ/ADV": 1
+      "ADJ+ADV": 1
     },
     "verses": [
       "1:30",
@@ -69622,7 +69765,7 @@
       "VERB": 5,
       "ADV": 1,
       "ADJ": 1,
-      "ADJ/ADV": 1
+      "ADJ+ADV": 1
     },
     "verses": [
       "1:30",
@@ -70158,7 +70301,7 @@
     "pos": "NOUN",
     "pos_counts": {
       "NOUN": 24,
-      "VERB/NOUN": 2,
+      "VERB+NOUN": 2,
       "DET": 1
     },
     "verses": [
@@ -71342,7 +71485,7 @@
     "pos_counts": {
       "NOUN": 6,
       "ADJ": 3,
-      "ADJ/NOUN": 1
+      "ADJ+NOUN": 1
     },
     "verses": [
       "15:6",
@@ -71602,7 +71745,7 @@
       "ADV": 2,
       "ADJ": 1,
       "PRON": 1,
-      "VERB/NOUN": 1
+      "VERB+NOUN": 1
     },
     "verses": [
       "4:1",
