@@ -148,9 +148,14 @@ function normalizeWord(word, lang) {
       .toLowerCase()
       .replace(/[\.,;:·!·\?\'"«»\(\)\[\]⸂⸃⸀⸁°¹²\s\u2019\u0027]/g, '');
   } else if (lang === 'heb') {
+    // REMOVER SÓ cantilação/marcas de leitura, NUNCA niqqud: U+0591–U+05AF
+    // (te'amim), U+05BD (meteg), U+05BE (maqaf), U+05C0 (paseq), U+05C3
+    // (sof pasuq). Vogais U+05B0–U+05BC e U+05C1–U+05C2 são parte da chave:
+    // removê-las fazia אֶת/אַתְּ, אֲשֶׁר/אָשֵׁר, עַל/עֹל etc. colidirem e a
+    // última sobrescrever a primeira. NFC preserva o niqqud composto.
     res = word
-      .replace(/[\u0591-\u05C7\u200B-\u200D\uFEFF]/g, '')
-      .normalize('NFD')
+      .normalize('NFC')
+      .replace(/[\u0591-\u05AF\u05BD\u05BE\u05C0\u05C3\u200B-\u200D\uFEFF]/g, '')
       .replace(/[שׂשׁ]/g, 'ש')
       .replace(/ך/g, 'כ')
       .replace(/ם/g, 'מ')
