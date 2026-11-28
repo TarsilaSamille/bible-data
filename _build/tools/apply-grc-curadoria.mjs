@@ -2,6 +2,7 @@
 import { readFile, writeFile } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
 import { join } from 'node:path';
+import { correctedKeysFor, isCorrected } from './lib/corrected-keys.mjs';
 
 const RAIZ = process.cwd();
 const CURADORIA = '/Users/macbook/GitHub/mestrado/bible-reader-web/docs/referencia/curadoria/grc';
@@ -26,6 +27,9 @@ async function main() {
     }
   }
   console.log(`Curated lookup: ${lookup.size} words`);
+  // JSON de correção tem precedência absoluta sobre a curadoria/etimologia.
+  const corrigidas = correctedKeysFor('grc', RAIZ);
+  console.log(`Correction keys protected: ${corrigidas.size / 2}`);
 
   let applied = 0, files = 0;
   for (let b = 1; b <= 66; b++) {
@@ -35,6 +39,7 @@ async function main() {
     let changed = false;
     for (const [surface, entry] of Object.entries(data)) {
       if (!entry || typeof entry !== 'object') continue;
+      if (isCorrected(corrigidas, surface)) continue;
       const cur = lookup.get(surface);
       if (!cur) continue;
       let touched = false;

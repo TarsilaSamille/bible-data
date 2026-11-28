@@ -23,6 +23,7 @@ import { existsSync, readFileSync, writeFileSync, readdirSync, statSync } from '
 import { join, dirname, basename } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { execSync } from 'node:child_process';
+import assert from 'node:assert/strict';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -132,58 +133,52 @@ const CANONICAL_TEXTS = {
   it: ['NR06']
 };
 
-// Normalização de chaves por língua com cache em memória
+// Chave de lookup EXATA (QA v5): NFC + apóstrofo tipográfico unificado,
+// SEM remover acentos, niqqud, tashkeel, espíritos gregos nem apóstrofos.
+// Só se remove pontuação COLADA no fim da forma ("," em ru, "]" em id,
+// ";" em grc, "…" em fr, "?"/"؟" em ar) — nunca no meio da palavra.
 const normCache = new Map();
-function normalizeWord(word, lang) {
+function lookupKey(word, lang) {
   if (!word || typeof word !== 'string') return '';
   const cacheKey = `${lang}:${word}`;
   const cached = normCache.get(cacheKey);
   if (cached !== undefined) return cached;
 
-  let res = '';
-  if (lang === 'grc') {
-    res = word
-      .normalize('NFD')
-      .replace(/[\u0300-\u036f]/g, '')
-      .toLowerCase()
-      .replace(/[\.,;:·!·\?\'"«»\(\)\[\]⸂⸃⸀⸁°¹²\s\u2019\u0027]/g, '');
-  } else if (lang === 'heb') {
-    // REMOVER SÓ cantilação/marcas de leitura, NUNCA niqqud: U+0591–U+05AF
-    // (te'amim), U+05BD (meteg), U+05BE (maqaf), U+05C0 (paseq), U+05C3
-    // (sof pasuq). Vogais U+05B0–U+05BC e U+05C1–U+05C2 são parte da chave:
-    // removê-las fazia אֶת/אַתְּ, אֲשֶׁר/אָשֵׁר, עַל/עֹל etc. colidirem e a
-    // última sobrescrever a primeira. NFC preserva o niqqud composto.
-    res = word
-      .normalize('NFC')
-      .replace(/[\u0591-\u05AF\u05BD\u05BE\u05C0\u05C3\u200B-\u200D\uFEFF]/g, '')
-      .replace(/[שׂשׁ]/g, 'ש')
-      .replace(/ך/g, 'כ')
-      .replace(/ם/g, 'מ')
-      .replace(/ן/g, 'נ')
-      .replace(/ף/g, 'פ')
-      .replace(/ץ/g, 'צ')
-      .replace(/[\.,;:·!·\?\'"«»\(\)\[\]\s־\u05BE]/g, '');
-  } else if (lang === 'ar') {
-    res = word
-      .replace(/[\u064B-\u065F\u0670\u06DF-\u06ED\u0610-\u061A\u0640]/g, '')
-      .replace(/[آأإٱ]/g, 'ا')
-      .toLowerCase()
-      .trim();
-  } else if (lang === 'gn') {
-    res = word
-      .normalize('NFD')
-      .replace(/[\u0300-\u036f]/g, '')
-      .toLowerCase()
-      .trim();
-  } else {
-    res = word
-      .toLowerCase()
-      .replace(/[.,;:!?\(\)\[\]"'\u2019\s]/g, '')
-      .trim();
-  }
+  const res = word
+    .normalize('NFC')
+    .replace(/[\u2018\u2019\u02BC]/g, "'")
+    .replace(/[\u037E;.,\]…?؟]+$/u, '')
+    .trim();
 
   normCache.set(cacheKey, res);
   return res;
+}
+
+/** 2º nível de fallback: diferencia maiúsculas/minúsculas mas PRESERVA
+ *  diacríticos e apóstrofos. Nunca existe fallback "removendo marcas". */
+function foldKey(key) {
+  return key.toLowerCase();
+}
+
+// Autoteste rápido da regra de ouro: node apply-correcoes.mjs --self-test
+if (process.argv.includes('--self-test')) {
+  const pairs = [
+    ['fr', 'la', 'l’a'], ['fr', 'deux', 'd’eux'],
+    ['en', 'things', "things'"], ['en', 'gods', "God's"],
+    ['ar', 'فِي', 'فِيَّ'], ['ar', 'مَنْ', 'مِنْ'],
+    ['grc', 'οὐ', 'οὗ'], ['grc', 'εἰ', 'εἶ'],
+    ['heb', 'שָׁם', 'שָׂם'], ['heb', 'עֵשָׂו', 'עָשׂוּ'],
+  ];
+  for (const [lang, a, b] of pairs) {
+    assert.notEqual(lookupKey(a, lang), lookupKey(b, lang), `${lang}: ${a} ≠ ${b}`);
+  }
+  assert.equal(lookupKey('God’s', 'en'), lookupKey("God's", 'en'), 'apóstrofo unificado');
+  assert.equal(foldKey(lookupKey('Kepada-Ku', 'id')), foldKey(lookupKey('kepada-ku', 'id')));
+  assert.equal(lookupKey('situ.]', 'id'), 'situ', 'pontuação terminal removida');
+  assert.equal(lookupKey('ya.', 'ru'), 'ya', 'ponto colado removido');
+  assert.equal(lookupKey('فِي؟', 'ar'), 'فِي', '؟ removida');
+  console.log('apply-correcoes: chave exata NFC/fallback por caixa OK');
+  process.exit(0);
 }
 
 // Detecta língua pelo nome do arquivo ou conteúdo
@@ -300,13 +295,23 @@ for (const filePath of filesToProcess) {
 
   console.log(`\nProcessando ${basename(filePath)} -> idioma: [${lang.toUpperCase()}] (${entriesCount} palavras)`);
 
-  // Mapear palavras para formas normalizadas
+  // Mapear palavras para chaves EXATAS em NFC. O fallback por caixa é
+  // indexado à parte e nunca remove diacríticos/apóstrofos.
   const wordsMap = new Map();
+  const ciToExact = new Map();
   for (const [palavra, dados] of Object.entries(data)) {
-    const n = normalizeWord(palavra, lang);
+    const n = lookupKey(palavra, lang);
     if (!wordsMap.has(n)) wordsMap.set(n, []);
     wordsMap.get(n).push({ original: palavra, dados });
+    const ci = foldKey(n);
+    if (!ciToExact.has(ci)) ciToExact.set(ci, []);
+    ciToExact.get(ci).push(n);
   }
+  const matchExactKeys = (candidate) => {
+    const ek = lookupKey(candidate, lang);
+    if (wordsMap.has(ek)) return [ek];
+    return ciToExact.get(foldKey(ek)) ?? [];
+  };
 
   // Identificar em quais livros bíblicos as palavras ocorrem
   console.log(`  Identificando livros bíblicos para [${lang}]...`);
@@ -320,8 +325,7 @@ for (const filePath of filesToProcess) {
       try {
         const bData = JSON.parse(readFileSync(join(dictLangDir, bf), 'utf8'));
         for (const k of Object.keys(bData)) {
-          const nk = normalizeWord(k, lang);
-          if (wordsMap.has(nk)) {
+          for (const nk of matchExactKeys(k)) {
             if (!wordToBooks.has(nk)) wordToBooks.set(nk, new Set());
             wordToBooks.get(nk).add(bNum);
           }
@@ -348,8 +352,7 @@ for (const filePath of filesToProcess) {
             if (!v.text) continue;
             const tokens = v.text.split(/\s+/);
             for (const t of tokens) {
-              const nt = normalizeWord(t, lang);
-              if (wordsMap.has(nt)) {
+              for (const nt of matchExactKeys(t)) {
                 if (!wordToBooks.has(nt)) wordToBooks.set(nt, new Set());
                 wordToBooks.get(nt).add(bNum);
               }
@@ -378,7 +381,7 @@ for (const filePath of filesToProcess) {
   const entriesWithNorm = Object.entries(data).map(([palavra, dados]) => ({
     palavra,
     dados,
-    normKey: normalizeWord(palavra, lang)
+    normKey: lookupKey(palavra, lang)
   }));
 
   console.log(`  Aplicando correções em ${targetBooks.size} livros do idioma [${lang}]...`);
@@ -395,12 +398,17 @@ for (const filePath of filesToProcess) {
       }
     }
 
-    // Indexar bookData UMA ÚNICA VEZ por livro: normKey -> chaves existentes (O(K) em vez de O(N*M*K))
-    const existingNormMap = new Map();
+    // Índice em 2 níveis: chave exata em NFC primeiro; só se não houver
+    // exata, chave case-insensitive (com diacríticos/apóstrofos intactos).
+    const exactIndex = new Map();
+    const ciIndex = new Map();
     for (const existingKey of Object.keys(bookData)) {
-      const nk = normalizeWord(existingKey, lang);
-      if (!existingNormMap.has(nk)) existingNormMap.set(nk, []);
-      existingNormMap.get(nk).push(existingKey);
+      const ek = lookupKey(existingKey, lang);
+      const ci = foldKey(ek);
+      if (!exactIndex.has(ek)) exactIndex.set(ek, []);
+      exactIndex.get(ek).push(existingKey);
+      if (!ciIndex.has(ci)) ciIndex.set(ci, []);
+      ciIndex.get(ci).push(existingKey);
     }
 
     let modified = false;
@@ -409,15 +417,18 @@ for (const filePath of filesToProcess) {
       const bSet = wordToBooks.get(normKey);
       if (!bSet || !bSet.has(b)) continue;
 
-      const keysToTouch = new Set([normKey]);
-      if (palavra !== normKey) keysToTouch.add(palavra);
-
-      // Também inclui qualquer variante existente no livro que normalize para a mesma chave
-      // (ex.: no hebraico com cantilações: "לְדָוִ֑ד", "לְדָוִ֗ד", "לְדָוִֽד", etc.)
-      const variants = existingNormMap.get(normKey);
-      if (variants) {
-        for (const v of variants) {
-          keysToTouch.add(v);
+      const keysToTouch = new Set();
+      const exactHits = exactIndex.get(normKey);
+      if (exactHits?.length) {
+        for (const k of exactHits) keysToTouch.add(k);
+      } else {
+        const ciHits = ciIndex.get(foldKey(normKey));
+        if (ciHits?.length) {
+          for (const k of ciHits) keysToTouch.add(k);
+        } else {
+          // Forma ainda não cadastrada: cria a chave exata do JSON (NFC).
+          keysToTouch.add(normKey);
+          if (palavra !== normKey) keysToTouch.add(palavra);
         }
       }
 
@@ -428,7 +439,14 @@ for (const filePath of filesToProcess) {
         for (const campo of ['root', 'translit', 'en', 'pt', 'es', 'id']) {
           const v = dados[campo] || prev[campo];
           if (campo === 'root' && !v) { mesclado.root = normKey; continue; }
-          if (v !== undefined && v !== '') mesclado[campo] = v;
+          if (v !== undefined && v !== '') {
+            // Pontuação colada na transliteração (ya., situ.], فِي؟) não é
+            // parte da forma: limpar antes de gravar evita sujar raw_books.
+            mesclado[campo] =
+              campo === 'translit'
+                ? String(v).replace(/[\u037E;.,\]…?؟]+$/u, '').trim()
+                : v;
+          }
         }
         // Campos extras (pos, verses, proper, color, ...) não podem sumir.
         for (const [campo, valor] of Object.entries(dados)) {
@@ -468,6 +486,9 @@ for (const lang of languagesModified) {
   console.log(`- Regenerando master.json para [${lang}]...`);
   execSync(`node _build/tools/gen-master.mjs ${lang}`, { cwd: REPO_DATA_ROOT, stdio: 'inherit' });
 }
+
+console.log(`- Regenerando corrected-keys.generated.json (precedência do JSON no runtime)...`);
+execSync(`node _build/tools/gen-corrected-keys.mjs`, { cwd: REPO_DATA_ROOT, stdio: 'inherit' });
 
 console.log(`- Regenerando pt_master_glossary.json...`);
 execSync(`node _build/tools/gen-pt-glossary.mjs`, { cwd: REPO_DATA_ROOT, stdio: 'inherit' });

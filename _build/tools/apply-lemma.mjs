@@ -31,6 +31,7 @@
 import { join } from 'node:path';
 import { RAIZ, DICT_DIR, pacotes, livrosDo, lerJson, escreverJson } from './lib/io.mjs';
 import { lema, estrategia } from './lib/lemmatize.mjs';
+import { correctedKeysFor, isCorrected } from './lib/corrected-keys.mjs';
 
 /** @type {Record<string, 'exato'|'identidade'|'regras'>} */
 const MODO = {
@@ -99,6 +100,9 @@ export function aplicarLemas(opcoes = {}) {
       for (const k of Object.keys(lerJson(join(dir, livro)))) vocab.add(k);
     }
     const poses = modo === 'regras' ? posPorForma(lang, DICT_DIR) : null;
+    // O root vindo do JSON de correção é definitivo: a heurística de lema
+    // nunca pode sobrescrevê-lo quando a ferramenta roda depois do import.
+    const corrigidas = correctedKeysFor(lang, RAIZ);
 
     let mudadas = 0;
     let total = 0;
@@ -109,6 +113,7 @@ export function aplicarLemas(opcoes = {}) {
       for (const [surface, bruta] of Object.entries(entradas)) {
         if (!bruta || typeof bruta !== 'object') continue;
         total++;
+        if (isCorrected(corrigidas, surface)) continue;
         const ctx =
           modo === 'exato'
             ? { grcIndex: indice, vocab }
