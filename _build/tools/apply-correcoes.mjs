@@ -160,6 +160,57 @@ function foldKey(key) {
   return key.toLowerCase();
 }
 
+/**
+ * `/` separa classes contextuais alternativas; `+` é FUSÃO de clítico na mesma
+ * palavra. Correções antigas gravaram fusões reais com `/` — fr `d’Abraham`
+ * (ADP/PROPN), id `oleh-Nya` (ADP/PRON), bju `mun-e` (ADP/NOUN) — e isso
+ * reaparecia no .txt como (ADP/PROPN) em vez de (ADP+PROPN).
+ *
+ * Regra conservadora:
+ *  - se algum segmento já tem `+`, o `/` separa alternativas fundidas
+ *    (fr `c’était` = PRON+AUX/PRON+VERB) e NÃO é mexido;
+ *  - sem `+`, converte apenas quando a forma tem apóstrofo de elisão ou sufixo
+ *    clítico conhecido da língua. Compostos/reduplicações legítimos
+ *    (fr `au-dessus`, `c'est-à-dire`, id `bernyala-nyala`) ficam com `/`.
+ */
+const CLITIC_SUFFIX = {
+  id: /(?:-nya|-Nya|-ku|-mu|-kah|-lah|-pun)$/,
+  bju: /(?:-e|-ꞌe)$/,
+  pt: /-(?:me|te|se|lhe|lo|la|os|as|nos|vos|o|a)(?:-|$)/,
+};
+const APOSTROPHE = /['’ʼ]/;
+
+function normalizePosForFusion(lang, key, pos) {
+  if (typeof pos !== 'string' || !pos.includes('/') || pos.includes('+')) return pos;
+  const k = String(key).normalize('NFC');
+  if ((k.match(/-/g) || []).length >= 2 && APOSTROPHE.test(k)) return pos; // expressão lexicalizada
+  const fusion = APOSTROPHE.test(k) || CLITIC_SUFFIX[lang]?.test(k);
+  return fusion ? pos.replace(/\//g, '+') : pos;
+}
+
+// Varredura completa dos dicionários: node apply-correcoes.mjs --normalize-pos
+if (process.argv.includes('--normalize-pos')) {
+  let arquivos = 0, chaves = 0;
+  const langs = [...new Set(Object.values(SUFFIX_TO_LANG))];
+  for (const lang of langs) {
+    const dir = join(REPO_DATA_ROOT, 'dict', lang);
+    if (!existsSync(dir)) continue;
+    for (const f of readdirSync(dir).filter(f => /^\d+\.json$/.test(f))) {
+      const p = join(dir, f);
+      const d = JSON.parse(readFileSync(p, 'utf8'));
+      let n = 0;
+      for (const [k, v] of Object.entries(d)) {
+        if (!v || typeof v !== 'object' || typeof v.pos !== 'string') continue;
+        const np = normalizePosForFusion(lang, k, v.pos);
+        if (np !== v.pos) { v.pos = np; n++; }
+      }
+      if (n) { writeFileSync(p, JSON.stringify(d, null, 2), 'utf8'); arquivos++; chaves += n; }
+    }
+  }
+  console.log(`normalize-pos: ${chaves} chaves em ${arquivos} arquivos ajustadas (fusão +).`);
+  process.exit(0);
+}
+
 // Autoteste rápido da regra de ouro: node apply-correcoes.mjs --self-test
 if (process.argv.includes('--self-test')) {
   const pairs = [
@@ -177,7 +228,18 @@ if (process.argv.includes('--self-test')) {
   assert.equal(lookupKey('situ.]', 'id'), 'situ', 'pontuação terminal removida');
   assert.equal(lookupKey('ya.', 'ru'), 'ya', 'ponto colado removido');
   assert.equal(lookupKey('فِي؟', 'ar'), 'فِي', '؟ removida');
-  console.log('apply-correcoes: chave exata NFC/fallback por caixa OK');
+  // fusão real: `/` era usado indevidamente no lugar de `+`
+  assert.equal(normalizePosForFusion('fr', "d’Abraham", 'ADP/PROPN'), 'ADP+PROPN');
+  assert.equal(normalizePosForFusion('fr', "d'homme", 'ADP/NOUN'), 'ADP+NOUN');
+  assert.equal(normalizePosForFusion('id', 'oleh-Nya', 'ADP/PRON'), 'ADP+PRON');
+  assert.equal(normalizePosForFusion('bju', 'mun-e', 'ADP/NOUN'), 'ADP+NOUN');
+  assert.equal(normalizePosForFusion('pt', 'ser-vos-ão', 'AUX/VERB'), 'AUX+VERB');
+  // alternativas já fundidas e compostos legítimos ficam como estão
+  assert.equal(normalizePosForFusion('fr', 'c’était', 'PRON+AUX/PRON+VERB'), 'PRON+AUX/PRON+VERB');
+  assert.equal(normalizePosForFusion('fr', 'au-dessus', 'ADP/ADV'), 'ADP/ADV');
+  assert.equal(normalizePosForFusion('fr', "c'est-à-dire", 'CCONJ/ADV'), 'CCONJ/ADV');
+  assert.equal(normalizePosForFusion('id', 'bernyala-nyala', 'VERB/ADJ'), 'VERB/ADJ');
+  console.log('apply-correcoes: chave exata NFC/fallback por caixa e POS de fusão OK');
   process.exit(0);
 }
 
@@ -451,7 +513,9 @@ for (const filePath of filesToProcess) {
         // Campos extras (pos, verses, proper, color, ...) não podem sumir.
         for (const [campo, valor] of Object.entries(dados)) {
           if (['root', 'translit', 'en', 'pt', 'es', 'id'].includes(campo)) continue;
-          if (valor !== undefined && valor !== '') mesclado[campo] = valor;
+          if (valor === undefined || valor === '') continue;
+          // `+` é fusão real; `/` é classe dupla. Normaliza antes de gravar.
+          mesclado[campo] = campo === 'pos' ? normalizePosForFusion(lang, k, valor) : valor;
         }
         bookData[k] = mesclado;
         modified = true;
