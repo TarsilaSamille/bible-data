@@ -76,7 +76,7 @@
   },
   "terpilih": {
     "root": "pilih",
-    "en": "chosen; elect; selected",
+    "en": "chosen; elected",
     "translit": "terpilih",
     "pos": "ADJ/VERB",
     "verses": [
@@ -85,7 +85,7 @@
     ],
     "pt": "escolhido; eleito",
     "es": "escogido; elegido",
-    "id": "pilihan; terpilih"
+    "id": "terpilih"
   },
   "dan": {
     "root": "dan",
@@ -124,12 +124,12 @@
   },
   "anaknya": {
     "root": "anak",
-    "en": "his son; his child",
+    "en": "his son; his child; her child",
     "translit": "anaknya",
     "id": "anaknya",
     "pt": "seu filho; sua filha",
     "es": "su hijo; su hija",
-    "pos": "NOUN"
+    "pos": "NOUN+PRON"
   },
   "benarbenar": {
     "root": "benarbenar",
@@ -242,11 +242,11 @@
   },
   "semua": {
     "root": "semua",
-    "en": "all; every",
+    "en": "all; every; everything",
     "translit": "semua",
     "pt": "todo; todos; tudo",
-    "id": "semua",
-    "es": "todo; todos",
+    "id": "semua; segala",
+    "es": "todo; todos; todas",
     "pos": "DET/PRON",
     "verses": [
       "1:1"
@@ -319,10 +319,10 @@
   },
   "karena": {
     "root": "karena",
-    "en": "because; for; on account of",
+    "en": "because; because of; on account of",
     "translit": "karena",
     "pt": "porque; por causa de",
-    "id": "sebab; oleh karena",
+    "id": "karena; sebab",
     "es": "porque; a causa de",
     "pos": "SCONJ/ADP",
     "verses": [
@@ -331,15 +331,15 @@
   },
   "tetap": {
     "root": "tetap",
-    "en": "remain; stay; constant; still",
+    "en": "to remain; steadfast; constant; still",
     "translit": "tetap",
-    "pos": "VERB/ADV",
+    "pos": "VERB/ADJ/ADV",
     "verses": [
       "1:2"
     ],
     "pt": "permanecer; ficar; constante; firme",
-    "es": "permanecer; quedar; constante; firme",
-    "id": "tetap; terus; konstan"
+    "es": "permanecer; firme; constante; seguir",
+    "id": "tetap; teguh"
   },
   "di": {
     "root": "di",
@@ -360,7 +360,7 @@
     "en": "in; inside; deep",
     "translit": "dalam",
     "pt": "em; dentro de; profundo",
-    "id": "dalam",
+    "id": "dalam; di dalam",
     "es": "en; dentro de; profundo",
     "pos": "ADP/ADJ",
     "pos_counts": {
@@ -394,8 +394,8 @@
     "root": "akan",
     "en": "will; shall; about; toward",
     "translit": "akan",
-    "pt": "irá; há de; a respeito de; para",
-    "id": "akan; hendak",
+    "pt": "irá; há de; acerca de; para",
+    "id": "akan; mengenai",
     "es": "irá; ha de; acerca de; hacia",
     "pos": "AUX/ADP",
     "verses": [
@@ -418,7 +418,7 @@
   },
   "sampai": {
     "root": "sampai",
-    "en": "until; to; arrive; reach",
+    "en": "until; to; to arrive; to reach",
     "translit": "sampai",
     "pt": "até; chegar; alcançar",
     "es": "hasta; llegar; alcanzar",
@@ -426,7 +426,7 @@
     "verses": [
       "1:2"
     ],
-    "id": "sampai"
+    "id": "sampai; hingga; tiba"
   },
   "selamalamanya": {
     "root": "selamalamanya",
@@ -435,21 +435,21 @@
   },
   "selama": {
     "root": "lama",
-    "en": "during; as long as; while",
+    "en": "during; while; as long as",
     "translit": "selama",
     "pt": "durante; enquanto",
     "es": "durante; mientras",
-    "id": "selama",
+    "id": "selama; sepanjang",
     "pos": "ADP/SCONJ"
   },
   "lamanya": {
     "root": "lama",
-    "en": "duration; length of time",
+    "en": "its duration; length of time",
     "translit": "lamanya",
     "id": "lamanya",
-    "pt": "duração; tempo",
-    "es": "duración; tiempo",
-    "pos": "NOUN"
+    "pt": "sua duração; tempo",
+    "es": "su duración; tiempo",
+    "pos": "NOUN+PRON/ADJ+PRON"
   },
   "kasih": {
     "root": "kasih",
@@ -493,7 +493,7 @@
     "en": "peace; peaceful",
     "translit": "damai",
     "pt": "paz; pacífico",
-    "id": "damai",
+    "id": "damai; kedamaian",
     "es": "paz; pacífico",
     "pos": "NOUN/ADJ",
     "verses": [
@@ -502,22 +502,22 @@
   },
   "sejahtera": {
     "root": "sejahtera",
-    "en": "peace; prosperous; safe; well-being",
+    "en": "peace; prosperous; well-being",
     "translit": "sejahtera",
     "pos": "ADJ/NOUN",
     "verses": [
       "1:3"
     ],
     "pt": "paz; próspero; seguro; bem-estar",
-    "es": "paz; próspero; seguro; bienestar",
+    "es": "paz; próspero; bienestar",
     "id": "sejahtera; damai"
   },
   "allah": {
-    "root": "allah",
-    "en": "God; deity",
+    "root": "Allah",
+    "en": "God; god",
     "translit": "allah",
     "pt": "Deus; deus",
-    "id": "Allah; Tuhan",
+    "id": "Allah; tuhan",
     "es": "Dios; dios",
     "pos": "PROPN/NOUN",
     "proper": true,
@@ -527,12 +527,12 @@
     ]
   },
   "bapa": {
-    "root": "bapa",
-    "en": "father; Father",
+    "root": "Bapa",
+    "en": "Father; father",
     "translit": "bapa",
-    "pt": "pai; Pai",
-    "id": "ayah; bapa",
-    "es": "padre; Padre",
+    "pt": "Pai; pai",
+    "id": "Bapa; ayah",
+    "es": "Padre; padre",
     "pos": "NOUN/PROPN",
     "proper": true,
     "verses": [
@@ -625,7 +625,7 @@
     "en": "half",
     "translit": "separuh",
     "pt": "metade; meio",
-    "id": "setengah; separuh",
+    "id": "separuh",
     "es": "mitad; medio",
     "pos": "NUM/NOUN",
     "verses": [
@@ -639,20 +639,20 @@
   },
   "anakmu": {
     "root": "anak",
-    "en": "your child; your son",
+    "en": "your son; your child",
     "translit": "anakmu",
     "id": "anakmu",
     "pt": "teu filho; tua filha",
     "es": "tu hijo; tu hija",
-    "pos": "NOUN"
+    "pos": "NOUN+PRON"
   },
   "hidup": {
     "root": "hidup",
-    "en": "live; life; alive",
+    "en": "to live; life; alive",
     "translit": "hidup",
     "pt": "viver; vida; vivo",
     "es": "vivir; vida; vivo",
-    "pos": "VERB/NOUN",
+    "pos": "VERB/NOUN/ADJ",
     "verses": [
       "1:4",
       "1:6"
@@ -660,8 +660,8 @@
     "id": "hidup; kehidupan"
   },
   "sesuai": {
-    "root": "sesuai",
-    "en": "in accordance with; fitting; matching",
+    "root": "suai",
+    "en": "according to; suitable; fitting",
     "translit": "sesuai",
     "pos": "ADJ/ADP",
     "verses": [
@@ -669,7 +669,7 @@
     ],
     "pt": "conforme; segundo; adequado",
     "es": "conforme; según; adecuado",
-    "id": "sesuai"
+    "id": "sesuai; cocok"
   },
   "dengan": {
     "root": "dengan",
@@ -754,11 +754,11 @@
   },
   "olah": {
     "root": "olah",
-    "en": "prepare; process; treat; manner",
+    "en": "to process; to work; manner",
     "translit": "olah",
     "pt": "preparar; trabalhar; modo",
-    "es": "preparar; elaborar; modo",
-    "id": "mengolah; cara",
+    "es": "preparar; trabajar; modo",
+    "id": "olah",
     "pos": "VERB/NOUN"
   },
   "menuliskan": {
@@ -778,8 +778,8 @@
     "en": "new; just; only then",
     "translit": "baru",
     "pt": "novo; recém; somente então",
-    "id": "baru; belum lama",
-    "es": "nuevo; recién; solo entonces",
+    "id": "baru",
+    "es": "nuevo; recién; apenas",
     "pos": "ADJ/ADV",
     "verses": [
       "1:5"
@@ -787,16 +787,16 @@
   },
   "bagimu": {
     "root": "bagi",
-    "en": "for you; unto you",
+    "en": "for you; to you",
     "translit": "bagimu",
     "pt": "para ti; para vós",
     "id": "bagimu",
     "es": "para ti; para vosotros",
-    "pos": "ADP"
+    "pos": "ADP+PRON"
   },
   "menurut": {
     "root": "turut",
-    "en": "according to; follow; obey",
+    "en": "according to; to follow; to obey",
     "translit": "menurut",
     "pos": "ADP/VERB",
     "verses": [
@@ -805,7 +805,7 @@
     ],
     "pt": "segundo; conforme; seguir; obedecer",
     "es": "según; conforme a; seguir; obedecer",
-    "id": "menurut"
+    "id": "menurut; mengikuti"
   },
   "sudah": {
     "root": "sudah",
@@ -845,12 +845,12 @@
   },
   "mulanya": {
     "root": "mula",
-    "en": "beginning; origin",
+    "en": "its beginning; origin",
     "translit": "mulanya",
-    "pt": "princípio; origem",
-    "es": "principio; origen",
+    "pt": "seu princípio; origem",
+    "es": "su principio; origen",
     "id": "mulanya",
-    "pos": "NOUN"
+    "pos": "NOUN+PRON"
   },
   "supaya": {
     "root": "supaya",
@@ -885,14 +885,14 @@
     "pt": "este é; isto é; eis",
     "es": "este es; esto es; he aquí",
     "id": "inilah",
-    "pos": "DET/PRON"
+    "pos": "DET+PART/PRON+PART"
   },
   "itu": {
     "root": "itu",
-    "en": "that; the",
+    "en": "that; those; the",
     "translit": "itu",
     "pt": "aquele; aquela; isso; o; a",
-    "es": "ese; esa; eso; aquel; el; la",
+    "es": "ese; esa; aquel; aquello",
     "pos": "DET/PRON",
     "pos_counts": {
       "DET": 4,
@@ -908,7 +908,7 @@
   },
   "yaitu": {
     "root": "yaitu",
-    "en": "namely; that is",
+    "en": "that is; namely",
     "translit": "yaitu",
     "pos": "SCONJ/CCONJ",
     "verses": [
@@ -961,7 +961,7 @@
     "en": "as; just as; according to",
     "translit": "sebagaimana",
     "pt": "como; assim como; conforme",
-    "id": "seperti; sebagaimana",
+    "id": "sebagaimana",
     "es": "como; así como; conforme",
     "pos": "SCONJ/ADP",
     "verses": [
@@ -985,7 +985,7 @@
     "en": "because; for; cause; reason",
     "translit": "sebab",
     "pt": "porque; pois; causa; motivo",
-    "id": "sebab",
+    "id": "sebab; karena; alasan",
     "es": "porque; pues; causa; motivo",
     "pos": "SCONJ/NOUN",
     "verses": [
@@ -995,16 +995,16 @@
   },
   "banyak": {
     "root": "banyak",
-    "en": "many; much; numerous; very",
+    "en": "many; much; numerous",
     "translit": "banyak",
-    "pos": "ADJ/ADV",
+    "pos": "ADJ/ADV/DET",
     "verses": [
       "1:7",
       "1:12"
     ],
     "pt": "muitos; muito; numeroso",
     "es": "muchos; mucho; numeroso",
-    "id": "banyak; berlimpah"
+    "id": "banyak"
   },
   "penyesat": {
     "root": "sesat",
@@ -1053,12 +1053,15 @@
   },
   "seluruh": {
     "root": "seluruh",
-    "en": "whole; entire",
-    "translit": "",
+    "en": "all; whole; entire",
+    "translit": "seluruh",
     "pos": "DET",
     "verses": [
       "1:7"
-    ]
+    ],
+    "pt": "todo; inteiro; completo",
+    "es": "todo; entero; completo",
+    "id": "seluruh; segenap"
   },
   "dunia": {
     "root": "dunia",
@@ -1169,15 +1172,15 @@
   },
   "waspadalah": {
     "root": "waspada",
-    "en": "watch out; be vigilant; beware",
+    "en": "watch out; be on guard; beware",
     "translit": "waspadalah",
-    "pos": "VERB",
+    "pos": "VERB+PART/ADJ+PART",
     "verses": [
       "1:8"
     ],
     "pt": "vigia; acautela-te; fica alerta",
     "es": "vigila; guárdate; estate alerta",
-    "id": "berjaga-jagalah; waspadalah"
+    "id": "waspadalah"
   },
   "jangan": {
     "root": "jangan",
@@ -1194,7 +1197,7 @@
   },
   "kehilangan": {
     "root": "hilang",
-    "en": "lose; suffer loss; loss",
+    "en": "to lose; loss",
     "translit": "kehilangan",
     "pos": "VERB/NOUN",
     "verses": [
@@ -1418,7 +1421,7 @@
     ],
     "pt": "uma pessoa; alguém; um",
     "es": "una persona; alguien; uno",
-    "id": "seorang"
+    "id": "seorang; seseorang"
   },
   "membawa": {
     "root": "membawa",
@@ -1431,7 +1434,7 @@
   },
   "ini": {
     "root": "ini",
-    "en": "this",
+    "en": "this; these",
     "translit": "ini",
     "pt": "este; esta; isto",
     "id": "ini",
@@ -1453,7 +1456,7 @@
     "pt": "não; não faças",
     "es": "no; no hagas",
     "id": "janganlah",
-    "pos": "PART"
+    "pos": "PART+PART"
   },
   "menerima": {
     "root": "terima",
@@ -1486,7 +1489,7 @@
     "id": "rumahmu",
     "pt": "tua casa; vossa casa",
     "es": "tu casa; vuestra casa",
-    "pos": "NOUN"
+    "pos": "NOUN+PRON"
   },
   "memberi": {
     "root": "memberi",
@@ -1539,12 +1542,12 @@
   },
   "perbuatannya": {
     "root": "buat",
-    "en": "his deed",
+    "en": "his deed; his work",
     "translit": "perbuatannya",
-    "pt": "seu feito",
-    "es": "su hecho",
+    "pt": "seu feito; sua obra",
+    "es": "su obra; su hecho",
     "id": "perbuatannya",
-    "pos": "NOUN"
+    "pos": "NOUN+PRON"
   },
   "jahat": {
     "root": "jahat",
@@ -1584,9 +1587,9 @@
   },
   "mau": {
     "root": "mau",
-    "en": "want; wish; willing",
+    "en": "to want; to wish; will",
     "translit": "mau",
-    "id": "mau",
+    "id": "mau; hendak",
     "es": "querer; desear",
     "pos": "AUX/VERB",
     "verses": [
@@ -1596,12 +1599,12 @@
   },
   "melakukannya": {
     "root": "laku",
-    "en": "do it; practice it",
+    "en": "to do it; to practice it",
     "translit": "melakukannya",
     "pt": "fazê-lo; praticá-lo",
     "es": "hacerlo; practicarlo",
     "id": "melakukannya",
-    "pos": "VERB"
+    "pos": "VERB+PRON"
   },
   "kertas": {
     "root": "kertas",
@@ -1691,7 +1694,7 @@
     "root": "sempurna",
     "en": "be perfect; is complete",
     "translit": "sempurnalah",
-    "pos": "ADJ/VERB",
+    "pos": "ADJ+PART/VERB+PART",
     "verses": [
       "1:12"
     ],
@@ -1723,7 +1726,7 @@
     "pt": "teu irmão; teu parente",
     "es": "tu hermano; tu pariente",
     "id": "saudaramu",
-    "pos": "NOUN"
+    "pos": "NOUN+PRON"
   },
   "anak-anak": {
     "root": "anak",
@@ -1804,7 +1807,7 @@
     "verses": [
       "1:5"
     ],
-    "en": "for; to; divide; share",
+    "en": "for; to; to divide; to share",
     "pt": "para; dividir; repartir",
     "es": "para; dividir; repartir",
     "id": "bagi; untuk; membagi"
@@ -1921,7 +1924,7 @@
     "en": "forever; eternally",
     "pt": "para sempre; eternamente",
     "es": "para siempre; eternamente",
-    "id": "kekal; selama-lamanya",
+    "id": "selama-lamanya; kekal",
     "pos": "ADV"
   },
   "anak-anakmu": {
@@ -1931,34 +1934,34 @@
     "pt": "teus filhos; vossos filhos",
     "es": "tus hijos; vuestros hijos",
     "id": "anak-anakmu",
-    "pos": "NOUN"
+    "pos": "NOUN+PRON"
   },
   "anak-anaknya": {
     "root": "anak",
     "translit": "anak-anaknya",
-    "en": "his children; his sons",
-    "pt": "seus filhos",
+    "en": "his children; her children; his sons",
+    "pt": "seus filhos; suas crianças",
     "es": "sus hijos",
     "id": "anak-anaknya",
-    "pos": "NOUN"
+    "pos": "NOUN+PRON"
   },
   "perintah-nya": {
     "root": "perintah",
-    "translit": "perintah-Nya",
-    "en": "his commandment",
+    "translit": "perintah-nya",
+    "en": "his command; his commandment",
     "pt": "seu mandamento",
     "es": "su mandamiento",
     "id": "perintah-Nya",
-    "pos": "NOUN"
+    "pos": "NOUN+PRON"
   },
   "perintah-Nya": {
     "root": "perintah",
-    "translit": "perintah-Nya",
-    "en": "his commandment",
+    "translit": "perintah-nya",
+    "en": "his command; his commandment",
     "pt": "seu mandamento",
     "es": "su mandamiento",
     "id": "perintah-Nya",
-    "pos": "NOUN"
+    "pos": "NOUN+PRON"
   },
   "situ.]": {
     "root": "situ",
